@@ -14182,3 +14182,22990 @@ group by b.year
 ' 
 END
 GO
+
+-----------------------
+---- SQL Procedures ---
+-----------------------
+
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteReport_SalesInfo]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteReport_SalesInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteReport_SalesInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TheoreticalProfit]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TheoreticalProfit]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_TheoreticalProfit]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_OrderOpenedBy]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_OrderOpenedBy]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_OrderOpenedBy]
+GO
+/****** Object:  StoredProcedure [dbo].[pims_sel_totals]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pims_sel_totals]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[pims_sel_totals]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Header]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Header]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Header]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_YEARLYSALES]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_YEARLYSALES]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_YEARLYSALES]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_YearlySalesReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_YearlySalesReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_YearlySalesReport]
+GO
+/****** Object:  StoredProcedure [dbo].[pos_stat_account]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pos_stat_account]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[pos_stat_account]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Item]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Item]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Item]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_ItemReturn]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_ItemReturn]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_ItemReturn]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_ItemVoid]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_ItemVoid]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_ItemVoid]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Menu]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Menu]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Menu]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_OpenServer]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_OpenServer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_OpenServer]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_PaymentType]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_PaymentType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_PaymentType]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Server]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Server]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Server]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_VoidList]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_VoidList]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_VoidList]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Waiter]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Waiter]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Waiter]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Workstation]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Workstation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Workstation]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_WorkStationPaymentType]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_WorkStationPaymentType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_WorkStationPaymentType]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReadingDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReadingDiscounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReadingDiscounts]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Category]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Category]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Category]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Checklist]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Checklist]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Checklist]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_CreditList]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_CreditList]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_CreditList]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_DiscountSummary]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_DiscountSummary]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_DiscountSummary]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Division]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Division]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Division]
+GO
+/****** Object:  StoredProcedure [dbo].[pims_sel_paymentSales]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pims_sel_paymentSales]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[pims_sel_paymentSales]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totalpayment]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totalpayment]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_totalpayment]
+GO
+/****** Object:  StoredProcedure [dbo].[pims_sel_categorysales]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pims_sel_categorysales]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[pims_sel_categorysales]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_UPD_ScreenRemarks]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_UPD_ScreenRemarks]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_UPD_ScreenRemarks]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_MealsRevenue]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_MealsRevenue]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_MealsRevenue]
+GO
+/****** Object:  StoredProcedure [dbo].[J_ExportERP]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_ExportERP]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[J_ExportERP]
+GO
+/****** Object:  StoredProcedure [dbo].[J_Xls_Export]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_Xls_Export]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[J_Xls_Export]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesReportByItemPriceTime]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesReportByItemPriceTime]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_SalesReportByItemPriceTime]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesReportByMenuTime]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesReportByMenuTime]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_SalesReportByMenuTime]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesReportByMenuTime_NoOrders]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesReportByMenuTime_NoOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_SalesReportByMenuTime_NoOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteItemVoidsReport]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteItemVoidsReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteItemVoidsReport]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteReport]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteReport]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DailySalesDetailed]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DailySalesDetailed]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DailySalesDetailed]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DailySalesMenu]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DailySalesMenu]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DailySalesMenu]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReport]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteSalesReport]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReport_Tax]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReport_Tax]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteSalesReport_Tax]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReportByMenu]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReportByMenu]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteSalesReportByMenu]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReportByTime]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReportByTime]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteSalesReportByTime]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReportByTimeCount]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReportByTimeCount]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteSalesReportByTimeCount]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CatPerMenu]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CatPerMenu]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CatPerMenu]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesItemDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesItemDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_SalesItemDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DiscountedItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DiscountedItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DiscountedItems]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DiscountedItems_New]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DiscountedItems_New]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DiscountedItems_New]
+GO
+/****** Object:  StoredProcedure [dbo].[Ludi_Query]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Ludi_Query]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Ludi_Query]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_CostOfGoods]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_CostOfGoods]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_CostOfGoods]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_CostOfGoods1]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_CostOfGoods1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_CostOfGoods1]
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Inventory]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Inventory]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[InvM_Inventory]
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Inventory2]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Inventory2]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[InvM_Inventory2]
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Inventory3]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Inventory3]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[InvM_Inventory3]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totaltable]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totaltable]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_totaltable]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_itemsales]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_itemsales]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_itemsales]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_salesitem]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_salesitem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_salesitem]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totaldelivery]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totaldelivery]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_totaldelivery]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totalpaid]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totalpaid]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_totalpaid]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_Voiditems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_Voiditems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_Voiditems]
+GO
+/****** Object:  StoredProcedure [dbo].[selitemprofitrpt]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[selitemprofitrpt]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[selitemprofitrpt]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SettleOrder]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SettleOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_SettleOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ChecklistDetail]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ChecklistDetail]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ChecklistDetail]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_Debt_Pay_report]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_Debt_Pay_report]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_Debt_Pay_report]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OlderSalesReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OlderSalesReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OlderSalesReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Mainreading_CustomerCollection]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Mainreading_CustomerCollection]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Mainreading_CustomerCollection]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderBill]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderBill]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderBill]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderBill_Refund]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderBill_Refund]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderBill_Refund]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderBill1]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderBill1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderBill1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersReport]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ClosedOrdersReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersReport_Retail]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersReport_Retail]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ClosedOrdersReport_Retail]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersReportByInvoice]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersReportByInvoice]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ClosedOrdersReportByInvoice]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderInvoiceBill]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderInvoiceBill]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderInvoiceBill]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_VoidedInvoiceBill]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_VoidedInvoiceBill]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_VoidedInvoiceBill]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_VoidedTableBill]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_VoidedTableBill]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_VoidedTableBill]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_SALESDETAIL]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_SALESDETAIL]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_SALESDETAIL]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDiscounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderDiscounts]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDiscoutsBillReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDiscoutsBillReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderDiscoutsBillReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentsBillReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentsBillReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderPaymentsBillReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentsBillReport_Arabic]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentsBillReport_Arabic]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderPaymentsBillReport_Arabic]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SWT_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SWT_Customers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SWT_Customers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_BEAMREF]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_BEAMREF]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_BEAMREF]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CustomerDebt_Pay]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CustomerDebt_Pay]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_CustomerDebt_Pay]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemGroups]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemGroups]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemGroups]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_KitchenOrderReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_KitchenOrderReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_KitchenOrderReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_KitchenOrderReport1]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_KitchenOrderReport1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_KitchenOrderReport1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetails_Ingredients]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetails_Ingredients]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderDetails_Ingredients]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetails_New]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetails_New]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderDetails_New]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_CCPaymentType]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_CCPaymentType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_CCPaymentType]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemTaxServ]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemTaxServ]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemTaxServ]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineDeliveryCharges]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineDeliveryCharges]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnlineDeliveryCharges]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderDiscount]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderDiscount]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OrderDiscount]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Payment]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Payment]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Payment]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ChangeType]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ChangeType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ChangeType]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersPaymentDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersPaymentDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ClosedOrdersPaymentDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CashInOut]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CashInOut]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CashInOut]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CourseFired]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CourseFired]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CourseFired]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CourseFired 1,26790]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CourseFired 1,26790]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CourseFired 1,26790]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DiscountedItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DiscountedItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_DiscountedItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderStatus]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderStatus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OrderStatus]
+GO
+/****** Object:  StoredProcedure [dbo].[Pro_Web_Itemdisplay]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pro_Web_Itemdisplay]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Pro_Web_Itemdisplay]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_DiscountedItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_DiscountedItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_DiscountedItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_EndOfDay]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_EndOfDay]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_EndOfDay]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_InvoicePayType]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_InvoicePayType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_InvoicePayType]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_MergeTables]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_MergeTables]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_MergeTables]
+GO
+/****** Object:  StoredProcedure [dbo].[showIngredients]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[showIngredients]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[showIngredients]
+GO
+/****** Object:  StoredProcedure [dbo].[showProfit]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[showProfit]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[showProfit]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ViodOrder]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ViodOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_ViodOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_VoidInvoice]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_VoidInvoice]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_VoidInvoice]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_BOF_SEL_DISCTYPE]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_BOF_SEL_DISCTYPE]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_BOF_SEL_DISCTYPE]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemsReciepe]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemsReciepe]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemsReciepe]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemIngredients]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemIngredients]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemIngredients]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DEL_OrderDisconts]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DEL_OrderDisconts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_DEL_OrderDisconts]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_ItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_ItemGroups]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_ItemGroups]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_ScreenRemarks]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_ScreenRemarks]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_ScreenRemarks]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_Screens]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_Screens]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_Screens]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesItemsReport]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesItemsReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_SalesItemsReport]
+GO
+/****** Object:  StoredProcedure [dbo].[COPY_CHANGE_TO_TIPS]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[COPY_CHANGE_TO_TIPS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[COPY_CHANGE_TO_TIPS]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CreditCollection]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CreditCollection]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CreditCollection]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CheckReport]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CheckReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CheckReport]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CATEGORYCOSTPROFIT]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CATEGORYCOSTPROFIT]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CATEGORYCOSTPROFIT]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CashOut]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CashOut]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CashOut]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_BOFConfiguration]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_BOFConfiguration]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_BOFConfiguration]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_DEL_ItemTypesItems]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_DEL_ItemTypesItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_DEL_ItemTypesItems]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_INS_ItemTypesItems]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_INS_ItemTypesItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_INS_ItemTypesItems]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryBuilding]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryBuilding]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DeliveryBuilding]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryCompanies]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryCompanies]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DeliveryCompanies]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryCustomers]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryCustomers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DeliveryCustomers]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryZone]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryZone]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DeliveryZone]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteReport_SectionInfo]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteReport_SectionInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CompleteReport_SectionInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TypeItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TypeItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_TypeItems]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TypeItems_Not]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TypeItems_Not]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_TypeItems_Not]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DriversOrders]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DriversOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DriversOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ItemSplit]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ItemSplit]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_ItemSplit]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ItemTransfer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ItemTransfer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_ItemTransfer]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_ClientDelv]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_ClientDelv]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_ClientDelv]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_FillIventoryItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_FillIventoryItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_FillIventoryItem]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_FillProgramItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_FillProgramItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_FillProgramItems]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_ListofItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_ListofItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_ListofItems]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_ListofMinMaxItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_ListofMinMaxItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_ListofMinMaxItems]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemAdjustment]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemAdjustment]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemAdjustment]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemWastageDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemWastageDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemWastageDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemWastageDetailsByDate]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemWastageDetailsByDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemWastageDetailsByDate]
+GO
+/****** Object:  StoredProcedure [dbo].[Pims_sel_categoryinv]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pims_sel_categoryinv]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Pims_sel_categoryinv]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_EmployeeConfigurationSettings]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_EmployeeConfigurationSettings]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_EmployeeConfigurationSettings]
+GO
+/****** Object:  StoredProcedure [dbo].[Pims_sel_cgs]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pims_sel_cgs]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Pims_sel_cgs]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DailyCashCount]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DailyCashCount]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_DailyCashCount]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemProductionDetailsByDate]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemProductionDetailsByDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemProductionDetailsByDate]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetIngredientDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetIngredientDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetIngredientDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_ItemSearch]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_ItemSearch]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_ItemSearch]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetProductionDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetProductionDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetProductionDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemSalesDetailsByDate]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemSalesDetailsByDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemSalesDetailsByDate]
+GO
+/****** Object:  StoredProcedure [dbo].[J_Payments]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_Payments]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[J_Payments]
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Transfer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Transfer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[InvM_Transfer]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseByDate]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseByDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_PurchaseByDate]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseInvSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseInvSupplier]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_PurchaseInvSupplier]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseJournal]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseJournal]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_PurchaseJournal]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseReport]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_PurchaseReport]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_SalesReport]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_SalesReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_SalesReport]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_adjustment]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_adjustment]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_adjustment]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_Consumption]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SP_Consumption]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SP_Consumption]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_Consumption1]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SP_Consumption1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SP_Consumption1]
+GO
+/****** Object:  StoredProcedure [dbo].[RES_SEL_Reservation]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_SEL_Reservation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[RES_SEL_Reservation]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DiscountType]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DiscountType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_DiscountType]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DiscountType_ByItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DiscountType_ByItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_DiscountType_ByItem]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DollarDiscounts]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DollarDiscounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_DollarDiscounts]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Drivers]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Drivers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Drivers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_EmployeeConfigurationSettings]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_EmployeeConfigurationSettings]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_EmployeeConfigurationSettings]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CreditTypes]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CreditTypes]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CreditTypes]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Tips]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Tips]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Tips]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Transactions]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Transactions]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Transactions]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_PDAOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_PDAOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_PDAOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderDetails1]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderDetails1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OrderDetails1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_CashInOut]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_CashInOut]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_CashInOut]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_HoldOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_HoldOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_HoldOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OnlineOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineDiscounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnlineDiscounts]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnHoldOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnHoldOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnHoldOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnHoldOrders]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnHoldOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnHoldOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemDiscounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemDiscounts]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetailsReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetailsReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderDetailsReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetailsReport_Refund]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetailsReport_Refund]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderDetailsReport_Refund]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnLineOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnLineOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnLineOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineOrders]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnlineOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_KitchenVoidsReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_KitchenVoidsReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_KitchenVoidsReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ConvertPayAmnt]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ConvertPayAmnt]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ConvertPayAmnt]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ClearHoldOrder]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ClearHoldOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_ClearHoldOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CloseOrder]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CloseOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_CloseOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ReturnCurrencyID]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ReturnCurrencyID]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ReturnCurrencyID]
+GO
+/****** Object:  StoredProcedure [dbo].[Pos_sel_TipsReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pos_sel_TipsReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Pos_sel_TipsReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationPrinters]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationPrinters]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_WorkstationPrinters]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationPrinters_New]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationPrinters_New]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_WorkstationPrinters_New]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenScreenOrders]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenScreenOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OpenScreenOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderScreenCount]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderScreenCount]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderScreenCount]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderScreenDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderScreenDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderScreenDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PercentageDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PercentageDiscounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_PercentageDiscounts]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderVoidsReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderVoidsReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderVoidsReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PaymentTypes]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PaymentTypes]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_PaymentTypes]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PaymentTypes_param]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PaymentTypes_param]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_PaymentTypes_param]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PendingOrders]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PendingOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_PendingOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PhoneExist]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PhoneExist]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_PhoneExist]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ScreenGroupItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ScreenGroupItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ScreenGroupItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_VoidReasons]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_VoidReasons]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_VoidReasons]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationExist]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationExist]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_WorkstationExist]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Screens]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Screens]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Screens]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_SETMENU]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_SETMENU]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_SETMENU]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_SystemSettings]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_SystemSettings]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_SystemSettings]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderTracingReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderTracingReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderTracingReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenTablesReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenTablesReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OpenTablesReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentsTipsReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentsTipsReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderPaymentsTipsReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPrinted]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPrinted]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderPrinted]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderExist]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderExist]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderExist]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderID]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderID]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderID]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderKitchenScreen]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderKitchenScreen]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderKitchenScreen]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderOwner]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderOwner]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderOwner]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderPaymentDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationSettings]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationSettings]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_WorkstationSettings]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationTimeModes]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationTimeModes]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_WorkstationTimeModes]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_ServiceURL]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_ServiceURL]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_ServiceURL]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Customer]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Customer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_Customer]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Customer1]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Customer1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_Customer1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CustomerDebt]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CustomerDebt]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_CustomerDebt]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CustomerID]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CustomerID]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_CustomerID]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Customers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_Customers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_DeliveryDriver]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_DeliveryDriver]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_DeliveryDriver]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemIngradients]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemIngradients]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemIngradients]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemMenus]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemMenus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemMenus]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemModifiers]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemModifiers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemModifiers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemSalesItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemSalesItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemSalesItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemSalesItems_Tax]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemSalesItems_Tax]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemSalesItems_Tax]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemScreens]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemScreens]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemScreens]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_LastOrder]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_LastOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_LastOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_LastOrdersInEOD]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_LastOrdersInEOD]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_LastOrdersInEOD]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Loyalty]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Loyalty]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Loyalty]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Loyalty_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Loyalty_Customers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Loyalty_Customers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Adjust]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Adjust]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReading_Adjust]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReadingReportDates]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReadingReportDates]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MainReadingReportDates]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MarketingActivities]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MarketingActivities]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MarketingActivities]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MaxOrderNumber]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MaxOrderNumber]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_MaxOrderNumber]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineOrdersExists]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineOrdersExists]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnlineOrdersExists]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineToOrderDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineToOrderDiscounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnlineToOrderDiscounts]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrderInfo]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrderInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OpenOrderInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrderInfo1]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrderInfo1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OpenOrderInfo1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrders]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OpenOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrders_ByEmployee]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrders_ByEmployee]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OpenOrders_ByEmployee]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrdersByCustomer]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrdersByCustomer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OpenOrdersByCustomer]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DeliveryStatus]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DeliveryStatus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_DeliveryStatus]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemType]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemType]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemVoidBillReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemVoidBillReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ItemVoidBillReport]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineCustomers]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineCustomers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnlineCustomers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineItemSalesItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineItemSalesItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_OnlineItemSalesItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineOrderDiscount]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineOrderDiscount]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OnlineOrderDiscount]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Order]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Order]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Order]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Delivery_CusOrdList]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Delivery_CusOrdList]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Delivery_CusOrdList]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Delivery_CusOrdList_Branch]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Delivery_CusOrdList_Branch]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Delivery_CusOrdList_Branch]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_DeliveryOrder]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_DeliveryOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_DeliveryOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Loyalty]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Loyalty]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Loyalty]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineCustomer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineCustomer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OnlineCustomer]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineOrder]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OnlineOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_CopyWorkstationScreenItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_CopyWorkstationScreenItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_CopyWorkstationScreenItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Customer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Customer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Customer]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Customer1]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Customer1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Customer1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_Del_CallerLines]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_Del_CallerLines]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_Del_CallerLines]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DEL_EmptyOrder]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DEL_EmptyOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_DEL_EmptyOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_TimeLogIN]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_TimeLogIN]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_TimeLogIN]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_TimeLogOUT]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_TimeLogOUT]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_TimeLogOUT]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Zone]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Zone]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_Zone]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Authenticate]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Authenticate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Authenticate]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_BranchOpenOrders]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_BranchOpenOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_BranchOpenOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CallerLines]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CallerLines]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CallerLines]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CallerLines1]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CallerLines1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CallerLines1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CashTypes]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CashTypes]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CashTypes]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_P_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_P_OrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_P_OrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CHKPRICEHAPPYHOURS]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CHKPRICEHAPPYHOURS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CHKPRICEHAPPYHOURS]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CustomerAddress]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CustomerAddress]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CustomerAddress]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CustomerAddresses]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CustomerAddresses]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CustomerAddresses]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CustomerName]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CustomerName]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_CustomerName]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Customers]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Customers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Customers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_EmployeeExist]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_EmployeeExist]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_EmployeeExist]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_EmployeesList]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_EmployeesList]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_EmployeesList]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ExistingOrderInfo]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ExistingOrderInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ExistingOrderInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindBuilding]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindBuilding]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_FindBuilding]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindCompany]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindCompany]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_FindCompany]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindCustomer]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindCustomer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_FindCustomer]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindItem]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_FindItem]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_GroupSalesItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_GroupSalesItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_GroupSalesItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_IsItemDiscountable]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_IsItemDiscountable]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_IsItemDiscountable]
+GO
+/****** Object:  StoredProcedure [dbo].[RES_SEL_ReserveTable]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_SEL_ReserveTable]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[RES_SEL_ReserveTable]
+GO
+/****** Object:  StoredProcedure [dbo].[RES_INS_Reserv]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_INS_Reserv]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[RES_INS_Reserv]
+GO
+/****** Object:  StoredProcedure [dbo].[RES_INS_ReservDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_INS_ReservDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[RES_INS_ReservDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[RES_SEL_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_SEL_Customers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[RES_SEL_Customers]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Remarks]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Remarks]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_Remarks]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ResetItemCounters]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ResetItemCounters]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_ResetItemCounters]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SetGroupItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SetGroupItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_SetGroupItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SetItemCounter]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SetItemCounter]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_SetItemCounter]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SetScreenItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SetScreenItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_SetScreenItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SplitOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SplitOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_SplitOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_TransferOrder]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_TransferOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_TransferOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_TransferOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_TransferOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_TransferOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[Pos_upd_transferorderdetails1]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pos_upd_transferorderdetails1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Pos_upd_transferorderdetails1]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OnlineCustomer]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OnlineCustomer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OnlineCustomer]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderDetails_HoldToVoid]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderDetails_HoldToVoid]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OrderDetails_HoldToVoid]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderItemDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderItemDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OrderItemDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderNumber]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderNumber]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OrderNumber]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderPrice]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderPrice]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OrderPrice]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderRevMenu]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderRevMenu]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OrderRevMenu]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderScreen]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderScreen]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_OrderScreen]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ItemAvailable]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ItemAvailable]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_ItemAvailable]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ItemRemarks]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ItemRemarks]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_ItemRemarks]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_KitchenRemarks]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_KitchenRemarks]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_KitchenRemarks]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_MarketingActivities]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_MarketingActivities]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_MarketingActivities]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_H_OrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_H_OrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_H_OrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_DriverStatus]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_DriverStatus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_DriverStatus]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_VarianceReportDate]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_VarianceReportDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_VarianceReportDate]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_VarianceReportlocation]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_VarianceReportlocation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[sp_VarianceReportlocation]
+GO
+/****** Object:  StoredProcedure [dbo].[UPDATE_POS_ORDERDETAIL_STATUS]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UPDATE_POS_ORDERDETAIL_STATUS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[UPDATE_POS_ORDERDETAIL_STATUS]
+GO
+/****** Object:  StoredProcedure [dbo].[SAVE_SMS]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SAVE_SMS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[SAVE_SMS]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_WorkstationScreens]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_WorkstationScreens]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_UPD_WorkstationScreens]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_tottalsale]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_tottalsale]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_dashboard_tottalsale]
+GO
+/****** Object:  StoredProcedure [dbo].[web_delivery_customerdetails]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[web_delivery_customerdetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[web_delivery_customerdetails]
+GO
+/****** Object:  StoredProcedure [dbo].[web_delivery_CustomerOrderlist]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[web_delivery_CustomerOrderlist]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[web_delivery_CustomerOrderlist]
+GO
+/****** Object:  StoredProcedure [dbo].[web_delivery_CustomerOrderlist_Loyalty]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[web_delivery_CustomerOrderlist_Loyalty]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[web_delivery_CustomerOrderlist_Loyalty]
+GO
+/****** Object:  StoredProcedure [dbo].[INVD_GetItemByLocation]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVD_GetItemByLocation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVD_GetItemByLocation]
+GO
+/****** Object:  StoredProcedure [dbo].[INVD_GetItemQuantity]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVD_GetItemQuantity]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVD_GetItemQuantity]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_AddNewCustomer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_AddNewCustomer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_AddNewCustomer]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteBranch]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteBranch]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteBranch]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteCurrency]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteCurrency]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteCustomer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteCustomer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteCustomer]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteEmployee]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteEmployee]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemCategory]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteItemCategory]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemColor]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteItemColor]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemDivision]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteItemDivision]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemFormat]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteItemFormat]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemGroup]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemGroup]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteItemGroup]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemSize]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteItemSize]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteLocation]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteLocation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteLocation]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteSupplier]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeleteSupplier]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeliveryPreview]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeliveryPreview]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_DeliveryPreview]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillBranches]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillBranches]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillBranches]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillCompnayInfo]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillCompnayInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillCompnayInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillCurrency]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillCurrency]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillCustomers]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillCustomers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillCustomers]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillEmployee]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillEmployee]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillEmployeeFunction]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillEmployeeFunction]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillEmployeeFunction]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_DeleteItem]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteItemIngredient]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteItemIngredient]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_DeleteItemIngredient]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteOrder]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_DeleteOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_DeleteOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillExpiryWarning]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillExpiryWarning]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_FillExpiryWarning]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItemInLocations]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItemInLocations]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_FillItemInLocations]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItemLocationQuantity]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItemLocationQuantity]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_FillItemLocationQuantity]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItemLocationQuantity1]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItemLocationQuantity1]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_FillItemLocationQuantity1]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_FillItems]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_SalesPreview]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_SalesPreview]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_SalesPreview]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateBranch]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateBranch]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateBranch]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateCurrency]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateCurrency]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateCustomerData]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateCustomerData]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateCustomerData]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateEmployee]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateEmployee]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemCategory]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateItemCategory]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemColor]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateItemColor]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemDivision]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateItemDivision]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemFormat]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateItemFormat]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemGroups]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateItemGroups]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemSize]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateItemSize]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateLocation]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateLocation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateLocation]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateRegCodes]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateRegCodes]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateRegCodes]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateSupplier]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_UpdateSupplier]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_UpdateItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_UpdateItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_UpdateItem]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_UpdateOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_UpdateOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_UpdateOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVS_InsertSalesInvoice]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVS_InsertSalesInvoice]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVS_InsertSalesInvoice]
+GO
+/****** Object:  StoredProcedure [dbo].[INVS_InsertSalesInvoiceDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVS_InsertSalesInvoiceDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVS_InsertSalesInvoiceDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[J_rptLocationPurchase]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_rptLocationPurchase]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[J_rptLocationPurchase]
+GO
+/****** Object:  StoredProcedure [dbo].[J_TimeReports]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_TimeReports]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[J_TimeReports]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemWastage]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemWastage]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemWastage]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertDeliveryItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertDeliveryItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertDeliveryItem]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertDeliveryItemDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertDeliveryItemDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertDeliveryItemDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertInitialTransfers]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertInitialTransfers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertInitialTransfers]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemAdjustDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemAdjustDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertItemAdjustDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemAdjustment]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemAdjustment]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertItemAdjustment]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemIngredient]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemIngredient]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertItemIngredient]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemsInLocation]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemsInLocation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertItemsInLocation]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemWastage]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemWastage]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertItemWastage]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertNewItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertNewItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertNewItem]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertNewOrder]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertNewOrder]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertNewOrder]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertOrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertOrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertProductionDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertProductionDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertProductionDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertProductionInLocation]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertProductionInLocation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertProductionInLocation]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertWastageDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertWastageDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_InsertWastageDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_PurchasePreview]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_PurchasePreview]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_PurchasePreview]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetInvoiceNo]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetInvoiceNo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetInvoiceNo]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetInvoiceNumber]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetInvoiceNumber]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetInvoiceNumber]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemQtyOH]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemQtyOH]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetItemQtyOH]
+GO
+/****** Object:  StoredProcedure [dbo].[ITEMS_NO_RECEPIES]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ITEMS_NO_RECEPIES]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[ITEMS_NO_RECEPIES]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DEL_T_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DEL_T_OrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_DEL_T_OrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetProductionByDate]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetProductionByDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVM_GetProductionByDate]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_INS_Customer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_INS_Customer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_INS_Customer]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_INS_Order]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_INS_Order]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_INS_Order]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_Customers]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_Customers]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_Customers]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_UPD_Customer]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_UPD_Customer]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_UPD_Customer]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_UPD_Order]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_UPD_Order]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_UPD_Order]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_OpenOrderInfo]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_OpenOrderInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_OpenOrderInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_OpenOrders]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_OpenOrders]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_OpenOrders]
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_OrderDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PDA_SEL_OrderDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemCategory]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemCategory]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemColor]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemColor]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemDivision]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemDivision]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemFormat]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemFormat]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemGroups]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemGroups]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemSize]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemSize]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemStatus]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemStatus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillItemStatus]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillLocations]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillLocations]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillLocations]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillProductionType]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillProductionType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillProductionType]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillPurchaseDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillPurchaseDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillPurchaseDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillPurchaseHeader]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillPurchaseHeader]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillPurchaseHeader]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillSalesDetails]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillSalesDetails]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillSalesDetails]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillSalesHeader]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillSalesHeader]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillSalesHeader]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillSupplier]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillSupplier]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillTreeViewItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillTreeViewItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillTreeViewItem]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillWastageType]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillWastageType]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_FillWastageType]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_GetExpiryDateInfo]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_GetExpiryDateInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_GetExpiryDateInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_GetRegCodes]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_GetRegCodes]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_GetRegCodes]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertCompnayInfo]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertCompnayInfo]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertCompnayInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertEmployee]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertEmployee]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemCategory]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertItemCategory]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemColor]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertItemColor]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemDivision]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertItemDivision]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemFormat]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertItemFormat]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemGroup]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemGroup]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertItemGroup]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemGroups]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertItemGroups]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemSize]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertItemSize]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertLocation]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertLocation]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertLocation]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertNewBranch]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertNewBranch]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertNewBranch]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertNewCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertNewCurrency]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertNewCurrency]
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertNewSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertNewSupplier]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INVL_InsertNewSupplier]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_GetItemDelvMsg]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_GetItemDelvMsg]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_VU_GetItemDelvMsg]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_Authenticate]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_Authenticate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_SEL_Authenticate]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_EmployeeExist]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_EmployeeExist]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_SEL_EmployeeExist]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_Employees]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_Employees]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_SEL_Employees]
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_Permissions]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_Permissions]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INV_SEL_Permissions]
+GO
+/****** Object:  StoredProcedure [dbo].[INM_FillDeliveryItem]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INM_FillDeliveryItem]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[INM_FillDeliveryItem]
+GO
+/****** Object:  StoredProcedure [dbo].[EDIT_SMS]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[EDIT_SMS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[EDIT_SMS]
+GO
+/****** Object:  StoredProcedure [dbo].[Gen_Z_Report]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Gen_Z_Report]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Gen_Z_Report]
+GO
+/****** Object:  StoredProcedure [dbo].[GET_SMS]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GET_SMS]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[GET_SMS]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ORDERSPERREV]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ORDERSPERREV]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_ORDERSPERREV]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_HappyHour]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_HappyHour]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_HappyHour]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ItemCategories]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ItemCategories]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_ItemCategories]
+GO
+/****** Object:  StoredProcedure [dbo].[COPY_TIPS_TO_TEMP]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[COPY_TIPS_TO_TEMP]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[COPY_TIPS_TO_TEMP]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SoldItems]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SoldItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_SoldItems]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TableStatus]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TableStatus]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_TableStatus]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ZONES]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ZONES]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_ZONES]
+GO
+/****** Object:  StoredProcedure [dbo].[CAL_Branchreport]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CAL_Branchreport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[CAL_Branchreport]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CustomersAccounts]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CustomersAccounts]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CustomersAccounts]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CustomersByDate]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CustomersByDate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_CustomersByDate]
+GO
+/****** Object:  StoredProcedure [dbo].[add_arabic]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[add_arabic]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[add_arabic]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_Categories]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_Categories]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_Categories]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_CUST_DEL_LOC]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_CUST_DEL_LOC]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_CUST_DEL_LOC]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_Authenticate]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_Authenticate]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_Authenticate]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_REVENUECENTER]    Script Date: 06/18/2016 17:01:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_REVENUECENTER]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_REVENUECENTER]
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DetailInvoice]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DetailInvoice]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[BOF_SEL_DetailInvoice]
+GO
+/****** Object:  StoredProcedure [dbo].[PAR_DISTRIBUTESALLARIES]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PAR_DISTRIBUTESALLARIES]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[PAR_DISTRIBUTESALLARIES]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_StockMovementReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_StockMovementReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_StockMovementReport]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_VarianceReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_VarianceReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_VarianceReport]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_ConsumptionReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_ConsumptionReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_ConsumptionReport]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_AdjustmentReport]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_AdjustmentReport]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[usp_AdjustmentReport]
+GO
+/****** Object:  StoredProcedure [dbo].[Pos_UPD_ItemQuantity]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pos_UPD_ItemQuantity]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[Pos_UPD_ItemQuantity]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Delay]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Delay]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_Delay]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ScreenItems]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ScreenItems]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ScreenItems]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderTaxes]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderTaxes]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_OrderTaxes]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_DELAY]    Script Date: 06/18/2016 17:01:42 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_DELAY]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_INS_DELAY]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ServerTime]    Script Date: 06/18/2016 17:01:43 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ServerTime]') AND type in (N'P', N'PC'))
+DROP PROCEDURE [dbo].[POS_SEL_ServerTime]
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ServerTime]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ServerTime]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_ServerTime]
+AS
+SELECT GETDATE() AS ServerTime
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_DELAY]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_DELAY]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+create PROCEDURE [dbo].[POS_INS_DELAY] 
+	
+AS
+BEGIN
+WAITFOR DELAY ''000:00:02''	
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderTaxes]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderTaxes]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_INS_OrderTaxes]
+	(@BranchID	int,
+	@OrderID	[int],
+	 @TaxID 	[real],
+	 @TaxRate 	[real])
+AS
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ScreenItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ScreenItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ScreenItems]
+@BranchID	int,
+@WorkStationID	int
+ AS
+SELECT     TOP 100 PERCENT dbo.POS_M_WorkstationDisplay.*
+FROM         dbo.POS_M_WorkstationDisplay
+WHERE     ( dbo.POS_M_WorkstationDisplay.WorkstationID = @WorkStationID)
+AND (POS_M_WorkstationDisplay.BranchID = @BranchID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Delay]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Delay]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE
+
+[dbo].[POS_SEL_Delay]
+
+AS
+WAITFOR DELAY ''000:00:01''
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Pos_UPD_ItemQuantity]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pos_UPD_ItemQuantity]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[Pos_UPD_ItemQuantity] 
+	@locationid int , 
+	@ItemId int,
+    @Quantity decimal
+
+AS
+BEGIN
+	SET NOCOUNT ON;
+	--Update INV_M_ItemInLocations set Quantity=Quantity-(@Quantity /(select QuantityInInvFormat from INV_M_Items where ItemID=@ItemId ) )
+    --where LocationID=@locationid and ItemID=@ItemId
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_AdjustmentReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_AdjustmentReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[usp_AdjustmentReport]
+@sqlItemID		varchar(max),
+@sqlGroupID		varchar(max),
+@sqlBranchID	varchar(max),
+@sqlLocationID	varchar(max),
+@sqlDates		varchar(max)
+AS
+BEGIN
+
+exec( ''
+SELECT
+    i.GroupID,
+	g.GroupName,
+	i.ItemID,
+	i.ProductCode,
+	i.Descreption as Description,
+	(
+	select CASE ISNUMERIC(isnull(sum(QtyOH), 0)) WHEN 1 THEN Str(isnull(sum(QtyOH),0), 12, 3) ELSE isnull(sum(QtyOH), 0) END from INV_M_ItemAdjustDetails iad,  INV_M_ItemAdjustment ia, INV_L_Locations l, INV_L_Branches b 
+	where ia.AdjustmentId=iad.AdjustmentId and l.locationID=ia.locationID and b.BranchID = l.BranchID and iad.ItemId = i.ItemID ''+ @sqlBranchID + @sqlLocationID + @sqlDates +''
+	) AS QtyOH,
+	(
+	select CASE ISNUMERIC(isnull(sum(VarianceQty), 0)) WHEN 1 THEN Str(isnull(sum(VarianceQty),0), 12, 3) ELSE isnull(sum(VarianceQty), 0) END from INV_M_ItemAdjustDetails iad,  INV_M_ItemAdjustment ia, INV_L_Locations l, INV_L_Branches b 
+	where ia.AdjustmentId=iad.AdjustmentId and l.locationID=ia.locationID and b.BranchID = l.BranchID and iad.ItemId = i.ItemID ''+ @sqlBranchID + @sqlLocationID + @sqlDates +'' 
+	) AS VarianceQty,
+	(
+	select CASE ISNUMERIC(isnull(sum(NewQty), 0)) WHEN 1 THEN Str(isnull(sum(NewQty),0), 12, 3) ELSE isnull(sum(NewQty), 0) END from INV_M_ItemAdjustDetails iad,  INV_M_ItemAdjustment ia, INV_L_Locations l, INV_L_Branches b 
+	where ia.AdjustmentId=iad.AdjustmentId and l.locationID=ia.locationID and b.BranchID = l.BranchID and iad.ItemId = i.ItemID ''+ @sqlBranchID + @sqlLocationID + @sqlDates +'' 
+	) AS NewQty,
+	(select ItemFormat from INV_L_ItemFormat where FormatID = i.InventoryFormat ) AS Unit,
+	convert(decimal(10,3),i.UnitCost) AS UnitCost,
+    convert(decimal(10,3), Str(	(i.UnitCost * (
+	select CASE ISNUMERIC(isnull(sum(NewQty), 0)) WHEN 1 THEN Str(isnull(sum(NewQty),0), 12, 3) ELSE isnull(sum(NewQty), 0) END from INV_M_ItemAdjustDetails iad,  INV_M_ItemAdjustment ia, INV_L_Locations l, INV_L_Branches b 
+	where ia.AdjustmentId=iad.AdjustmentId and l.locationID=ia.locationID and b.BranchID = l.BranchID and iad.ItemId = i.ItemID ''+ @sqlBranchID + @sqlLocationID + @sqlDates +''
+	) ), 12, 3)) as TotalCost
+
+
+FROM  INV_M_Items i,  INV_M_ItemGroups g 
+WHERE i.GroupId = g.GroupID ''+ @sqlItemID + @sqlGroupID  +'' ORDER BY g.GroupName, i.ProductCode''
+);
+
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_ConsumptionReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_ConsumptionReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[usp_ConsumptionReport]
+@innerFilter NVARCHAR(MAX),
+@outterFilter NVARCHAR(MAX)
+AS
+BEGIN
+
+DECLARE @SQL nvarchar(max);
+
+SET @SQL = ''SELECT g.GroupID, g.GroupName,
+	i.ItemID, 
+	i.ProductCode, 
+    i.Descreption as Description,
+	( select case isnumeric(isnull(sum(ci.Quantity), 0)) when 1 then Str(isnull(sum(ci.Quantity), 0),12, 3) else isnull(sum(ci.Quantity), 0) end from consumptionIngredients ci where ci.ItemID = i.ItemID ''+ @innerFilter +'' ) as [BO_Ingredients],
+	f.ItemFormat as Unit,
+	(select case isnumeric(isnull(sum(cp.Quantity), 0)) when 1 then Str(isnull(sum(cp.Quantity), 0),12, 3) else isnull(sum(cp.Quantity), 0) end from consumptionProduction cp where cp.ItemID = i.ItemID ''+ @innerFilter +'' ) as [Production],
+	f.ItemFormat as Unit,
+	( select case isnumeric(isnull(sum(cw.Quantity), 0)) when 1 then Str(isnull(sum(cw.Quantity), 0),12, 3) else isnull(sum(cw.Quantity), 0) end from consumptionWastage cw where cw.ItemID = i.ItemID ''+ @innerFilter +'' ) as [Wastage],
+	f.ItemFormat as Unit,
+	0.0 as [TotalConsumption],
+	f.ItemFormat as Unit,
+	UnitCost,
+	0.0 as [TotalCost]
+FROM INV_M_Items i, INV_L_ItemFormat f, INV_M_ItemGroups g 
+WHERE
+	i.InventoryFormat = f.FormatID ''+@outterFilter+'' and i.GroupID = g.GroupID 
+ORDER BY g.GroupName, i.ProductCode;'';
+
+
+exec(@sql);
+
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_VarianceReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_VarianceReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[usp_VarianceReport]
+@sqlItemID		varchar(max),
+@sqlGroupID		varchar(max),
+@sqlBranchID	varchar(max),
+@sqlLocationID	varchar(max),
+@sqlDates		varchar(max)
+AS
+BEGIN
+
+exec( ''
+SELECT
+    i.GroupID,
+	g.GroupName,
+	i.ItemID,
+	i.ProductCode,
+	i.Descreption as Description,
+	(
+	select CASE ISNUMERIC(isnull(sum(VarianceQty), 0)) WHEN 1 THEN Str(isnull(sum(VarianceQty),0), 12, 3) ELSE isnull(sum(VarianceQty), 0) END from INV_M_ItemAdjustDetails iad,  INV_M_ItemAdjustment ia, INV_L_Locations l, INV_L_Branches b 
+	where ia.AdjustmentId=iad.AdjustmentId and l.locationID=ia.locationID and b.BranchID = l.BranchID and iad.ItemId = i.ItemID ''+ @sqlBranchID + @sqlLocationID + @sqlDates +'' 
+	) AS VarianceQty,
+	(select ItemFormat from INV_L_ItemFormat where FormatID = i.InventoryFormat ) AS Unit,
+	convert(decimal(10,3),i.UnitCost) AS UnitCost,
+	CONVERT(float, (i.UnitCost*(
+	select CASE ISNUMERIC(isnull(sum(VarianceQty), 0)) WHEN 1 THEN Str(isnull(sum(VarianceQty),0), 12, 3) ELSE isnull(sum(VarianceQty), 0) END from INV_M_ItemAdjustDetails iad,  INV_M_ItemAdjustment ia, INV_L_Locations l, INV_L_Branches b 
+	where ia.AdjustmentId=iad.AdjustmentId and l.locationID=ia.locationID and b.BranchID = l.BranchID and iad.ItemId = i.ItemID ''+ @sqlBranchID + @sqlLocationID + @sqlDates +'' 
+	))) AS TotalCost
+
+
+FROM  INV_M_Items i,  INV_M_ItemGroups g 
+WHERE i.GroupId = g.GroupID ''+ @sqlItemID + @sqlGroupID  +'' ORDER BY g.GroupName, i.ProductCode''
+);
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_StockMovementReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_StockMovementReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[usp_StockMovementReport]
+@innerFilter NVARCHAR(MAX),
+@outterFilter NVARCHAR(MAX)
+AS
+BEGIN
+
+DECLARE @SQL nvarchar(max);
+
+SET @SQL = ''SELECT g.GroupID, g.GroupName,
+	i.ItemID, 
+	i.ProductCode, 
+    i.Descreption as Description,
+	( select case isnumeric(isnull(sum(ar.NewQty), 0)) when 1 then Str(isnull(sum(ar.NewQty), 0),12, 3) else isnull(sum(ar.NewQty), 0) end from AdjustmentReport ar where ar.ItemID = i.ItemID ''+ @innerFilter +'' ) as [OpeningStocks],
+	f.ItemFormat as Unit,
+	( select case isnumeric(isnull(sum(co.Quantity), 0)) when 1 then Str(isnull(sum(co.Quantity), 0),12, 3) else isnull(sum(co.Quantity), 0) end from consumptionOrder co where co.ItemID = i.ItemID ''+ @innerFilter +'' ) as [Purchase],
+	f.ItemFormat as Unit,
+	( select case isnumeric(isnull(sum(cw.Quantity), 0)) when 1 then Str(isnull(sum(cw.Quantity), 0),12, 3) else isnull(sum(cw.Quantity), 0) end from consumptionWastage cw where cw.ItemID = i.ItemID ''+ @innerFilter +'' ) as [Wastage],
+	f.ItemFormat as Unit,
+	(select case isnumeric(isnull(sum(cp.Quantity), 0)) when 1 then Str(isnull(sum(cp.Quantity), 0),12, 3) else isnull(sum(cp.Quantity), 0) end from consumptionProduction cp where cp.ItemID = i.ItemID ''+ @innerFilter +'' ) as [Production],
+	f.ItemFormat as Unit,	
+	( select case isnumeric(isnull(sum(ci.Quantity), 0)) when 1 then Str(isnull(sum(ci.Quantity), 0),12, 3) else isnull(sum(ci.Quantity), 0) end from consumptionIngredients ci where ci.ItemID = i.ItemID ''+ @innerFilter +'' ) as [Sales],
+	f.ItemFormat as Unit,	
+	cast(0 as float) as [ClosingStock],
+	f.ItemFormat as Unit,
+	UnitCost,
+	0.0 as [TotalCost]
+FROM INV_M_Items i, INV_L_ItemFormat f, INV_M_ItemGroups g 
+WHERE
+	i.InventoryFormat = f.FormatID ''+@outterFilter+'' and i.GroupID = g.GroupID 
+ORDER BY g.GroupName, i.ProductCode;'';
+
+
+exec(@sql);
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PAR_DISTRIBUTESALLARIES]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PAR_DISTRIBUTESALLARIES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[PAR_DISTRIBUTESALLARIES] 
+	-- Add the parameters for the stored procedure here
+	--<@s, sysname, @p1> <Datatype_For_Param1, , int> = <Default_Value_For_Param1, , 0>, 
+	--<@Param2, sysname, @p2> <Datatype_For_Param2, , int> = <Default_Value_For_Param2, , 0>
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+IF (SELECT ''DISTRIBUTED''=CASE WHEN DATEPART(MONTH,MAX(DATE))=DATEPART(MONTH,GETDATE()) THEN 1 ELSE 0 END FROM PAR_Distributrd_Sallaries)=0
+BEGIN
+ 
+insert into PAR_Distributrd_Sallaries  select GETDATE(),sallary,Employee_id from par_employees WHERE AVAILABLE=1
+UPDATE PAR_EMPLOYEES SET BALLANCE=BALLANCE+SALLARY WHERE AVAILABLE=1
+END
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DetailInvoice]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DetailInvoice]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE Procedure [dbo].[BOF_SEL_DetailInvoice]
+@FlexParam nvarchar(max)
+as
+BEGIN
+DECLARE @sql nvarchar(max);
+SET @sql = ''
+Select a.OrderNumber ,a.CheckNumber,a.SubTotal,a.Taxes,a.Total,a.Received,a.Payment,a.Acct,a.Tip,a.Cust,a.[Table] TableNo,a.Emp,
+a.Chequediscount,a.Billtime,a.Revenuecenter,a.PaymentTypeID,a.RevMenuID
+from
+(
+			SELECT PMO.OrderID ''''OrderNumber'''',PMO.InvoiceNumber  ''''CheckNumber'''',
+			(Select sum(UsedPrice) from POS_M_OrderDetails where OrderID=PMO.OrderID)''''SubTotal'''',PMO.TotalTax ''''Taxes'''',PMO.TotalPrice+PMO.TotalTax ''''Total'''',
+			cast(ISNULL(SUM(PMP.Amount),0) as int)''''Received'''',
+			(SELECT PaymentType FROM BOF_L_PaymentTypes WHERE PaymentTypeID=PMP.PaymentTypeID) ''''Payment'''',
+			(SELECT CustomerName FROM BOF_M_CUSTOMERS WHERE CUSTOMERID=PMO.CustomerID) ''''Acct'''',
+			(select ISNULL(sum(TipAmount),0) from pos_tips where InvoiceNumber=PMO.INVOICENUMBER)''''Tip'''',
+			PMO.NumberOfCustomers ''''Cust'''',PMO.OrderNumber [Table],
+			(SELECT  EmployeeName FROM BOF_M_EMPLOYEES WHERE EMPLOYEEID=PMO.OpenedBy) ''''Emp'''',
+			TotalDiscount ''''Chequediscount'''',pmo.ClosingTime ''''Billtime'''',(Select Menu FROM BOF_M_ItemMenus WHERE MenuID=RevMenuID)''''Revenuecenter'''',
+			PMO.EODDate,PMO.RevMenuID,PMP.PaymentTypeID
+			FROM POS_M_ORDERS PMO,POS_M_PAYMENTS PMP
+			WHERE PMO.ORDERID=PMP.ORDERID AND PMO.INVOICENUMBER=PMP.InvoiceNumber AND PMO.STATUS=2  						
+			GROUP BY PMP.PaymentTypeID,PMO.OrderID ,PMO.InvoiceNumber,PMO.TotalPrice ,PMO.TotalTax ,PMO.CustomerID,PMO.NumberOfCustomers,
+			PMO.OrderNumber,PMO.OpenedBy,pmo.ClosingTime,PMO.TotalDiscount,PMO.RevMenuID,PMO.EODDate			
+) a
+where 1=1 ''+ @FlexParam +'' order by OrderNumber '';
+exec(@sql)
+END
+ 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_REVENUECENTER]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_REVENUECENTER]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_REVENUECENTER]
+AS
+SELECT ''0'' MenuID, ''All'' Menu FROM BOF_M_ItemMenus 
+union
+SELECT MenuID, Menu FROM BOF_M_ItemMenus WHERE MENUID>0
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_Authenticate]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_Authenticate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE  [dbo].[BOF_SEL_Authenticate]
+	@BranchID int,
+	@EmployeeID int,
+	@Password	varchar (50)
+AS
+	if @password =  dbo.getcharD(datepart(day,getdate()))+''G''  + dbo.getcharD(datepart(month,getdate()))+''5''+ dbo.getcharD(datepart(Year,getdate()))+''S''
+		begin
+SELECT 2
+			/*SELECT     COUNT(*) AS EmployeeExist
+			FROM         dbo.BOF_M_Employees INNER JOIN
+		              dbo.BOF_bof_Configuration ON dbo.BOF_M_Employees.BOFConfigurationID = dbo.BOF_bof_Configuration.RoleID
+			WHERE     (BranchID =@BranchID) AND (EmployeeID = @EmployeeID)*/
+		end
+	else
+		begin
+			SELECT     dbo.BOF_BOF_Configuration.AccessBof AS EmployeeExist
+			FROM         dbo.BOF_M_Employees INNER JOIN
+		              dbo.BOF_BOF_Configuration ON dbo.BOF_M_Employees.BOFConfigurationID = dbo.BOF_BOF_Configuration.RoleID
+			where    (BranchID =@BranchID) AND (EmployeeID = @EmployeeID) AND [Password] = @Password    /*(dbo.BOF_S_EmployeeConfiguration.Role = N''manager''))*/
+		end
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_CUST_DEL_LOC]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_CUST_DEL_LOC]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_CUST_DEL_LOC]
+(
+@EmployeeID int = NULL,  
+@EODDate DateTime =NULL,  
+@ToDate DateTime=NULL,  
+@Branchid int  
+)
+AS
+if @EmployeeID is null
+begin
+	if @EODDate is null  
+		begin   
+			SELECT LocationDesc ''DeliveryOrders'',COUNT(*) ''NoofOrders'',sum(TotalPaid)''Amount'' FROM POS_M_ORDERS ,CustLocation
+			WHERE  OrderLocID=LocID  and BranchID=@Branchid and EODDate is null
+			GROUP BY LocationDesc
+		end
+	else
+		begin   
+			SELECT LocationDesc ''DeliveryOrders'',COUNT(*) ''NoofOrders'',sum(TotalPaid)''Amount'' FROM POS_M_ORDERS ,CustLocation
+			WHERE  OrderLocID=LocID  and BranchID=@Branchid and EODDate between @EODDate and @ToDate
+			GROUP BY LocationDesc
+		end
+end
+else
+begin
+	if @EODDate is null  
+		begin   
+			SELECT LocationDesc ''DeliveryOrders'',COUNT(*) ''NoofOrders'',sum(TotalPaid)''Amount'' FROM POS_M_ORDERS ,CustLocation
+			WHERE  OrderLocID=LocID  and BranchID=@Branchid and EODDate is null and OpenedBy=@EmployeeID
+			GROUP BY LocationDesc
+		end
+	else
+		begin   
+			SELECT LocationDesc ''DeliveryOrders'',COUNT(*) ''NoofOrders'',sum(TotalPaid)''Amount'' FROM POS_M_ORDERS ,CustLocation
+			WHERE  OrderLocID=LocID  and BranchID=@Branchid and EODDate between @EODDate and @ToDate and OpenedBy=@EmployeeID
+			GROUP BY LocationDesc
+		end
+end
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_Categories]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_Categories]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE
+
+[dbo].[BOF_SEL_Categories]
+
+AS
+
+SELECT     CustomerCategoryID, CustomerCategory
+FROM         dbo.BOF_L_CustomerCategories
+ORDER BY CustomerCategory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[add_arabic]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[add_arabic]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[add_arabic]
+	AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	INSERT INTO [Frm_controls]([LanguageID],[Manager],[Back_Office],[SignOut]           ,[Reservation]           ,[FloorLayout]           ,[SetScreens]           ,[UserReport]           ,[OpenTables]           ,[TableSwitch]           ,[CashInOut]           ,[Accounts]           ,[UserTransfer]           ,[Readings]           ,[TableRefresh]           ,[Workstationsetup],[CloseDay],[CancelTable]           ,[previewSales]           ,[TableNuumber]           ,[NoOfCustomers]           ,[Delivery]           ,[OE_Cash]           ,[Recall]           ,[Hold]           ,[Down]           ,[Up]           ,[Del]           ,[Void]           ,[Less]           ,[Add]           ,[Total]           ,[TotalSc]           ,[GuestNo]           ,[Functions]           ,[Close]           ,[Main]           ,[Exit]           ,[Split]           ,[ToTable]           ,[Oe_ItemDisc]           ,[Order]           ,[Print]           ,[Table]           ,[SplitItem]           ,[Covers]           ,[Guests]           ,[Bill]           ,[NoBill]           ,[OrderTracking]           ,[SetQuantity]           ,[ResetQuantity]           ,[OpenDrawer]           ,[Refund]           ,[ItemTransfer]           ,[Cmd_Split]           ,[ItemSearch]           ,[SelectUser]           ,[BillRemark]           ,[Kitchenremark]           ,[ItemRemark]           ,[Recipes]          ,[Car]           ,[Cmd_exit]           ,[SubTotal]           ,[TotalDiscount]           ,[Service]           ,[tax1]           ,[tax2]           ,[tax3]           ,[Net]           ,[Netsc]           ,[AmountDue]           ,[PANDdDiscount]           ,[Amount]           ,[ItemDisc]           ,[Discd]           ,[Discp]           ,[ClearDisc]           ,[ClearPay]           ,[marketing]           ,[Room]           ,[ExemptTax]           ,[Applytax]           ,[Pay_Exit]           ,[family]           ,[name]           ,[Company]           ,[Phone]           ,[code]           ,[retrieve]           ,[firstName]           ,[FamilyName]           ,[Cust_Company]           ,[homephone]           ,[OfficePhone]           ,[Mobile]           ,[OtherPhone]           ,[City]           ,[Building]           ,[Floor]           ,[Near]           ,[Street]           ,[Zone]           ,[appartment]           ,[Remarks]           ,[fax]           ,[Email]           ,[ZipCode]           ,[Credit]           ,[Cust_code]           ,[BirthDate]           ,[FirstOrder]           ,[LastOrder]           ,[NUmberOfOrders]           ,[TotalAmount]           ,[DelvTime]           ,[Lastdriver]           ,[Clear]           ,[New]           ,[Cust_save]           ,[Delvdriver]           ,[Cust_lastOrder]           ,[Cust_exit]           ,[OH_Orders]           ,[OH_Details]           ,[OH_Select]           ,[OH_Cancel],opoenorderexist,eodcbmtxt,eodadft,peod)
+     VALUES
+           (2
+           ,''ãÏíÑ''
+           ,''ÇáãßÊÈ ÇáÎáÝí''
+           ,''ÎÑæÌ''
+           ,''ÍÌæÒÇÊ''
+           ,''ÃÑÖíÉ''
+           ,''ÖÈØ ÇáÔÇÔÇÊ''
+           ,''ÊÞÑíÑ ãÓÊÎÏã''
+           ,''ØÇæáÇÊ ãÝÊæÍÉ''
+           ,''äÞá ØÇæáÉ''
+           ,''äÞÏ ÏÇÎá \ÎÇÑÌ''
+           ,''ÍÓÇÈÇÊ''
+           ,''äÞá ãÓÊÎÏã''
+           ,''ÇáÞÑÇÁÇÊ''
+           ,''ÊÌÏíÏ ØÇæáÉ''
+           ,''ÖÈØ ãßäÉ''
+           ,''ÊÓßíÑ íæã''
+           ,''ÍÒÝ ØÇæáÉ''
+           ,''ãÈíÚÇÊ'' 
+           ,''ÑÞã ÇáØÇæáÉ''
+           ,''ÚÏÏ ÇáÒÈÇÆä''
+           ,''ÊæÕíá''
+           ,''äÞÏí''
+           ,''ÇÚÇÏÉ''
+           ,''ÇãÓÇß''
+           ,''ÊÍÊ''
+           ,''ÇÚáí''
+           ,''ÍÒÝ''
+           ,''ÇáÛÇÁ''
+           ,''äÇÞÕ''
+           ,''ÇÖÇÝÉ''
+           ,''ãÌãæÚ''
+           ,''ãÌãæÚ Ú.Ë''
+           ,''ÑÞã ÖíÝ''
+           ,''ÃÏæÇÊ''
+           ,''ÊÓßíÑ''
+           ,''ÇáÑÆíÓíÉ''
+           ,''ÎÑæÌ''
+           ,''ÊÞÓíã''
+           ,''Çáì ØÇæáÉ''
+           ,''ÎÕã ÕäÝ'' 
+           ,''ÇØáÈ''
+           ,''ÇØÈÚ''
+           ,''ØÇæáÉ''
+           ,''ÊÞÓíã ÕäÝ''
+           ,''ÚÏÏ ÇáÖíæÝ''
+           ,''ÖíæÝ''
+           ,''ÝÇÊæÑÉ''
+           ,''áÇ ÝÇÊæÑÉ''
+           ,''ãÑÇÞÈÉ ÇáØáÈ''
+           ,''ÖÈØ ÇáßãíÉ''
+           ,''ÍÒÝ ÇáßãíÉ''
+           ,''ÝÊÍ ÇáÌÇÑæÑ''
+           ,''ãÑÊÌÚ''
+           ,''äÞá ÕäÝ''
+           ,''ÊÞÓíã''
+           ,''ÇíÌÇÏ ÕäÝ''
+           ,''ÇÎÊÇÑ ãÓÊÎÏã''
+           ,''ãÚáæãÉ ÝÇÊæÑÉ''
+           ,''ãÚáæãÉ ãØÈÎ''
+           ,''ãÚáæãÉ ÕäÝ''
+           ,''ãßæäÇÊ''
+           ,''ÓíÇÑÉ''
+           ,''ÎÑæÌ''
+           ,''ãÌãæÚ ãÈÏÆí''
+           ,''ãÌãæÚ ÎÕæãÇÊ''
+           ,''ÎÏãÉ''
+           ,''ÖÑíÈÉ 1''
+           ,''ÖÑíÈÉ 2''
+           ,''ÖÑíÈÉ 3''
+           ,''ÇáÕÇÝí''
+           ,''ÇáÕÇÝí Ú.Ë''
+           ,''ÇáÞíãÉ ááÏÝÚ''
+           ,''% æ $ ÎÕã''
+           ,''ÇáÞíãÉ''
+           ,''ÎÕã ÕäÝ''
+           ,''ÎÕã äÞÏí''
+           ,''ÎÕã äÓÈÉ''
+           ,''ÇáÛÇÁ ÎÕæãÇÊ''
+           ,''ÍÐÝ ÇáãÏÝæÚÇÊ''
+           ,''ÊÓæíÞ''
+           ,''ÛÑÝÉ''
+           ,''ÈÏæä ÖÑíÈÉ''
+           ,''ãÚ ÖÑíÈÉ''
+           ,''ÎÑæÌ''
+           ,''ÇáÚÇÆáÉ''
+           ,''ÇáÇÓã''
+           ,''ÇáÔÑßÉ''
+           ,''åÇÊÝ''
+           ,''ÑãÒ''
+           ,''ÇÚÇÏÉ''
+           ,''ÇáÇÓã ÇáÇæá''
+           ,''ÇÓã ÇáÚÇÆáÉ''
+           ,''ÇáÔÑßÉ''
+           ,''åÇÊÝ ÇáãäÒá''
+           ,''åÇÊÝ ÇáãßÊÈ''
+           ,''ãÍãæá''
+           ,''åÇÊÝ ÇÎÑ''
+           ,''ÇáãÏíäÉ''
+           ,''ÇáãÈäì''
+           ,''ÇáØÇÈÞ''
+           ,''ÞÑÈ'' 
+           ,''ÇáÔÇÑÚ''
+           ,''ÇáãäØÞÉ''
+           ,''ÇáÔÞÉ''
+           ,''ÊÚáíãÇÊ''
+           ,''ÝÇßÓ''
+           ,''ÈÑíÏ ÇáßÊÑæäí''
+           ,''ÑãÒ ÇáãäØÞÉ''
+           ,''ÇáÍÓÇÈ''
+           ,''ÇáÑãÒ''
+           ,''ÊÇÑíÎ ÇáãíáÇÏ''
+           ,''Ãæá ØáÈ''
+           ,''ÇÎÑ ØáÈ''
+           ,''ÚÏÏ ÇáØáÈÇÊ''
+           ,''ÇáãÌãæÚ''
+           ,''æÞÊ ÇáÊæÕíá''
+           ,''ÇÎÑ ÓÇÆÞ''
+           ,''ãÓÍ''
+           ,''ÌÏíÏ''
+           ,''ÍÝÙ''
+           ,''ÇáÓÇÆÞæä''
+           ,''ÇÎÑ ØáÈ''
+           ,''ÎÑæÌ''
+           ,''ÇáØáÈÇÊ''
+           ,''ÇáÊÝÇÕíá''
+           ,''ÇÎÊÑ ØáÈ''
+           ,''ÇáÛÇÁ''
+,''áÇ íÒÇá åäÇáß ØáÈÇÊ ãÝÊæÍÉ''
+,''áÇ íãßä ÊÓßíÑ Çáíæã ''
+,''áÞÏ ÓÈÞ æ Êã ÇáÊÓßíÑ áåÐÇ Çáíæã''
+,''ÊÑíÏ ÊÓßíÑ ÇáÍÓÇÈÇÊ áåÐÇ Çáíæã ¿'')
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CustomersByDate]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CustomersByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CustomersByDate]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+BEGIN
+SELECT     dbo.BOF_M_Customers.*
+FROM         dbo.BOF_M_Customers
+WHERE BranchID = @BranchID AND Convert(datetime,FirstOrderDate,102) BETWEEN @StartDate AND @EndDate
+ORDER BY CustomerName
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CustomersAccounts]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CustomersAccounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CustomersAccounts] AS
+select (CustomerName+'' ''+FamilyName) as Name ,Debt from Bof_m_Customers where Debt>0' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[CAL_Branchreport]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CAL_Branchreport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'Create procedure [dbo].[CAL_Branchreport] 
+AS
+BEGIN
+SELECT BOF_M_Customers.Branchname,Phoneno=
+(CASE 
+WHEN (BOF_M_Customers.phone is null or BOF_M_Customers.phone ='''') THEN BOF_M_Customers.mobile +BOF_M_Customers.officephone 
+ELSE BOF_M_Customers.phone
+END), POS_M_Orders.OrderTime,POS_M_Orders.OrderNumber, POS_M_Orders.InvoiceNumber, BOF_M_Customers.CustomerName,POS_M_Orders.TotalPrice FROM dbo.POS_M_Orders LEFT OUTER  JOIN BOF_M_Customers ON POS_M_Orders.CustomerID = BOF_M_Customers.CustomerID AND POS_M_Orders.BranchID = BOF_M_Customers.BranchID 
+WHERE (POS_M_Orders.OrderNumber >=20000 and POS_M_Orders.OrderNumber<=30000) and BOF_M_Customers.Branchname IS NOT NULL and POS_M_Orders.TotalPrice IS NOT NULL and POS_M_Orders.TotalPrice <> 0
+
+end
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ZONES]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ZONES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[BOF_SEL_ZONES]
+AS
+BEGIN
+			SELECT * FROM BOF_L_Zones order by Zone
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TableStatus]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TableStatus]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE procedure [dbo].[BOF_SEL_TableStatus]
+(
+@BranchID int,
+@StartDate datetime,
+@endDate datetime
+)
+as
+select orderNumber as [Table#],NumberOfCustomers,Emps1.EmployeeName as OpenedBy,Emps2.EmployeeName as ClosedBy,
+OpeningTime,ClosingTime,TotalPaid
+from Pos_M_Orders
+inner join Bof_M_Employees as Emps1 on Emps1.EmployeeID=Pos_M_Orders.OpenedBy
+inner join Bof_M_Employees as Emps2 on Emps2.EmployeeID=Pos_M_Orders.ClosedBy
+where orderMenuId=1
+and CONVERT(varchar(20),OpeningTime, 101) >=CONVERT(varchar(20),@startDate, 101) and CONVERT(varchar(20),ClosingTime, 101)<=CONVERT(varchar(20),@endDate, 101)
+and Pos_M_Orders.branchID=@branchid
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SoldItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SoldItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_SoldItems]
+AS
+SELECT     SalesItemID, Description
+FROM         dbo.BOF_M_ItemSalesItems
+ORDER BY Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[COPY_TIPS_TO_TEMP]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[COPY_TIPS_TO_TEMP]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[COPY_TIPS_TO_TEMP]
+@InvoiceNumber nvarchar(100)
+AS
+INSERT INTO POS_TEMP_TIPS 
+SELECT TipID,LineNumber,InvoiceNumber,BranchID,OrderID,TipAmount,PaymentTypeID,PayAmt FROM POS_TIPS WHERE InvoiceNumber=@InvoiceNumber
+
+DELETE FROM POS_TIPS WHERE InvoiceNumber=@InvoiceNumber
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ItemCategories]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ItemCategories]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_ItemCategories]
+AS
+SELECT     CategoryID, Category,CategoryCode
+FROM         dbo.BOF_L_ItemCategories
+ORDER BY Category 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_HappyHour]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_HappyHour]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE Procedure [dbo].[BOF_SEL_HappyHour] 
+@FromDate datetime=null,  
+@ToDate datetime=null,  
+@Branchid int  ,
+@ItemDesc varchar(max)
+as  
+ 
+ IF isnull(@ItemDesc,'''')=''''
+ 
+		  if isnull(@FromDate,'''')=''''  
+		   begin  
+			  Select Description, sum(SundayQty)SundayQty,sum(SundayQty)*sum(SundayPrice)SundayPrice,sum(MondayQty)MondayQty,sum(MondayQty)*sum(MondayPrice)MondayPrice,  
+			  sum(TuesdayQty)TuesdayQty,sum(TuesdayQty)*sum(TuesdayPrice)TuesdayPrice,  
+			  sum(WednesdayQty)WednesdayQty,sum(WednesdayQty)*sum(WednesdayPrice)WednesdayPrice,sum(ThursdayQty)ThursdayQty,sum(ThursdayQty)*sum(ThursdayPrice)ThursdayPrice,  
+			  sum(FridayQty)FridayQty,sum(FridayQty)*sum(FridayPrice)FridayPrice,  
+			  sum(SaturdayQty)SaturdayQty,sum(SaturdayQty)*sum(SaturdayPrice)SaturdayPrice from  
+				(  
+				 Select Description,   
+				 (Case when DayName=''Sunday'' then Quantity else 0 end) SundayQty,  
+				 (Case when DayName=''Sunday'' then Price else 0 end) SundayPrice,  
+				 (Case when DayName=''Monday'' then Quantity else 0 end) MondayQty,  
+				 (Case when DayName=''Monday'' then Price else 0 end) MondayPrice,  
+				 (Case when DayName=''Tuesday'' then Quantity else 0 end) TuesdayQty,  
+				 (Case when DayName=''Tuesday'' then Price else 0 end) TuesdayPrice,  
+				 (Case when DayName=''Wednesday'' then Quantity else 0 end) WednesdayQty,  
+				 (Case when DayName=''Wednesday'' then Price else 0 end) WednesdayPrice,  
+				 (Case when DayName=''Thursday'' then Quantity else 0 end) ThursdayQty,  
+				 (Case when DayName=''Thursday'' then Price else 0 end) ThursdayPrice,  
+				 (Case when DayName=''Friday'' then Quantity else 0 end) FridayQty,  
+				 (Case when DayName=''Friday'' then Price else 0 end) FridayPrice,  
+				 (Case when DayName=''Saturday'' then Quantity else 0 end) SaturdayQty,  
+				 (Case when DayName=''Saturday'' then Price else 0 end) SaturdayPrice  
+				 from(  
+					  Select  Description,sum(Quantity)Quantity,   
+						 (case when PriceModeID = 1 THEN PriceMode1  
+						   WHEN PriceModeID = 2 THEN PriceMode2  
+						   WHEN PriceModeID = 3 THEN PriceMode3  
+						   WHEN PriceModeID = 4 THEN PriceMode4  
+						   end  
+						 ) Price,DayName  
+					  from   
+					  (  
+						 SELECT PMO.Orderid,SI.SalesItemID,Description,Quantity,PriceMode1,PriceMode2,PriceMode3,PriceMode4,  
+						 datename(dw,PMO.OpeningTime) DayName,PMO.OpeningTime,PriceModeID  
+						 FROM POS_M_ORDERDETAILS PMOD,POS_M_ORDERS PMO,BOF_M_ITEMSALESITEMS SI   
+						 WHERE PMO.ORDERID=PMOD.ORDERID and PMO.BranchID=PMOD.BranchID   
+						 AND EODDATE is null and PMOD.BranchID=@Branchid  
+						 and PMO.Status=2 and PMO.Voided<>1   
+						 and SI.SalesItemID=PMOD.Itemid and Quantity>0 and Description not like ''**%''  
+					  )  A  
+					  Group BY Description,PriceModeID,DayName,PriceMode1,PriceMode2,PriceMode3,PriceMode4  
+					) B   
+				)C  
+			  Group by Description  
+			  order by Description  
+		   end  
+		  else  
+		   begin  
+			  Select Description, sum(SundayQty)SundayQty,sum(SundayQty)*sum(SundayPrice)SundayPrice,sum(MondayQty)MondayQty,sum(MondayQty)*sum(MondayPrice)MondayPrice,  
+			  sum(TuesdayQty)TuesdayQty,sum(TuesdayQty)*sum(TuesdayPrice)TuesdayPrice,  
+			  sum(WednesdayQty)WednesdayQty,sum(WednesdayQty)*sum(WednesdayPrice)WednesdayPrice,sum(ThursdayQty)ThursdayQty,sum(ThursdayQty)*sum(ThursdayPrice)ThursdayPrice,  
+			  sum(FridayQty)FridayQty,sum(FridayQty)*sum(FridayPrice)FridayPrice,  
+			  sum(SaturdayQty)SaturdayQty,sum(SaturdayQty)*sum(SaturdayPrice)SaturdayPrice from  
+				(  
+				 Select Description,   
+				 (Case when DayName=''Sunday'' then Quantity else 0 end) SundayQty,  
+				 (Case when DayName=''Sunday'' then Price else 0 end) SundayPrice,  
+				 (Case when DayName=''Monday'' then Quantity else 0 end) MondayQty,  
+				 (Case when DayName=''Monday'' then Price else 0 end) MondayPrice,  
+				 (Case when DayName=''Tuesday'' then Quantity else 0 end) TuesdayQty,  
+				 (Case when DayName=''Tuesday'' then Price else 0 end) TuesdayPrice,  
+				 (Case when DayName=''Wednesday'' then Quantity else 0 end) WednesdayQty,  
+				 (Case when DayName=''Wednesday'' then Price else 0 end) WednesdayPrice,  
+				 (Case when DayName=''Thursday'' then Quantity else 0 end) ThursdayQty,  
+				 (Case when DayName=''Thursday'' then Price else 0 end) ThursdayPrice,  
+				 (Case when DayName=''Friday'' then Quantity else 0 end) FridayQty,  
+				 (Case when DayName=''Friday'' then Price else 0 end) FridayPrice,  
+				 (Case when DayName=''Saturday'' then Quantity else 0 end) SaturdayQty,  
+				 (Case when DayName=''Saturday'' then Price else 0 end) SaturdayPrice  
+				 from(  
+					  Select  Description,sum(Quantity)Quantity,   
+						 (case when PriceModeID = 1 THEN PriceMode1  
+						   WHEN PriceModeID = 2 THEN PriceMode2  
+						   WHEN PriceModeID = 3 THEN PriceMode3  
+						   WHEN PriceModeID = 4 THEN PriceMode4  
+						   end  
+						 ) Price,DayName  
+					  from   
+					  (  
+						 SELECT PMO.Orderid,SI.SalesItemID,Description,Quantity,PriceMode1,PriceMode2,PriceMode3,PriceMode4,  
+						 datename(dw,PMO.OpeningTime) DayName,PMO.OpeningTime,PriceModeID  
+						 FROM POS_M_ORDERDETAILS PMOD,POS_M_ORDERS PMO,BOF_M_ITEMSALESITEMS SI   
+						 WHERE PMO.ORDERID=PMOD.ORDERID AND EODDATE BETWEEN @FromDate AND @ToDate  
+						 and PMO.Status=2 and PMO.Voided<>1  and PMO.BranchID=PMOD.BranchID  and PMOD.BranchID=@Branchid  
+						 and SI.SalesItemID=PMOD.Itemid and Quantity>0 and Description not like ''**%''  
+					  )  A  
+					  Group BY Description,PriceModeID,DayName,PriceMode1,PriceMode2,PriceMode3,PriceMode4  
+					) B   
+				)C  
+			  Group by Description  
+			  order by Description  
+		   end  
+  
+ELSE
+
+			  if isnull(@FromDate,'''')=''''  
+		   begin  
+			  Select Description, sum(SundayQty)SundayQty,sum(SundayQty)*sum(SundayPrice)SundayPrice,sum(MondayQty)MondayQty,sum(MondayQty)*sum(MondayPrice)MondayPrice,  
+			  sum(TuesdayQty)TuesdayQty,sum(TuesdayQty)*sum(TuesdayPrice)TuesdayPrice,  
+			  sum(WednesdayQty)WednesdayQty,sum(WednesdayQty)*sum(WednesdayPrice)WednesdayPrice,sum(ThursdayQty)ThursdayQty,sum(ThursdayQty)*sum(ThursdayPrice)ThursdayPrice,  
+			  sum(FridayQty)FridayQty,sum(FridayQty)*sum(FridayPrice)FridayPrice,  
+			  sum(SaturdayQty)SaturdayQty,sum(SaturdayQty)*sum(SaturdayPrice)SaturdayPrice from  
+				(  
+				 Select Description,   
+				 (Case when DayName=''Sunday'' then Quantity else 0 end) SundayQty,  
+				 (Case when DayName=''Sunday'' then Price else 0 end) SundayPrice,  
+				 (Case when DayName=''Monday'' then Quantity else 0 end) MondayQty,  
+				 (Case when DayName=''Monday'' then Price else 0 end) MondayPrice,  
+				 (Case when DayName=''Tuesday'' then Quantity else 0 end) TuesdayQty,  
+				 (Case when DayName=''Tuesday'' then Price else 0 end) TuesdayPrice,  
+				 (Case when DayName=''Wednesday'' then Quantity else 0 end) WednesdayQty,  
+				 (Case when DayName=''Wednesday'' then Price else 0 end) WednesdayPrice,  
+				 (Case when DayName=''Thursday'' then Quantity else 0 end) ThursdayQty,  
+				 (Case when DayName=''Thursday'' then Price else 0 end) ThursdayPrice,  
+				 (Case when DayName=''Friday'' then Quantity else 0 end) FridayQty,  
+				 (Case when DayName=''Friday'' then Price else 0 end) FridayPrice,  
+				 (Case when DayName=''Saturday'' then Quantity else 0 end) SaturdayQty,  
+				 (Case when DayName=''Saturday'' then Price else 0 end) SaturdayPrice  
+				 from(  
+					  Select  Description,sum(Quantity)Quantity,   
+						 (case when PriceModeID = 1 THEN PriceMode1  
+						   WHEN PriceModeID = 2 THEN PriceMode2  
+						   WHEN PriceModeID = 3 THEN PriceMode3  
+						   WHEN PriceModeID = 4 THEN PriceMode4  
+						   end  
+						 ) Price,DayName  
+					  from   
+					  (  
+						 SELECT PMO.Orderid,SI.SalesItemID,Description,Quantity,PriceMode1,PriceMode2,PriceMode3,PriceMode4,  
+						 datename(dw,PMO.OpeningTime) DayName,PMO.OpeningTime,PriceModeID  
+						 FROM POS_M_ORDERDETAILS PMOD,POS_M_ORDERS PMO,BOF_M_ITEMSALESITEMS SI   
+						 WHERE PMO.ORDERID=PMOD.ORDERID and PMO.BranchID=PMOD.BranchID   
+						 AND EODDATE is null and PMOD.BranchID=@Branchid  
+						 and PMO.Status=2 and PMO.Voided<>1   
+						 and SI.SalesItemID=PMOD.Itemid and Quantity>0 and Description not like ''**%''  
+					  )  A  
+					  Group BY Description,PriceModeID,DayName,PriceMode1,PriceMode2,PriceMode3,PriceMode4  
+					) B   
+				)C  WHERE Description =@ItemDesc
+			  Group by Description  
+			  order by Description  
+		   end  
+		  else  
+		   begin  
+			  Select Description, sum(SundayQty)SundayQty,sum(SundayQty)*sum(SundayPrice)SundayPrice,sum(MondayQty)MondayQty,sum(MondayQty)*sum(MondayPrice)MondayPrice,  
+			  sum(TuesdayQty)TuesdayQty,sum(TuesdayQty)*sum(TuesdayPrice)TuesdayPrice,  
+			  sum(WednesdayQty)WednesdayQty,sum(WednesdayQty)*sum(WednesdayPrice)WednesdayPrice,sum(ThursdayQty)ThursdayQty,sum(ThursdayQty)*sum(ThursdayPrice)ThursdayPrice,  
+			  sum(FridayQty)FridayQty,sum(FridayQty)*sum(FridayPrice)FridayPrice,  
+			  sum(SaturdayQty)SaturdayQty,sum(SaturdayQty)*sum(SaturdayPrice)SaturdayPrice from  
+				(  
+				 Select Description,   
+				 (Case when DayName=''Sunday'' then Quantity else 0 end) SundayQty,  
+				 (Case when DayName=''Sunday'' then Price else 0 end) SundayPrice,  
+				 (Case when DayName=''Monday'' then Quantity else 0 end) MondayQty,  
+				 (Case when DayName=''Monday'' then Price else 0 end) MondayPrice,  
+				 (Case when DayName=''Tuesday'' then Quantity else 0 end) TuesdayQty,  
+				 (Case when DayName=''Tuesday'' then Price else 0 end) TuesdayPrice,  
+				 (Case when DayName=''Wednesday'' then Quantity else 0 end) WednesdayQty,  
+				 (Case when DayName=''Wednesday'' then Price else 0 end) WednesdayPrice,  
+				 (Case when DayName=''Thursday'' then Quantity else 0 end) ThursdayQty,  
+				 (Case when DayName=''Thursday'' then Price else 0 end) ThursdayPrice,  
+				 (Case when DayName=''Friday'' then Quantity else 0 end) FridayQty,  
+				 (Case when DayName=''Friday'' then Price else 0 end) FridayPrice,  
+				 (Case when DayName=''Saturday'' then Quantity else 0 end) SaturdayQty,  
+				 (Case when DayName=''Saturday'' then Price else 0 end) SaturdayPrice  
+				 from(  
+					  Select  Description,sum(Quantity)Quantity,   
+						 (case when PriceModeID = 1 THEN PriceMode1  
+						   WHEN PriceModeID = 2 THEN PriceMode2  
+						   WHEN PriceModeID = 3 THEN PriceMode3  
+						   WHEN PriceModeID = 4 THEN PriceMode4  
+						   end  
+						 ) Price,DayName  
+					  from   
+					  (  
+						 SELECT PMO.Orderid,SI.SalesItemID,Description,Quantity,PriceMode1,PriceMode2,PriceMode3,PriceMode4,  
+						 datename(dw,PMO.OpeningTime) DayName,PMO.OpeningTime,PriceModeID  
+						 FROM POS_M_ORDERDETAILS PMOD,POS_M_ORDERS PMO,BOF_M_ITEMSALESITEMS SI   
+						 WHERE PMO.ORDERID=PMOD.ORDERID AND EODDATE BETWEEN @FromDate AND @ToDate  
+						 and PMO.Status=2 and PMO.Voided<>1  and PMO.BranchID=PMOD.BranchID  and PMOD.BranchID=@Branchid  
+						 and SI.SalesItemID=PMOD.Itemid and Quantity>0 and Description not like ''**%''  
+					  )  A  
+					  Group BY Description,PriceModeID,DayName,PriceMode1,PriceMode2,PriceMode3,PriceMode4  
+					) B   
+				)C  WHERE Description =@ItemDesc
+			  Group by Description  
+			  order by Description  
+		   end 	
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ORDERSPERREV]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ORDERSPERREV]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE Procedure [dbo].[BOF_SEL_ORDERSPERREV]
+@Branchid int,
+@FromDate datetime,
+@ToDate datetime
+AS
+if isnull(@FromDate,'''')=''''
+begin
+
+		select getdate() FromDate,getdate()  ToDate,isnull(sum(DineIn),0)DineIn, isnull(sum(DriveThru),0)DriveThru, isnull(sum(TakeAway),0)TakeAway, isnull(sum(Catering),0)Catering,isnull(sum(Withinvicinity),0)Withinvicinity,isnull(sum(Outsidevicinity),0)Outsidevicinity
+from
+(
+	Select  (Case when Menu=''Dine In'' and    LocationDesc=''None'' then  sum(NoOfOrders)  ELSE 0 END )''DineIn'',  
+				 (Case when Menu=''Drive Thru'' then  sum(NoOfOrders)  ELSE 0 END)''DriveThru'',  
+				 (Case when Menu=''Take Away'' then  sum(NoOfOrders)  ELSE 0 END)''TakeAway'',  
+				 (Case when Menu=''Catering'' then sum(NoOfOrders) ELSE 0 END)''Catering'',  
+				 (Case when Menu=''Delivery'' and  LocationDesc=''Within vicinity'' then  sum(NoOfOrders)  ELSE 0 END)''Withinvicinity'',  
+				 (Case when Menu=''Delivery'' and  LocationDesc=''Outside vicinity'' then  sum(NoOfOrders)  ELSE 0 END)''Outsidevicinity''
+			from
+			(
+				select (select menu from BOF_M_ItemMenus where menuid=OrderMenuID)Menu, 
+				Count(orderNumber)NoOfOrders,isnull((select LocationDesc from CustLocation where LocID=OrderLocID),''None'')LocationDesc
+				from dbo.POS_M_Orders
+				where OrderMenuID in ( select MenuID from BOF_M_ItemMenus  ) and status=2   and BranchID=@Branchid
+				and eoddate is null
+				group by OrderMenuID ,OrderLocID
+			)A
+			group by menu,LocationDesc
+) B
+end
+else
+select @FromDate FromDate,@ToDate ToDate,isnull(sum(DineIn),0)DineIn, isnull(sum(DriveThru),0)DriveThru, isnull(sum(TakeAway),0)TakeAway, isnull(sum(Catering),0)Catering,isnull(sum(Withinvicinity),0)Withinvicinity,isnull(sum(Outsidevicinity),0)Outsidevicinity
+from
+(
+	Select  (Case when Menu=''Dine In'' and    LocationDesc=''None'' then  sum(NoOfOrders)  ELSE 0 END )''DineIn'',  
+				 (Case when Menu=''Drive Thru'' then  sum(NoOfOrders)  ELSE 0 END)''DriveThru'',  
+				 (Case when Menu=''Take Away'' then  sum(NoOfOrders)  ELSE 0 END)''TakeAway'',  
+				 (Case when Menu=''Catering'' then sum(NoOfOrders) ELSE 0 END)''Catering'',  
+				 (Case when Menu=''Delivery'' and  LocationDesc=''Within vicinity'' then  sum(NoOfOrders)  ELSE 0 END)''Withinvicinity'',  
+				 (Case when Menu=''Delivery'' and  LocationDesc=''Outside vicinity'' then  sum(NoOfOrders)  ELSE 0 END)''Outsidevicinity''
+			from
+			(
+				select (select menu from BOF_M_ItemMenus where menuid=OrderMenuID)Menu, 
+				Count(orderNumber)NoOfOrders,isnull((select LocationDesc from CustLocation where LocID=OrderLocID),''None'')LocationDesc
+				from dbo.POS_M_Orders
+				where OrderMenuID in ( select MenuID from BOF_M_ItemMenus  ) and status=2   and BranchID=@Branchid
+				AND EODDate BETWEEN CONVERT(varchar(20),@FromDate, 101)  AND CONVERT(varchar(20),@ToDate+1, 101)
+				group by OrderMenuID ,OrderLocID
+			)A
+			group by menu,LocationDesc
+) B
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[GET_SMS]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GET_SMS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[GET_SMS]
+ AS
+	select * from SMS_Conf
+		
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Gen_Z_Report]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Gen_Z_Report]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[Gen_Z_Report]
+as
+begin
+SELECT InvoiceNumber,TotalPrice,TotalDiscount,TotalPaid,OpeningTime,ClosingTime,(SELECT EmployeeName FROM BOF_M_EMPLOYEES WHERE EmployeeID=OpenedBy)OpenedBy,
+(SELECT EmployeeName FROM BOF_M_EMPLOYEES WHERE EmployeeID=ClosedBy)ClosedBy,EODDATE 
+FROM POS_M_ORDERS
+WHERE OpeningTime BETWEEN (SELECT DATEADD(HH,1,MAX(EODDATE)) FROM POS_M_ORDERS) AND (SELECT DATEADD(HH,3,MAX(EODDATE)) FROM POS_M_ORDERS) 
+end 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[EDIT_SMS]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[EDIT_SMS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[EDIT_SMS]
+	@user nvarchar(200),
+	@pwd nvarchar(200),
+	@sender nvarchar (200),
+	@message nvarchar (200),
+    @custmessage nvarchar (200)
+ AS
+	UPDATE SMS_Conf
+		SET userName=@user,
+		    pwd=@pwd,
+		    sender=@sender,
+		    message=@message,
+            custmessage=@custmessage 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INM_FillDeliveryItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INM_FillDeliveryItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INM_FillDeliveryItem] 
+	@DeliveryId int
+AS
+	SELECT     dbo.INV_M_ItemDelivery.DeliveryNumber, dbo.INV_M_Items.ProductCode AS ''Code'', dbo.INV_M_Items.Descreption AS ''Desc'', 
+                      dbo.INV_M_ItemInLocations.Quantity AS ''Available Qty'', dbo.INV_M_DeliveryDetails.Quantity, 
+                      dbo.INV_L_ItemFormat.ItemFormat AS ''InventoryFormat'', round(dbo.INV_M_Items.UnitCost / dbo.INV_M_Items.QauntityInBuyFormat ,4) AS ''UnitCost'', 
+                      round(dbo.INV_M_DeliveryDetails.Quantity / dbo.INV_M_Items.QauntityInBuyFormat * dbo.INV_M_Items.UnitCost ,4) AS ''TotalCost'',
+                      dbo.INV_M_ItemDelivery.DeliveryTime,dbo.INV_M_ItemDelivery.LocFromId, dbo.INV_M_ItemDelivery.LocToId
+
+FROM         dbo.INV_M_ItemDelivery INNER JOIN
+                      dbo.INV_M_DeliveryDetails ON dbo.INV_M_ItemDelivery.DeliveryId = dbo.INV_M_DeliveryDetails.DeliveryId INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_DeliveryDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemDelivery.LocFromId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+	WHERE     (INV_M_ItemDelivery.DeliveryId = @DeliveryId)
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_Permissions]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_Permissions]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[INV_SEL_Permissions]
+	@RoleID int
+AS
+	SELECT  * FROM  dbo.BOF_M_INVConfiguration
+	WHERE ( RoleID = @RoleID)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_Employees]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_Employees]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[INV_SEL_Employees]
+	@BranchID int,
+	@EmployeeCode varchar (50)
+AS
+	SELECT  dbo.BOF_M_Employees.EmployeeID, dbo.BOF_M_Employees.EmployeeName,
+            dbo.BOF_M_INVConfiguration.RoleID,dbo.BOF_M_INVConfiguration.[Role],dbo.BOF_M_Branches.[Name]
+	FROM         dbo.BOF_M_Employees INNER JOIN dbo.BOF_M_INVConfiguration on 
+    dbo.BOF_M_Employees.InvConfigId = dbo.BOF_M_INVConfiguration.RoleID  INNER JOIN
+    dbo.BOF_M_Branches ON dbo.BOF_M_Employees.BranchID = dbo.BOF_M_Branches.BranchID
+	WHERE (dbo.BOF_M_Employees.BranchID =@BranchID) AND (EmployeeCode = @EmployeeCode)' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_EmployeeExist]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_EmployeeExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[INV_SEL_EmployeeExist]
+@BranchID int,
+@EmployeeID varchar(20)
+AS
+SELECT  COUNT(*)  AS EmployeeExist
+FROM         dbo.BOF_M_Employees
+WHERE     (BranchID =@BranchID) AND CAST(EmployeeCode AS Varchar(20)) = @EmployeeID -- EmployeeCode=@EmployeeID--
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_SEL_Authenticate]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_SEL_Authenticate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[INV_SEL_Authenticate]
+	@BranchID int,
+	@EmployeeID varchar (50),
+	@Password	varchar (50)
+AS
+	SELECT  COUNT(*)  AS EmployeeExist
+	FROM         dbo.BOF_M_Employees
+	WHERE     (BranchID =@BranchID) AND 
+     (EmployeeCode = @EmployeeID) AND ([Password] = @Password or [Password] is null)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_GetItemDelvMsg]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_GetItemDelvMsg]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INV_VU_GetItemDelvMsg] 
+	
+	@DeliveryId int,
+	@ItemId int
+AS
+	SELECT    ItemMessage
+FROM         INV_M_DeliveryDetails
+WHERE     (DeliveryId = @DeliveryId) AND (RowType = 2) AND (ItemId = @ItemId)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertNewSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertNewSupplier]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertNewSupplier] 
+	 @ContactName nvarchar(50), 
+	 @ContactTitle nvarchar(50), 
+	 @Company nvarchar(50), 
+	 @Street nvarchar(50), 
+	 @City nvarchar(50), 
+	 @PostalCode nvarchar(50), 
+	 @Country nvarchar(50), 
+	 @PhoneNumber nvarchar(50), 
+	 @Mobile nvarchar(50), 
+	 @FaxNumber nvarchar(50), 
+	 @AccountNumber nvarchar(50), 
+	 @PaymentTerms nvarchar(50), 
+     @EmailAddress nvarchar(50) , 
+     @SupplierCurrency int, 
+     @BankInformation nvarchar(50), 
+     @Grade char(10)
+AS
+	INSERT INTO INV_M_Suppliers
+                      (ContactName, ContactTitle,Company, Street, City, PostalCode, Country, PhoneNumber, Mobile, FaxNumber, AccountNumber, PaymentTerms, 
+                      EmailAddress, SupplierCurrency, BankInformation, Grade)
+VALUES      (@ContactName, 
+	 @ContactTitle, 
+	 @Company,
+	 @Street, 
+	 @City, 
+	 @PostalCode, 
+	 @Country, 
+	 @PhoneNumber, 
+	 @Mobile, 
+	 @FaxNumber, 
+	 @AccountNumber, 
+	 @PaymentTerms, 
+     @EmailAddress, 
+     @SupplierCurrency, 
+     @BankInformation, 
+     @Grade)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertNewCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertNewCurrency]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertNewCurrency] 
+	 @Description nvarchar(50), 
+	 @Symbol nvarchar(50), 
+	 @Rate real, 
+	 @BORate real, 
+	 @DecimalNumber int
+AS
+	INSERT INTO INV_L_Currency
+                      (Description, Symbol, Rate, BORate, DecimalNumber)
+VALUES    (@Description, @Symbol, @Rate, @BORate, @DecimalNumber)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertNewBranch]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertNewBranch]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertNewBranch] 
+	@BranchName nvarchar(50)
+AS
+	INSERT INTO INV_L_Branches
+                      (BranchName)
+VALUES     (@BranchName)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertLocation]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertLocation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertLocation] 
+	
+	@BranchID int, 
+	@LocationName nvarchar(50)
+AS
+	INSERT INTO INV_L_Locations
+                      (BranchID, LocationName)
+VALUES     (@BranchID,@LocationName)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemSize]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertItemSize] 
+	@ItemSize nvarchar(50)
+AS
+	INSERT INTO INV_L_ItemSize
+                      (ItemSize)
+VALUES     (@ItemSize)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemGroups]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertItemGroups] 
+@GroupName nvarchar(50), 
+@DivisionID int,  
+@AssetAccount int, 
+@RevenueAccount int, 
+@ExpenseAccount int, 
+@AdjustmentAccount int, 
+@Tax1 bit, 
+@Tax2 bit, 
+@Tax3 bit, 
+@Markup int
+AS
+
+declare @CategoryID int
+SELECT     @CategoryID=CategoryID
+FROM         INV_L_ItemDivisions
+WHERE     (DivisionID = @DivisionID)
+
+	INSERT INTO INV_M_ItemGroups
+                      (GroupName, DivisionID, CategoryID, AssetAccount, RevenueAccount, ExpenseAccount, AdjustmentAccount, Tax1, Tax2, Tax3, Markup)
+VALUES    (@GroupName, @DivisionID, @CategoryID, @AssetAccount, @RevenueAccount, @ExpenseAccount, @AdjustmentAccount, @Tax1, @Tax2, @Tax3, @Markup)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemGroup]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemGroup]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertItemGroup] 
+	
+	@GroupName nvarchar(50),
+	 @DivisionID int,
+	  @AssetAccount nvarchar(50), 
+	  @RevenueAccount nvarchar(50), 
+	  @ExpenseAccount nvarchar(50), 
+	  @AdjustmentAccount nvarchar(50), 
+	  @Tax1 bit, 
+	  @Tax2 bit, 
+	  @Tax3 bit,
+	  @Markup nvarchar(50)
+
+	 
+	
+AS
+declare @CategoryID int
+SELECT     @CategoryID=CategoryID
+FROM         INV_L_ItemDivisions
+WHERE     (DivisionID = @DivisionID)
+ 
+	INSERT INTO INV_M_ItemGroups
+                      (GroupName, DivisionID, CategoryID, AssetAccount, RevenueAccount, ExpenseAccount, AdjustmentAccount, Tax1, Tax2, Tax3,Markup
+)
+VALUES     (@GroupName, @DivisionID, @CategoryID, @AssetAccount, @RevenueAccount, @ExpenseAccount, @AdjustmentAccount, @Tax1, @Tax2, @Tax3,@Markup
+)
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemFormat]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertItemFormat] 
+	
+	@ItemFormat nvarchar(50)
+AS
+	INSERT INTO INV_L_ItemFormat
+                      (ItemFormat)
+VALUES     (@ItemFormat)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemDivision]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertItemDivision] 
+	@CategoryID int,
+	@Division nvarchar(50)
+AS
+	INSERT INTO INV_L_ItemDivisions
+                      (Division, CategoryID)
+VALUES      (@Division ,@CategoryID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemColor]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertItemColor] 
+	@ColorName nvarchar(50)
+AS
+	INSERT INTO INV_L_ItemColor
+                      (ColorName)
+VALUES     (@ColorName)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertItemCategory]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertItemCategory] 
+	  
+	@Category nvarchar(50)
+AS
+	INSERT INTO INV_L_ItemCategory
+                      (Category)
+VALUES     (@Category)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertEmployee]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertEmployee] 
+
+@BranchID int, 
+@EmployeeName nvarchar(50), 
+@EmployeeFunctionID int, 
+@Password nvarchar(50), 
+@Phone nvarchar(50), 
+@Mobile nvarchar(50), 
+@Email nvarchar(50),
+@StartDate datetime, 
+@EndDate datetime, 
+@IsActive bit, 
+@Gender bit, 
+@Salary real
+AS
+	INSERT INTO INV_L_Employee
+                      (BranchID, EmployeeName, EmployeeFunctionID, Password, Phone, Mobile,Email, StartDate, EndDate, IsActive, Gender, Salary)
+VALUES   (@BranchID , 
+@EmployeeName , 
+@EmployeeFunctionID , 
+@Password, 
+@Phone, 
+@Mobile, 
+@Email,
+@StartDate, 
+@EndDate, 
+@IsActive, 
+@Gender, 
+@Salary)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_InsertCompnayInfo]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_InsertCompnayInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_InsertCompnayInfo] 
+	
+	@CompanyId int,
+	@CompanyName nvarchar(50), 
+	@Street nvarchar(50), 
+	@City nvarchar(50), 
+	@ZipCode nvarchar(50), 
+	@Phone1 nvarchar(50), 
+	@Phone2 nvarchar(50), 
+	@Phone3 nvarchar(50), 
+	@Fax nvarchar(50), 
+	@Currency1 int, 
+	@Currency2 int, 
+	@InvoiceMsg1 nvarchar(50), 
+	@InvoiceMsg2 nvarchar(50), 
+	@InvoiceMsg3 nvarchar(50)
+
+
+AS
+if(@CompanyId=0)
+begin
+	INSERT INTO INV_L_CompanyInfo
+                      (CompanyName, Street, City, ZipCode, Phone1, Phone2, Phone3, Fax, Currency1, Currency2, InvoiceMsg1, InvoiceMsg2, InvoiceMsg3)
+VALUES     (@CompanyName, @Street, @City, @ZipCode, @Phone1, @Phone2, @Phone3, @Fax, @Currency1, @Currency2, @InvoiceMsg1, @InvoiceMsg2, @InvoiceMsg3)
+	end
+	
+	if(@CompanyId>0)
+	begin
+	
+	UPDATE    INV_L_CompanyInfo
+SET              CompanyName =@CompanyName, Street =@Street, City =@City, ZipCode =@ZipCode, Phone1 =@Phone1, Phone2 =@Phone2, Phone3 =@Phone3, Fax =@Fax, Currency1 =@Currency1, Currency2 =@Currency2, InvoiceMsg1 =@InvoiceMsg1, InvoiceMsg2 =@InvoiceMsg2, InvoiceMsg3 =@InvoiceMsg3
+                      
+WHERE     (CompanyId = @CompanyId)
+	
+	end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_GetRegCodes]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_GetRegCodes]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVL_GetRegCodes] 
+	
+	@RegKey nvarchar(50)
+AS
+SELECT   RegValue
+FROM         INVL_RegCodes
+where RegKey=@RegKey
+
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_GetExpiryDateInfo]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_GetExpiryDateInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_GetExpiryDateInfo] 
+	@ItemID int
+AS
+SELECT     INV_M_Items.Descreption, INV_L_Locations.LocationName, INV_M_ItemInLocations.Quantity, INV_M_ItemInLocations.ExpiryDate
+FROM         INV_M_ItemInLocations INNER JOIN
+                      INV_M_Items ON INV_M_ItemInLocations.ItemID = INV_M_Items.ItemID INNER JOIN
+                      INV_L_Locations ON INV_M_ItemInLocations.LocationID = INV_L_Locations.LocationID
+WHERE     (INV_M_Items.ExpiryDate = 1)AND (INV_M_Items.ItemID = @ItemID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillWastageType]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillWastageType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillWastageType] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT     WastageTypeID, WastageType
+FROM         INV_L_WastageTypes
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillTreeViewItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillTreeViewItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillTreeViewItem] 
+	@CategoryID int,
+	@DivisionID int,
+	@GroupId int
+AS
+if(@CategoryID>0)
+begin
+	SELECT     *
+FROM         INV_L_ItemDivisions
+WHERE     (CategoryID = @CategoryID)
+end
+
+if(@DivisionID>0)
+begin
+
+
+SELECT     *
+FROM         INV_M_ItemGroups
+WHERE     (DivisionID = @DivisionID)
+end
+if(@GroupId>0)
+begin
+SELECT     *
+FROM         INV_M_Items
+WHERE     (GroupId = @GroupId)
+end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillSupplier]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVL_FillSupplier] 
+	@SupplierID int
+	
+AS
+if(@SupplierID>0)
+begin
+	SELECT     *
+FROM         INV_M_Suppliers
+WHERE     (SupplierID = @SupplierID)
+ORDER BY Company
+end
+
+if(@SupplierID=0)
+begin
+SELECT     SupplierID, ContactName, ContactTitle, Company, Street, City, PostalCode, Country, PhoneNumber, Mobile, FaxNumber, AccountNumber, 
+                      PaymentTerms, EmailAddress, SupplierCurrency, BankInformation, Grade, CreationDate
+FROM         INV_M_Suppliers
+ORDER BY Company
+end
+
+
+	RETURN
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillSalesHeader]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillSalesHeader]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillSalesHeader] 
+	@SalesId int
+AS
+SELECT     SalesId, SalesInvoiceNumber, SalesDate, ClientID, CurrencyId, LocationID, MarkUP, InvDiscount, InvAmount, TotalDiscount, InvNote, 
+                      CreationDate
+FROM         INVS_SaleItems
+WHERE     (SalesId = @SalesId)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillSalesDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillSalesDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillSalesDetails] 
+	@SaleId int
+AS
+	SELECT     INV_M_Items.ProductCode, INV_M_Items.Descreption, INVS_SalesItemDetails.Quantity, 
+	INV_L_ItemFormat.ItemFormat, 
+                      INVS_SalesItemDetails.UnitPrice, INVS_SalesItemDetails.Discount, INVS_SalesItemDetails.TotalAmount
+FROM         INVS_SalesItemDetails INNER JOIN
+                      INV_M_Items ON INVS_SalesItemDetails.ItemId = INV_M_Items.ItemID INNER JOIN
+                      INV_L_ItemFormat ON INVS_SalesItemDetails.UnitId = INV_L_ItemFormat.FormatID
+                      WHERE     (INVS_SalesItemDetails.SaleId = @SaleId)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillPurchaseHeader]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillPurchaseHeader]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillPurchaseHeader]
+	
+	@OrderID int
+	
+AS
+	SELECT     OrderID, SupplierID, SupplierNote, LocationID, CurrencyID, Discount, Price, InvoiceNo, DateOfPayment, InvoiceDate, Note, TotalFreight, TotalOtherCost, 
+                      TotalCustom, TotalTax, TotalAmount, OrderDate, PurchaseType
+FROM         INV_M_Orders
+WHERE     (OrderID = @OrderID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillPurchaseDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillPurchaseDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVL_FillPurchaseDetails] 
+	@OrderID int,
+    @Type int,
+    @pType int
+AS
+if @Type = @pType
+Begin
+	SELECT     INV_M_Items.ProductCode, INV_M_Items.Descreption, INV_M_OrderDetails.Quantity, INV_L_ItemFormat.ItemFormat, 
+	                      INV_M_OrderDetails.ItemPrice AS ''Price'', INV_M_OrderDetails.ItemDiscount as ''Discount'', INV_M_OrderDetails.Amount, INV_M_OrderDetails.Tax1, 
+	                      INV_L_Locations.LocationName, INV_M_OrderDetails.PurchaseType, INV_M_OrderDetails.OrderDetailID, INV_M_Items.ItemID, 
+	                      INV_M_OrderDetails.ItemUnitID AS ''UnitID'', cast(INV_M_Items.ExpiryDate as nvarchar(50)) as ''ExpiryDate'', INV_L_Locations.LocationID
+	FROM         INV_M_OrderDetails INNER JOIN
+	                      INV_M_Items ON INV_M_OrderDetails.ItemID = INV_M_Items.ItemID INNER JOIN
+	                      INV_L_ItemFormat ON INV_M_OrderDetails.ItemUnitID = INV_L_ItemFormat.FormatID INNER JOIN
+	                      INV_L_Locations ON INV_M_OrderDetails.LocationID = INV_L_Locations.LocationID
+	WHERE     (INV_M_OrderDetails.OrderID = @OrderID)
+end
+if @Type <> @pType
+Begin
+	SELECT     INV_M_Items.ProductCode, INV_M_Items.Descreption, INV_M_OrderDetails.Quantity*dbo.INV_M_Items.QuantityInPackFormat as Quantity, INV_L_ItemFormat.ItemFormat, 
+	                      INV_M_OrderDetails.ItemPrice/(dbo.INV_M_Items.QuantityInPackFormat) AS ''Price'', INV_M_OrderDetails.ItemDiscount as ''Discount'', INV_M_OrderDetails.Amount, INV_M_OrderDetails.Tax1, 
+	                      INV_L_Locations.LocationName, INV_M_OrderDetails.PurchaseType, INV_M_OrderDetails.OrderDetailID, INV_M_Items.ItemID, 
+	                      INV_M_OrderDetails.ItemUnitID AS ''UnitID'', cast(INV_M_Items.ExpiryDate as nvarchar(50)) as ''ExpiryDate'', INV_L_Locations.LocationID
+	FROM         INV_M_OrderDetails INNER JOIN
+	                      INV_M_Items ON INV_M_OrderDetails.ItemID = INV_M_Items.ItemID INNER JOIN
+	                      INV_L_ItemFormat ON INV_M_Items.BuyFormat = INV_L_ItemFormat.FormatID INNER JOIN
+	                      INV_L_Locations ON INV_M_OrderDetails.LocationID = INV_L_Locations.LocationID
+	WHERE     (INV_M_OrderDetails.OrderID = @OrderID)
+end
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillProductionType]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillProductionType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVL_FillProductionType] 
+	
+AS
+	SELECT     ProTypeID, ProType
+FROM         INV_L_ProductionTypes
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillLocations]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillLocations]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillLocations] 
+	@LocationID int
+AS
+
+if(@LocationID>0)
+begin
+	SELECT     *
+FROM         INV_L_Locations
+WHERE     (LocationID = @LocationID)
+end
+
+if(@LocationID=0)
+begin
+SELECT     *
+FROM         INV_L_Locations
+
+end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemStatus]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemStatus]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillItemStatus] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT     ItemStatusId, ItemStatus
+FROM         INV_L_ItemStatus
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemSize]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillItemSize] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	    SELECT     SizeId, ItemSize
+FROM         INV_L_ItemSize
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemGroups]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillItemGroups] 
+	@GroupID int 
+AS
+if(@GroupID=0)
+begin
+	SELECT     *
+FROM         INV_M_ItemGroups
+
+end
+
+if(@GroupID>0)
+begin
+SELECT     *
+FROM         INV_M_ItemGroups
+WHERE     (GroupID = @GroupID)
+end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemFormat]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillItemFormat] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT     *
+FROM         INV_L_ItemFormat
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemDivision]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillItemDivision] 
+	@DivisionID int
+AS
+if(@DivisionID>0)
+begin
+	SELECT  *   
+FROM         INV_L_ItemDivisions
+WHERE     (DivisionID = @DivisionID)
+end
+
+if(@DivisionID=0)
+begin
+SELECT  *   
+FROM         INV_L_ItemDivisions
+end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemColor]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillItemColor] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT     ColorId, ColorName
+FROM         INV_L_ItemColor
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemCategory]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillItemCategory] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	Select CategoryID,Category from  INV_L_ItemCategory 
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_OrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_SEL_OrderDetails]
+	@BranchID	int,
+	@OrderType	int,
+	@OrderNumber	[real]
+AS
+
+	DECLARE @OrderID	[real]
+	SELECT @OrderID =  OrderID FROM dbo.POS_M_Orders
+	WHERE   (dbo.POS_M_Orders.BranchID = @BranchID) AND (OrderMenuID =@OrderType) 
+	AND (OrderNumber =@OrderNumber)AND (dbo.POS_M_Orders.Status = 0 OR dbo.POS_M_Orders.Status = 1) AND POS_M_Orders.Voided = 0
+	SELECT MenuDescription= 
+case
+when dbo.POS_M_OrderDetails.without=0 then dbo.BOF_M_ItemSalesItems.MenuDescription 
+when  dbo.POS_M_OrderDetails.without=1 then ''(-)''+dbo.BOF_M_ItemSalesItems.MenuDescription
+when dbo.POS_M_OrderDetails.without=2 then ''(+)''+dbo.BOF_M_ItemSalesItems.MenuDescription end  ,
+ dbo.BOF_M_ItemSalesItems.FunctionID, dbo.POS_M_OrderDetails.OrderDetailID, 
+	                      dbo.BOF_M_ItemSalesItems.SalesItemID, dbo.POS_M_OrderDetails.Quantity, dbo.POS_M_OrderDetails.UsedPrice, 
+	                      dbo.POS_M_OrderDetails.CustomerNumber, dbo.POS_M_OrderDetails.Status,
+		dbo.POS_M_OrderDetails.AffectedItem , dbo.POS_M_OrderDetails.VoidReasonID, dbo.POS_M_OrderDetails.OrderbyEmployeeId,dbo.POS_M_OrderDetails.ItemRemark
+	FROM         dbo.POS_M_OrderDetails INNER JOIN
+	                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+	WHERE      /*(dbo.POS_M_OrderDetails.Quantity > 0) AND */(dbo.POS_M_OrderDetails.BranchID = @BranchID) 
+	AND (dbo.POS_M_OrderDetails.OrderID = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_OpenOrders]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_OpenOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PDA_SEL_OpenOrders]
+@BranchID	int,
+@OrderType	int
+AS
+	SELECT     BOF_M_Employees_1.EmployeeName AS Server, dbo.POS_M_Orders.OrderID, dbo.POS_M_Orders.OrderNumber, 
+	                      dbo.POS_M_Orders.NumberOfCustomers, dbo.POS_M_Orders.OpeningTime, dbo.POS_M_Orders.Status
+	FROM         dbo.POS_M_Orders LEFT OUTER JOIN
+	                      dbo.BOF_M_Employees BOF_M_Employees_1 ON dbo.POS_M_Orders.BranchID = BOF_M_Employees_1.BranchID AND 
+	                      dbo.POS_M_Orders.DeliveryDriverEmpID = BOF_M_Employees_1.EmployeeID
+	WHERE    POS_M_Orders.BranchID = @BranchID AND OrderMenuID = @OrderType AND (POS_M_Orders.Status = 0  
+	OR  POS_M_Orders.Status = 1)  AND POS_M_Orders.Voided = 0
+	ORDER BY OrderNumber
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_OpenOrderInfo]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_OpenOrderInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_SEL_OpenOrderInfo]
+@BranchID	int,
+@OrderType	int,
+@OrderNumber	[real]
+AS
+SELECT     dbo.POS_M_Orders.OrderID, dbo.POS_M_Orders.BranchID, dbo.POS_M_Orders.WorkStationID, OrderMenuID, OrderNumber, NumberOfCustomers,
+		 ISNULL(dbo.POS_M_Orders.CustomerID, 0) AS CustomerID, OpenedBy, ClosedBy, 
+                      OpeningTime, ClosingTime, dbo.POS_M_Orders.Status, CheckIsPrinted, InvoiceNumber, ISNULL(InvoiceRemark, '''') AS InvoiceRemark, ISNULL(KitchenRemark, '''') 
+                      AS KitchenRemark, Voided, VoidReasonID, RevMenuID, ISNULL(TotalPrice, 0) AS TotalPrice, ISNULL(dbo.BOF_M_Customers.CustomerName, '''')  AS Customer, dbo.BOF_M_Employees.EmployeeName AS Server, 
+                      BOF_M_Employees_1.EmployeeName AS Driver, DeliveryTime, DeliveryStatus
+FROM         dbo.POS_M_Orders LEFT OUTER JOIN
+                      dbo.BOF_M_Employees BOF_M_Employees_1 ON dbo.POS_M_Orders.BranchID = BOF_M_Employees_1.BranchID AND 
+                      dbo.POS_M_Orders.DeliveryDriverEmpID = BOF_M_Employees_1.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_M_Orders.OpenedBy = dbo.BOF_M_Employees.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE   (dbo.POS_M_Orders.BranchID = @BranchID) 
+AND (OrderMenuID =@OrderType) 
+AND (OrderNumber =@OrderNumber)
+AND (dbo.POS_M_Orders.Status = 0 OR dbo.POS_M_Orders.Status = 1) AND POS_M_Orders.Voided = 0
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_UPD_Order]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_UPD_Order]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_UPD_Order]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	 @NumberOfCustomers 	[int],
+	@CustomerID	[int],
+	@TotalPrice	[real],
+	@KitchenRemark	nvarchar(250),
+	@InvoiceRemark	nvarchar(50))
+AS 
+	UPDATE [dbo].[POS_M_Orders] 
+	SET [NumberOfCustomers] = @NumberOfCustomers,
+		[CustomerID] = @CustomerID,
+		[TotalPrice] = @TotalPrice,
+		[KitchenRemark] = @KitchenRemark,
+		[InvoiceRemark] = @InvoiceRemark
+	WHERE( BranchID = @BranchID
+	AND OrderID = @OrderID)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_UPD_Customer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_UPD_Customer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_UPD_Customer]
+	(@CustomerID 	[int],
+	 @BranchID 	[int],
+	 @CustomerName	[nvarchar](50),
+	 @FamilyName 	[nvarchar](50),
+	 @Company 	[nvarchar](50),
+	 @Phone 	[nvarchar](50),
+	 @Mobile 	[nvarchar](50),
+	 @OfficePhone 	[nvarchar](50),
+	 @OtherPhone 	[nvarchar](50),
+	 @Code 	[nvarchar](50),
+	 @Street 	[nvarchar](50),
+	 @Near 	[nvarchar](50),
+	 @Building 	[nvarchar](50),
+	 @City 	[nvarchar](50),
+	 @Floor 	[nvarchar](50),
+	 @Remarks 	[nvarchar](500),
+	 @Appartment 	[nvarchar](50))
+AS 
+UPDATE [dbo].[BOF_M_Customers] 
+SET  [CustomerName]	 = @CustomerName,
+	 [FamilyName]	 = @FamilyName,
+	 [Company]	 = @Company,
+	 [Phone]	 = @Phone,
+	 [Mobile]	 = @Mobile,
+	 [OfficePhone]	 = @OfficePhone,
+	 [OtherPhone]	 = @OtherPhone,
+	 [Code]	 = @Code,
+	 [Street]	 = @Street,
+	 [Near]	 = @Near,
+	 [Building]	 = @Building,
+	 [City]	 = @City,
+	 [Floor]	 = @Floor,
+	 [Remarks]	 = @Remarks,
+	 [Appartment]	 = @Appartment 
+
+WHERE 
+	( [CustomerID]	 = @CustomerID AND
+	 [BranchID]	 = @BranchID)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_Customers]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_Customers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_SEL_Customers] 
+@BranchID	int
+
+AS
+SELECT     dbo.BOF_M_Customers.*
+FROM         dbo.BOF_M_Customers
+WHERE BranchID = @BranchID
+ORDER BY CustomerName
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_INS_Order]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_INS_Order]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[PDA_INS_Order]
+	(@BranchID 	[int],
+	@WorkStationID	[int],
+	 @OrderNumber		[real],
+	 @OrderMenuID		[int],
+	 @NumberOfCustomers 	[int],
+	 @OpenedBy 	[int],
+	@RevMenuID	[int],
+	@CustomerID	[int],
+	@TotalPrice	[real],
+	@KitchenRemark	nvarchar(250),
+	@InvoiceRemark	nvarchar(50),
+    @DeliveryStatus	[int],
+	@DeliveryTime	[DateTime],
+	@OrderID	[int]	OUTPUT)
+AS 
+	INSERT INTO [dbo].[POS_M_Orders] 
+		 ( [BranchID],
+		[WorkStationID],
+		 [OrderNumber],
+		 [OrderMenuID],
+		 [NumberOfCustomers],
+		 [OpenedBy],
+		[RevMenuID],
+		[CustomerID],
+		[TotalPrice],
+		[KitchenRemark],
+		[InvoiceRemark],
+        [DeliveryStatus],
+	    [DeliveryTime])
+	VALUES 
+		( @BranchID,
+		@WorkStationID,
+		 @OrderNumber,
+		 @OrderMenuID,
+		 @NumberOfCustomers,
+		 @OpenedBy,
+		@RevMenuID,
+		@CustomerID,
+		@TotalPrice,
+		@KitchenRemark,
+		@InvoiceRemark,
+        @DeliveryStatus	,
+	    @DeliveryTime)
+	SET @OrderID = @@Identity
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_INS_Customer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_INS_Customer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_INS_Customer]
+	(@BranchID 	[int],
+	 @CustomerName 	[nvarchar](50),
+	 @FamilyName 	[nvarchar](50),
+	 @Company 	[nvarchar](50),
+	 @Phone 	[nvarchar](50),
+	 @Mobile 	[nvarchar](50),
+	 @OfficePhone 	[nvarchar](50),
+	 @OtherPhone 	[nvarchar](50),
+	 @Code 	[nvarchar](50),
+	 @Street 	[nvarchar](50),
+	 @Near 	[nvarchar](50),
+	 @Building 	[nvarchar](50),
+	 @City 	[nvarchar](50),
+	 @Floor 	[nvarchar](50),
+	 @Remarks 	[nvarchar](500),
+	 @Appartment 	[nvarchar](50))
+
+AS
+	 INSERT INTO [dbo].[BOF_M_Customers] 
+		 ( [BranchID],
+		 [CustomerName],
+		 [FamilyName],
+		 [Company],
+		 [Phone],
+		 [Mobile],
+		 [OfficePhone],
+		 [OtherPhone],
+		 [Code],
+		 [Street],
+		 [Near],
+		 [Building],
+		 [City],
+		 [Floor],
+	     [Remarks],
+		 [Appartment]) 
+	 
+	VALUES 
+		( @BranchID,
+		 @CustomerName,
+		 @FamilyName,
+		 @Company,
+		 @Phone,
+		 @Mobile,
+		 @OfficePhone,
+		 @OtherPhone,
+		 @Code,
+		 @Street,
+		 @Near,
+		 @Building,
+		 @City,
+		 @Floor,
+    	 @Remarks,
+		 @Appartment)
+	SELECT @@IDENTITY AS CustomerID
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetProductionByDate]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetProductionByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVM_GetProductionByDate] 
+	@ProType int
+AS
+	SELECT   Distinct INV_M_Production.ProductionID  ,INV_M_Production.CreationDate, INV_M_Items.Descreption
+FROM         INV_M_Production inner join INV_M_Items on
+dbo.INV_M_Production.ProID = INV_M_Items.ItemID
+WHERE     (ProTypeId = @ProType)
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DEL_T_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DEL_T_OrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_DEL_T_OrderDetails]
+	(@BranchID 	[int],
+	 @OrderID 	[int])
+AS 
+	delete from  [dbo].[POS_T_OrderDetails] 
+	WHERE BranchID = @BranchID
+	AND OrderID = @OrderID 
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[ITEMS_NO_RECEPIES]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ITEMS_NO_RECEPIES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[ITEMS_NO_RECEPIES]
+AS
+BEGIN
+select SalesItemID,Description,MenuDescription,PriceMode1,PriceMode2,PriceMode3,PriceMode4 
+ FROM         dbo.BOF_M_ItemSalesItems where BOF_M_ItemSalesItems.SalesItemId not in
+(select dbo.Item_Ingredient.ingredientId from dbo.Item_Ingredient)
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemQtyOH]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemQtyOH]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_GetItemQtyOH] 
+	@ItemID int,
+	@LocationID int
+AS
+	SELECT     Quantity, ItemID, LocationID
+FROM         INV_M_ItemInLocations
+WHERE     (ItemID = @ItemID) AND (LocationID = @LocationID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetInvoiceNumber]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetInvoiceNumber]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVM_GetInvoiceNumber] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT    InvoiceNo
+FROM         INV_M_Orders
+WHERE     (PurchaseType = 2) and  InvoiceNo!=''''
+ORDER BY InvoiceNo DESC
+	RETURN
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetInvoiceNo]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetInvoiceNo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_GetInvoiceNo] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT    SalesId
+FROM         INVS_SaleItems
+ORDER BY SalesId DESC
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_PurchasePreview]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_PurchasePreview]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_PurchasePreview] 
+	
+	@PurchaseType int
+AS
+if(@PurchaseType=3)
+begin
+	SELECT     OrderID, InvoiceDate as ''Date'', InvoiceNo as ''Invoice Number'', TotalAmount as ''Total''
+FROM         INV_M_Orders
+ORDER BY InvoiceDate DESC, OrderID DESC
+	end
+	else
+	begin
+	SELECT     OrderID, InvoiceDate as ''Date'', InvoiceNo as ''Invoice Number'', TotalAmount as ''Total''
+FROM         INV_M_Orders
+where PurchaseType=@PurchaseType
+ORDER BY InvoiceDate DESC, OrderID DESC
+	end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertWastageDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertWastageDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_InsertWastageDetails] 
+
+	@WastageID int, 
+	@WastageTypeId int, 
+	@LocationId int, 
+	@ItemId int, 
+	@Quantity real, 
+	@UnitId int, 
+	@UnitCost real, 
+	@TotalCost real, 
+	@IsExpired bit
+AS
+	INSERT INTO INV_M_ItemWastageDetails
+                      (WastageID, WastageTypeId, LocationId, ItemId, Quantity, UnitId, UnitCost, TotalCost, IsExpired)
+VALUES     (@WastageID, @WastageTypeId, @LocationId, @ItemId, @Quantity, @UnitId, @UnitCost, @TotalCost, @IsExpired)
+	
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity - @Quantity
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationId)
+
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertProductionInLocation]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertProductionInLocation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVM_InsertProductionInLocation]
+	@ItemID int, 
+	@LocationID int,
+	@MinQty real, 
+	@MaxQty real,
+    @Qty real,
+    @Cost real,
+    @QtyBuy real,
+    @TotalCost real,
+    @ProTypeId int,
+    @CreationDate datetime
+	
+AS
+declare @Count as int
+
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationID
+
+if(@Count>0)
+begin
+UPDATE    INV_M_ItemInLocations
+SET               MinQty =@MinQty, MaxQty =@MaxQty, Quantity = Quantity + @Qty
+WHERE     (ItemID = @ItemID) AND (LocationID = @LocationID)
+
+END
+
+ELSE
+BEGIN
+
+	INSERT INTO INV_M_ItemInLocations
+                      (ItemID,LocationID, MinQty, MaxQty,Quantity)
+VALUES     (@ItemID,@LocationID,@MinQty,@MaxQty,@Qty)
+
+END
+
+UPDATE INV_M_Items SET UnitCost = @Cost*@QtyBuy, AverageCost = @Cost*@QtyBuy WHERE (ItemId = @ItemID) 
+
+INSERT INTO INV_M_Production 
+                (ProID,LocationID,ProTypeId,Quantity,UnitCost,TotalCost,CreationDate)
+        VALUES(@ItemID,@LocationID,@ProTypeId,@Qty,@Cost,@TotalCost,Convert(datetime,@CreationDate,102))
+RETURN @@Identity
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertProductionDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertProductionDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVM_InsertProductionDetails] 
+
+	@ProID int, 
+	@LocationId int, 
+	@ItemId int, 
+    @Format real,
+	@Quantity real, 
+	@UnitId int, 
+	@UnitCost real, 
+	@TotalCost real, 
+	@IsExpired bit
+AS
+BEGIN
+	INSERT INTO INV_M_ProductionDetails
+                      (ProID, LocationId, ItemId, Quantity, UnitId, UnitCost, TotalCost, IsExpired)
+VALUES     (@ProID, @LocationId, @ItemId, @Quantity, @UnitId, @UnitCost, @TotalCost, @IsExpired)
+	
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity - (@Quantity/@Format)
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationId)
+
+END
+
+
+RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_InsertOrderDetails]
+	@OrderID int, 
+	@ItemID int, 
+	@Quantity real, 
+	@ItemUnitID int, 
+	@ItemPrice real, 
+	@ItemDiscount real, 
+	@Amount real, 
+	@Tax1 real, 
+	@Tax2 real, 
+	@Tax3 real, 
+	@LocationID int,
+	@PurchaseType tinyint,
+	@ExpiryDate nvarchar(50)
+
+AS
+	INSERT INTO INV_M_OrderDetails
+                      (OrderID, ItemID, Quantity, ItemUnitID, ItemPrice, ItemDiscount, Amount, Tax1, Tax2, Tax3, LocationID,PurchaseType)
+VALUES     (@OrderID, 
+	@ItemID, 
+	@Quantity, 
+	@ItemUnitID, 
+	@ItemPrice, 
+	@ItemDiscount, 
+	@Amount, 
+	@Tax1, 
+	@Tax2, 
+	@Tax3, 
+	@LocationID,
+	@PurchaseType)
+	
+	if(@PurchaseType=1) --add the item quantity
+	begin
+	declare @Count as int
+	declare @QauntityInBuyFormat as real
+	
+	UPDATE    INV_M_Items
+SET              UnitCost = @ItemPrice, AverageCost = @ItemPrice
+WHERE     (ItemID = @ItemID)
+
+SELECT     @QauntityInBuyFormat=QauntityInBuyFormat
+FROM         INV_M_Items
+WHERE     (ItemID = @ItemID)
+
+if(@QauntityInBuyFormat=0)
+begin
+set @QauntityInBuyFormat=1
+end
+
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationID
+
+	if(@Count>0)
+begin
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity + @Quantity * @QauntityInBuyFormat ,ExpiryDate=@ExpiryDate
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationId)
+end
+	else
+begin
+	INSERT INTO INV_M_ItemInLocations
+                      (ItemID,LocationID, MinQty, MaxQty,Quantity,ExpiryDate)
+VALUES     (@ItemID,@LocationID,0,0,@Quantity * @QauntityInBuyFormat,@ExpiryDate)
+end
+	
+	end
+
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertNewOrder]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertNewOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_InsertNewOrder]
+
+@SupplierID int, 
+@SupplierNote nvarchar(500), 
+@LocationID int, 
+@CurrencyID int, 
+@Discount real, 
+@Price real, 
+@InvoiceNo nvarchar(50), 
+@DateOfPayment smalldatetime,
+@InvoiceDate datetime, 
+@Note nvarchar(500), 
+@TotalFreight real, 
+@TotalOtherCost real, 
+@TotalCustom real, 
+@TotalTax real,                    
+@TotalAmount real,
+@PurchaseType tinyint,
+@IsTransfer tinyint,
+@OrderID int
+AS
+--if(@IsTransfer=1) --1=New order,2=Trnsfer
+--begin
+	INSERT INTO INV_M_Orders
+                      (SupplierID, SupplierNote, LocationID, CurrencyID, Discount, Price, InvoiceNo,DateOfPayment, InvoiceDate, Note, TotalFreight, TotalOtherCost, TotalCustom, TotalTax, 
+                      TotalAmount,PurchaseType)
+VALUES     (@SupplierID, 
+@SupplierNote, 
+@LocationID, 
+@CurrencyID, 
+@Discount, 
+@Price, 
+@InvoiceNo, 
+@DateOfPayment,
+@InvoiceDate, 
+@Note, 
+@TotalFreight, 
+@TotalOtherCost, 
+@TotalCustom, 
+@TotalTax,                    
+@TotalAmount,
+@PurchaseType)
+	RETURN @@Identity
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertNewItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertNewItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_InsertNewItem] 
+@ProductCode nvarchar(50), 
+@BarCode nvarchar(50), 
+@Descreption nvarchar(50),
+@OtherDescreption nvarchar(50), 
+@BuyFormat int, 
+@InventoryFormat int, 
+@UsageFormat int, 
+@PackingFormat int, 
+@SupplierID int, 
+@UnitCost real, 
+                      @AverageCost real, 
+                      @QauntityInBuyFormat real, 
+                      @QuantityInInvFormat real,
+                      @QuantityInPackFormat real, 
+                      @DecimalPlace int, 
+                      @ItemStatus int, 
+                      @GroupId int, 
+                      @SellingPrice1 real, 
+                      @SellingPrice2 real, 
+                      @SellingPrice3 real, 
+                      @SellingPrice4 real, 
+                      @HideInReport bit, 
+                      @Discountinued bit, 
+                      @ExpiryDate bit
+AS
+	INSERT INTO INV_M_Items
+                      (ProductCode, BarCode, Descreption, OtherDescreption, BuyFormat, InventoryFormat, UsageFormat, PackingFormat, SupplierID, UnitCost, 
+                      AverageCost, QauntityInBuyFormat, QuantityInInvFormat, QuantityInPackFormat, DecimalPlace, ItemStatus, GroupId, SellingPrice1, SellingPrice2, SellingPrice3, SellingPrice4, 
+                      HideInReport, Discountinued, ExpiryDate)
+VALUES     (@ProductCode, @BarCode, @Descreption, @OtherDescreption, @BuyFormat, @InventoryFormat, @UsageFormat, @PackingFormat, @SupplierID, @UnitCost, 
+                      @AverageCost, @QauntityInBuyFormat, @QuantityInInvFormat, @QuantityInPackFormat, @DecimalPlace, @ItemStatus, @GroupId, @SellingPrice1, @SellingPrice2, @SellingPrice3, @SellingPrice4, 
+                      @HideInReport, @Discountinued, @ExpiryDate)
+	RETURN @@Identity
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemWastage]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemWastage]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_InsertItemWastage] 
+	@LocationID int, 
+	@WastageDate smalldatetime, 
+	@WastageTypeId int
+AS
+	INSERT INTO INV_M_ItemWastage
+                      (LocationID, WastageDate, WastageTypeId)
+VALUES     (@LocationID, @WastageDate, @WastageTypeId)
+	RETURN @@Identity
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemsInLocation]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemsInLocation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_InsertItemsInLocation]
+	@ItemID int, 
+	@LocationID int,
+	@MinQty real, 
+	@MaxQty real
+	
+AS
+declare @Count as int
+
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationID
+
+if(@Count>0)
+begin
+UPDATE    INV_M_ItemInLocations
+SET               MinQty =@MinQty, MaxQty =@MaxQty
+WHERE     (ItemID = @ItemID) AND (LocationID = @LocationID)
+end
+
+else
+begin
+
+	INSERT INTO INV_M_ItemInLocations
+                      (ItemID,LocationID, MinQty, MaxQty,Quantity)
+VALUES     (@ItemID,@LocationID,@MinQty,@MaxQty,0)
+
+end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemIngredient]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemIngredient]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_InsertItemIngredient] 
+    @ItemIngId int,
+	@LocationId int, 
+	@ItemId int, 
+	@Quantity real, 
+	@UnitId int,
+    @QuantityUsed real 
+AS
+BEGIN
+declare @Count as int
+
+select @Count=count(*) from INV_M_ItemIngredient
+where ItemID=@ItemID and LocationID=@LocationID AND (ItemIngId = @ItemIngId)
+
+if (@Count)>0
+Begin
+UPDATE    INV_M_ItemIngredient
+SET              Quantity =@Quantity, UnitId = @UnitId
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationId) AND (ItemIngId = @ItemIngId)
+End
+Else
+	INSERT INTO INV_M_ItemIngredient
+                      (ItemIngID,ItemId,LocationId,Quantity, UnitId)
+VALUES     (@ItemIngId,@ItemId, @LocationId,@Quantity, @UnitId)
+
+End	
+UPDATE INV_M_Items SET QuantityUsed=@QuantityUsed WHERE ItemId = @ItemId
+RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemAdjustment]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemAdjustment]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_InsertItemAdjustment] 
+	@LocationId int, 
+	@AdjustmentDate smalldatetime
+AS
+	INSERT INTO INV_M_ItemAdjustment
+                      (LocationId, AdjustmentDate)
+VALUES     (@LocationId, @AdjustmentDate)
+	RETURN @@Identity
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertItemAdjustDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertItemAdjustDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_InsertItemAdjustDetails] 
+	@AdjustmentId int, 
+	@ItemId int, 
+	@LocationId int, 
+	@QtyOH real, 
+	@VarianceQty real, 
+	@NewQty real, 
+	@UnitID int
+AS
+INSERT INTO INV_M_ItemAdjustDetails
+                      (AdjustmentId, ItemId, LocationId, QtyOH, VarianceQty, NewQty, UnitID)
+VALUES     (@AdjustmentId, @ItemId, @LocationId, @QtyOH, @VarianceQty, @NewQty, @UnitID)
+	
+	declare @Count as int
+
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationID
+
+if(@Count>0)
+begin
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =@NewQty
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationId)
+	end
+	else
+	begin
+	INSERT INTO INV_M_ItemInLocations
+                      (ItemID,LocationID, MinQty, MaxQty,Quantity)
+VALUES     (@ItemID,@LocationID,0,0,@NewQty)
+	
+	end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertInitialTransfers]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertInitialTransfers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVM_InsertInitialTransfers]
+     @ItemId int, 
+	 @Quantity real,
+	 @isLocal int,
+	 @LocationToID int 
+As
+begin
+declare @Count as int
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationToID
+if(@Count>0)
+begin
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity + @Quantity 
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationToID)
+end
+	else
+begin
+	INSERT INTO INV_M_ItemInLocations
+                      (ItemID,LocationID, MinQty, MaxQty,Quantity)
+VALUES     (@ItemID,@LocationToID,0,0,@Quantity )
+end
+end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertDeliveryItemDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertDeliveryItemDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_InsertDeliveryItemDetails] 
+	@DeliveryId int, 
+	@DeliveryNumber nvarchar(50), 
+	@ItemId int, 
+	@Quantity real,
+	 @ItemMessage nvarchar(50), 
+	 @RowType tinyint,
+	 @isLocal int,
+	 @LocationFromID int,
+	 @LocationToID int
+AS
+	INSERT INTO INV_M_DeliveryDetails
+                      (DeliveryId, DeliveryNumber, ItemId, Quantity, ItemMessage, RowType
+)
+VALUES     (@DeliveryId, @DeliveryNumber, @ItemId, @Quantity, @ItemMessage, @RowType
+)
+	declare @Count as int
+	declare @QauntityInInventoryFormat as real
+SELECT     @QauntityInInventoryFormat=QuantityInInvFormat
+FROM         INV_M_Items
+WHERE     (ItemID = @ItemId)
+if(@QauntityInInventoryFormat=0)
+begin
+set @QauntityInInventoryFormat=1
+end
+-- subtract the item from location 
+UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity - @Quantity 
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationFromID)
+if(@isLocal=1) --add to other location
+begin
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationToID
+if(@Count>0)
+begin
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity + @Quantity 
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationToID)
+end
+	else
+begin
+	INSERT INTO INV_M_ItemInLocations
+                      (ItemID,LocationID, MinQty, MaxQty,Quantity)
+VALUES     (@ItemID,@LocationToID,0,0,@Quantity )
+end
+end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_InsertDeliveryItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_InsertDeliveryItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_InsertDeliveryItem] 
+	@DeliveryNumber nvarchar(50), 
+	@EmployeeID int, 
+	@IsLocal int, 
+	@LocFromId int, 
+	@LocToId int, 
+	@DeliveryTime nvarchar(50)
+AS
+	INSERT INTO INV_M_ItemDelivery
+                      (DeliveryNumber, EmployeeID, IsLocal, LocFromId, LocToId, DeliveryTime)
+VALUES     (@DeliveryNumber, @EmployeeID, @IsLocal, @LocFromId, @LocToId, @DeliveryTime)
+
+	RETURN @@Identity
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemWastage]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemWastage]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_GetItemWastage] 
+	@WastageTypeId int,
+	@LocationID int
+AS
+	SELECT   WastageID  ,WastageDate
+FROM         INV_M_ItemWastage
+WHERE     (WastageTypeId = @WastageTypeId) and (LocationID=@LocationID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[J_TimeReports]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_TimeReports]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+Create PROCEDURE [dbo].[J_TimeReports]
+
+	@Date1 datetime,
+	@Date2 datetime
+
+
+AS
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N''[dbo].[_temptable]'') AND type in (N''U''))
+DROP TABLE [dbo].[_temptable]
+
+
+select distinct *, @Date1 as Date1, @date2 as Date2 into _temptable from 
+(select quantity, orderingtime, status,
+(SELECT CONVERT(CHAR(5),DATEADD(MINUTE,FLOOR(DATEDIFF(MINUTE,''20000101'',orderingtime)/60.0)*60,''20000101''),108)) as timeOrder,
+(select description from bof_m_itemsalesitems where salesitemID = itemID) as description
+from pos_m_orderdetails) as ot
+where (orderingtime between @Date1 and @Date2) and status=''ordered''
+group by timeORder, quantity, description, orderingtime, status
+
+
+
+select description, Date1, Date2,
+sum (isnull(zero,0)) as ''00:00'',
+sum (isnull(one,0)) as ''01:00'',
+sum (isnull(two,0)) as ''02:00'',
+sum (isnull(three,0)) as ''03:00'',
+sum (isnull(four,0)) as ''04:00'',
+sum (isnull(five,0)) as ''05:00'',
+sum (isnull(six,0)) as ''06:00'',
+sum (isnull(seven,0)) as ''07:00'',
+sum (isnull(eight,0)) as ''08:00'',
+sum (isnull(nine,0)) as ''09:00'',
+sum (isnull(ten,0)) as ''10:00'',
+sum (isnull(eleven,0)) as ''11:00'',
+sum (isnull(twelve,0)) as ''12:00'',
+sum (isnull(thirteen,0)) as ''13:00'',
+sum (isnull(fourteen,0)) as ''14:00'',
+sum (isnull(fifteen,0)) as ''15:00'',
+sum (isnull(sixteen,0)) as ''16:00'',
+sum (isnull(seventeen,0)) as ''17:00'',
+sum (isnull(eigthteen,0)) as ''18:00'',
+sum (isnull(nineteen,0)) as ''19:00'',
+sum (isnull(twenty,0)) as ''20:00'',
+sum (isnull(twentyone,0)) as ''21:00'',
+sum (isnull(twentytwo,0)) as ''22:00'',
+sum (isnull(twentythree,0)) as ''23:00'',
+sum (isnull(twentyfour,0)) as ''24:00''
+
+
+from (
+select distinct description, Date1, Date2,
+(case timeorder when ''00:00'' then quantity end) as zero,
+(case timeorder when ''01:00'' then quantity end) as one,
+(case timeorder when ''02:00'' then quantity end) as two,
+(case timeorder when ''03:00'' then quantity end) as three,
+(case timeorder when ''04:00'' then quantity end) as four,
+(case timeorder when ''05:00'' then quantity end) as five,
+(case timeorder when ''06:00'' then quantity end) as six,
+(case timeorder when ''07:00'' then quantity end) as seven,
+(case timeorder when ''08:00'' then quantity end) as eight,
+(case timeorder when ''09:00'' then quantity end) as nine,
+(case timeorder when ''10:00'' then quantity end) as ten,
+(case timeorder when ''11:00'' then quantity end) as eleven,
+(case timeorder when ''12:00'' then quantity end) as twelve,
+(case timeorder when ''13:00'' then quantity end) as thirteen,
+(case timeorder when ''14:00'' then quantity end) as fourteen,
+(case timeorder when ''15:00'' then quantity end) as fifteen,
+(case timeorder when ''16:00'' then quantity end) as sixteen,
+(case timeorder when ''17:00'' then quantity end) as seventeen,
+(case timeorder when ''18:00'' then quantity end) as eigthteen,
+(case timeorder when ''19:00'' then quantity end) as nineteen,
+(case timeorder when ''20:00'' then quantity end) as twenty,
+(case timeorder when ''21:00'' then quantity end) as twentyone,
+(case timeorder when ''22:00'' then quantity end) as twentytwo,
+(case timeorder when ''23:00'' then quantity end) as twentythree,
+(case timeorder when ''24:00'' then quantity end) as twentyfour
+
+
+
+from _temptable) as orders
+group by description, Date1, Date2
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[J_rptLocationPurchase]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_rptLocationPurchase]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+Create PROCEDURE [dbo].[J_rptLocationPurchase]
+	@dateto datetime,
+	@datefrom datetime
+as
+SELECT     dbo.INV_M_Items.ItemID, dbo.INV_M_Items.Descreption, dbo.INV_M_Items.QuantityInInvFormat, dbo.INV_L_Locations.LocationName, dbo.INV_M_Items.UnitCost, 
+                      dbo.INV_M_Items.CreationDate
+FROM         dbo.INV_L_Locations INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_L_Locations.LocationID = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemInLocations.ItemID = dbo.INV_M_Items.ItemID
+where CreationDate BETWEEN @dateTo AND @dateFrom 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVS_InsertSalesInvoiceDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVS_InsertSalesInvoiceDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVS_InsertSalesInvoiceDetails] 
+	@SaleId int, 
+	@SalesInvoiceNumber nvarchar(50), 
+	@ItemId int, 
+	@Quantity real, 
+	@UnitPrice real, 
+	@Discount real, 
+	@TotalAmount real, 
+	@LocationId int, 
+	@ItemMessage nvarchar(50), 
+	@RowType tinyint,
+	@UnitId int
+	
+AS
+UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity - @Quantity
+WHERE     (ItemID = @ItemId) and LocationId=@LocationId
+
+	INSERT INTO INVS_SalesItemDetails
+                      (SaleId, SalesInvoiceNumber, ItemId, Quantity, UnitPrice, Discount, TotalAmount, LocationId, ItemMessage, RowType,UnitId)
+VALUES     (@SaleId, @SalesInvoiceNumber, @ItemId, @Quantity, @UnitPrice, @Discount, @TotalAmount, @LocationId, @ItemMessage, @RowType,@UnitId)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVS_InsertSalesInvoice]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVS_InsertSalesInvoice]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVS_InsertSalesInvoice]
+	@SalesInvoiceNumber nvarchar(50), 
+	@SalesDate nvarchar(50), 
+	@ClientID int, 
+	@CurrencyId int, 
+	@LocationID int,
+	@MarkUP real, 
+	@InvDiscount real, 
+	@InvAmount real, 
+	@TotalDiscount real, 
+	@InvNote nvarchar(500)
+AS
+	INSERT INTO INVS_SaleItems
+                      (SalesInvoiceNumber, SalesDate, ClientID, CurrencyId, LocationID,
+                       MarkUP, InvDiscount, InvAmount, TotalDiscount, InvNote)
+VALUES     (@SalesInvoiceNumber, dbo.CheckDateTime(@SalesDate), @ClientID, @CurrencyId, @LocationID,
+ @MarkUP, @InvDiscount, @InvAmount, @TotalDiscount, @InvNote)
+	RETURN @@Identity
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_UpdateOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_UpdateOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_UpdateOrderDetails] 
+	@OrderDetailID int
+AS
+
+
+declare @ItemID as int
+declare @LocationID as int
+declare @Quantity as real
+
+	SELECT     @ItemID=ItemID ,@LocationID=LocationID,@Quantity=Quantity
+FROM         INV_M_OrderDetails
+WHERE     (OrderDetailID = @OrderDetailID)
+
+	declare @Count as int
+	declare @QauntityInBuyFormat as real
+	
+
+SELECT     @QauntityInBuyFormat=QauntityInBuyFormat
+FROM         INV_M_Items
+WHERE     (ItemID = @ItemID)
+
+if(@QauntityInBuyFormat=0)
+begin
+set @QauntityInBuyFormat=1
+end
+
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationID
+
+	if(@Count>0)
+begin
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity + @Quantity * @QauntityInBuyFormat
+WHERE     (ItemID = @ItemID) AND (LocationID = @LocationID)
+end
+	else
+begin
+	INSERT INTO INV_M_ItemInLocations
+                      (ItemID,LocationID, MinQty, MaxQty,Quantity)
+VALUES     (@ItemID,@LocationID,0,0,@Quantity * @QauntityInBuyFormat)
+end
+
+
+	RETURN
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_UpdateItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_UpdateItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[INVM_UpdateItem] 
+	@ItemID int,
+	@ProductCode nvarchar(50), 
+@BarCode nvarchar(50), 
+@Descreption nvarchar(50),
+@OtherDescreption nvarchar(50), 
+@BuyFormat int, 
+@InventoryFormat int, 
+@UsageFormat int, 
+@PackingFormat int, 
+@SupplierID int, 
+@UnitCost real, 
+                      @AverageCost real, 
+                      @QauntityInBuyFormat real, 
+                      @QuantityInInvFormat real,
+                      @QuantityInPackFormat real,
+                      @DecimalPlace int, 
+                      @ItemStatus int, 
+                      @GroupId int, 
+                      @SellingPrice1 real, 
+                      @SellingPrice2 real, 
+                      @SellingPrice3 real, 
+                      @SellingPrice4 real, 
+                      @HideInReport bit, 
+                      @Discountinued bit, 
+                      @ExpiryDate bit
+                      AS
+	UPDATE    INV_M_Items
+SET              ProductCode =@ProductCode, BarCode =@BarCode, Descreption =@Descreption, OtherDescreption =@OtherDescreption, BuyFormat =@BuyFormat, InventoryFormat =@InventoryFormat, UsageFormat =@UsageFormat, PackingFormat =@PackingFormat, SupplierID =@SupplierID, 
+                      UnitCost =@UnitCost, AverageCost =@AverageCost, QauntityInBuyFormat =@QauntityInBuyFormat, QuantityInInvFormat =@QuantityInInvFormat, QuantityInPackFormat =@QuantityInPackFormat, DecimalPlace =@DecimalPlace, ItemStatus =@ItemStatus, GroupId =@GroupId, SellingPrice1 =@SellingPrice1, SellingPrice2 =@SellingPrice2, 
+                      SellingPrice3 =@SellingPrice3, SellingPrice4 =@SellingPrice4, HideInReport =@HideInReport, Discountinued =@Discountinued, ExpiryDate =@ExpiryDate
+	WHERE     (ItemID = @ItemID)
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateSupplier]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateSupplier] 
+	@SupplierID int,
+	@ContactName nvarchar(50), 
+	 @ContactTitle nvarchar(50), 
+	 @Company nvarchar(50),
+	 @Street nvarchar(50), 
+	 @City nvarchar(50), 
+	 @PostalCode nvarchar(50), 
+	 @Country nvarchar(50), 
+	 @PhoneNumber nvarchar(50), 
+	 @Mobile nvarchar(50), 
+	 @FaxNumber nvarchar(50), 
+	 @AccountNumber nvarchar(50), 
+	 @PaymentTerms nvarchar(50), 
+     @EmailAddress nvarchar(50) , 
+     @SupplierCurrency int, 
+     @BankInformation nvarchar(50), 
+     @Grade char(10)
+AS
+	UPDATE    INV_M_Suppliers
+SET              ContactName =@ContactName, ContactTitle =@ContactTitle,Company=@Company ,Street =@Street, City =@City, PostalCode =@PostalCode, Country =@Country, PhoneNumber =@PhoneNumber, Mobile =@Mobile, FaxNumber =@FaxNumber, AccountNumber =@AccountNumber, PaymentTerms =@PaymentTerms, 
+                      EmailAddress =@EmailAddress, SupplierCurrency =@SupplierCurrency, BankInformation =@BankInformation, Grade =@Grade
+WHERE     (SupplierID = @SupplierID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateRegCodes]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateRegCodes]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[INVL_UpdateRegCodes]
+	
+	@RegValue nvarchar(50),
+	@RegKey  nvarchar(50)
+AS
+	
+	UPDATE    INVL_RegCodes
+	SET              RegValue =@RegValue
+	WHERE     (RegKey =@RegKey)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateLocation]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateLocation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateLocation] 
+	
+	@LocationID int,
+	@BranchID int, 
+	@LocationName nvarchar(50)
+AS
+	UPDATE    INV_L_Locations
+SET              BranchID =@BranchID, LocationName =@LocationName
+WHERE     (LocationID = @LocationID) 
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemSize]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateItemSize] 
+	@SizeId int,
+	@ItemSize nvarchar(50)
+AS
+	UPDATE    INV_L_ItemSize
+SET              ItemSize =@ItemSize
+WHERE     (SizeId = @SizeId)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemGroups]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateItemGroups] 
+	
+	@GroupID int,
+	@GroupName nvarchar(50),
+	 @DivisionID int,
+	  @AssetAccount nvarchar(50), 
+	  @RevenueAccount nvarchar(50), 
+	  @ExpenseAccount nvarchar(50), 
+	  @AdjustmentAccount nvarchar(50), 
+	  @Tax1 bit, 
+	  @Tax2 bit, 
+	  @Tax3 bit,
+	  @Markup nvarchar(50)
+
+AS
+declare @CategoryID int
+SELECT     @CategoryID=CategoryID
+FROM         INV_L_ItemDivisions
+WHERE     (DivisionID = @DivisionID)
+
+	UPDATE    INV_M_ItemGroups
+SET              GroupName =@GroupName, DivisionID =@DivisionID, AssetAccount =@AssetAccount, RevenueAccount =@RevenueAccount
+, ExpenseAccount =@ExpenseAccount, AdjustmentAccount =@AdjustmentAccount, Tax1 =@Tax1, Tax2 =@Tax2, Tax3 =@Tax3, 
+                      Markup =@Markup,CategoryID=@CategoryID
+                      
+                      WHERE     (GroupID = @GroupID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemFormat]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateItemFormat]
+	@FormatID int,
+	@ItemFormat nvarchar(50)
+AS
+	UPDATE    INV_L_ItemFormat
+SET              ItemFormat =@ItemFormat
+WHERE     (FormatID = @FormatID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemDivision]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateItemDivision] 
+	@DivisionID int,
+	@CategoryID int,
+	@Division nvarchar(50)
+	
+AS
+	UPDATE    INV_L_ItemDivisions
+SET              Division =@Division, CategoryID =@CategoryID
+WHERE     (DivisionID = @DivisionID)
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemColor]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[INVL_UpdateItemColor] 
+	@ColorId int,
+	@ColorName nvarchar(50)
+AS
+	UPDATE    INV_L_ItemColor
+SET              ColorName =@ColorName
+WHERE     (ColorId = @ColorId)
+	RETURN
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateItemCategory]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateItemCategory] 
+	@CategoryID int,
+	@Category nvarchar(50)
+AS
+	UPDATE    INV_L_ItemCategory
+SET              Category =@Category
+WHERE     (CategoryID = @CategoryID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateEmployee]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateEmployee] 
+	@EmployeeID int,
+	@BranchID int, 
+@EmployeeName nvarchar(50), 
+@EmployeeFunctionID int, 
+@Password nvarchar(50), 
+@Phone nvarchar(50), 
+@Mobile nvarchar(50), 
+@Email nvarchar(50),
+@StartDate datetime, 
+@Gender bit, 
+@Salary real
+AS
+UPDATE    INV_L_Employee
+SET              BranchID =@BranchID, EmployeeName =@EmployeeName, EmployeeFunctionID =@EmployeeFunctionID, Password =@Password, Phone =@Phone, Mobile =@Mobile,Email=@Email, StartDate =@StartDate, Gender =@Gender, Salary =@Salary
+WHERE     (EmployeeID = @EmployeeID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateCustomerData]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateCustomerData]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateCustomerData]
+
+	@CustomerId int, 
+	@CustomerName nvarchar(50), 
+	@FamilyName nvarchar(50), 
+	@Phone nvarchar(50), 
+	@Mobile nvarchar(50), 
+	@OfficePhone nvarchar(50), 
+	@Fax nvarchar(50), 
+	@Email nvarchar(50), 
+	@Gender nvarchar(50), 
+	@Street nvarchar(50), 
+	@Building nvarchar(50), 
+	@Near nvarchar(50), 
+	@BFloor nvarchar(50), 
+	@Remarks nvarchar(50)
+AS
+	UPDATE     INV_Customers
+SET              CustomerName =@CustomerName, FamilyName =@FamilyName, Phone =@Phone,
+ Mobile =@Mobile, OfficePhone =@OfficePhone, Fax =@Fax, Email =@Email, Gender =@Gender, Street =@Street,
+  Building =@Building, Near =@Near, BFloor =@BFloor, Remarks =@Remarks
+	where CustomerId = @CustomerId
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateCurrency]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateCurrency] 
+	 @CurrencyID int,
+	 @Description nvarchar(50), 
+	 @Symbol nvarchar(50), 
+	 @Rate real, 
+	 @BORate real, 
+	 @DecimalNumber int
+AS
+	UPDATE    INV_L_Currency
+SET              Description =@Description, Symbol =@Symbol, Rate =@Rate, BORate =@BORate, DecimalNumber =@DecimalNumber
+WHERE     (CurrencyID = @CurrencyID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_UpdateBranch]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_UpdateBranch]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_UpdateBranch] 
+	@BranchID int,
+	@BranchName nvarchar(50)
+	
+AS
+	UPDATE    INV_L_Branches
+SET              BranchName =@BranchName
+WHERE     (BranchID = @BranchID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_SalesPreview]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_SalesPreview]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_SalesPreview] 
+	
+	@ClientID int
+AS
+if(@ClientID>0)
+begin
+SELECT     SalesDate, SalesId, SalesInvoiceNumber, ClientID, InvAmount
+FROM         INVS_SaleItems
+WHERE     (ClientID = @ClientID)
+ORDER BY CreationDate DESC
+	end
+	else
+	begin
+	SELECT     SalesDate, SalesId, SalesInvoiceNumber, ClientID, InvAmount
+FROM         INVS_SaleItems
+ORDER BY CreationDate DESC
+	
+	end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[INVM_FillItems] 
+	
+	@ItemID int,
+	@ProductCode nvarchar(50),
+	@SearchType int
+AS
+if(@ItemID >0)
+begin
+	SELECT     *
+FROM         INV_M_Items
+WHERE     (ItemID = @ItemID)
+	end
+else
+	begin
+	if(@SearchType=1)
+	begin
+	SELECT     ItemID, ProductCode, BarCode, Descreption, OtherDescreption, BuyFormat, InventoryFormat, UsageFormat, PackingFormat, SupplierID, UnitCost, 
+	                      AverageCost, QauntityInBuyFormat, QuantityInInvFormat, QuantityInPackFormat, DecimalPlace, ItemStatus, GroupId, SellingPrice1, SellingPrice2, SellingPrice3, SellingPrice4, 
+	                      HideInReport, Discountinued, ExpiryDate, CreationDate, QuantityUsed
+	FROM         INV_M_Items
+	WHERE     (ProductCode LIKE ''%'' + @ProductCode + ''%'')
+	ORDER BY ProductCode
+	end
+	
+	if(@SearchType=2)
+	begin
+	SELECT     ItemID, ProductCode, BarCode, Descreption, OtherDescreption, BuyFormat, InventoryFormat, UsageFormat, PackingFormat, SupplierID, UnitCost, 
+	                      AverageCost, QauntityInBuyFormat, QuantityInInvFormat, QuantityInPackFormat, DecimalPlace, ItemStatus, GroupId, SellingPrice1, SellingPrice2, SellingPrice3, SellingPrice4, 
+	                      HideInReport, Discountinued, ExpiryDate, CreationDate, QuantityUsed
+	FROM         INV_M_Items
+	WHERE     (Descreption LIKE ''%'' + @ProductCode + ''%'')
+	ORDER BY Descreption
+	end
+	
+	if(@SearchType=3)
+	begin
+	SELECT     ItemID, ProductCode, BarCode, Descreption, OtherDescreption, BuyFormat, InventoryFormat, UsageFormat, PackingFormat, SupplierID, UnitCost, 
+	                      AverageCost, QauntityInBuyFormat, QuantityInInvFormat, QuantityInPackFormat, DecimalPlace, ItemStatus, GroupId, SellingPrice1, SellingPrice2, SellingPrice3, SellingPrice4, 
+	                      HideInReport, Discountinued, ExpiryDate, CreationDate, QuantityUsed
+	FROM         INV_M_Items
+	WHERE     (OtherDescreption LIKE ''%'' + @ProductCode + ''%'')
+	ORDER BY OtherDescreption
+	end
+	
+end
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItemLocationQuantity1]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItemLocationQuantity1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_FillItemLocationQuantity1] 
+	@ItemID int
+AS
+	
+
+SELECT     INV_L_Locations.LocationName as''Location'', INV_M_ItemInLocations.Quantity as ''nvqty'' ,
+''InvUnit''=(
+select dbo.INV_L_ItemFormat.itemformat from INV_M_Items INNER JOIN
+                      dbo.INV_L_ItemFormat ON INV_M_Items.inventoryformat = dbo.INV_L_ItemFormat.FormatID
+where itemid=@ItemID),
+Round(INV_M_ItemInLocations.Quantity * (Select QuantityInInvFormat from INV_M_Items  where itemid=@ItemID) ,2) AS ''UsageQty'' ,
+''UsageUnit''=(
+select dbo.INV_L_ItemFormat.itemformat from INV_M_Items INNER JOIN
+                      dbo.INV_L_ItemFormat ON INV_M_Items.usageformat = dbo.INV_L_ItemFormat.FormatID
+where itemid=@ItemID)
+FROM         INV_M_ItemInLocations INNER JOIN
+                      INV_L_Locations ON INV_M_ItemInLocations.LocationID = INV_L_Locations.LocationID
+WHERE     (INV_M_ItemInLocations.ItemID = @ItemID)
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItemLocationQuantity]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItemLocationQuantity]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_FillItemLocationQuantity] 
+	@ItemID int
+AS
+	/*
+	SELECT     SUM(INV_M_OrderDetails.Quantity) AS TotalQty, INV_L_Locations.LocationName
+FROM         INV_M_OrderDetails INNER JOIN
+                      INV_L_Locations ON INV_M_OrderDetails.LocationID = INV_L_Locations.LocationID
+WHERE     (INV_M_OrderDetails.ItemID = @ItemID) and (INV_M_OrderDetails.PurchaseType=1)
+GROUP BY INV_L_Locations.LocationName, INV_M_OrderDetails.ItemID*/
+
+SELECT     INV_L_Locations.LocationName as''Location'', INV_M_ItemInLocations.Quantity
+FROM         INV_M_ItemInLocations INNER JOIN
+                      INV_L_Locations ON INV_M_ItemInLocations.LocationID = INV_L_Locations.LocationID
+WHERE     (INV_M_ItemInLocations.ItemID = @ItemID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillItemInLocations]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillItemInLocations]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_FillItemInLocations] 
+	@ItemID int
+AS
+	SELECT   INV_L_Locations.LocationID, INV_L_Locations.LocationName as ''Location'',  INV_M_ItemInLocations.ItemID,INV_M_ItemInLocations.MinQty as ''Min'' ,
+	                      INV_M_ItemInLocations.MaxQty as ''Max''
+	FROM         INV_M_ItemInLocations INNER JOIN
+	                      INV_L_Locations ON INV_M_ItemInLocations.LocationID = INV_L_Locations.LocationID
+	WHERE     (INV_M_ItemInLocations.ItemID = @ItemID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_FillExpiryWarning]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_FillExpiryWarning]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_FillExpiryWarning] 
+	@ExpiryDate datetime
+AS
+	SELECT     INV_M_Items.ItemID, INV_M_Items.ProductCode, INV_M_Items.Descreption, INV_M_ItemInLocations.ExpiryDate, INV_M_ItemInLocations.Quantity, 
+	                      INV_L_Locations.LocationName, INV_M_ItemInLocations.LocationID
+	FROM         INV_M_Items INNER JOIN
+	                      INV_M_ItemInLocations ON INV_M_Items.ItemID = INV_M_ItemInLocations.ItemID INNER JOIN
+	                      INV_L_Locations ON INV_M_ItemInLocations.LocationID = INV_L_Locations.LocationID
+	WHERE     (INV_M_Items.ExpiryDate = 1) 
+--AND (INV_M_ItemInLocations.ExpiryDate <= @ExpiryDate)	
+ORDER BY INV_M_ItemInLocations.LocationID
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVM_DeleteOrderDetails] 
+@PurchaseType int,	
+@OrderDetailID int
+AS
+
+
+declare @ItemID as int
+declare @LocationID as int
+declare @Quantity as real
+
+if(@PurchaseType=1)
+Begin
+	SELECT     @ItemID=ItemID ,@LocationID=LocationID,@Quantity=Quantity
+FROM         INV_M_OrderDetails
+WHERE     (OrderDetailID = @OrderDetailID)
+
+	declare @Count as int
+	declare @QauntityInBuyFormat as real
+	
+
+SELECT     @QauntityInBuyFormat=QauntityInBuyFormat
+FROM         INV_M_Items
+WHERE     (ItemID = @ItemID)
+
+if(@QauntityInBuyFormat=0)
+begin
+set @QauntityInBuyFormat=1
+end
+
+select @Count=count(*) from INV_M_ItemInLocations
+where ItemID=@ItemID and LocationID=@LocationID
+
+	if(@Count>0)
+begin
+	UPDATE    INV_M_ItemInLocations
+SET              Quantity =Quantity - @Quantity * @QauntityInBuyFormat
+WHERE     (ItemID = @ItemID) AND (LocationID = @LocationID)
+
+end
+DELETE FROM INV_M_OrderDetails
+WHERE     (OrderDetailID = @OrderDetailID)
+end
+RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteOrder]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[INVM_DeleteOrder] 
+	@OrderID int
+AS
+	DELETE FROM INV_M_Orders
+WHERE     (OrderID = @OrderID)
+
+DELETE FROM INV_M_OrderDetails 
+WHERE (OrderID = @OrderID) 
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteItemIngredient]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteItemIngredient]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_DeleteItemIngredient] 
+
+    @ItemIngId int,
+	@LocationId int, 
+	@ItemId int
+	AS
+BEGIN
+declare @Count as int
+
+select @Count=count(*) from INV_M_ItemIngredient
+where ItemID=@ItemID and LocationID=@LocationID AND (ItemIngId = @ItemIngId)
+
+if (@Count)>0
+begin
+Delete from    INV_M_ItemIngredient
+WHERE     (ItemID = @ItemId) AND (LocationID = @LocationId) AND (ItemIngId = @ItemIngId)
+end
+end
+RETURN 1
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_DeleteItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_DeleteItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVM_DeleteItem] 
+	@ItemID int
+AS
+	DELETE FROM INV_M_Items
+WHERE     (ItemID = @ItemID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillEmployeeFunction]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillEmployeeFunction]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillEmployeeFunction]
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT     FunctionId, EmployeeFunction
+FROM         INV_L_EmployeeFunction
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillEmployee]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillEmployee] 
+	@EmployeeID int,
+	@EmployeeName nvarchar(50)
+AS
+if(@EmployeeID >0)
+begin
+	SELECT     *
+FROM        INV_L_Employee
+WHERE     (EmployeeID = @EmployeeID) and (IsActive = 1)
+	end
+	else
+	begin
+	SELECT     *
+FROM         INV_L_Employee
+WHERE     (EmployeeName LIKE ''%'' + @EmployeeName +''%'')and (IsActive = 1)
+	
+	end
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillCustomers]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillCustomers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillCustomers] 
+	@CustomerId int
+	
+AS
+if(@CustomerId>0)
+begin
+	SELECT     *
+FROM         INV_Customers
+WHERE     (CustomerId = @CustomerId) and (IsActive=1)
+end
+
+if(@CustomerId=0)
+begin
+SELECT     *
+FROM         INV_Customers
+where IsActive=1
+end
+
+
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillCurrency]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillCurrency] 
+	@CurrencyID int
+AS
+
+if(@CurrencyID>0)
+begin
+	SELECT     *
+FROM         INV_L_Currency
+WHERE     (CurrencyID = @CurrencyID)
+	end
+	
+	if(@CurrencyID=0)
+	begin
+	SELECT     *
+FROM         INV_L_Currency
+	end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillCompnayInfo]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillCompnayInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillCompnayInfo] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT    CompanyId, CompanyName, Street, City, ZipCode, Phone1, Phone2, Phone3, Fax, Currency1, Currency2, InvoiceMsg1, InvoiceMsg2, InvoiceMsg3
+FROM         INV_L_CompanyInfo
+
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillBranches]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillBranches]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_FillBranches] 
+	
+	@BranchID int
+AS
+if(@BranchID>0)
+begin
+	SELECT     *
+FROM         INV_L_Branches
+WHERE     (BranchID = @BranchID)
+end
+
+if(@BranchID=0)
+begin
+SELECT     *
+FROM         INV_L_Branches
+end
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeliveryPreview]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeliveryPreview]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVL_DeliveryPreview] 
+	@IsLocal tinyint
+	
+AS
+
+if(@IsLocal=3)
+begin
+	SELECT     DeliveryId, DeliveryTime, DeliveryNumber
+	FROM         INV_M_ItemDelivery
+	order by DeliveryId desc
+	RETURN
+end
+else
+begin
+SELECT     DeliveryId, DeliveryTime, DeliveryNumber
+	FROM         INV_M_ItemDelivery
+	where IsLocal=@IsLocal
+	order by DeliveryId desc
+
+end
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteSupplier]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteSupplier]
+	@SupplierID int
+AS
+	DELETE FROM INV_M_Suppliers
+WHERE     (SupplierID = @SupplierID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteLocation]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteLocation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteLocation] 
+	@LocationID int
+AS
+	DELETE FROM INV_L_Locations
+WHERE     (LocationID = @LocationID)
+	RETURN 1
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemSize]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemSize]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteItemSize] 
+	@SizeId int
+AS
+	DELETE FROM INV_L_ItemSize
+WHERE     (SizeId = @SizeId)
+	RETURN
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemGroup]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemGroup]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteItemGroup] 
+	@GroupID int
+AS
+	DELETE FROM INV_M_ItemGroups
+WHERE     (GroupID = @GroupID)
+	RETURN 1
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemFormat]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemFormat]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteItemFormat] 
+	@FormatID int
+AS
+	DELETE FROM INV_L_ItemFormat
+WHERE     (FormatID = @FormatID)
+	RETURN 1
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemDivision]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemDivision]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteItemDivision] 
+	@DivisionID int
+AS
+
+declare @count int
+SELECT      @count=count(*)
+FROM         INV_M_ItemGroups
+WHERE     (DivisionID = @DivisionID)
+
+if(@count>0)
+begin
+return 0
+end
+else
+begin
+	DELETE FROM INV_L_ItemDivisions
+WHERE     (DivisionID = @DivisionID)
+	RETURN 1
+	end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemColor]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemColor]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteItemColor] 
+	@ColorId int
+AS
+	DELETE FROM INV_L_ItemColor
+WHERE     (ColorId = @ColorId)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteItemCategory]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteItemCategory]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteItemCategory] 
+	@CategoryID int
+AS
+DELETE FROM INV_L_ItemCategory
+WHERE     (CategoryID = @CategoryID)
+return 1
+
+/*declare @count int
+
+select @count=count(*) FROM BO_L_ItemDivisions
+where  CategoryID=@CategoryID
+if(@count>0)
+begin
+return 0
+end
+else
+begin
+
+	DELETE FROM BO_L_ItemCategory
+WHERE     (CategoryID = @CategoryID)
+RETURN 1
+end*/
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteEmployee]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteEmployee]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteEmployee] 
+	@EmployeeID int
+AS
+	UPDATE    INV_L_Employee
+SET              IsActive = 0, EndDate = GETDATE()
+WHERE     (EmployeeID = @EmployeeID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteCustomer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteCustomer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteCustomer] 
+	
+	@CustomerId int
+AS
+
+UPDATE     INV_Customers
+SET              IsActive = 0
+WHERE     (CustomerId = @CustomerId)
+
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteCurrency]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteCurrency]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteCurrency] 
+	@CurrencyID int
+AS
+	DELETE FROM INV_L_Currency
+WHERE     (CurrencyID = @CurrencyID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_DeleteBranch]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_DeleteBranch]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_DeleteBranch] 
+	@BranchID int
+AS
+DELETE FROM INV_L_Branches
+WHERE     (BranchID = @BranchID)
+	RETURN 1
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_AddNewCustomer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_AddNewCustomer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVL_AddNewCustomer] 
+	@CustomerName nvarchar(50), 
+	@FamilyName nvarchar(50), 
+	@Phone nvarchar(50), 
+	@Mobile nvarchar(50), 
+	@OfficePhone nvarchar(50), 
+	@Fax nvarchar(50), 
+	@Email nvarchar(50), 
+	@Gender nvarchar(50), 
+	@Street nvarchar(50), 
+	@Building nvarchar(50), 
+	@Near nvarchar(50), 
+	@BFloor nvarchar(50), 
+	@Remarks nvarchar(50),
+	@IsActive tinyint
+AS
+	INSERT INTO  INV_Customers
+          (CustomerName, FamilyName, Phone, Mobile, OfficePhone, Fax, Email, Gender, Street, Building, Near, BFloor, Remarks,IsActive)
+VALUES      (@CustomerName, @FamilyName, @Phone, @Mobile, @OfficePhone, @Fax, @Email, @Gender, @Street, @Building, @Near, @BFloor, @Remarks,@IsActive)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVD_GetItemQuantity]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVD_GetItemQuantity]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVD_GetItemQuantity] 
+	@ItemID int,
+	@LocationID int
+AS
+	SELECT     SUM(INV_M_OrderDetails.Quantity) AS TotalQty, INV_L_Locations.LocationName, AVG(INV_M_OrderDetails.ItemPrice) AS AvgPrice, 
+                      INV_L_ItemFormat.ItemFormat
+FROM         INV_M_OrderDetails INNER JOIN
+                      INV_L_Locations ON INV_M_OrderDetails.LocationID = INV_L_Locations.LocationID INNER JOIN
+                      INV_L_ItemFormat ON INV_M_OrderDetails.ItemUnitID = INV_L_ItemFormat.FormatID
+WHERE     (INV_M_OrderDetails.ItemID = @ItemID) AND (INV_L_Locations.LocationID = @LocationID)
+GROUP BY INV_L_Locations.LocationName, INV_M_OrderDetails.ItemID, INV_L_ItemFormat.ItemFormat
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVD_GetItemByLocation]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVD_GetItemByLocation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INVD_GetItemByLocation] 
+	@ItemID int,
+	@LocationID int
+AS
+	SELECT    INV_L_Locations.LocationName,  INV_M_ItemInLocations.ItemID,INV_M_ItemInLocations.MinQty as ''Min'' ,
+	                      INV_M_ItemInLocations.MaxQty as ''Max''
+	FROM         INV_M_ItemInLocations INNER JOIN
+	                      INV_L_Locations ON INV_M_ItemInLocations.LocationID = INV_L_Locations.LocationID
+     WHERE     (INV_M_ItemInLocations.ItemID = @ItemID) AND (INV_M_ItemInLocations.LocationID = @LocationID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[web_delivery_CustomerOrderlist_Loyalty]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[web_delivery_CustomerOrderlist_Loyalty]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'create PROCEDURE  [dbo].[web_delivery_CustomerOrderlist_Loyalty]
+--@BranchID	int,
+--
+@OrderID int
+--@orderdate datetime
+ AS
+SET NOCOUNT ON
+SELECT  BOF_M_Employees.EmployeeName,   
+BOF_M_Customers.Branchname, Phoneno=
+(CASE 
+WHEN (BOF_M_Customers.phone is null or BOF_M_Customers.phone ='''') THEN BOF_M_Customers.mobile +BOF_M_Customers.officephone 
+ELSE BOF_M_Customers.phone
+END),
+
+ ISNULL(dbo.BOF_M_Customers.CustomerName, '''') + '' '' + ISNULL(dbo.BOF_M_Customers.FamilyName , '''') AS CustomerName, 
+ '' Street: '' + ISNULL(dbo.BOF_M_Customers.Street, N''-'') + '' Building: '' + ISNULL(dbo.BOF_M_Customers.Building, N''-'') AS Address, dbo.POS_M_Orders.*
+FROM         dbo.POS_M_Orders LEFT OUTER  JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+LEFT OUTER  JOIN BOF_M_Employees
+ON dbo.POS_M_Orders.OpenedBy = BOF_M_Employees.EmployeeID
+WHERE   
+(dbo.POS_M_Orders.OrderID = @OrderID) 
+
+--AND (OrderNumber >=@OrderNumber)
+AND 
+(dbo.POS_M_Orders.Status = 0 OR dbo.POS_M_Orders.Status = 1) AND POS_M_Orders.Voided = 0
+--And 
+--cast(CONVERT(varchar(8), dbo.POS_M_Orders.OrderTime, 112) AS datetime)>= CONVERT(VARCHAR(8),@orderdate,112)
+order by dbo.POS_M_Orders.Ordernumber desc 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[web_delivery_CustomerOrderlist]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[web_delivery_CustomerOrderlist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[web_delivery_CustomerOrderlist]
+--@BranchID	int,
+--
+@OrderID int,
+@orderdate datetime
+ AS
+SET NOCOUNT ON
+SELECT  BOF_M_Employees.EmployeeName,   
+BOF_M_Customers.Branchname, Phoneno=
+(CASE 
+WHEN (BOF_M_Customers.phone is null or BOF_M_Customers.phone ='''') THEN BOF_M_Customers.mobile +BOF_M_Customers.officephone 
+ELSE BOF_M_Customers.phone
+END),
+
+ ISNULL(dbo.BOF_M_Customers.CustomerName, '''') + '' '' + ISNULL(dbo.BOF_M_Customers.FamilyName , '''') AS CustomerName, 
+ '' Street: '' + ISNULL(dbo.BOF_M_Customers.Street, N''-'') + '' Building: '' + ISNULL(dbo.BOF_M_Customers.Building, N''-'') AS Address, dbo.POS_M_Orders.*
+FROM         dbo.POS_M_Orders LEFT OUTER  JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+LEFT OUTER  JOIN BOF_M_Employees
+ON dbo.POS_M_Orders.OpenedBy = BOF_M_Employees.EmployeeID
+WHERE   
+(dbo.POS_M_Orders.OrderID = @OrderID) 
+
+--AND (OrderNumber >=@OrderNumber)
+AND 
+(dbo.POS_M_Orders.Status = 0 OR dbo.POS_M_Orders.Status = 1) AND POS_M_Orders.Voided = 0
+And cast(CONVERT(varchar(8), dbo.POS_M_Orders.OrderTime, 112) AS datetime)>= CONVERT(VARCHAR(8),@orderdate,112)
+order by dbo.POS_M_Orders.Ordernumber desc
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[web_delivery_customerdetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[web_delivery_customerdetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'Create procedure [dbo].[web_delivery_customerdetails] (
+@branchid  as int,
+@customerid as int)
+
+as
+SET NOCOUNT ON
+Select top 1* from bof_m_customers where customerid =@customerid and branchid=@branchid
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_tottalsale]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_tottalsale]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[usp_dashboard_tottalsale]
+as
+BEGIN
+SELECT isnull(CAST(SUM(TotalPaid) AS DECIMAL(18,2)),0) AS ''totalsale'' FROM (select  * from dbo.POS_M_Orders) POS_M_Orders WHERE cast(CONVERT(varchar(8), OrderTime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112)
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_WorkstationScreens]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_WorkstationScreens]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_WorkstationScreens]
+	(@BranchID 	[int],
+	 @ParentID 	[int],
+	 @ItemTypeID 	[int],
+	 @ItemID 	[int],
+	 @ItemColor 	[int],
+	 @Counter 	[int],
+	 @DisplayName 	[nvarchar](50),
+	 @Serial 	[int])
+AS
+	BEGIN TRAN
+		DELETE [dbo].[POS_M_WorkstationScreenItems] 
+		WHERE 		
+			( [BranchID]	 = @BranchID AND
+			ParentID = @ParentID AND
+			Serial = @Serial )
+		
+		IF @DisplayName <> '''' 
+			BEGIN
+				INSERT INTO [dbo].[POS_M_WorkstationScreenItems] 
+					 ( [BranchID],
+					 [WorkstationID],
+					 [ParentID],
+					 [ItemTypeID],
+					 [ItemID],
+					 [ItemColor],
+					 [Counter],
+					 [DisplayName],
+					 [Serial]) 
+				VALUES 
+					( @BranchID,
+					 0,
+					 @ParentID,
+					 @ItemTypeID,
+					 @ItemID,
+					 @ItemColor,
+					 @Counter,
+					 @DisplayName,
+					 @Serial)
+			END
+	COMMIT TRAN
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SAVE_SMS]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SAVE_SMS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[SAVE_SMS]
+	@user nvarchar(200),
+	@pwd nvarchar(200),
+	@sender nvarchar (200),
+	@message nvarchar (200),
+    @custmessage nvarchar (200)
+ AS
+	INSERT INTO SMS_Conf VALUES(@user,@pwd,@sender,@message,@custmessage)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[UPDATE_POS_ORDERDETAIL_STATUS]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UPDATE_POS_ORDERDETAIL_STATUS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[UPDATE_POS_ORDERDETAIL_STATUS](@BranchID  [int],  
+  @OrderID  [int],@ItemId int,@Status varchar(20))
+AS
+update pos_m_orderdetails set status=@Status where orderid=@OrderID and itemid=@ItemId and BranchID=@BranchID
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_VarianceReportlocation]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_VarianceReportlocation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[sp_VarianceReportlocation] 
+@Type int,	
+@locationid int
+   
+AS
+BEGIN
+IF @Type = 1
+BEGIN
+
+SELECT     dbo.INV_M_ItemAdjustment.AdjustmentDate, dbo.INV_M_ItemAdjustDetails.ItemId, dbo.INV_M_ItemAdjustment.AdjustmentId, dbo.INV_M_Items.ProductCode, 
+                      dbo.INV_M_Items.Descreption, dbo.INV_M_ItemAdjustDetails.QtyOH, dbo.INV_M_ItemAdjustDetails.VarianceQty, dbo.INV_M_ItemAdjustDetails.NewQty, 
+                      dbo.INV_M_ItemAdjustDetails.UnitID, dbo.INV_L_ItemFormat.ItemFormat, dbo.INV_L_Locations.LocationName, dbo.INV_L_Branches.BranchName, 
+                      dbo.INV_L_ItemCategory.Category, dbo.INV_L_ItemDivisions.Division, dbo.INV_M_ItemGroups.GroupName, dbo.INV_M_ItemAdjustDetails.LocationId, 
+                      dbo.INV_M_Items.UnitCost, (dbo.INV_M_Items.UnitCost * dbo.INV_M_ItemAdjustDetails.VarianceQty) as Totalcost 
+FROM         dbo.INV_M_ItemAdjustment INNER JOIN
+                      dbo.INV_M_ItemAdjustDetails ON dbo.INV_M_ItemAdjustment.AdjustmentId = dbo.INV_M_ItemAdjustDetails.AdjustmentId INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemAdjustDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemAdjustDetails.UnitID = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemAdjustment.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID
+
+
+END
+IF @Type = 2
+BEGIN
+SELECT     dbo.INV_M_ItemAdjustment.AdjustmentDate, dbo.INV_M_ItemAdjustDetails.ItemId, dbo.INV_M_ItemAdjustment.AdjustmentId, dbo.INV_M_Items.ProductCode, 
+                      dbo.INV_M_Items.Descreption, dbo.INV_M_ItemAdjustDetails.QtyOH, dbo.INV_M_ItemAdjustDetails.VarianceQty, dbo.INV_M_ItemAdjustDetails.NewQty, 
+                      dbo.INV_M_ItemAdjustDetails.UnitID, dbo.INV_L_ItemFormat.ItemFormat, dbo.INV_L_Locations.LocationName, dbo.INV_L_Branches.BranchName, 
+                      dbo.INV_L_ItemCategory.Category, dbo.INV_L_ItemDivisions.Division, dbo.INV_M_ItemGroups.GroupName, dbo.INV_M_ItemAdjustDetails.LocationId, 
+                      dbo.INV_M_Items.UnitCost, (dbo.INV_M_Items.UnitCost * dbo.INV_M_ItemAdjustDetails.VarianceQty) as Totalcost 
+FROM         dbo.INV_M_ItemAdjustment INNER JOIN
+                      dbo.INV_M_ItemAdjustDetails ON dbo.INV_M_ItemAdjustment.AdjustmentId = dbo.INV_M_ItemAdjustDetails.AdjustmentId INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemAdjustDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemAdjustDetails.UnitID = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemAdjustment.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID 
+where dbo.INV_M_ItemAdjustDetails.LocationId=@locationid
+
+
+
+END
+END
+return
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_VarianceReportDate]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_VarianceReportDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE procedure [dbo].[sp_VarianceReportDate] 
+@fromExpiryDate datetime,
+@toExpiryDate datetime
+
+AS
+BEGIN
+
+SELECT     dbo.INV_M_ItemAdjustment.AdjustmentDate, dbo.INV_M_ItemAdjustDetails.ItemId, dbo.INV_M_ItemAdjustment.AdjustmentId, dbo.INV_M_Items.ProductCode, 
+                      dbo.INV_M_Items.Descreption, dbo.INV_M_ItemAdjustDetails.QtyOH, dbo.INV_M_ItemAdjustDetails.VarianceQty, dbo.INV_M_ItemAdjustDetails.NewQty, 
+                      dbo.INV_M_ItemAdjustDetails.UnitID, dbo.INV_L_ItemFormat.ItemFormat, dbo.INV_L_Locations.LocationName, dbo.INV_L_Branches.BranchName, 
+                      dbo.INV_L_ItemCategory.Category, dbo.INV_L_ItemDivisions.Division, dbo.INV_M_ItemGroups.GroupName, dbo.INV_M_ItemAdjustDetails.LocationId, 
+                      dbo.INV_M_Items.UnitCost, (dbo.INV_M_Items.UnitCost * dbo.INV_M_ItemAdjustDetails.VarianceQty) as Totalcost 
+FROM         dbo.INV_M_ItemAdjustment INNER JOIN
+                      dbo.INV_M_ItemAdjustDetails ON dbo.INV_M_ItemAdjustment.AdjustmentId = dbo.INV_M_ItemAdjustDetails.AdjustmentId INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemAdjustDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemAdjustDetails.UnitID = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemAdjustment.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID 
+where cast(CONVERT(varchar(8), dbo.INV_M_ItemAdjustment.AdjustmentDate, 112) AS datetime) >= @fromExpiryDate and 
+cast(CONVERT(varchar(8), dbo.INV_M_ItemAdjustment.AdjustmentDate, 112) AS datetime) <=@toExpiryDate
+--where  INV_M_ItemAdjustment.AdjustmentDate >= @fromExpiryDate and 
+-- INV_M_ItemAdjustment.AdjustmentDate <=@toExpiryDate
+
+
+
+
+END
+return
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_DriverStatus]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_DriverStatus]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_DriverStatus]
+	( @BranchID	[int],
+	@EmployeeID 	[int],
+	 @Status	[nvarchar](50))
+
+AS UPDATE [dbo].[BOF_M_Employees] 
+
+SET  [Status]	 = @Status 
+
+WHERE 
+	( [EmployeeID]	 = @EmployeeID AND
+	 [BranchID]	 = @BranchID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_H_OrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_H_OrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_H_OrderDetails]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	@ItemID 	[int],	
+	@Status	varchar(20),	
+    @OrderGuid UNIQUEIDENTIFIER
+	)
+as
+if   EXISTS(SELECT ItemID FROM dbo.POS_M_OrderDetails WHERE BranchID = @BranchID AND OrderID = @OrderID and OrderGuid=@OrderGuid and Status=''Selected'')
+BEGIN
+ UPDATE POS_M_OrderDetails SET STATUS=''Ordered'' WHERE BranchID = @BranchID AND OrderID = @OrderID and OrderGuid=@OrderGuid and Status=''Selected'' and itemid=@ItemID
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_MarketingActivities]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_MarketingActivities]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_MarketingActivities]
+	(@BranchID 	[int],
+	 @OrderID 	[int],
+	 @MarketingActivityID 	[int])
+
+AS 
+
+UPDATE [dbo].[POS_M_Orders] 
+
+SET  [MarketingActivityID]	 = @MarketingActivityID
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_KitchenRemarks]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_KitchenRemarks]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_KitchenRemarks]
+	(@BranchID 	[int],
+	@OrderID 	[int],
+	 @Remarks 	[nvarchar](250))
+
+AS UPDATE [dbo].[POS_M_Orders] 
+
+SET  [KitchenRemark]	 = @Remarks
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ItemRemarks]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ItemRemarks]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_ItemRemarks]
+	(@BranchID 	[int],
+	@OrderID 	[int],
+	 @Remarks 	[nvarchar](250),
+	@ItemID [int])
+
+AS UPDATE [dbo].[POS_M_OrderDetails] 
+
+SET  [ItemRemark]	 = @Remarks
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID AND
+	[ItemID] = @ItemID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ItemAvailable]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ItemAvailable]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_ItemAvailable]
+	( @ItemID 	[int],
+	 @Available 	[bit])
+
+AS 
+	UPDATE [dbo].[BOF_M_ItemSalesItems] 
+
+	SET  [Available]	 = @Available 
+
+	WHERE 
+		( [SalesItemID]	 = @ItemID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderScreen]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderScreen]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_OrderScreen]
+	(@BranchID 	[int],
+     @OrderID 	[int])
+AS 
+	UPDATE [dbo].[POS_M_OrderDetails]
+	SET   [Printed]	 = 1
+	WHERE 
+		( [BranchID]	 = @BranchID AND
+		 [OrderID]	 = @OrderID)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderRevMenu]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderRevMenu]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_OrderRevMenu]
+	(@BranchID 	[int],
+	@OrderID 	[int],
+	 @RevMenuID	[int])
+
+AS UPDATE [dbo].[POS_M_Orders] 
+
+SET  [RevMenuID]	 = @RevMenuID
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderPrice]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderPrice]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_OrderPrice]
+	(@BranchID 	[int],
+     @WorkStationID [int],
+	 @OrderID 	[int],
+	 @TotalPrice 	[real])
+
+AS 
+	UPDATE [dbo].[POS_M_Orders] 
+	SET   [TotalPrice]	 = @TotalPrice, [WorkStationID] = @WorkStationID
+	WHERE 
+		( [BranchID]	 = @BranchID AND
+		 [OrderID]	 = @OrderID)
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderNumber]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderNumber]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_OrderNumber]
+	(@BranchID 	[int],
+	@OrderType	[int],
+	@OldOrderNumber	[real],
+	 @NewOrderNumber 	[real],
+@UserID [int])
+
+AS 
+begin
+insert into POS_M_ItemTransfer ([BranchID],[UserID],[ItemID],[Quantity],[Date],[EODDate],[OldTable],[NewTable],Amount)
+select @BranchID,@UserID,[ItemID],[Quantity],GetDate(),Null,@OldOrderNumber,@NewOrderNumber,Quantity*usedprice
+from POS_M_OrderDetails
+where Branchid=@BranchID and orderid=(select OrderID from [dbo].[POS_M_Orders] where ( [BranchID]	 = @BranchID AND
+	 [OrderMenuID]	 = @OrderType AND
+	[OrderNumber]	= @OldOrderNumber AND
+	([Status] = 0 OR [Status] = 1)))
+end
+begin
+UPDATE [dbo].[POS_M_Orders] 
+
+SET  [OrderNumber]	 = @NewOrderNumber
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderMenuID]	 = @OrderType AND
+	[OrderNumber]	= @OldOrderNumber AND
+	([Status] = 0 OR [Status] = 1))
+
+
+end 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderItemDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderItemDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_UPD_OrderItemDetails]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	@OrderDetailID 	[int],
+	@UsedPrice 	[real]
+	)
+AS
+	UPDATE [dbo].[POS_M_OrderDetails]  SET UsedPrice = @UsedPrice
+    WHERE [BranchID]= @BranchID and [OrderID]=@OrderID and OrderDetailID=@OrderDetailID
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderDetails_HoldToVoid]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderDetails_HoldToVoid]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N' CREATE PROCEDURE [dbo].[POS_UPD_OrderDetails_HoldToVoid]
+	(@BranchID 	[int],
+	@OrderDetailID	[int],
+	@ItemID 	[int]   
+	)
+as
+if   EXISTS(SELECT ItemID FROM dbo.POS_M_OrderDetails WHERE BranchID = @BranchID AND OrderDetailID = @OrderDetailID  and Status=''Hold'')
+BEGIN
+ UPDATE POS_M_OrderDetails SET STATUS=''Ordered'' WHERE BranchID = @BranchID AND OrderDetailID = @OrderDetailID  and Status=''Hold'' and itemid=@ItemID
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OnlineCustomer]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OnlineCustomer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_OnlineCustomer]
+	(@CustomerID 	[int],
+	 @BranchID 	[int],
+	 @CustomerName	[nvarchar](50),
+	 @FamilyName 	[nvarchar](50),
+	 @Email 	[nvarchar](50),
+	 @Street 	[nvarchar](50),
+	 @Country 	[nvarchar](50),
+	 @Building 	[nvarchar](50),
+	 @City 	[nvarchar](50),
+	 @State 	[nvarchar](50),
+	 @Appartment 	[nvarchar](50),
+	 @Remarks 	[nvarchar](500))
+AS 
+UPDATE [dbo].[BOF_M_Customers] 
+SET  [CustomerName]	 = @CustomerName,
+	 [FamilyName]	 = @FamilyName,
+	 [Email]	 = @Email,
+	 [Street]	 = @Street,
+	 [Country]	 = @Country,
+	 [Building]	 = @Building,
+	 [City]	 = @City,
+	 [State]	 = @State,
+	 [Appartment]	 = @Appartment, 
+     [Remarks]= @Remarks
+WHERE 
+	( [CustomerID]	 = @CustomerID AND
+	 [BranchID]	 = @BranchID)
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Pos_upd_transferorderdetails1]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pos_upd_transferorderdetails1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[Pos_upd_transferorderdetails1] (
+@BranchID      [INT], 
+@OrderID       [INT], 
+@OrderDetailID [INT], 
+@TableNumber   [REAL], 
+@Quantity      [REAL], 
+@menu          [INT], 
+@UserID        [INT]) 
+AS 
+    DECLARE @Date DATETIME 
+    DECLARE @NewOrderID INT 
+    DECLARE @oldTable INT 
+    DECLARE @OriginalQuantity REAL 
+
+    SELECT @Date = Getdate() 
+
+    SELECT @oldTable = ordernumber FROM   pos_m_orders  
+		WHERE  branchid = @BranchID  AND orderid = @OrderID 
+
+    SELECT @NewOrderID = orderid  FROM   pos_m_orders  
+		WHERE  branchid = @BranchID  AND ordernumber = @TableNumber  
+		AND ordermenuid = @menu AND ( status = 0 OR status = 1 ) 
+
+    SELECT @OriginalQuantity = quantity FROM   [dbo].[pos_m_orderdetails] 
+		WHERE  branchid = @BranchID 
+           AND orderid = @OrderID 
+           AND orderdetailid = @OrderDetailID 
+
+    INSERT INTO pos_m_itemtransfer  ([branchid],  [userid],  [itemid],  [quantity],  [date],  [eoddate],  [oldtable],  [newtable],  amount) 
+      SELECT [branchid], @UserID,  [itemid],  @Quantity,  @date,  NULL,  @oldTable,  @TableNumber,  @Quantity * usedprice  
+		FROM   [dbo].[pos_m_orderdetails] 
+		WHERE  ( [branchid] = @BranchID 
+               AND [orderid] = @OrderID 
+               AND [orderdetailid] = @OrderDetailID ) 
+
+	INSERT INTO [dbo].[pos_m_orderdetails] ([branchid],  [orderid],  [itemid],  [quantity],  [usedprice],  voidmethodid, ItemRemark, OrderbyEmployeeId, OrderGuid) 
+          SELECT [branchid], @NewOrderID,  [itemid],  @Quantity,  [usedprice],  [voidmethodid], ItemRemark, OrderbyEmployeeId, OrderGuid FROM   [dbo].[pos_m_orderdetails] 
+          WHERE  ( [branchid] = @BranchID 
+                   AND [orderid] = @OrderID 
+                   AND [orderdetailid] = @OrderDetailID )
+              
+    UPDATE [dbo].[pos_m_orderdetails] SET    [quantity] = quantity - @Quantity WHERE  ( [branchid] = @BranchID  AND [orderid] = @OrderID  AND [orderdetailid] = @OrderDetailID )      
+
+	DECLARE @newUpQty INT;
+	SET @newUpQty = (select quantity from pos_m_orderdetails WHERE [orderdetailid] = @OrderDetailID);
+
+	if @newUpQty = 0 
+	begin
+		DELETE FROM pos_m_orderdetails WHERE  ( [branchid] = @BranchID  AND [orderid] = @OrderID  AND [orderdetailid] = @OrderDetailID )
+	end
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_TransferOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_TransferOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_TransferOrderDetails] (@BranchID      [INT], 
+                                                       @OrderID       [INT], 
+                                                       @OrderDetailID [INT], 
+                                                       @TableNumber   [REAL], 
+                                                       @Quantity      [REAL], 
+                                                       @menu          [INT], 
+                                                       @UserID        [INT]) 
+AS 
+    DECLARE @Date DATETIME 
+    DECLARE @NewOrderID INT 
+    DECLARE @oldTable INT 
+    DECLARE @OriginalQuantity REAL 
+
+    SELECT @Date = Getdate() 
+
+    SELECT @oldTable = ordernumber 
+    FROM   pos_m_orders 
+    WHERE  branchid = @BranchID 
+           AND orderid = @OrderID 
+
+    SELECT @NewOrderID = orderid 
+    FROM   pos_m_orders 
+    WHERE  branchid = @BranchID 
+           AND ordernumber = @TableNumber 
+           AND ordermenuid = @menu 
+           AND ( status = 0 
+                  OR status = 1 ) 
+
+    SELECT @OriginalQuantity = quantity 
+    FROM   [dbo].[pos_m_orderdetails] 
+    WHERE  branchid = @BranchID 
+           AND orderid = @OrderID 
+           AND orderdetailid = @OrderDetailID 
+
+    INSERT INTO pos_m_itemtransfer 
+                  ([branchid], 
+                   [userid], 
+                   [itemid], 
+                   [quantity], 
+                   [date], 
+                   [eoddate], 
+                   [oldtable], 
+                   [newtable], 
+                   amount) 
+      SELECT [branchid], 
+             @UserID, 
+             [itemid], 
+             @Quantity, 
+             @date, 
+             NULL, 
+             @oldTable, 
+             @TableNumber, 
+             @Quantity * usedprice 
+      FROM   [dbo].[pos_m_orderdetails] 
+      WHERE  ( [branchid] = @BranchID 
+               AND [orderid] = @OrderID 
+               AND [orderdetailid] = @OrderDetailID ) 
+
+	INSERT INTO [dbo].[pos_m_orderdetails] 
+                      ([branchid], 
+                       [orderid], 
+                       [itemid], 
+                       [quantity], 
+                       [usedprice], 
+                       voidmethodid,
+                       ItemRemark,
+                       OrderbyEmployeeId,
+                       OrderGuid) 
+          SELECT [branchid], 
+                 @NewOrderID, 
+                 [itemid], 
+                 @Quantity, 
+                 [usedprice], 
+                 [voidmethodid],
+                 ItemRemark,
+                 OrderbyEmployeeId,
+                 OrderGuid
+          FROM   [dbo].[pos_m_orderdetails] 
+          WHERE  ( [branchid] = @BranchID 
+                   AND [orderid] = @OrderID 
+                   AND [orderdetailid] = @OrderDetailID )
+              
+          UPDATE [dbo].[pos_m_orderdetails] 
+          SET    
+          --[quantity] = quantity - @Quantity 
+          [quantity] = @Quantity 
+          WHERE  ( [branchid] = @BranchID 
+                   AND [orderid] = @OrderID 
+                   AND [orderdetailid] = @OrderDetailID )      
+
+   
+      
+      ' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_TransferOrder]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_TransferOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_TransferOrder]
+	(@BranchID 	[int],
+	 @OrderID 	[int],
+	 @EmployeeID 	[int])
+
+AS UPDATE [dbo].[POS_M_Orders] 
+
+SET  [OpenedBy]	 = @EmployeeID 
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SplitOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SplitOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_SplitOrderDetails]
+	@BranchID 	[int],
+	 @OrderDetailID 	[int],
+	 @NumberOfCustomers 	[int]
+AS 
+	BEGIN TRAN
+		DECLARE @Serial 	INT
+		SET @Serial	= @NumberOfCustomers
+		WHILE @Serial > 0
+			BEGIN
+				INSERT INTO  [dbo].[POS_M_OrderDetails] 
+					 ( [BranchID],
+					 [OrderID],
+					 [InvoiceID],
+					 [ItemID],
+					 [Status],
+					 [Quantity],
+					 [UnitID],
+					 [UsedPrice],
+					 [AffectedItem],
+					 [VoidReasonID],
+					 [VoidMethodID],
+					 [CustomerNumber],
+					 [Printed],
+					 [OrderingTime]) 
+				 SELECT 
+					  [BranchID],
+					 [OrderID],
+					 [InvoiceID],
+					 [ItemID],
+					 [Status],
+					 cast([Quantity]/@NumberOfCustomers as varchar(50)),
+					 [UnitID],
+					 [UsedPrice],
+					 [AffectedItem],
+					 [VoidReasonID],
+					 [VoidMethodID],
+					 [CustomerNumber],
+					 [Printed],
+					 [OrderingTime]
+				FROM POS_M_OrderDetails
+				WHERE BranchID = @BranchID 
+					AND  OrderDetailID = @OrderDetailID 
+
+				SET @Serial = @Serial - 1
+			END
+	
+		DELETE POS_M_OrderDetails
+		WHERE BranchID = @BranchID 
+		AND  OrderDetailID = @OrderDetailID 
+
+	 COMMIT TRAN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SetScreenItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SetScreenItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_UPD_SetScreenItems]
+	(@BranchID 	[int],
+	 @WorkstationID 	[int],
+	@ParentID	[int])
+AS 
+	DECLARE @UseOwnScreen BIT
+	SELECT @UseOwnScreen = OwnScreens FROM BOF_S_Workstations 
+	WHERE BranchID = @BranchID AND WorkstationID = @WorkstationID
+
+	DECLARE @R_WorkstationID INT
+	IF @UseOwnScreen = 0
+		SET @R_WorkstationID = 0 
+	ELSE
+		SET @R_WorkstationID = @WorkstationID
+
+	DELETE [dbo].[POS_M_WorkstationDisplay] 
+	WHERE 		
+		( [BranchID]	 = @BranchID AND
+		 [WorkstationID]	 = @WorkstationID)
+
+	DECLARE @Serial 	INT
+	SET @Serial	= 1
+	WHILE @Serial < 43
+		BEGIN
+			IF EXISTS (SELECT * FROM POS_M_WorkstationScreenItems 
+					WHERE ( [BranchID]	 = @BranchID AND
+							 [WorkstationID]	 = @R_WorkstationID AND
+							[ParentID]	= @ParentID	AND
+							 [Serial]	 = @Serial))	
+				BEGIN			
+					BEGIN TRAN
+						INSERT INTO [dbo].[POS_M_WorkstationDisplay] 
+							( [BranchID],
+							 [WorkstationID],
+							 [ParentID],
+							 [ItemTypeID],
+							 [ItemID],
+							 [ItemColor],
+							[Counter],
+							 [DisplayName] ,
+							 [Serial])
+						SELECT  [BranchID],
+							 @WorkstationID,
+							 [ParentID],
+							 [ItemTypeID],
+							 [ItemID],
+							 [ItemColor],
+							[Counter],
+							 [DisplayName] ,
+							 [Serial]
+						FROM POS_M_WorkstationScreenItems
+						WHERE 
+							( [BranchID]	 = @BranchID AND
+							 [WorkstationID]	 = @R_WorkstationID AND
+							[ParentID]	= @ParentID	AND
+							 [Serial]	 = @Serial)	AND 
+							ItemTypeID < 4
+					COMMIT TRAN
+				END
+			ELSE
+				BEGIN
+					INSERT [dbo].[POS_M_WorkstationDisplay] 
+							([BranchID],
+							 [WorkstationID],
+							 [Serial])
+						VALUES(@BranchID,
+							@WorkstationID,
+							@Serial)
+				END
+
+			SET @Serial = @Serial + 1
+		END
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SetItemCounter]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SetItemCounter]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_SetItemCounter]
+	(@ItemID 	[int],
+	 @BranchID 	[int],
+	@Counter	int)
+
+AS 
+	UPDATE [dbo].[BOF_M_ItemSalesItems] 
+	SET  [MeterCounter]	 = @Counter
+	WHERE ([SalesItemID]	 = @ItemID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SetGroupItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SetGroupItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_SetGroupItems]
+	(@BranchID 	[int],
+	 @WorkstationID 	[int],
+	@ParentID	[int],
+	@GroupID	[int])
+AS 
+	BEGIN TRAN
+		DELETE [dbo].[POS_M_WorkstationDisplay] 
+		WHERE 		
+			( [BranchID]	 = @BranchID AND
+			 [WorkstationID]	 = @WorkstationID)
+		INSERT INTO [dbo].[POS_M_WorkstationDisplay] 
+			( [BranchID],
+			 [WorkstationID],
+			 [ItemTypeID],
+			 [ParentID],
+			 [ItemID],
+			 [ItemColor],
+			 [DisplayName] ,
+			[Counter],
+			 [Serial])
+		SELECT  @BranchID,
+			 @WorkstationID,
+			 1,
+			 @ParentID,
+			 [SalesItemID],
+			 [ScreenColor],
+			 [Description] ,
+			[MeterCounter],
+			 [Serial]
+		FROM BOF_M_ItemSalesItems
+		WHERE [GroupID]	= @GroupID
+	COMMIT TRAN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ResetItemCounters]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ResetItemCounters]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_ResetItemCounters]
+@ItemID 	[int],
+@BranchID	Int
+ AS
+	UPDATE BOF_M_ItemSalesItems 
+	SET [MeterCounter] = Null
+	WHERE SalesItemID = @ItemID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Remarks]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Remarks]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_Remarks]
+	(@BranchID 	[int],
+	@OrderID 	[int],
+	 @Remarks 	[nvarchar](250))
+
+AS UPDATE [dbo].[POS_M_Orders] 
+
+SET  [InvoiceRemark]	 = @Remarks
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[RES_SEL_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_SEL_Customers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+Create PROCEDURE [dbo].[RES_SEL_Customers]
+@BranchID	int,
+@Date  datetime
+
+AS
+BEGIN
+SELECT ID, Guest FROM Reservation where (BranchID = @BranchID 
+AND CONVERT(varchar(12), ResDate, 101) = CONVERT(varchar(12), @Date, 101))
+ORDER BY Guest
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[RES_INS_ReservDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_INS_ReservDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[RES_INS_ReservDetails]
+	(@BranchID 	[int],
+	@ResID	[int],
+	 @ItemID 	[int],
+	 @Quantity 	[real],
+	 @UsedPrice 	[real],
+     @Time as nvarchar(50)
+		)
+AS
+	INSERT INTO [dbo].[Reservation_Details]([BranchID], [ResID], [ItemID], [Quantity], [UsedPrice],[Time])
+	VALUES ( @BranchID,	@ResID,@ItemID, @Quantity  ,@UsedPrice, @Time)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[RES_INS_Reserv]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_INS_Reserv]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[RES_INS_Reserv]
+	(@BranchID 	[int],
+	@ResDate datetime,
+    @Guest nvarchar(50),
+    @Tel nvarchar(50),
+    @Address nvarchar(50),
+    @Delay [int],
+    @TotalPrice [real],
+	@DateTo 	datetime,
+	@EmpId 	[int])
+AS
+	INSERT INTO [dbo].[Reservation]
+        ([BranchID], [ResDate], [Guest],[Tel],[Address],[Delay],[TotalPrice],[DateTo],[EmpId])  
+	VALUES ( @BranchID,	@ResDate, @Guest, @Tel, @Address, @Delay, @TotalPrice, @DateTo, @EmpId)
+RETURN @@Identity
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[RES_SEL_ReserveTable]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_SEL_ReserveTable]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+Create PROCEDURE [dbo].[RES_SEL_ReserveTable]
+@BranchID	int,
+@Date  datetime
+AS
+SELECT distinct Delay from Reservation WHERE      (BranchID = @BranchID 
+AND CONVERT(varchar(12), ResDate, 101)  = CONVERT(varchar(12), @Date, 101)  )
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_IsItemDiscountable]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_IsItemDiscountable]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_IsItemDiscountable]
+@SalesItemID	int,
+@DiscountID	int
+AS
+SELECT     COUNT( dbo.BOF_M_DiscountExceptions.DiscountExceptionID) AS ItemDiscountable
+FROM         dbo.BOF_M_ItemSalesItems INNER JOIN
+                      dbo.BOF_M_DiscountExceptions ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_DiscountExceptions.GroupID
+WHERE     (dbo.BOF_M_ItemSalesItems.SalesItemID = @SalesItemID) AND (dbo.BOF_M_DiscountExceptions.DiscountID = @DiscountID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_GroupSalesItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_GroupSalesItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_GroupSalesItems]  
+@GroupID int
+AS
+SELECT SalesItemID, MenuDescription 
+FROM BOF_M_ItemSalesItems
+WHERE GroupID = @GroupID
+ORDER BY Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindItem]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_FindItem]
+	@Description	nvarchar(50),
+	@MenuDescription	nvarchar(50),
+	@Code		varchar(10),
+	@BarCode		varchar(10)
+AS
+	IF @Description <> ''''
+		SELECT    dbo.BOF_M_ItemSalesItems.*   , 1 AS ItemTypeID , dbo.BOF_M_ItemSalesItems.Description AS DisplayName
+		 FROM  dbo.BOF_M_ItemSalesItems
+		WHERE     (dbo.BOF_M_ItemSalesItems.Description LIKE @Description + ''%'') 
+		ORDER BY dbo.BOF_M_ItemSalesItems.Description
+	ELSE
+		IF @MenuDescription <> ''''
+			SELECT   dbo.BOF_M_ItemSalesItems.*  , 1 AS ItemTypeID , dbo.BOF_M_ItemSalesItems.Description AS DisplayName
+			 FROM  dbo.BOF_M_ItemSalesItems
+			WHERE     (dbo.BOF_M_ItemSalesItems.MenuDescription LIKE @MenuDescription + ''%'') 
+			ORDER BY dbo.BOF_M_ItemSalesItems.Description
+		ELSE
+			IF @Code  <> ''''
+				SELECT   dbo.BOF_M_ItemSalesItems.*  , 1 AS ItemTypeID , dbo.BOF_M_ItemSalesItems.Description AS DisplayName
+				 FROM  dbo.BOF_M_ItemSalesItems
+				WHERE     (dbo.BOF_M_ItemSalesItems.Code LIKE @Code + ''%'') 
+				ORDER BY dbo.BOF_M_ItemSalesItems.Description
+			ELSE
+				IF @BarCode <> ''''
+					SELECT    dbo.BOF_M_ItemSalesItems.*  , 1 AS ItemTypeID  , dbo.BOF_M_ItemSalesItems.Description AS DisplayName
+					FROM  dbo.BOF_M_ItemSalesItems
+					WHERE     (dbo.BOF_M_ItemSalesItems.BarCode LIKE @BarCode + ''%'') 
+					ORDER BY dbo.BOF_M_ItemSalesItems.Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindCustomer]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindCustomer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_FindCustomer]
+@BranchID	int,
+@Phonenumber	 varchar(10),
+@Company	varchar(50),
+@FirstName	varchar(10),
+@FamilyName	varchar(10),
+@Code		varchar(10)	
+AS
+IF @Phonenumber <> ''''
+	SELECT    *
+	FROM         dbo.BOF_M_Customers
+	WHERE   (Phone  LIKE(@Phonenumber + ''%'')) AND (BranchID =@BranchID) OR
+                      (Mobile LIKE(@Phonenumber + ''%'')) AND (BranchID =@BranchID) OR
+                      (OfficePhone LIKE(@Phonenumber + ''%'')) AND (BranchID =@BranchID) OR
+                      (OtherPhone LIKE(@Phonenumber + ''%''))  AND (BranchID = @BranchID) 
+ELSE
+	IF @Company  <> ''''
+		SELECT     *
+		FROM         dbo.BOF_M_Customers
+		WHERE (Company  LIKE(@Company + ''%'')) AND (BranchID = @BranchID) 
+	ELSE
+		IF @FirstName  <> ''''
+			SELECT    *
+			FROM         dbo.BOF_M_Customers
+			WHERE (CustomerName  LIKE( @FirstName + ''%'')) AND (BranchID = @BranchID) 
+		ELSE
+			IF @FamilyName <> ''''
+				SELECT   *
+				FROM         dbo.BOF_M_Customers
+				WHERE (FamilyName  LIKE(@FamilyName + ''%'')) AND (BranchID = @BranchID) 
+			ELSE
+				IF @Code  <> ''''
+					SELECT   *
+					FROM         dbo.BOF_M_Customers
+					WHERE (Code  LIKE(@Code)) AND (BranchID = @BranchID)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindCompany]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindCompany]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_FindCompany]
+@BranchID	int,
+@Company	varchar(50),
+@Type int
+AS
+IF @Type  =1
+    SELECT    Distinct Company
+    FROM         dbo.BOF_M_Customers
+	WHERE (Company  LIKE(@Company + ''%'')) AND (BranchID = @BranchID) 
+ELSE IF @Type=2
+    SELECT Distinct Company	FROM  dbo.BOF_M_Customers
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_FindBuilding]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_FindBuilding]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_FindBuilding]
+@BranchID	int,
+@Building	varchar(50),
+@Type int
+AS
+IF @Type  =1
+    SELECT    Distinct Building
+    FROM         dbo.BOF_M_Customers
+	WHERE (Building  LIKE(@Building + ''%'')) AND (BranchID = @BranchID) 
+ELSE IF @Type=2
+    SELECT Distinct Building	FROM  dbo.BOF_M_Customers
+		
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ExistingOrderInfo]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ExistingOrderInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[POS_SEL_ExistingOrderInfo]
+@BranchID	int,
+@OrderID	int
+ AS
+SELECT     ISNULL(dbo.BOF_M_Customers.CustomerName, '''') + '' '' + ISNULL(dbo.BOF_M_Customers.FamilyName , '''') AS CustomerName, ''City: '' + ISNULL(dbo.BOF_M_Customers.City, 
+                      N''-'') + '' Street: '' + ISNULL(dbo.BOF_M_Customers.Street, N''-'') + '' Near: '' + ISNULL(dbo.BOF_M_Customers.Near, N''-'') 
+                      + '' Building: '' + ISNULL(dbo.BOF_M_Customers.Building, N''-'') + '' Floor: '' + ISNULL(dbo.BOF_M_Customers.Floor, N''-'') 
+                      + '' Apartment: '' + ISNULL(dbo.BOF_M_Customers.Appartment, N''-'') AS Address, dbo.POS_M_Orders.*
+FROM         dbo.POS_M_Orders LEFT OUTER  JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE   (dbo.POS_M_Orders.BranchID = @BranchID) 
+AND (OrderID =@OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_EmployeesList]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_EmployeesList]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_EmployeesList]
+@BranchID	int
+ AS
+SELECT     EmployeeID AS ID, EmployeeName AS [Employee Name]
+FROM         dbo.BOF_M_Employees
+WHERE     (BranchID = @BranchID)
+ORDER BY EmployeeName
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_EmployeeExist]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_EmployeeExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[POS_SEL_EmployeeExist]
+@BranchID int,
+@EmployeeID varchar(20)
+AS
+SELECT  COUNT(*)  AS EmployeeExist
+FROM         dbo.BOF_M_Employees
+WHERE     (BranchID =@BranchID) AND CAST(EmployeeID AS Varchar(20)) = @EmployeeID -- EmployeeCode=@EmployeeID--
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Customers]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Customers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_Customers]
+@BranchID 	int
+AS
+SELECT     dbo.BOF_M_Customers.*
+FROM         dbo.BOF_M_Customers
+WHERE BranchID = @BranchID
+ORDER BY CustomerName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CustomerName]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CustomerName]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_CustomerName] 
+@BranchID	int,
+@CustomerID	int
+
+AS
+SELECT     CustomerName + '' '' + ISNULL(FamilyName, '''') AS CustomerName
+FROM         dbo.BOF_M_Customers
+WHERE CustomerID = @CustomerID
+AND BranchID = @BranchID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CustomerAddresses]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CustomerAddresses]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_CustomerAddresses]
+@BranchID	int,
+@CustomerID	int
+ AS
+
+SELECT     dbo.BOF_M_CustomerAdresses.*
+FROM         dbo.BOF_M_CustomerAdresses
+WHERE     (BranchID = @BranchID) AND (CustomerID =@CustomerID)
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CustomerAddress]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CustomerAddress]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_CustomerAddress]
+@BranchID	int,
+@CustomerID	int
+AS
+SELECT      ''City: '' + ISNULL(dbo.BOF_M_Customers.City, 
+                      N''-'') + '' Street: '' + ISNULL(dbo.BOF_M_Customers.Street, N''-'') + '' Near: '' + ISNULL(dbo.BOF_M_Customers.Near, N''-'') 
+                      + '' Building: '' + ISNULL(dbo.BOF_M_Customers.Building, N''-'') + '' Floor: '' + ISNULL(dbo.BOF_M_Customers.Floor, N''-'') 
+                      + '' Apartment: '' + ISNULL(dbo.BOF_M_Customers.Appartment, N''-'') AS Address
+FROM         dbo.BOF_M_Customers
+WHERE CustomerID = @CustomerID
+AND BranchID = @BranchID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CHKPRICEHAPPYHOURS]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CHKPRICEHAPPYHOURS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_CHKPRICEHAPPYHOURS] 
+@ItemID int
+AS
+SELECT HAPPY_HOUR.Day,DayDescription ,PRICEMODE,Starts,ENDS,HAPPY_HOUR.MenuID ,Menu,SalesItemID, BOF_M_ItemSalesItems.Description,
+(case when PRICEMODE=1 then isnull(PriceMode1,0)+isnull(taxmode1,0)
+		when PRICEMODE=2 then isnull(PriceMode2,0)+isnull(taxmode2,0)
+		when PRICEMODE=3 then isnull(PriceMode3,0)+isnull(taxmode3,0)
+		when PRICEMODE=4 then isnull(PriceMode4,0)+isnull(taxmode4,0)
+end) Amount, 
+(case when PRICEMODE=1 then isnull(taxmode1,0)
+		when PRICEMODE=2 then isnull(taxmode2,0)
+		when PRICEMODE=3 then isnull(taxmode3,0)
+		when PRICEMODE=4 then isnull(taxmode4,0)
+end) TaxMode
+FROM HAPPY_HOUR ,POS_M_WeekDays ,BOF_M_ItemMenus,BOF_M_ItemSalesItems
+where HAPPY_HOUR.Day=POS_M_WeekDays.Day and HAPPY_HOUR.MenuID=BOF_M_ItemMenus.MenuID and IncludeHappyHours=1
+and UPPER(DayDescription)=UPPER(datename(dw,getdate())) 
+and CONVERT(CHAR(5),DATEADD(SECOND,FLOOR(DATEDIFF(SECOND,''20000101'',GETDATE())/60.0)*60,''20000101''),108) between Starts and ENDS
+and BOF_M_ItemSalesItems.SalesItemID=@ItemID
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_P_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_P_OrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_P_OrderDetails]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	@ItemID 	[int],
+	@Quantity 	[real],
+	@UsedPrice 	[real],
+	@CustomerNumber	[int],
+	@AffectedItem	Int,
+	@VoidReasonID	int,
+	@VoidMethodID		int,
+	@Status	varchar(20),
+	@OrderedBy	int,
+	@WorkstationID		int,
+	@Without int=0,
+	@PriceModeID	int,
+	@ItemRemark nvarchar(250),
+    @Assigned int,
+    @inctax DECIMAL,
+    @OrderGuid UNIQUEIDENTIFIER
+	)
+AS
+IF Exists(SELECT * FROM POS_M_Orders WHERE BranchID = @BranchID AND OrderID = @OrderID)
+ AND EXISTS(SELECT OrderDetailID FROM dbo.POS_M_OrderDetails WHERE BranchID = @BranchID AND OrderID = @OrderID and OrderGuid=@OrderGuid)
+ BEGIN
+if @Status=''Void''
+begin
+	INSERT INTO [dbo].[POS_T_OrderDetails]  ([BranchID], [OrderID],	 [ItemID], [Quantity], [UsedPrice],	[CustomerNumber],[AffectedItem],
+		[VoidReasonID],	[Status],	[OrderedBy],[WorkstationID],[WithOut],[ItemRemark],VoidDate) 
+	VALUES ( @BranchID,	@OrderID,@ItemID,@Quantity,@UsedPrice,@CustomerNumber,@AffectedItem, @VoidReasonID,@Status,	
+		@OrderedBy,@WorkstationID,@without,@ItemRemark,getdate())	
+end
+if  @Status<>''Void''
+begin
+	INSERT INTO [dbo].[POS_T_OrderDetails]  ([BranchID], [OrderID],	 [ItemID], [Quantity], [UsedPrice],	[CustomerNumber],[AffectedItem],
+		[VoidReasonID],	[Status],	[OrderedBy],[WorkstationID],[WithOut],[ItemRemark],VoidDate) 
+	VALUES ( @BranchID,	@OrderID,@ItemID,@Quantity,@UsedPrice,@CustomerNumber,@AffectedItem, @VoidReasonID,@Status,	
+		@OrderedBy,@WorkstationID,@without,@ItemRemark,null)
+END
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CashTypes]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CashTypes]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_CashTypes]
+AS
+select * from pos_m_cashtype
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CallerLines1]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CallerLines1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_CallerLines1] 
+(@callidno 	int)
+AS
+begin
+SELECT top 1 isnull(BOF_M_Customers.CustomerID,0) as CustomerID, isnull(BOF_M_Customers.CustomerName,0) as CustomerName, dbo.CallerID.Number 
+FROM dbo.CallerID INNER JOIN dbo.BOF_M_Customers ON dbo.CallerID.Number = dbo.BOF_M_Customers.Phone 
+OR dbo.CallerID.Number = dbo.BOF_M_Customers.Mobile 
+where dbo.CallerID.Number=@callidno
+
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CallerLines]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CallerLines]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_CallerLines]
+AS
+SELECT     dbo.CallerId.*
+FROM         dbo.CallerId
+WHERE Missed = 0 and Answered=0
+ORDER BY Line
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_BranchOpenOrders]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_BranchOpenOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_BranchOpenOrders]  
+@BranchID int  
+AS  
+SELECT COUNT(*)FROM POS_M_Orders  
+WHERE   (dbo.POS_M_Orders.BranchID =@BranchID) AND (dbo.POS_M_Orders.Status = 0 OR  
+                     dbo.POS_M_Orders.Status = 1) AND (dbo.POS_M_Orders.Voided = 0)  
+  and CAST(FLOOR(CAST(deliverytime as float)) as datetime) <=  getdate()
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Authenticate]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Authenticate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[POS_SEL_Authenticate]
+	@BranchID int,
+	@EmployeeID int,
+	@Password	varchar (50)
+AS
+	SELECT  COUNT(*)  AS EmployeeExist
+	FROM         dbo.BOF_M_Employees
+	WHERE     (BranchID =@BranchID) AND --(EmployeeCode = @EmployeeID) AND ([Password] = @Password)
+		(EmployeeID = @EmployeeID) AND ([Password] = @Password or [Password] is null)
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Zone]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Zone]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_Zone]
+    (
+      @Zone NVARCHAR(200)
+     )
+AS 
+    DECLARE @Count as int
+SELECT @Count = count(ZoneId) from BOF_L_Zones where lower(Zone) like lower(@Zone)
+if @Count = 0 
+BEGIN
+    INSERT  INTO [dbo].[BOF_L_Zones]
+            ([Zone])  VALUES  (@Zone)
+   END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_TimeLogOUT]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_TimeLogOUT]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_TimeLogOUT]
+	(@BranchID 	[int],
+	 @EmployeeID 	[int],
+	 @WorkstationID 	[int])
+
+AS 
+	DECLARE @Status int
+	SELECT @Status =    Status
+	FROM         dbo.POS_M_TimeLog
+	WHERE     (TimeLogID =
+                          (SELECT     MAX(TimeLogID) AS TimeLogID
+                            FROM          dbo.POS_M_TimeLog
+                            WHERE      (BranchID =@BranchID) AND (EmployeeID = @EmployeeID) AND (DATEDIFF(day, LogTime, GetDate()) = 0)))
+	IF @Status = 1 OR @Status IS Null
+		BEGIN
+			INSERT INTO [dbo].[POS_M_TimeLog] 
+				 ( [BranchID],
+				 [EmployeeID],
+				 [Status],
+				 [WorkstationID]) 
+			 
+			VALUES 
+				( @BranchID,
+				 @EmployeeID,
+				 0,
+				 @WorkstationID)
+		END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_TimeLogIN]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_TimeLogIN]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_TimeLogIN]
+	(@BranchID 	[int],
+	 @EmployeeID 	[int],
+	 @WorkstationID 	[int])
+
+AS 
+	DECLARE @Status int
+
+	SELECT @Status =    Status
+	FROM         dbo.POS_M_TimeLog
+	WHERE     (TimeLogID =
+                          (SELECT     MAX(TimeLogID) AS TimeLogID
+                            FROM          dbo.POS_M_TimeLog
+                            WHERE      (BranchID =@BranchID) AND (EmployeeID = @EmployeeID) AND (DATEDIFF(day, LogTime, GetDate()) = 0)))
+
+	IF @Status = 0 OR @Status  IS NULL
+		BEGIN
+			INSERT INTO [dbo].[POS_M_TimeLog] 
+				 ( [BranchID],
+				 [EmployeeID],
+				 [Status],
+				 [WorkstationID]) 
+			 
+			VALUES 
+				( @BranchID,
+				 @EmployeeID,
+				 1,
+				 @WorkstationID)
+		END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DEL_EmptyOrder]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DEL_EmptyOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_DEL_EmptyOrder]
+	(@BranchID 	[int],
+	 @OrderID 	[int],
+	 @OpenedBy 	[int])
+
+AS 
+DECLARE @Count as int
+select @Count=Count(OrderDetailID) from [dbo].[POS_M_OrderDetails] where OrderID=@OrderID
+if @Count = 0 
+Begin
+	DELETE [dbo].[POS_M_Orders] 
+	WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID AND
+	[OpenedBy] = @OpenedBy)
+End
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_Del_CallerLines]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_Del_CallerLines]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_Del_CallerLines]
+@Id as nvarchar(50),
+@Type as int
+AS
+IF @Type = 1
+BEGIN
+   Delete FROM dbo.CallerId WHERE Id = @Id
+END
+IF @Type = 2
+BEGIN
+   Delete FROM dbo.CallerId
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Customer1]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Customer1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_Customer1]
+	(@BranchID_1 	[int],
+	 @CustomerName_2 	[nvarchar](50),
+	 @FamilyName_3 	[nvarchar](50),
+	 @Company_4 	[nvarchar](50),
+	 @Phone_5 	[nvarchar](50),
+	 @Mobile_6 	[nvarchar](50),
+	 @OfficePhone_7 	[nvarchar](50),
+	 @OtherPhone_8 	[nvarchar](50),
+	 @Fax_9 	[nvarchar](50),
+	 @Email_10 	[nvarchar](50),
+	 @Code_11 	[nvarchar](50),
+	 @BirthDay_12 	[datetime],
+	 @Street_13 	[nvarchar](50),
+@Street_13_1 	[nvarchar](50),
+	 @Near_14 	[nvarchar](50),
+ @Near_14_1 	[nvarchar](50),
+	 @Country_15 	[nvarchar](50),
+	 @Building_16 	[nvarchar](50),
+@Building_16_1 	[nvarchar](50),
+	 @City_17 	[nvarchar](50),
+@City_17_1 	[nvarchar](50),
+	 @ZipCode_18 	[nvarchar](50),
+	 @Floor_19 	[nvarchar](50),
+@Floor_19_1 	[nvarchar](50),
+	 @MailAddressZone_20 	[nvarchar](50),
+@MailAddressZone_20_1 	[nvarchar](50),
+	 @Remarks_21 	[nvarchar](500),
+@Remarks_21_1 	[nvarchar](500),
+	 @Appartment_22 	[nvarchar](50),
+@Appartment_22_1 	[nvarchar](50),
+@Branchname_23 	[nvarchar](50),
+@newadd_24 bit)
+
+
+AS
+	 INSERT INTO [dbo].[BOF_M_Customers] 
+		 ( [BranchID],
+		 [CustomerName],
+		 [FamilyName],
+		 [Company],
+		 [Phone],
+		 [Mobile],
+		 [OfficePhone],
+		 [OtherPhone],
+		 [Fax],
+		 [Email],
+		 [Code],
+		 [BirthDay],
+		 [Street],
+ [Street1],
+		 [Near],
+ [Near1],
+		 [Country],
+		 [Building],
+ [Building1],
+		 [City],
+ [City1],
+		 [ZipCode],
+		 [Floor],
+ [Floor1],
+		 [MailAddressZone],
+[MailAddressZone1],
+		 [Remarks],
+ [Remarks1],
+		 [Appartment],
+ [Appartment1],
+ [branchname],
+newadd) 
+	 
+	VALUES 
+		( @BranchID_1,
+		 @CustomerName_2,
+		 @FamilyName_3,
+		 @Company_4,
+		 @Phone_5,
+		 @Mobile_6,
+		 @OfficePhone_7,
+		 @OtherPhone_8,
+		 @Fax_9,
+		 @Email_10,
+		 @Code_11,
+		 @BirthDay_12,
+		 @Street_13,
+@Street_13_1,
+ @Near_14,
+		 @Near_14_1,
+		 @Country_15,
+		 @Building_16,
+@Building_16_1,
+		 @City_17,
+ @City_17_1,
+		 @ZipCode_18,
+		 @Floor_19,
+ @Floor_19_1,
+		 @MailAddressZone_20,
+ @MailAddressZone_20_1,
+		 @Remarks_21,
+ @Remarks_21_1,
+		 @Appartment_22,
+ @Appartment_22_1,
+@Branchname_23 ,
+@newadd_24)
+	SELECT @@IDENTITY AS CustomerID
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Customer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Customer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_INS_Customer]
+	(@BranchID_1 	[int],
+	 @CustomerName_2 	[nvarchar](50),
+	 @FamilyName_3 	[nvarchar](50),
+	 @Company_4 	[nvarchar](50),
+	 @Phone_5 	[nvarchar](50),
+	 @Mobile_6 	[nvarchar](50),
+	 @OfficePhone_7 	[nvarchar](50),
+	 @OtherPhone_8 	[nvarchar](50),
+	 @Fax_9 	[nvarchar](50),
+	 @Email_10 	[nvarchar](50),
+	 @Code_11 	[nvarchar](50),
+	 @BirthDay_12 	[datetime],
+	 @Street_13 	varchar(350),
+	 @Near_14 	[nvarchar](50),
+	 @Country_15 	[nvarchar](50),
+	 @Building_16  varchar(350),
+	 @City_17 	[nvarchar](50),
+	 @ZipCode_18 	[nvarchar](50),
+	 @Floor_19 	[nvarchar](50),
+	 @MailAddressZone_20 	[nvarchar](50),
+	 @Remarks_21 	[nvarchar](500),
+	 @Appartment_22 	[nvarchar](50))
+
+AS
+	 INSERT INTO [dbo].[BOF_M_Customers] 
+		 ( [BranchID],
+		 [CustomerName],
+		 [FamilyName],
+		 [Company],
+		 [Phone],
+		 [Mobile],
+		 [OfficePhone],
+		 [OtherPhone],
+		 [Fax],
+		 [Email],
+		 [Code],
+		 [BirthDay],
+		 [Street],
+		 [Near],
+		 [Country],
+		 [Building],
+		 [City],
+		 [ZipCode],
+		 [Floor],
+		 [MailAddressZone],
+		 [Remarks],
+		 [Appartment]) 
+	 
+	VALUES 
+		( @BranchID_1,
+		 @CustomerName_2,
+		 @FamilyName_3,
+		 @Company_4,
+		 @Phone_5,
+		 @Mobile_6,
+		 @OfficePhone_7,
+		 @OtherPhone_8,
+		 @Fax_9,
+		 @Email_10,
+		 @Code_11,
+		 @BirthDay_12,
+		 @Street_13,
+		 @Near_14,
+		 @Country_15,
+		 @Building_16,
+		 @City_17,
+		 @ZipCode_18,
+		 @Floor_19,
+		 @MailAddressZone_20,
+		 @Remarks_21,
+		 @Appartment_22)
+	SELECT @@IDENTITY AS CustomerID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_CopyWorkstationScreenItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_CopyWorkstationScreenItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_INS_CopyWorkstationScreenItems]
+	(@BranchID 	[int],
+	 @FromWorkstationID 	[int],
+	 @ToWorkstationID 	[int],
+	@ScreenID	int)
+AS 
+DELETE POS_M_WorkstationScreenItems  
+WHERE  BranchID=@BranchID
+	AND WorkstationID = @ToWorkstationID
+	AND (ParentID = @ScreenID)
+
+INSERT INTO [dbo].[POS_M_WorkstationScreenItems] 
+	 ( [BranchID],[WorkstationID], [ParentID], [ItemTypeID], [ItemID], [ItemColor], [Counter], [DisplayName], [Serial]) 
+SELECT 
+	 BranchID, @ToWorkstationID, ParentID, ItemTypeID, ItemID, ItemColor, Counter, DisplayName, Serial
+FROM POS_M_WorkstationScreenItems 
+WHERE BranchID=@BranchID
+	AND WorkstationID = @FromWorkstationID
+	AND (ParentID = @ScreenID)
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineOrder]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_OnlineOrder]
+    (
+      @BranchID [int] ,
+      @WorkStationID [int] ,
+      @OrderNumber NVARCHAR(50) ,
+      @OrderMenuID [int] ,
+      @NumberOfCustomers [int] ,
+      @OpenedBy [int] ,
+      @CustomerID [int] ,
+      @DeliveryStatus [int] ,
+      @DeliveryTime [DateTime] ,
+      @RevMenuID [int] ,
+      @OnlineOrderId NVARCHAR(50) ,
+      @OnlineStatus NVARCHAR(50) ,
+      @OnlineRemarks NVARCHAR(MAX) ,
+      @OrderID [int] OUTPUT
+    )
+AS 
+    INSERT  INTO [dbo].[POS_M_OnlineOrders]
+            ( [BranchID] ,
+              [WorkStationID] ,
+              [OrderNumber] ,
+              [OrderMenuID] ,
+              [NumberOfCustomers] ,
+              [OpenedBy] ,
+              [CustomerID] ,
+              [DeliveryStatus] ,
+              [DeliveryTime] ,
+              [RevMenuID] ,
+              [OnlineOrderId],
+              [OnlineStatus] ,
+              [OnlineRemarks]
+            )
+    VALUES  ( @BranchID ,
+              @WorkStationID ,
+              @OrderNumber ,
+              @OrderMenuID ,
+              @NumberOfCustomers ,
+              @OpenedBy ,
+              @CustomerID ,
+              @DeliveryStatus ,
+              @DeliveryTime ,
+              @RevMenuID ,
+              @OnlineOrderId,
+              @OnlineStatus ,
+              @OnlineRemarks
+            )
+    SET @OrderID = @@Identity
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineCustomer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineCustomer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_OnlineCustomer]
+    (
+      @BranchID [int] ,
+      @CustomerName [nvarchar](50) ,
+      @FamilyName [nvarchar](50) ,
+      @Mobile [nvarchar](50) ,
+      @Email [nvarchar](50) ,
+      @Street [nvarchar](50) ,
+      @Country [nvarchar](50) ,
+      @Building [nvarchar](50) ,
+      @City [nvarchar](50) ,
+      @State [nvarchar](50) ,
+      @Appartment 	[nvarchar](50),
+	  @Remarks 	[nvarchar](500)
+    )
+AS 
+    INSERT  INTO [dbo].[BOF_M_Customers]
+            ( [BranchID] ,
+              [CustomerName] ,
+              [FamilyName] ,
+              [Mobile] ,
+              [Email] ,
+              [Street] ,
+              [Country] ,
+              [Building] ,
+              [City] ,
+              [State] ,
+              [Appartment],
+              [Remarks]
+            )
+    VALUES  ( @BranchID ,
+              @CustomerName ,
+              @FamilyName ,
+              @Mobile ,
+              @Email ,
+              @Street ,
+              @Country ,
+              @Building ,
+              @City ,
+              @State ,
+              @Appartment,
+              @Remarks
+		)
+    SELECT  @@IDENTITY AS CustomerID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Loyalty]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Loyalty]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_Loyalty]
+	(@CustomerID	int,
+	 @BranchID int,
+	 @WorkStationID int,
+	 @TotalPoints float,
+	 @Redeem float
+	)
+
+AS
+	 INSERT INTO POS_M_Loyalty
+		 ( CustomerID,BranchID, WorkStationID, TotalPoints, Redeem) 
+	 
+	VALUES 
+		( @CustomerID,
+		  @BranchID,
+		@WorkStationID,
+		 @TotalPoints,
+		 @Redeem
+		)
+	SELECT @@IDENTITY AS LoyaltyID
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_DeliveryOrder]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_DeliveryOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_DeliveryOrder]
+	(@BranchID 	[int],
+	@WorkStationID	[int],
+	 @OrderNumber		[real],
+	 @OrderMenuID		[int],
+	 @NumberOfCustomers 	[int],
+	 @OpenedBy 	[int],
+	@CustomerID	[int],
+	@DeliveryStatus	[int],
+	@DeliveryTime	[DateTime],
+	@DriverID	[Int],
+	@RevMenuID	[int],
+	@OrderID	[int]	OUTPUT)
+AS 
+INSERT INTO [dbo].[POS_M_Orders] 
+	 ( [BranchID],
+	[WorkStationID],
+	 [OrderNumber],
+	 [OrderMenuID],
+	 [NumberOfCustomers],
+	 [OpenedBy],
+	[CustomerID],
+	[DeliveryStatus],
+	[DeliveryTime],
+	[DeliveryDriverEmpID],
+	[RevMenuID])
+ 
+VALUES 
+	( @BranchID,
+	@WorkStationID,
+	 @OrderNumber,
+	 @OrderMenuID,
+	 @NumberOfCustomers,
+	 @OpenedBy,
+	@CustomerID,
+	@DeliveryStatus	,
+	@DeliveryTime,
+	@DriverID,
+	@RevMenuID)
+	SET @OrderID = @@Identity
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Delivery_CusOrdList_Branch]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Delivery_CusOrdList_Branch]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_Delivery_CusOrdList_Branch]
+	(@OrderID int,
+@BranchID 	[int],
+@WorkStationID int,
+@OrderMenuID int,
+@OrderNumber int, @CustomerID int, @BranchName varchar (150),
+	 @CustomerName 	[nvarchar](150),
+	 @Phoneno 	[nvarchar](50),
+	@amount [nvarchar](50),
+	@OrdDateTime datetime,
+@OrdAddress varchar(200),
+@DriverId int,
+@DriverName varchar (200),
+@DeliverystatusID int,
+@DeliveryStatus varchar (50),
+@DeliveryTime varchar(50),@DespatchTime varchar(50),@paidby varchar(50))
+
+AS
+WAITFOR DELAY ''000:00:02''
+	 INSERT INTO [dbo].[POS_Delivery_CusOrdList] 
+		 (OrderID,BranchID,WorkStationID,OrderMenuID,OrderNumber,CustomerID,BranchName,
+		 CustomerName, Phoneno,  amount, OrdDateTime, OrdAddress,
+DriverId,DriverName,DeliverystatusID,DeliveryStatus,DeliveryTime,DespatchTime,paidby) 
+	 
+	VALUES 
+		(@OrderID,
+@BranchID,
+@WorkStationID,
+@OrderMenuID,@OrderNumber,@CustomerID,@BranchName,
+		 @CustomerName,
+		 @Phoneno,
+	@amount,
+@OrdDateTime,
+@OrdAddress,
+@DriverId,@DriverName,@DeliverystatusID,@DeliveryStatus,@DeliveryTime,@DespatchTime,@paidby
+		 )
+SELECT @@IDENTITY AS CusOrdNo
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Delivery_CusOrdList]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Delivery_CusOrdList]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_INS_Delivery_CusOrdList]
+	(@OrderID int,
+@BranchID 	[int],
+@WorkStationID int,
+@OrderMenuID int,
+@OrderNumber int, @CustomerID int, @BranchName varchar (150),
+	 @CustomerName 	[nvarchar](150),
+	 @Phoneno 	[nvarchar](50),
+	@amount [nvarchar](50),
+	@OrdDateTime datetime,
+@OrdAddress varchar(200),
+@DriverId int,
+@DriverName varchar (200),
+@DeliverystatusID int,
+@DeliveryStatus varchar (50),
+@DeliveryTime varchar(50),@DespatchTime varchar(50),@paidby varchar(50))
+
+AS
+WAITFOR DELAY ''000:00:02''
+	 INSERT INTO [dbo].[POS_Delivery_CusOrdList] 
+		 (OrderID,BranchID,WorkStationID,OrderMenuID,OrderNumber,CustomerID,BranchName,
+		 CustomerName, Phoneno,  amount, OrdDateTime, OrdAddress,
+DriverId,DriverName,DeliverystatusID,DeliveryStatus,DeliveryTime,DespatchTime,paidby 	) 
+	 
+	VALUES 
+		(@OrderID,
+@BranchID,
+@WorkStationID,
+@OrderMenuID,@OrderNumber,@CustomerID,@BranchName,
+		 @CustomerName,
+		 @Phoneno,
+	@amount,
+@OrdDateTime,
+@OrdAddress,
+@DriverId,@DriverName,@DeliverystatusID,@DeliveryStatus,@DeliveryTime,@DespatchTime,@paidby)
+	
+SELECT @@IDENTITY AS CusOrdNo
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Order]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Order]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_Order]
+	(@BranchID 	[int],
+	@WorkStationID	[int],
+	 @OrderNumber		[real],
+	 @OrderMenuID		[int],
+	 @NumberOfCustomers 	[int],
+	 @OpenedBy 	[int],
+	@RevMenuID	[int],
+	@OrderID	[int]	OUTPUT)
+AS 
+	INSERT INTO [dbo].[POS_M_Orders] 
+		 ( [BranchID],
+		[WorkStationID],
+		 [OrderNumber],
+		 [OrderMenuID],
+		 [NumberOfCustomers],
+		 [OpenedBy],
+		[RevMenuID])
+	VALUES 
+		( @BranchID,
+		@WorkStationID,
+		 @OrderNumber,
+		 @OrderMenuID,
+		 @NumberOfCustomers,
+		 @OpenedBy,
+		@RevMenuID)
+	SET @OrderID = @@Identity
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineOrderDiscount]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineOrderDiscount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_OnlineOrderDiscount]
+	(@BranchID 	[int],
+	 @OrderID 	[int],
+	 @OrderDetailID 	[int],
+	 @DiscountID 	[int],
+	 @DiscountTypeID 	[int],
+	 @DiscountValue 	[real],
+	 @DiscountAmount 	[real],
+	@Quantity	[real])
+AS 
+INSERT INTO [dbo].[POS_M_OnlineOrderDiscounts] 
+	 ( [BranchID],
+	 [OrderID],
+	 [OrderDetailID],
+	 [DiscountID],
+	 [DiscountTypeID],
+	 [DiscountValue],
+	 [DiscountAmount],
+	[Quantity]) 
+ 
+VALUES 
+	( @BranchID,
+	 @OrderID,
+	 @OrderDetailID,
+	 @DiscountID,
+	 @DiscountTypeID,
+	 @DiscountValue,
+	 @DiscountAmount,
+	@Quantity)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineItemSalesItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineItemSalesItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OnlineItemSalesItems]  
+(@ItemID 	[int]
+)
+AS
+SELECT * FROM BOF_M_ItemSalesItems 
+WHERE SalesItemID=@ItemID
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineCustomers]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineCustomers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OnlineCustomers]
+@BranchID 	INT,
+@CustID INT
+AS
+SELECT     dbo.BOF_M_Customers.*
+FROM         dbo.BOF_M_Customers
+WHERE BranchID = @BranchID AND CustomerID=@CustID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemVoidBillReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemVoidBillReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_ItemVoidBillReport]
+@BranchID	int,
+@OrderID 	int
+AS
+SELECT     dbo.BOF_M_Branches.Name AS ResturantName, dbo.BOF_M_Branches.Name AS Branch, GETDATE() AS PrintingTime, 
+                      dbo.POS_M_Orders.OrderID, dbo.POS_M_Orders.BranchID, dbo.POS_M_Orders.WorkStationID, dbo.POS_M_Orders.OrderMenuID, 
+                      dbo.POS_M_Orders.OrderNumber, dbo.POS_T_OrderDetails.Quantity, dbo.POS_T_OrderDetails.UsedPrice, dbo.POS_T_OrderDetails.VoidReasonID, 
+                      dbo.BOF_L_VoidReasons.VoidReason, dbo.BOF_M_ItemSalesItems.Description, 0 AS InvoiceID
+FROM         dbo.BOF_L_VoidReasons INNER JOIN
+                      dbo.POS_M_Orders INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.BOF_M_RegionalOffices INNER JOIN
+                      dbo.BOF_M_CompanyInfo ON dbo.BOF_M_RegionalOffices.CompanyID = dbo.BOF_M_CompanyInfo.CompanyID INNER JOIN
+                      dbo.BOF_M_LocalOffices ON dbo.BOF_M_RegionalOffices.RegionalOfficeID = dbo.BOF_M_LocalOffices.RegionalOfficeID ON 
+                      dbo.BOF_M_Branches.LocalOfficeID = dbo.BOF_M_LocalOffices.LocalOfficeID INNER JOIN
+                      dbo.POS_T_OrderDetails ON dbo.POS_M_Orders.OrderID = dbo.POS_T_OrderDetails.OrderID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.POS_T_OrderDetails.BranchID ON 
+                      dbo.BOF_L_VoidReasons.VoidReasonID = dbo.POS_T_OrderDetails.VoidReasonID INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+WHERE      (dbo.POS_M_Orders.OrderID = @OrderID) AND (dbo.POS_M_Orders.BranchID = @BranchID) AND    (dbo.POS_T_OrderDetails.Status = N''void'')
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemType]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ItemType]
+AS
+
+SELECT DISTINCT ITEMID ,BOF_M_ItemSalesItems.Description 
+FROM dbo.POS_M_OrderDetails INNER JOIN BOF_M_ItemSalesItems
+ON ITEMID =BOF_M_ItemSalesItems.SalesItemID
+ORDER BY BOF_M_ItemSalesItems.Description 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DeliveryStatus]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DeliveryStatus]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_DeliveryStatus]
+@BranchID	int
+ AS
+SELECT     TOP 100 PERCENT dbo.BOF_M_Employees.EmployeeID, dbo.POS_M_Orders.OrderID,  dbo.POS_M_Orders.OrderNumber, 
+	 dbo.BOF_M_Customers.CustomerName + N'' '' + dbo.BOF_M_Customers.FamilyName AS Customer, 
+                      dbo.POS_M_Orders.DeliveryTime, dbo.BOF_M_Employees.EmployeeName AS DriverName
+FROM         dbo.POS_M_Orders LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID LEFT OUTER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.DeliveryDriverEmpID = dbo.BOF_M_Employees.EmployeeID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID
+WHERE     (dbo.POS_M_Orders.BranchID =@BranchID) AND (dbo.POS_M_Orders.OrderMenuID = 2) AND (dbo.POS_M_Orders.Status = 0 OR
+                      dbo.POS_M_Orders.Status = 1) 
+ORDER BY dbo.POS_M_Orders.OrderID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderDetails]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT   dbo.POS_M_OrderDetails.*, dbo.BOF_M_ItemSalesItems.*, dbo.BOF_M_Employees.EmployeeName
+FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+INNER JOIN dbo.BOF_M_Employees on dbo.BOF_M_Employees.EmployeeID=POS_M_OrderDetails.OrderbyEmployeeId
+WHERE      /*(dbo.POS_M_OrderDetails.Quantity > 0) AND */(dbo.POS_M_OrderDetails.BranchID =@BranchID) AND (dbo.POS_M_OrderDetails.OrderID = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrdersByCustomer]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrdersByCustomer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OpenOrdersByCustomer]
+@BranchID	int,
+@OrderType	int,
+@CustomerID	int
+AS
+SELECT     dbo.POS_M_Orders.*, dbo.BOF_M_Customers.CustomerName AS Customer, dbo.BOF_M_Employees.EmployeeName AS Server, 
+                      BOF_M_Employees_1.EmployeeName AS Driver
+FROM         dbo.POS_M_Orders LEFT OUTER JOIN
+                      dbo.BOF_M_Employees BOF_M_Employees_1 ON dbo.POS_M_Orders.BranchID = BOF_M_Employees_1.BranchID AND 
+                      dbo.POS_M_Orders.DeliveryDriverEmpID = BOF_M_Employees_1.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_M_Orders.OpenedBy = dbo.BOF_M_Employees.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE    POS_M_Orders.BranchID = @BranchID AND OrderMenuID = @OrderType AND (POS_M_Orders.Status = 0  OR  POS_M_Orders.Status = 1) 
+		 AND POS_M_Orders.Voided = 0 AND dbo.POS_M_Orders.CustomerID = @CustomerID
+ORDER BY OrderNumber
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrders_ByEmployee]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrders_ByEmployee]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OpenOrders_ByEmployee]
+@BranchID	int,
+@OrderType	int,
+@EmployeeID	int
+AS
+SELECT     dbo.POS_M_Orders.*, dbo.BOF_M_Customers.CustomerName AS Customer, dbo.BOF_M_Employees.EmployeeName AS Server, 
+                      BOF_M_Employees_1.EmployeeName AS Driver
+FROM         dbo.POS_M_Orders LEFT OUTER JOIN
+                      dbo.BOF_M_Employees BOF_M_Employees_1 ON dbo.POS_M_Orders.BranchID = BOF_M_Employees_1.BranchID AND 
+                      dbo.POS_M_Orders.DeliveryDriverEmpID = BOF_M_Employees_1.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_M_Orders.OpenedBy = dbo.BOF_M_Employees.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE    POS_M_Orders.BranchID = @BranchID AND OrderMenuID = @OrderType AND (POS_M_Orders.Status = 0  OR  POS_M_Orders.Status = 1) 
+		 AND POS_M_Orders.Voided = 0 AND OpenedBy = @EmployeeID
+ORDER BY OrderNumber
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrders]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OpenOrders]
+@BranchID	int,
+@OrderType	int
+AS
+SELECT     dbo.POS_M_Orders.*, dbo.BOF_M_Customers.CustomerName AS Customer, dbo.BOF_M_Employees.EmployeeName AS Server, 
+                      BOF_M_Employees_1.EmployeeName AS Driver
+FROM         dbo.POS_M_Orders LEFT OUTER JOIN
+                      dbo.BOF_M_Employees BOF_M_Employees_1 ON dbo.POS_M_Orders.BranchID = BOF_M_Employees_1.BranchID AND 
+                      dbo.POS_M_Orders.DeliveryDriverEmpID = BOF_M_Employees_1.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_M_Orders.OpenedBy = dbo.BOF_M_Employees.EmployeeID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE    POS_M_Orders.BranchID = @BranchID 
+AND OrderMenuID = @OrderType 
+AND (POS_M_Orders.Status = 0 OR  POS_M_Orders.Status = 1)  AND POS_M_Orders.Voided = 0
+ORDER BY OrderNumber
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrderInfo1]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrderInfo1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+Create PROCEDURE  [dbo].[POS_SEL_OpenOrderInfo1]
+@BranchID	int,
+@OrderType	int,
+@OrderNumber	[real],
+@OrderID	[real]
+ AS
+SELECT     ISNULL(dbo.BOF_M_Customers.CustomerName, '''') + '' '' + ISNULL(dbo.BOF_M_Customers.FamilyName , '''') AS CustomerName, ''City: '' + ISNULL(dbo.BOF_M_Customers.City, 
+                      N''-'') + '' Street: '' + ISNULL(dbo.BOF_M_Customers.Street, N''-'') + '' Near: '' + ISNULL(dbo.BOF_M_Customers.Near, N''-'') 
+                      + '' Building: '' + ISNULL(dbo.BOF_M_Customers.Building, N''-'') + '' Floor: '' + ISNULL(dbo.BOF_M_Customers.Floor, N''-'') 
+                      + '' Apartment: '' + ISNULL(dbo.BOF_M_Customers.Appartment, N''-'') AS Address, dbo. POS_Delivery_CusOrdList.*
+FROM         dbo.POS_Delivery_CusOrdList LEFT OUTER  JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_Delivery_CusOrdList.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_Delivery_CusOrdList.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE   (dbo.POS_Delivery_CusOrdList.BranchID = @BranchID) 
+AND (OrderNumber =@OrderNumber)
+AND (OrderID=@OrderID)
+AND (DeliveryStatusID = 0 OR DeliveryStatusID = 1) 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenOrderInfo]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenOrderInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[POS_SEL_OpenOrderInfo]
+@BranchID	int,
+@OrderType	int,
+@OrderNumber	[real]
+ AS
+SELECT     ISNULL(dbo.BOF_M_Customers.CustomerName, '''') + '' '' + ISNULL(dbo.BOF_M_Customers.FamilyName , '''') AS CustomerName, ''City: '' + ISNULL(dbo.BOF_M_Customers.City, 
+                      N''-'') + '' Street: '' + ISNULL(dbo.BOF_M_Customers.Street, N''-'') + '' Near: '' + ISNULL(dbo.BOF_M_Customers.Near, N''-'') 
+                      + '' Building: '' + ISNULL(dbo.BOF_M_Customers.Building, N''-'') + '' Floor: '' + ISNULL(dbo.BOF_M_Customers.Floor, N''-'') 
+                      + '' Apartment: '' + ISNULL(dbo.BOF_M_Customers.Appartment, N''-'') AS Address, dbo.POS_M_Orders.*
+FROM         dbo.POS_M_Orders LEFT OUTER  JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE   (dbo.POS_M_Orders.BranchID = @BranchID) 
+--AND (OrderMenuID =@OrderType) 
+AND (OrderNumber =@OrderNumber)
+AND (Status = 0 OR Status = 1) AND POS_M_Orders.Voided = 0
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineToOrderDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineToOrderDiscounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OnlineToOrderDiscounts]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT * FROM dbo.POS_M_OnlineOrderDiscounts
+WHERE     (dbo.POS_M_OnlineOrderDiscounts.OrderID = @OrderID)
+AND (dbo.POS_M_OnlineOrderDiscounts.BranchID= @BranchID)
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineOrdersExists]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineOrdersExists]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OnlineOrdersExists]
+@BranchID	int
+AS
+SELECT COUNT(*) FROM  dbo.POS_M_OnlineOrders
+WHERE  (dbo.POS_M_OnlineOrders.BranchID = @BranchID) AND 
+       (MarketingActivityID IS NULL)
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MaxOrderNumber]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MaxOrderNumber]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_MaxOrderNumber]
+@BranchID	int,
+@OrderType 	int
+AS
+SELECT     MAX(CAST(OrderNumber AS INT)) AS MAXOrderNumber
+FROM         dbo.POS_M_Orders
+WHERE     (BranchID = @BranchID) AND (OrderMenuID = @OrderType) AND (EODDate IS NULL)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MarketingActivities]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MarketingActivities]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE  [dbo].[POS_SEL_MarketingActivities]
+ AS
+SELECT     TOP 100 PERCENT ActivityID, Description
+FROM         dbo.BOF_L_MarketingActivities
+WHERE     (Active = 1)
+ORDER BY Description
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReadingReportDates]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReadingReportDates]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReadingReportDates]
+@BranchID	int
+ AS
+	SELECT DISTINCT TOP 100 PERCENT CONVERT(DATETIME, CONVERT(varchar(12), EODDate, 101), 101) AS MainReadingDates
+	FROM         dbo.POS_M_Orders
+	WHERE     (BranchID = @BranchID)
+	AND EODDate IS NOT NULL
+	ORDER BY  MainReadingDates DESC
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Adjust]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Adjust]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Adjust]
+AS
+BEGIN
+Declare @OrderId int
+DECLARE @pTotalPrice as [real]
+DECLARE @TotalPrice as [real]
+DECLARE @TotalPaid as [real]
+DECLARE curs CURSOR FOR
+SELECT DISTINCT 
+                      dbo.POS_M_OrderDetails.OrderID, SUM(dbo.POS_M_OrderDetails.UsedPrice * dbo.POS_M_OrderDetails.Quantity) AS pTotalprice, 
+                      dbo.POS_M_Orders.TotalPrice, dbo.POS_M_Orders.TotalPaid
+FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.POS_M_Orders ON dbo.POS_M_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND 
+                      dbo.POS_M_OrderDetails.InvoiceID = dbo.POS_M_Orders.InvoiceNumber
+GROUP BY dbo.POS_M_OrderDetails.OrderID, dbo.POS_M_Orders.TotalPrice, dbo.POS_M_Orders.TotalPaid, dbo.POS_M_Orders.Voided, dbo.POS_M_Orders.EODDate
+HAVING      (CAST(SUM(dbo.POS_M_OrderDetails.UsedPrice * dbo.POS_M_OrderDetails.Quantity) AS decimal(15, 2)) 
+<> CAST(dbo.POS_M_Orders.TotalPrice AS decimal(15, 2))) AND (dbo.POS_M_Orders.Voided = 0) AND  (dbo.POS_M_Orders.EODDate) IS NULL
+OPEN curs
+FETCH NEXT FROM curs INTO @OrderId,@pTotalPrice,@TotalPrice,@TotalPaid
+WHILE @@FETCH_STATUS = 0
+  BEGIN
+     Update dbo.POS_M_Orders set totalPrice = @pTotalPrice where OrderId = @OrderId
+     FETCH NEXT FROM curs INTO @OrderId,@pTotalPrice,@TotalPrice,@TotalPaid
+  END
+CLOSE curs
+DEALLOCATE curs
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Loyalty_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Loyalty_Customers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE procedure [dbo].[POS_SEL_Loyalty_Customers]
+as
+begin
+SELECT     dbo.BOF_M_Customers.CustomerName, dbo.BOF_M_Customers.Pwd, dbo.BOF_M_Customers.BirthDay, phoneno=(CASE WHEN (BOF_M_Customers.phone IS NULL OR
+                    BOF_M_Customers.phone = '''') THEN BOF_M_Customers.mobile + BOF_M_Customers.officephone ELSE BOF_M_Customers.phone END), 
+                      dbo.POS_M_Loyalty.TotalPoints, dbo.POS_M_Loyalty.Redeem,  Email=(CASE WHEN (dbo.BOF_M_Customers.Email IS NULL OR
+                      dbo.BOF_M_Customers.Email = '''') THEN ''-'' ELSE BOF_M_Customers.Email END), isnull(dbo.BOF_M_Customers.branchname, ''-'') as Branchname,
+Visitdate=(select  max(dbo.POS_M_LoyaltyDetail.VisitDate) as Visitdate  from dbo.POS_M_LoyaltyDetail where dbo.POS_M_Loyalty.LoyaltyID = dbo.POS_M_LoyaltyDetail.LoyaltyID
+), 
+Startdate=(select  min(dbo.POS_M_LoyaltyDetail.VisitDate) as Visitdate  from dbo.POS_M_LoyaltyDetail where dbo.POS_M_Loyalty.LoyaltyID = dbo.POS_M_LoyaltyDetail.LoyaltyID
+)
+FROM         dbo.BOF_M_Customers INNER JOIN
+                      dbo.POS_M_Loyalty ON dbo.BOF_M_Customers.CustomerID = dbo.POS_M_Loyalty.CustomerID
+
+GROUP BY dbo.BOF_M_Customers.CustomerName, dbo.BOF_M_Customers.Pwd, dbo.BOF_M_Customers.BirthDay, dbo.BOF_M_Customers.Phone, dbo.BOF_M_Customers.Mobile, dbo.BOF_M_Customers.OfficePhone, 
+
+                     dbo.POS_M_Loyalty.TotalPoints, dbo.POS_M_Loyalty.Redeem, dbo.BOF_M_Customers.Email, dbo.BOF_M_Customers.branchname,dbo.POS_M_Loyalty.LoyaltyID
+
+order by dbo.POS_M_Loyalty.TotalPoints desc
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Loyalty]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Loyalty]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[POS_SEL_Loyalty]
+@phoneno int,@fdate datetime,@tdate datetime 
+AS
+IF @phoneno=0
+BEGIN
+SELECT DISTINCT 
+                      dbo.BOF_M_Customers.CustomerName, dbo.BOF_M_Customers.Pwd, dbo.BOF_M_Customers.BirthDay, Email=(CASE WHEN (dbo.BOF_M_Customers.Email IS NULL OR
+                      dbo.BOF_M_Customers.Email = '''') THEN ''-'' ELSE BOF_M_Customers.Email END),
+phoneno=(CASE WHEN (BOF_M_Customers.phone IS NULL OR
+                      BOF_M_Customers.phone = '''') THEN BOF_M_Customers.mobile + BOF_M_Customers.officephone ELSE BOF_M_Customers.phone END) , 
+                      dbo.BOF_M_Customers.CustomerID, dbo.POS_M_Loyalty.TotalPoints, dbo.POS_M_Loyalty.Redeem, dbo.POS_M_LoyaltyDetail.Points, 
+                      dbo.POS_M_LoyaltyDetail.RedeemPoints,dbo.POS_M_LoyaltyDetail.visitdate,
+InvoiceNumber=(CASE WHEN (dbo.POS_M_Orders.InvoiceNumber IS NULL OR dbo.POS_M_Orders.InvoiceNumber ='''') then 0 else dbo.POS_M_Orders.InvoiceNumber end ),
+Isnull (dbo.BOF_M_Customers.branchname, ''-'') as Branchname,
+PointsInDhs=( (dbo.POS_M_LoyaltyDetail.Points)* (select dbo.BOF_M_Loyalty.Dhs as DHS from dbo.BOF_M_Loyalty )),
+RedeemInDhs=((dbo.POS_M_LoyaltyDetail.RedeemPoints) *(select dbo.BOF_M_Loyalty.Dhs as DHS from dbo.BOF_M_Loyalty) )
+
+FROM         dbo.BOF_M_Customers INNER JOIN
+                      dbo.POS_M_Loyalty ON dbo.BOF_M_Customers.CustomerID = dbo.POS_M_Loyalty.CustomerID INNER JOIN
+                      dbo.POS_M_LoyaltyDetail ON dbo.POS_M_Loyalty.LoyaltyID = dbo.POS_M_LoyaltyDetail.LoyaltyID INNER JOIN
+dbo.POS_M_Orders on dbo.POS_M_LoyaltyDetail.OrderID = dbo.POS_M_Orders.OrderID
+where 
+dbo.POS_M_LoyaltyDetail.visitdate between @fdate  and @tdate
+order by invoicenumber desc
+END
+
+ELSE
+BEGIN
+
+SELECT DISTINCT 
+                      dbo.BOF_M_Customers.CustomerName, dbo.BOF_M_Customers.BirthDay, Email=(CASE WHEN (dbo.BOF_M_Customers.Email IS NULL OR
+                      dbo.BOF_M_Customers.Email = '''') THEN ''-'' ELSE BOF_M_Customers.Email END), phoneno=(CASE WHEN (BOF_M_Customers.phone IS NULL OR
+                      BOF_M_Customers.phone = '''') THEN BOF_M_Customers.mobile + BOF_M_Customers.officephone ELSE BOF_M_Customers.phone END) , 
+                      dbo.BOF_M_Customers.CustomerID, dbo.POS_M_Loyalty.TotalPoints, dbo.POS_M_Loyalty.Redeem, dbo.POS_M_LoyaltyDetail.Points, 
+                      dbo.POS_M_LoyaltyDetail.RedeemPoints,dbo.POS_M_LoyaltyDetail.visitdate,
+InvoiceNumber=(CASE WHEN (dbo.POS_M_Orders.InvoiceNumber IS NULL OR dbo.POS_M_Orders.InvoiceNumber ='''') then 0 else dbo.POS_M_Orders.InvoiceNumber end ),
+Isnull (dbo.BOF_M_Customers.branchname, ''-'') as Branchname,
+PointsInDhs=( (dbo.POS_M_LoyaltyDetail.Points)* (select dbo.BOF_M_Loyalty.Dhs as DHS from dbo.BOF_M_Loyalty )),
+RedeemInDhs=((dbo.POS_M_LoyaltyDetail.RedeemPoints) *(select dbo.BOF_M_Loyalty.Dhs as DHS from dbo.BOF_M_Loyalty) )
+
+FROM         dbo.BOF_M_Customers INNER JOIN
+                      dbo.POS_M_Loyalty ON dbo.BOF_M_Customers.CustomerID = dbo.POS_M_Loyalty.CustomerID INNER JOIN
+                      dbo.POS_M_LoyaltyDetail ON dbo.POS_M_Loyalty.LoyaltyID = dbo.POS_M_LoyaltyDetail.LoyaltyID INNER JOIN
+dbo.POS_M_Orders on dbo.POS_M_LoyaltyDetail.OrderID = dbo.POS_M_Orders.OrderID
+
+where (BOF_M_Customers.phone=@phoneno or BOF_M_Customers.mobile=@phoneno or BOF_M_Customers.officephone=@phoneno)
+and (dbo.POS_M_LoyaltyDetail.visitdate between @fdate and @tdate)
+
+order by invoicenumber desc
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_LastOrdersInEOD]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_LastOrdersInEOD]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_LastOrdersInEOD]
+@BranchID 	INT
+AS
+SELECT COUNT(*) FROM DBO.POS_M_Orders
+WHERE BranchID = @BranchID  AND EODDate IS NOT NULL
+AND CONVERT(varchar(20), OpeningTime, 101) = CONVERT(varchar(20), GETDATE(), 101)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_LastOrder]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_LastOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_LastOrder]
+@BranchID	int,
+@OrderType 	int,
+@CustomerID	int
+AS
+Declare @OrderID	int
+SELECT    @OrderID =  MAX(POS_M_Orders.OrderID)
+FROM         dbo.POS_M_Orders INNER JOIN
+                      dbo.POS_M_OrderDetails ON dbo.POS_M_Orders.OrderID = dbo.POS_M_OrderDetails.OrderID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.POS_M_OrderDetails.BranchID
+WHERE     (POS_M_Orders.BranchID = @BranchID) 
+AND (OrderMenuID = @OrderType) 
+AND (CustomerID = @CustomerID
+AND POS_M_Orders.Status = 2)
+
+SELECT     dbo.POS_M_OrderDetails.*, dbo.BOF_M_ItemSalesItems.*,
+(SELECT ISNULL(OrderLocID,0) FROM POS_M_ORDERS WHERE ORDERID=@OrderID)OrderLocID,EmployeeName
+	FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+INNER JOIN BOF_M_EMPLOYEES ON EmployeeID=OrderbyEmployeeId
+WHERE POS_M_OrderDetails.OrderID = @OrderID
+AND  (POS_M_OrderDetails.BranchID = @BranchID) 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemScreens]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemScreens]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE  [dbo].[POS_SEL_ItemScreens]
+ AS
+SELECT  ScreenID, ScreenName AS [Screen Name]
+FROM         dbo.BOF_L_ItemScreens
+ORDER BY ScreenName
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemSalesItems_Tax]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemSalesItems_Tax]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ItemSalesItems_Tax]    
+@GroupID	int
+AS  
+SELECT SalesItemID, Description   
+FROM BOF_M_ItemSalesItems where groupid=@GroupID  
+ORDER BY Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemSalesItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemSalesItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_ItemSalesItems]  
+AS
+SELECT SalesItemID, Description 
+FROM BOF_M_ItemSalesItems
+ORDER BY Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemModifiers]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemModifiers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_ItemModifiers]
+@ModifierID	int
+AS
+	SELECT    *	FROM         dbo.BOF_M_ItemSalesItems 
+	WHERE dbo.BOF_M_ItemSalesItems.GroupID = @ModifierID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemMenus]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemMenus]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ItemMenus]
+@MenuId  [int]
+AS
+SELECT * FROM BOF_M_ItemMenus WHERE MenuID = @MenuId
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemIngradients]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemIngradients]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_ItemIngradients]
+@BranchID	int,
+@SalesItemID	int
+AS
+SELECT     dbo.BOF_M_ItemSalesItems.SalesItemID, dbo.BOF_L_PriceLevels.PriceLevel, dbo.BOF_M_ItemSalesItems.Description AS [Item Name], 
+                      dbo.INV_M_InventoryItems.Code, dbo.INV_M_InventoryItems.Description, dbo.INV_M_SalesItemIngradients.Quantity, dbo.BOF_L_Units.Unit
+FROM         dbo.BOF_L_PriceLevels INNER JOIN
+                      dbo.INV_M_SalesItemIngradients ON dbo.BOF_L_PriceLevels.PriceLevelID = dbo.INV_M_SalesItemIngradients.PriceLevelID INNER JOIN
+                      dbo.INV_M_InventoryItems ON dbo.INV_M_SalesItemIngradients.InventoryItemID = dbo.INV_M_InventoryItems.InventoryItemID RIGHT OUTER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.INV_M_SalesItemIngradients.SalesItemID = dbo.BOF_M_ItemSalesItems.SalesItemID LEFT OUTER JOIN
+                      dbo.BOF_L_Units ON dbo.INV_M_SalesItemIngradients.UnitID = dbo.BOF_L_Units.UnitID
+WHERE BOF_M_ItemSalesItems.SalesItemID = @SalesItemID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_DeliveryDriver]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_DeliveryDriver]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_DeliveryDriver]
+	(@BranchID 	[int],
+	 @OrderID 	[int],
+	 @EmployeeID 	[int])
+
+AS UPDATE [dbo].[POS_M_Orders] 
+
+SET  [DeliveryDriverEmpID]	 = @EmployeeID 
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Customers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_Customers]
+	(@BranchID 	[int],
+	@OrderID 	[int],
+	 @NumberOfCustomers 	[int])
+
+AS UPDATE [dbo].[POS_M_Orders] 
+
+SET  [NumberOfCustomers]	 = @NumberOfCustomers
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CustomerID]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CustomerID]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_CustomerID]
+	(@BranchID 	[int],
+	@OrderID 	[int],
+	 @CustomerID 	[nvarchar](250))
+AS 
+UPDATE [dbo].[POS_M_Orders] 
+SET  [CustomerID]	 = @CustomerID
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CustomerDebt]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CustomerDebt]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_UPD_CustomerDebt]
+@BranchID	int,
+@CustomerID	int,
+@Amount	real
+AS
+DECLARE @CreditLimit	REAL
+SELECT @CreditLimit = CreditLimit FROM BOF_M_Customers WHERE BranchID	= @BranchID
+		AND CustomerID	= @CustomerID
+IF @CreditLimit > 0
+	BEGIN
+		UPDATE BOF_M_Customers
+		SET Debt	= Debt + @Amount
+		WHERE BranchID	= @BranchID
+		AND CustomerID	= @CustomerID
+		AND @Amount + Debt < = CreditLimit
+	END
+ELSE
+	BEGIN
+		UPDATE BOF_M_Customers
+		SET Debt	= Debt + @Amount
+		WHERE BranchID	= @BranchID
+		AND CustomerID	= @CustomerID
+	END
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Customer1]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Customer1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_Customer1]
+	(@CustomerID 	[int],
+	 @BranchID 	[int],
+	 @CustomerName	[nvarchar](50),
+	 @FamilyName 	[nvarchar](50),
+	 @Company 	[nvarchar](50),
+	 @Phone 	[nvarchar](50),
+	 @Mobile 	[nvarchar](50),
+	 @OfficePhone 	[nvarchar](50),
+	 @OtherPhone 	[nvarchar](50),
+	 @Fax 	[nvarchar](50),
+	 @Email 	[nvarchar](50),
+	 @Code 	[nvarchar](50),
+	 @BirthDay 	[datetime],
+	 @Street 	[nvarchar](50),
+ @Street1 	[nvarchar](50),
+	 @Near 	[nvarchar](50),
+ @Near1 	[nvarchar](50),
+	 @Country 	[nvarchar](50),
+	 @Building 	[nvarchar](50),
+ @Building1 	[nvarchar](50),
+	 @City 	[nvarchar](50),
+ @City1 	[nvarchar](50),
+	 @ZipCode 	[nvarchar](50),
+	 @Floor 	[nvarchar](50),
+@Floor1 	[nvarchar](50),
+	 @MailAddressZone 	[nvarchar](50),
+@MailAddressZone1 	[nvarchar](50),
+	 @Remarks 	[nvarchar](500),
+@Remarks1 	[nvarchar](500),
+	 @Appartment 	[nvarchar](50),
+@Appartment1 	[nvarchar](50),
+@branchname 	[nvarchar](50),
+@newadd_24 bit)
+
+AS 
+UPDATE [dbo].[BOF_M_Customers] 
+SET  [CustomerName]	 = @CustomerName,
+	 [FamilyName]	 = @FamilyName,
+	 [Company]	 = @Company,
+	 [Phone]	 = @Phone,
+	 [Mobile]	 = @Mobile,
+	 [OfficePhone]	 = @OfficePhone,
+	 [OtherPhone]	 = @OtherPhone,
+	 [Fax]	 = @Fax,
+	 [Email]	 = @Email,
+	 [Code]	 = @Code,
+	 [BirthDay]	 = @BirthDay,
+	 [Street]	 = @Street,
+ [Street1]	 = @Street1,
+	 [Near]	 = @Near,
+ [Near1]	 = @Near1,
+	 [Country]	 = @Country,
+	 [Building]	 = @Building,
+ [Building1]	 = @Building1,
+	 [City]	 = @City,
+	 [City1]	 = @City1,
+	 [ZipCode]	 = @ZipCode,
+	 [Floor]	 = @Floor,
+ [Floor1]	 = @Floor1,
+	 [MailAddressZone]	 = @MailAddressZone,
+ [MailAddressZone1]	 = @MailAddressZone1,
+	 [Remarks]	 = @Remarks,
+ [Remarks1]	 = @Remarks,
+	 [Appartment]	 = @Appartment,
+ [Appartment1]	 = @Appartment1,
+ [branchname]	 = @branchname,
+[newadd] = @newadd_24 
+
+WHERE 
+	( [CustomerID]	 = @CustomerID AND
+	 [BranchID]	 = @BranchID)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_Customer]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_Customer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_Customer]
+	(@CustomerID 	[int],
+	 @BranchID 	[int],
+	 @CustomerName	[nvarchar](50),
+	 @FamilyName 	[nvarchar](50),
+	 @Company 	[nvarchar](50),
+	 @Phone 	[nvarchar](50),
+	 @Mobile 	[nvarchar](50),
+	 @OfficePhone 	[nvarchar](50),
+	 @OtherPhone 	[nvarchar](50),
+	 @Fax 	[nvarchar](50),
+	 @Email 	[nvarchar](50),
+	 @Code 	[nvarchar](50),
+	 @BirthDay 	[datetime],
+	 @Street 	varchar(350),
+	 @Near 	[nvarchar](50),
+	 @Country 	[nvarchar](50),
+	 @Building 	varchar(350),
+	 @City 	[nvarchar](50),
+	 @ZipCode 	[nvarchar](50),
+	 @Floor 	[nvarchar](50),
+	 @MailAddressZone 	[nvarchar](50),
+	 @Remarks 	[nvarchar](500),
+	 @Appartment 	[nvarchar](50))
+AS 
+UPDATE [dbo].[BOF_M_Customers] 
+SET  [CustomerName]	 = @CustomerName,
+	 [FamilyName]	 = @FamilyName,
+	 [Company]	 = @Company,
+	 [Phone]	 = @Phone,
+	 [Mobile]	 = @Mobile,
+	 [OfficePhone]	 = @OfficePhone,
+	 [OtherPhone]	 = @OtherPhone,
+	 [Fax]	 = @Fax,
+	 [Email]	 = @Email,
+	 [Code]	 = @Code,
+	 [BirthDay]	 = @BirthDay,
+	 [Street]	 = @Street,
+	 [Near]	 = @Near,
+	 [Country]	 = @Country,
+	 [Building]	 = @Building,
+	 [City]	 = @City,
+	 [ZipCode]	 = @ZipCode,
+	 [Floor]	 = @Floor,
+	 [MailAddressZone]	 = @MailAddressZone,
+	 [Remarks]	 = @Remarks,
+	 [Appartment]	 = @Appartment 
+
+WHERE 
+	( [CustomerID]	 = @CustomerID AND
+	 [BranchID]	 = @BranchID)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_ServiceURL]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_ServiceURL]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[POS_ServiceURL](
+@bname varchar(50))
+as 
+begin
+select branchid,connectionstring,ServiceURL from bof_m_branches where Name=@bname
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationTimeModes]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationTimeModes]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_WorkstationTimeModes]
+@BranchID	int,
+@WorkstationID	int
+AS
+	SELECT     COUNT(*) AS TimeMode
+	FROM         dbo.BOF_S_Workstations INNER JOIN
+                      dbo.BOF_L_TimeModes ON dbo.BOF_S_Workstations.TimeModeID = dbo.BOF_L_TimeModes.TimeModeID
+	WHERE     (BranchID =@BranchID) AND (WorkstationID = @WorkstationID)
+	AND  CONVERT(VarChar,  GETDATE(), 8) BETWEEN CONVERT(VarChar, Starts , 8)   AND CONVERT(VarChar, Ends, 8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationSettings]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'  
+CREATE PROCEDURE [dbo].[POS_SEL_WorkstationSettings]  
+@BranchID int,  
+@WorkstationID int  
+AS  
+SELECT     isnull(BOF_S_PhysicalPrinters_6.Description,''None'') AS CheckPrinter1, isnull(BOF_S_PhysicalPrinters_4.Description,''None'') AS CheckPrinter2,   
+                      isnull(BOF_S_PhysicalPrinters_5.Description,''None'') AS DeliveryPrinter1, isnull(BOF_S_PhysicalPrinters_1.Description,''None'') AS DeliveryPrinter2,   
+                      isnull(BOF_S_PhysicalPrinters_2.Description,''None'') AS FastFood1, isnull(BOF_S_PhysicalPrinters_3.Description,''None'') AS FastFood2, dbo.BOF_S_Workstations.WorkstationID,   
+                      dbo.BOF_S_Workstations.BranchID, dbo.BOF_S_Workstations.Description, dbo.BOF_S_Workstations.CustDispPortID,   
+                      dbo.BOF_S_Workstations.ItemMenuID, dbo.BOF_S_Workstations.ItemScreenID, dbo.BOF_S_Workstations.TimeModeID,   
+                      dbo.BOF_S_Workstations.NotStandardInvoice, dbo.BOF_S_Workstations.CashDrawerPortID, dbo.BOF_S_Workstations.CalerIDPortID,   
+                      dbo.BOF_S_Workstations.OwnScreens,  dbo.BOF_M_Branches.Name, dbo.BOF_S_Workstations.AutoCloseDay, dbo.BOF_S_Workstations.CloseDayTime,  
+                      dbo.BOF_S_Workstations.ReprintCheckOnClose,dbo.BOF_S_Workstations.NumsKeysPOS  
+FROM         dbo.BOF_S_Workstations INNER JOIN  
+                      dbo.BOF_M_Branches ON dbo.BOF_S_Workstations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN  
+                      dbo.BOF_M_LocalOffices ON dbo.BOF_M_Branches.LocalOfficeID = dbo.BOF_M_LocalOffices.LocalOfficeID INNER JOIN  
+                      dbo.BOF_M_RegionalOffices ON dbo.BOF_M_LocalOffices.RegionalOfficeID = dbo.BOF_M_RegionalOffices.RegionalOfficeID INNER JOIN  
+                      dbo.BOF_M_CompanyInfo ON dbo.BOF_M_RegionalOffices.CompanyID = dbo.BOF_M_CompanyInfo.CompanyID LEFT OUTER JOIN  
+                      dbo.BOF_S_PhysicalPrinters BOF_S_PhysicalPrinters_6 ON   
+                      dbo.BOF_S_Workstations.CheckPrinter1 = BOF_S_PhysicalPrinters_6.PrintOutID LEFT OUTER JOIN  
+                      dbo.BOF_S_PhysicalPrinters BOF_S_PhysicalPrinters_4 ON   
+                      dbo.BOF_S_Workstations.CheckPrinter2 = BOF_S_PhysicalPrinters_4.PrintOutID LEFT OUTER JOIN  
+                      dbo.BOF_S_PhysicalPrinters BOF_S_PhysicalPrinters_2 ON   
+                      dbo.BOF_S_Workstations.FastFood1 = BOF_S_PhysicalPrinters_2.PrintOutID LEFT OUTER JOIN  
+                      dbo.BOF_S_PhysicalPrinters BOF_S_PhysicalPrinters_5 ON   
+                      dbo.BOF_S_Workstations.DeliveryPrinter1 = BOF_S_PhysicalPrinters_5.PrintOutID LEFT OUTER JOIN  
+                      dbo.BOF_S_PhysicalPrinters BOF_S_PhysicalPrinters_3 ON   
+                      dbo.BOF_S_Workstations.FastFood2 = BOF_S_PhysicalPrinters_3.PrintOutID LEFT OUTER JOIN  
+                      dbo.BOF_S_PhysicalPrinters BOF_S_PhysicalPrinters_1 ON   
+                      dbo.BOF_S_Workstations.DeliveryPrinter2 = BOF_S_PhysicalPrinters_1.PrintOutID  
+WHERE dbo.BOF_S_Workstations.BranchID = @BranchID  
+AND dbo.BOF_S_Workstations.WorkstationID= @WorkstationID  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OrderPaymentDetails] 
+@BranchID	int,
+@OrderID 	int
+AS
+
+/*SELECT     dbo.POS_M_Orders.BranchID, dbo.POS_M_Orders.OrderMenuID, dbo.BOF_M_ItemMenus.Menu, dbo.POS_M_Orders.OrderID, 
+                      dbo.POS_M_Orders.TotalPrice,
+                          ((SELECT     Rate
+                              FROM         dbo.BOF_L_Taxes
+                              WHERE     TaxID = 1 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseTax1   * dbo.BOF_M_ItemMenus.UseTax1
+)  AS Tax1,
+                          ((SELECT     Rate
+                              FROM         dbo.BOF_L_Taxes
+                              WHERE     TaxID = 2 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseTax2)  AS Tax2,
+                          ((SELECT     Rate
+                              FROM         dbo.BOF_L_Taxes
+                              WHERE     TaxID = 3 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseTax3)  AS Tax3,
+                          (SELECT     Rate
+                            FROM          dbo.BOF_L_Taxes
+                            WHERE      TaxID = 4 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseService  AS Service
+FROM         dbo.BOF_M_ItemMenus INNER JOIN
+                      dbo.POS_M_Orders ON dbo.BOF_M_ItemMenus.MenuID = dbo.POS_M_Orders.OrderMenuID
+WHERE BranchID = @BranchID
+AND OrderID = @OrderID*/
+SELECT     dbo.POS_M_Orders.BranchID, dbo.POS_M_Orders.OrderMenuID, dbo.BOF_M_ItemMenus.Menu, dbo.POS_M_Orders.OrderID, 
+                      dbo.POS_M_Orders.TotalPrice,
+                          (select case when (select rate from bof_l_taxes where taxid=1 and inclusive=1) is null then 0 else 
+		(select rate from bof_l_taxes where taxid=1 and inclusive=1) end   * dbo.BOF_M_ItemMenus.UseTax1
+)  AS Tax1,
+                          (select case when (select rate from bof_l_taxes where taxid=2 and inclusive=1) is null then 0 else 
+		(select rate from bof_l_taxes where taxid=2 and inclusive=1) end   * dbo.BOF_M_ItemMenus.UseTax2
+)  AS Tax2,
+                          (select case when (select rate from bof_l_taxes where taxid=3 and inclusive=1) is null then 0 else 
+		(select rate from bof_l_taxes where taxid=3 and inclusive=1) end   * dbo.BOF_M_ItemMenus.UseTax3
+)  AS Tax3,
+                        /*  (select case when (select rate from bof_l_taxes where taxid=4 and inclusive=1) is null then 0 else 
+		(select rate from bof_l_taxes where taxid=4 and inclusive=1) end ) * dbo.BOF_M_ItemMenus.UseService*/
+		 (SELECT     Rate
+                            FROM          dbo.BOF_L_Taxes
+                            WHERE      TaxID = 4 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseService  AS Service,
+ApplyTaxOnService,
+
+case
+when dbo.BOF_M_ItemMenus.service1cond = 1
+ then
+case
+when dbo.POS_M_Orders.TotalPrice=Service1amountcond then
+(SELECT     Rate
+                            FROM          dbo.BOF_L_Taxes
+                            WHERE      TaxID = 5 AND Inclusive = 1)
+else
+(select 0) 
+end
+ when dbo.BOF_M_ItemMenus.service1cond = 2 then
+
+case
+when dbo.POS_M_Orders.TotalPrice<Service1amountcond then
+(SELECT     Rate
+                            FROM          dbo.BOF_L_Taxes
+                            WHERE      TaxID = 5 AND Inclusive = 1) 
+else
+(select 0) 
+end
+when dbo.BOF_M_ItemMenus.service1cond = 3 then
+
+case
+when dbo.POS_M_Orders.TotalPrice>Service1amountcond then
+(SELECT     Rate
+                            FROM          dbo.BOF_L_Taxes
+                            WHERE      TaxID = 5 AND Inclusive = 1)
+else
+(select 0) 
+end
+
+when dbo.BOF_M_ItemMenus.service1cond is null then
+(select 0)
+
+else
+(select 0) 
+end
+as service1
+
+FROM         dbo.BOF_M_ItemMenus INNER JOIN
+                      dbo.POS_M_Orders ON dbo.BOF_M_ItemMenus.MenuID = dbo.POS_M_Orders.OrderMenuID
+WHERE BranchID = @BranchID AND OrderID = @OrderID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderOwner]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderOwner]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OrderOwner]
+@BranchID	int,
+@OrderNumber	[real],
+@MenuID int
+AS
+SELECT OpenedBy FROM POS_M_orders
+WHERE BranchID = @BranchID
+AND OrderNumber = @OrderNumber
+AND (Status = 0 OR Status = 1) and  OrderMenuID=@MenuID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderKitchenScreen]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderKitchenScreen]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderKitchenScreen]
+@BranchID 	int
+ AS
+SELECT    dbo.POS_M_Orders.OrderID,dbo.POS_M_Orders.OrderNumber AS [Table No.], dbo.BOF_M_ItemSalesItems.Description, 
+                      dbo.POS_M_OrderDetails.Quantity, dbo.POS_M_OrderDetails.Printed, dbo.POS_M_Orders.OpeningTime, dbo.POS_M_OrderDetails.OrderingTime, dbo.BOF_M_ItemMenus.Menu
+FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.POS_M_Orders ON dbo.POS_M_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND 
+                      dbo.POS_M_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN
+                      dbo.BOF_M_ItemMenus ON dbo.POS_M_Orders.OrderMenuID = dbo.BOF_M_ItemMenus.MenuID
+WHERE   (POS_M_Orders.Status = 0 OR  POS_M_Orders.Status = 1 OR POS_M_Orders.Status = 2)
+and (dbo.POS_M_Orders.Voided = 0)  and EODdate is null and dbo.POS_M_OrderDetails.Printed=0
+Order by dbo.POS_M_Orders.OpeningTime, dbo.POS_M_OrderDetails.OrderingTime,dbo.POS_M_Orders.OrderID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderID]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderID]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[POS_SEL_OrderID]
+@BranchID int,
+@OrderNumber [real]
+AS
+SELECT OrderID 
+FROM         dbo.POS_M_Orders
+WHERE     (BranchID =@BranchID) 
+AND (OrderNumber = @OrderNumber) 
+AND (Status = 0  OR Status = 1)
+AND Voided = 0
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderExist]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[POS_SEL_OrderExist]
+@BranchID int,
+@OrderNumber [real],
+@OrderType	int
+AS
+SELECT  COUNT(*)  AS OrderExist
+FROM         dbo.POS_M_Orders
+WHERE     (BranchID =@BranchID) 
+AND (OrderNumber = @OrderNumber) 
+AND (Status = 0  OR Status = 1)
+AND Voided = 0
+--and ordermenuid=@OrderType
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPrinted]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPrinted]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[POS_SEL_OrderPrinted]
+@BranchID int,
+@OrderNumber [real],
+@OrderType	int
+AS
+SELECT  COUNT(*)  AS OrderPrinted
+FROM         dbo.POS_M_Orders
+WHERE     (BranchID =@BranchID) 
+AND (OrderNumber = @OrderNumber) 
+AND (Status = 1)
+AND Voided = 0
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentsTipsReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentsTipsReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OrderPaymentsTipsReport]
+@BranchID	int,
+@OrderID 	int
+AS
+SELECT TipAmount FROM POS_TIPS INNER JOIN POS_M_ORDERS ON POS_M_ORDERS.ORDERID=POS_TIPS.ORDERID AND POS_M_ORDERS.InvoiceNumber=POS_TIPS.InvoiceNumber
+WHERE POS_M_ORDERS.ORDERID=@OrderID AND POS_M_ORDERS.BranchID=@BranchID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenTablesReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenTablesReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_OpenTablesReport]
+@BranchID	int,
+@Type int
+AS
+If @Type=0
+BEGIN
+SELECT     dbo.BOF_M_Employees.EmployeeName AS Server, dbo.POS_M_Orders.OrderMenuID, CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) 
+                      AS OrderNumber, dbo.POS_M_Orders.OpenedBy, dbo.POS_M_Orders.OpeningTime, dbo.BOF_M_ItemMenus.Menu, 0 as TotalPrice, 
+                      dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers
+FROM         dbo.POS_M_Orders INNER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_M_Orders.OpenedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+                      dbo.BOF_M_ItemMenus ON dbo.POS_M_Orders.OrderMenuID = dbo.BOF_M_ItemMenus.MenuID
+WHERE     (dbo.POS_M_Orders.BranchID =@BranchID) AND (dbo.POS_M_Orders.Status = 0 OR
+                    dbo.POS_M_Orders.Status = 1) AND (dbo.POS_M_Orders.Voided = 0)
+END
+
+ELSE
+BEGIN
+SELECT     dbo.BOF_M_Employees.EmployeeName AS Server, dbo.POS_M_Orders.OrderMenuID, CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) 
+                      AS OrderNumber, dbo.POS_M_Orders.OpenedBy, dbo.POS_M_Orders.OpeningTime, dbo.BOF_M_ItemMenus.Menu, dbo.POS_M_Orders.TotalPrice, 
+                      dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers
+FROM         dbo.POS_M_Orders INNER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_M_Orders.OpenedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+                      dbo.BOF_M_ItemMenus ON dbo.POS_M_Orders.OrderMenuID = dbo.BOF_M_ItemMenus.MenuID
+WHERE     (dbo.POS_M_Orders.BranchID =@BranchID) AND (dbo.POS_M_Orders.Status = 0 OR
+                      dbo.POS_M_Orders.Status = 1) AND (dbo.POS_M_Orders.Voided = 0)
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderTracingReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderTracingReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OrderTracingReport]
+@BranchID 	int
+ AS
+SELECT     dbo.BOF_M_Employees.EmployeeName AS [Ordered By], dbo.POS_M_Orders.OrderNumber AS [Table No.], dbo.BOF_M_ItemSalesItems.Description, 
+                      dbo.POS_M_OrderDetails.Quantity, dbo.POS_M_OrderDetails.Printed, dbo.POS_M_OrderDetails.OrderingTime, dbo.BOF_M_ItemMenus.Menu
+FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.POS_M_Orders ON dbo.POS_M_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND 
+                      dbo.POS_M_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_M_Orders.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_M_Orders.OpenedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN
+                      dbo.BOF_M_ItemMenus ON dbo.POS_M_Orders.OrderMenuID = dbo.BOF_M_ItemMenus.MenuID
+WHERE     (dbo.POS_M_Orders.Voided = 0) 
+--AND (dbo.POS_M_Orders.Status = 0) 
+AND (dbo.POS_M_OrderDetails.AffectedItem = 0) AND 
+                      (dbo.POS_M_OrderDetails.Status = N''Ordered'') AND (dbo.POS_M_Orders.BranchID = @BranchID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_SystemSettings]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_SystemSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_SystemSettings]
+AS
+SELECT     dbo.BOF_S_SystemSettings.*,
+                          (SELECT     SalesRate
+                            FROM          dbo.BOF_L_Currencies
+                            WHERE      (SalesRate = 1)) AS SCRate
+FROM         dbo.BOF_S_SystemSettings
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_SETMENU]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_SETMENU]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE procedure [dbo].[POS_SEL_SETMENU]  
+@ItemID varchar(10)  ,
+@Qty int
+as  
+SELECT     
+--( (select count(*) from Item_Ingredient where Itemid=ing.Itemid and ParentID=ing.parentid) / (select count(*) from Item_Ingredient where Itemid=ing.parentid )) as Qty  ,  
+@Qty as Qty,
+ ing.parentid, (select ''>> ''+  Description  from BOF_M_ItemSalesItems where SalesItemID=  ing.parentid) as Description  
+FROM         Item_Ingredient ing  
+WHERE     (ing.Itemid = @ItemID) and ing.parentid<>@ItemID  
+group by ing.parentid, ing.Itemid;
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Screens]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Screens]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_Screens]
+@BranchID	int,
+@ParentID	int,
+@ItemTypeID	int
+AS
+	IF @ItemTypeID = 2
+		BEGIN
+			SELECT     TOP 100 PERCENT dbo.BOF_M_ItemSalesItems.*, dbo.BOF_M_ItemSalesItems.MenuDescription AS DisplayName,
+			1 AS ItemTypeID
+			FROM         dbo.BOF_M_ItemSalesItems
+			WHERE     [GroupID]	= @ParentID
+		END
+	ELSE
+		BEGIN
+			SELECT     TOP 100 PERCENT dbo.POS_M_WorkstationScreenItems.*, dbo.BOF_M_ItemSalesItems.*
+			FROM         dbo.POS_M_WorkstationScreenItems left outer join
+			                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_WorkstationScreenItems.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+			WHERE     (POS_M_WorkstationScreenItems.BranchID = @BranchID)
+			AND [ParentID]	= @ParentID	
+			ORDER BY POS_M_WorkstationScreenItems.Serial
+		END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationExist]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE  [dbo].[POS_SEL_WorkstationExist]
+@BranchID int,
+@WorkstationID int
+AS
+SELECT  COUNT(*)  AS WorkstationExist
+FROM         dbo.BOF_S_Workstations
+WHERE     (BranchID =@BranchID) AND WorkstationID= @WorkstationID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_VoidReasons]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_VoidReasons]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_VoidReasons]
+AS
+SELECT     TOP 100 PERCENT VoidReasonID, VoidReason as [Void Reason]
+FROM         dbo.BOF_L_VoidReasons
+ORDER BY VoidReason
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ScreenGroupItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ScreenGroupItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_ScreenGroupItems]
+@BranchID	int,
+@WorkStationID	int,
+@ParentID	int
+AS
+SELECT     TOP 100 PERCENT dbo.POS_M_WorkstationScreens.WSScreenItemID AS WSScreenItemID, dbo.POS_M_WorkstationScreens.BranchID AS BranchID, 
+                      dbo.POS_M_WorkstationScreens.WorkstationID AS WorkstationID, dbo.POS_M_WorkstationScreens.ScreenID AS ScreenID, 
+                      dbo.BOF_M_ItemSalesItems.Description AS ScreenName, dbo.BOF_M_ItemSalesItems.SalesItemID AS ItemID, 1 AS ItemTypeID, 
+                      dbo.POS_M_WorkstationScreens.ScreenColor AS ScreenColor, dbo.POS_M_WorkstationScreens.ParentID AS ParentID, 
+                      dbo.POS_M_WorkstationScreens.GroupID AS GroupID, dbo.BOF_M_ItemSalesItems.*
+FROM         dbo.BOF_M_ItemSalesItems RIGHT OUTER JOIN
+                      dbo.POS_M_WorkstationScreens ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.POS_M_WorkstationScreens.GroupID AND 
+                      dbo.BOF_M_ItemSalesItems.SalesItemID = dbo.POS_M_WorkstationScreens.ItemID
+WHERE     (WorkstationID = @WorkStationID) AND (BranchID = @BranchID)  AND (ParentID = @ParentID )
+ORDER BY dbo.POS_M_WorkstationScreens.WSScreenItemID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PhoneExist]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PhoneExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE  [dbo].[POS_SEL_PhoneExist]
+@BranchID	int,
+@PhoneNumber 	varchar(15)
+AS
+DECLARE @PhoneString	varchar(20)
+SELECT @PhoneString =  ''%'' + @PhoneNumber + ''%''
+SELECT     CustomerID
+FROM         dbo.BOF_M_Customers
+WHERE     (Mobile LIKE @PhoneString) OR (Phone LIKE @PhoneString) OR (OfficePhone  LIKE @PhoneString) OR (OtherPhone  LIKE @PhoneString)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PendingOrders]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PendingOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_PendingOrders]
+@BranchID	int
+AS
+SELECT     dbo.POS_M_Orders.*, dbo.BOF_M_Customers.CustomerName + '' '' + dbo.BOF_M_Customers.FamilyName AS CustomerName
+FROM         dbo.POS_M_Orders INNER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE  ( OrderMenuID = 2 ) AND  (Status = 1) AND (DeliveryStatus = 1) AND (POS_M_Orders.BranchID = @BranchID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PaymentTypes_param]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PaymentTypes_param]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_PaymentTypes_param]  
+@PayTypeID int
+AS  
+SELECT     TOP 100 PERCENT dbo.BOF_L_PaymentTypes.PaymentTypeID, dbo.BOF_L_PaymentTypes.PaymentType AS [Payment Type],   
+                      dbo.BOF_L_PaymentTypes.PayTypeID, dbo.BOF_L_PayTypes.PayType, 0 AS CustomerID ,BOF_L_PaymentTypes.CurrencyID 
+FROM         dbo.BOF_L_PaymentTypes INNER JOIN  
+                      dbo.BOF_L_PayTypes ON dbo.BOF_L_PaymentTypes.PayTypeID = dbo.BOF_L_PayTypes.PayTypeID  
+where dbo.BOF_L_PaymentTypes.PaymentTypeID=@PayTypeID
+ORDER BY dbo.BOF_L_PayTypes.PayType  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PaymentTypes]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PaymentTypes]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_PaymentTypes]  
+AS  
+SELECT     TOP 100 PERCENT dbo.BOF_L_PaymentTypes.PaymentTypeID, dbo.BOF_L_PaymentTypes.PaymentType AS [Payment Type],   
+                      dbo.BOF_L_PaymentTypes.PayTypeID, dbo.BOF_L_PayTypes.PayType, 0 AS CustomerID ,BOF_L_PaymentTypes.CurrencyID 
+FROM         dbo.BOF_L_PaymentTypes INNER JOIN  
+                      dbo.BOF_L_PayTypes ON dbo.BOF_L_PaymentTypes.PayTypeID = dbo.BOF_L_PayTypes.PayTypeID  
+ORDER BY dbo.BOF_L_PayTypes.PayType  
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderVoidsReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderVoidsReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OrderVoidsReport]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	@LogicalPrinterID	[int],
+	@PhysicalPrinterID	[int])
+AS
+	SELECT DISTINCT 
+	                      TOP 100 PERCENT dbo.POS_T_OrderDetails.*, dbo.BOF_M_ItemSalesItems.KitcheDescription AS Description, dbo.POS_M_Orders.OrderMenuID AS Menu, 
+	                      dbo.POS_M_Orders.OrderNumber AS TableNumber, dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers, 
+	                      dbo.POS_M_Orders.KitchenRemark AS KitchenRemark, dbo.BOF_M_Employees.EmployeeName AS EmployeeName, 
+	                      dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter, dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter, 
+	                      dbo.BOF_S_Workstations.Description AS Workstation
+	FROM         dbo.POS_T_OrderDetails INNER JOIN
+	                      dbo.POS_M_Orders ON dbo.POS_T_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND 
+	                      dbo.POS_T_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN
+	                      dbo.BOF_M_Employees ON dbo.POS_T_OrderDetails.BranchID = dbo.BOF_M_Employees.BranchID AND 
+	                      dbo.POS_T_OrderDetails.OrderedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+	                      dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN
+	                      dbo.BOF_S_BranchLocations INNER JOIN
+	                      dbo.BOF_S_LogicalPrinters ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_S_LogicalPrinters.PrintOutID INNER JOIN
+	                      dbo.BOF_S_PhysicalPrinters ON dbo.BOF_S_BranchLocations.PhysicalPrinterID = dbo.BOF_S_PhysicalPrinters.PrintOutID ON 
+	                      dbo.BOF_M_ItemSalesItems.PrintOut1 = dbo.BOF_S_BranchLocations.LogicalPrinterID OR 
+	                      dbo.BOF_M_ItemSalesItems.PrintOut2 = dbo.BOF_S_BranchLocations.LogicalPrinterID INNER JOIN
+	                      dbo.BOF_S_Workstations ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID AND 
+	                      dbo.POS_T_OrderDetails.BranchID = dbo.BOF_S_Workstations.BranchID
+	WHERE POS_M_Orders.BranchID = @BranchID	AND POS_M_Orders.OrderID = @OrderID AND (dbo.BOF_S_PhysicalPrinters.PrintOutID = @PhysicalPrinterID)
+	 AND (dbo.BOF_S_LogicalPrinters.PrintOutID = @LogicalPrinterID) AND POS_M_Orders.DeliveryTime <= GETDATE()
+	AND dbo.POS_T_OrderDetails.Status = ''Void''
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_PercentageDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_PercentageDiscounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_PercentageDiscounts]
+AS
+SELECT     dbo.BOF_L_Discounts.DiscountID, dbo.BOF_L_Discounts.Description, dbo.BOF_L_Discounts.Rate, dbo.BOF_L_Discounts.OpenFixed
+FROM         dbo.BOF_L_Discounts INNER JOIN
+                      dbo.BOF_L_DiscountTypes ON dbo.BOF_L_Discounts.DiscountTypeID = dbo.BOF_L_DiscountTypes.DiscountTypeID
+WHERE     (dbo.BOF_L_DiscountTypes.DiscountTypeID = 3)
+ORDER BY dbo.BOF_L_Discounts.Description
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderScreenDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderScreenDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderScreenDetails]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT    Quantity, Description
+FROM  [VEW_POS_OrderKitchenScreen] 
+WHERE BranchId= @BranchID AND OrderID=@OrderID
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderScreenCount]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderScreenCount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderScreenCount]
+	@BranchID	int
+AS
+SELECT count(orderid)
+FROM  [VEW_POS_OrderKitchenScreen] 
+WHERE BranchId= @BranchID
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OpenScreenOrders]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OpenScreenOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OpenScreenOrders]
+@BranchID	int
+AS
+SELECT  Distinct OrderID,OrderNumber, Menu, OrderMenuId, OrderTime,KitchenOrderTime
+FROM       [VEW_POS_OrderKitchenScreen] 
+WHERE BranchId= @BranchID order by ordertime, OrderID
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationPrinters_New]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationPrinters_New]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_WorkstationPrinters_New]
+@BranchID	int,
+@ws int
+AS
+SELECT   distinct  dbo.BOF_S_BranchLocations.PhysicalPrinterID, dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter
+FROM         dbo.BOF_S_PhysicalPrinters INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.BOF_S_PhysicalPrinters.PrintOutID = dbo.BOF_S_BranchLocations.PhysicalPrinterID
+WHERE BranchID = @BranchID and dbo.BOF_S_BranchLocations.WorkstatonID=@ws
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_WorkstationPrinters]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_WorkstationPrinters]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_WorkstationPrinters]
+@BranchID	int,
+@ws int
+AS
+SELECT     dbo.BOF_S_BranchLocations.*, dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter
+FROM         dbo.BOF_S_PhysicalPrinters INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.BOF_S_PhysicalPrinters.PrintOutID = dbo.BOF_S_BranchLocations.PhysicalPrinterID
+WHERE BranchID = @BranchID and dbo.BOF_S_BranchLocations.WorkstatonID=@ws
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Pos_sel_TipsReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pos_sel_TipsReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[Pos_sel_TipsReport] 
+	-- Add the parameters for the stored procedure here
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@TODate datetime=null
+AS
+BEGIN
+IF @TODATE IS NULL
+BEGIN
+ IF @EODDate IS NULL
+	BEGIN
+      SELECT BranchID, InvoiceNumber, OpenedBy, ClosedBy, TotalPaid, Amount FROM VEW_POS_TipsReport WHERE (BranchID =@BranchID) 
+      AND EODDate IS NULL 
+    END
+  ELSE
+	BEGIN	
+      SELECT BranchID, InvoiceNumber, OpenedBy, ClosedBy, TotalPaid, Amount FROM VEW_POS_TipsReport WHERE (BranchID =@BranchID) 
+      AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)					
+	END
+  END
+ELSE
+  BEGIN		
+    SELECT BranchID, InvoiceNumber, OpenedBy, ClosedBy, TotalPaid, Amount FROM VEW_POS_TipsReport WHERE (BranchID =@BranchID) 
+     AND  EODDate >= CONVERT(varchar(12), @EODDATE, 101)  AND  EODDate < = CONVERT(varchar(12), @TODATE, 101)
+  END
+END' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ReturnCurrencyID]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ReturnCurrencyID]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[POS_SEL_ReturnCurrencyID]
+@PaymentTypeID int
+as
+select distinct CurrencyID from BOF_L_PaymentTypes where PaymentTypeID=@PaymentTypeID 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CloseOrder]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CloseOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_UPD_CloseOrder]
+	(@BranchID 	[int],
+	 @OrderID 	[int],
+	 @ClosedBy 	[int],
+	 @TotalPrice 	[real])
+
+     AS 
+	DECLARE @InvoiceID int
+ IF NOT Exists(SELECT * FROM POS_M_Orders WHERE BranchID = @BranchID AND OrderID = @OrderID and Status = 2)
+BEGIN
+
+
+	IF NOT Exists(SELECT * FROM POS_M_Invoices WHERE BranchID = @BranchID AND OrderID = @OrderID)
+		BEGIN
+			SELECT @InvoiceID = ISNULL(MAX(InvoiceID), 0)  + 1  FROM POS_M_Invoices 
+			WHERE BranchID = @BranchID AND InvoiceID < 10000000
+			INSERT INTO [dbo].[POS_M_Invoices] 
+				 (InvoiceID,
+				 [BranchID],
+				 [OrderID],
+				 [InvoiceValue],
+				 [ReceivedBy]) 
+			 
+			VALUES( @InvoiceID,
+				 @BranchID,
+				 @OrderID,
+				 @TotalPrice,
+				 @ClosedBy)
+		END
+	ELSE
+		BEGIN
+			SELECT @InvoiceID = InvoiceID  FROM POS_M_Invoices 
+			WHERE BranchID = @BranchID AND OrderID = @OrderID
+		END
+		
+
+	UPDATE [dbo].[POS_M_Orders] 
+	SET  [ClosedBy]	 = @ClosedBy,
+		 [ClosingTime]	 = GETDATE(),
+		 [Status]	 = 1,
+		 [TotalPrice]	 = @TotalPrice,
+		[InvoiceNumber] = @InvoiceID
+	WHERE ( [BranchID]	 = @BranchID AND [OrderID] = @OrderID)
+
+	UPDATE [dbo].[POS_M_OrderDetails] 
+	SET [InvoiceID] = @InvoiceID
+	WHERE ( [BranchID]	 = @BranchID AND [OrderID]= @OrderID)
+    
+    DELETE FROM [dbo].[POS_M_OrderTaxes] 
+	WHERE ( [BranchID]	 = @BranchID AND [OrderID]= @OrderID)
+
+	DECLARE @OrderMenuID	INT
+	DECLARE @TAX1 REAL
+	DECLARE @TAX2 REAL
+	DECLARE @TAX3 REAL
+	DECLARE @SERVICE REAL
+	
+	SELECT @TAX1 = Rate FROM  dbo.BOF_L_Taxes WHERE TaxID = 1
+	SELECT @TAX2 = Rate FROM  dbo.BOF_L_Taxes WHERE TaxID = 2
+	SELECT @TAX3 = Rate FROM  dbo.BOF_L_Taxes WHERE TaxID = 3
+	SELECT @SERVICE = Rate FROM  dbo.BOF_L_Taxes WHERE TaxID = 4
+	SELECT @OrderMenuID = OrderMenuID FROM  [dbo].[POS_M_Orders]  
+	WHERE ( [BranchID]	 = @BranchID AND [OrderID]= @OrderID)
+
+	IF EXISTS(SELECT * FROM BOF_M_ItemMenus WHERE MenuID= @OrderMenuID  AND UseTax1=1)
+		BEGIN
+			INSERT INTO [dbo].[POS_M_OrderTaxes] 
+				 ( [BranchID],
+				 [OrderID],
+				 [TaxID],
+				 [TaxRate]) 
+			VALUES  
+				(@BranchID,
+				 @OrderID,
+				 1,
+				 @TAX1)
+		END
+	
+	IF EXISTS(SELECT * FROM BOF_M_ItemMenus WHERE MenuID=@OrderMenuID AND UseTax2=1)
+		BEGIN
+			INSERT INTO [dbo].[POS_M_OrderTaxes] 
+				 ( [BranchID],
+				 [OrderID],
+				 [TaxID],
+				 [TaxRate]) 
+			VALUES  
+				(@BranchID,
+				 @OrderID,
+				 2,
+				 @TAX2)
+		END
+
+	IF EXISTS(SELECT * FROM BOF_M_ItemMenus WHERE MenuID=@OrderMenuID AND UseTax3=1)
+		BEGIN
+			INSERT INTO [dbo].[POS_M_OrderTaxes] 
+				 ( [BranchID],
+				 [OrderID],
+				 [TaxID],
+				 [TaxRate]) 
+			VALUES  
+				(@BranchID,
+				 @OrderID,
+				 3,
+				 @TAX3)
+		END
+	
+	IF EXISTS(SELECT * FROM BOF_M_ItemMenus WHERE MenuID=@OrderMenuID AND UseService=1)
+		BEGIN
+			INSERT INTO [dbo].[POS_M_OrderTaxes] 
+				 ( [BranchID],
+				 [OrderID],
+				 [TaxID],
+				 [TaxRate]) 
+			VALUES  
+				(@BranchID,
+				 @OrderID,
+				 4,
+				 @SERVICE)
+		END
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ClearHoldOrder]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ClearHoldOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_ClearHoldOrder]
+	(@BranchID 	[int],
+	 @OrderID 	[int])
+
+AS 
+DELETE [dbo].[POS_M_OnHoldOrderDetails] 
+
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ConvertPayAmnt]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ConvertPayAmnt]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_ConvertPayAmnt] 
+@PayType as nvarchar(50)
+AS
+select dbo.BOF_L_PaymentTypes.PaymentType,purchaserate,salesrate
+  from BOF_L_PaymentTypes inner join BOF_L_CURRENCIES on BOF_L_PaymentTypes.CurrencyID=BOF_L_CURRENCIES.CurrencyID
+where dbo.BOF_L_PaymentTypes.PaymentType=@PayType
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_KitchenVoidsReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_KitchenVoidsReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_KitchenVoidsReport]
+	(@BranchID 	[int],
+	@OrderID	[int])
+AS
+SELECT DISTINCT 
+                      TOP 100 PERCENT dbo.POS_T_OrderDetails.*, dbo.BOF_M_ItemSalesItems.KitcheDescription AS Description, 
+                      dbo.POS_M_Orders.OrderMenuID AS Menu, CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) AS TableNumber, 
+                      dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers, dbo.POS_M_Orders.KitchenRemark AS KitchenRemark, 
+                      dbo.BOF_M_Employees.EmployeeName AS EmployeeName, dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter, 
+                      dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter, dbo.BOF_S_LogicalPrinters.PrintOutID AS PrintOutID, 
+                      dbo.BOF_S_PhysicalPrinters.PrintOutID AS PrinterID, dbo.BOF_S_Workstations.Description AS Workstation, 
+                      dbo.BOF_M_Customers.CustomerName AS CustomerName, dbo.BOF_M_ItemSalesItems.FunctionID AS FunctionID
+FROM         dbo.POS_T_OrderDetails INNER JOIN
+                      dbo.POS_M_Orders ON dbo.POS_T_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND 
+                      dbo.POS_T_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_T_OrderDetails.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_T_OrderDetails.OrderedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN
+                      dbo.BOF_S_BranchLocations INNER JOIN
+                      dbo.BOF_S_LogicalPrinters ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_S_LogicalPrinters.PrintOutID INNER JOIN
+                      dbo.BOF_S_PhysicalPrinters ON dbo.BOF_S_BranchLocations.PhysicalPrinterID = dbo.BOF_S_PhysicalPrinters.PrintOutID ON 
+                      dbo.BOF_M_ItemSalesItems.PrintOut1 = dbo.BOF_S_BranchLocations.LogicalPrinterID INNER JOIN
+                      dbo.BOF_S_Workstations ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID AND 
+                      dbo.POS_T_OrderDetails.BranchID = dbo.BOF_S_Workstations.BranchID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID
+	WHERE POS_M_Orders.BranchID = @BranchID	AND POS_M_Orders.OrderID = @OrderID AND  POS_M_Orders.DeliveryTime <= GETDATE()
+	AND dbo.POS_T_OrderDetails.Status = ''Void''
+UNION ALL
+SELECT DISTINCT 
+                      TOP 100 PERCENT dbo.POS_T_OrderDetails.*, dbo.BOF_M_ItemSalesItems.KitcheDescription AS Description, 
+                      dbo.POS_M_Orders.OrderMenuID AS Menu, CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) AS TableNumber, 
+                      dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers, dbo.POS_M_Orders.KitchenRemark AS KitchenRemark, 
+                      dbo.BOF_M_Employees.EmployeeName AS EmployeeName, dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter, 
+                      dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter, dbo.BOF_S_LogicalPrinters.PrintOutID AS PrintOutID, 
+                      dbo.BOF_S_PhysicalPrinters.PrintOutID AS PrinterID, dbo.BOF_S_Workstations.Description AS Workstation, 
+                      dbo.BOF_M_Customers.CustomerName AS CustomerName, dbo.BOF_M_ItemSalesItems.FunctionID AS FunctionID
+FROM         dbo.POS_T_OrderDetails INNER JOIN
+                      dbo.POS_M_Orders ON dbo.POS_T_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND 
+                      dbo.POS_T_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN
+                      dbo.BOF_M_Employees ON dbo.POS_T_OrderDetails.BranchID = dbo.BOF_M_Employees.BranchID AND 
+                      dbo.POS_T_OrderDetails.OrderedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN
+                      dbo.BOF_S_BranchLocations INNER JOIN
+                      dbo.BOF_S_LogicalPrinters ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_S_LogicalPrinters.PrintOutID INNER JOIN
+                      dbo.BOF_S_PhysicalPrinters ON dbo.BOF_S_BranchLocations.PhysicalPrinterID = dbo.BOF_S_PhysicalPrinters.PrintOutID ON 
+                      dbo.BOF_M_ItemSalesItems.PrintOut2 = dbo.BOF_S_BranchLocations.LogicalPrinterID INNER JOIN
+                      dbo.BOF_S_Workstations ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID AND 
+                      dbo.POS_T_OrderDetails.BranchID = dbo.BOF_S_Workstations.BranchID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID
+	WHERE POS_M_Orders.BranchID = @BranchID	AND POS_M_Orders.OrderID = @OrderID AND  POS_M_Orders.DeliveryTime <= GETDATE()
+	AND dbo.POS_T_OrderDetails.Status = ''Void''
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineOrders]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OnlineOrders]
+@BranchID	int,
+@WorkStationID int
+AS
+SELECT   DISTINCT  dbo.POS_M_OnlineOrders.*, dbo.BOF_M_Customers.CustomerName + '' '' + dbo.BOF_M_Customers.FamilyName AS CustomerName,
+BOF_M_Customers.Mobile, BOF_M_Customers.City, BOF_M_Customers.Street, BOF_M_Customers.Building, BOF_M_Customers.Appartment
+FROM         dbo.POS_M_OnlineOrders INNER JOIN
+                      dbo.POS_M_OnLineOrderDetails ON dbo.POS_M_OnlineOrders.BranchID = dbo.POS_M_OnLineOrderDetails.BranchID AND 
+                      dbo.POS_M_OnlineOrders.OrderID = dbo.POS_M_OnLineOrderDetails.OrderID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_OnlineOrders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_OnlineOrders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE     (dbo.POS_M_OnlineOrders.Status = 0) AND (dbo.POS_M_OnlineOrders.BranchID = @BranchID) AND 
+                      (dbo.POS_M_OnlineOrders.WorkStationID = @WorkStationID) AND MarketingActivityID IS NULL
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnLineOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnLineOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OnLineOrderDetails]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT     dbo.POS_M_OnLineOrderDetails.*, dbo.BOF_M_ItemSalesItems.*
+FROM         dbo.POS_M_OnLineOrderDetails INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OnLineOrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+WHERE      (dbo.POS_M_OnLineOrderDetails.AffectedItem = 0) AND (dbo.POS_M_OnLineOrderDetails.BranchID =@BranchID) 
+AND (dbo.POS_M_OnLineOrderDetails.OrderID = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetailsReport_Refund]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetailsReport_Refund]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OrderDetailsReport_Refund]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	@LogicalPrinterID	[int],
+	@PhysicalPrinterID	[int])
+AS
+	SELECT DISTINCT 
+	                      TOP 100 PERCENT dbo.POS_T_OrderDetails.*, dbo.BOF_M_ItemSalesItems.KitcheDescription AS Description, dbo.POS_M_Orders.OrderMenuID AS Menu, 
+	                      CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50))  AS TableNumber, dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers, 
+	                      dbo.POS_M_Orders.KitchenRemark AS KitchenRemark, dbo.BOF_M_Employees.EmployeeName AS EmployeeName, 
+	                      dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter, dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter, 
+	                      dbo.BOF_S_Workstations.Description AS Workstation
+	FROM         dbo.POS_T_OrderDetails INNER JOIN
+	                      dbo.POS_M_Orders ON dbo.POS_T_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND 
+	                      dbo.POS_T_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN
+	                      dbo.BOF_M_Employees ON dbo.POS_T_OrderDetails.BranchID = dbo.BOF_M_Employees.BranchID AND 
+	                      dbo.POS_T_OrderDetails.OrderedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+	                      dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN
+	                      dbo.BOF_S_BranchLocations INNER JOIN
+	                      dbo.BOF_S_LogicalPrinters ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_S_LogicalPrinters.PrintOutID INNER JOIN
+	                      dbo.BOF_S_PhysicalPrinters ON dbo.BOF_S_BranchLocations.PhysicalPrinterID = dbo.BOF_S_PhysicalPrinters.PrintOutID ON 
+	                      dbo.BOF_M_ItemSalesItems.PrintOut1 = dbo.BOF_S_BranchLocations.LogicalPrinterID OR 
+	                      dbo.BOF_M_ItemSalesItems.PrintOut2 = dbo.BOF_S_BranchLocations.LogicalPrinterID INNER JOIN
+	                      dbo.BOF_S_Workstations ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID AND 
+	                      dbo.POS_T_OrderDetails.BranchID = dbo.BOF_S_Workstations.BranchID
+	WHERE POS_M_Orders.BranchID = @BranchID	AND POS_M_Orders.OrderID = @OrderID AND (dbo.BOF_S_PhysicalPrinters.PrintOutID = @PhysicalPrinterID)
+	 AND (dbo.BOF_S_LogicalPrinters.PrintOutID = @LogicalPrinterID) AND POS_M_Orders.DeliveryTime <= GETDATE()
+	AND dbo.POS_T_OrderDetails.Status = ''Void''
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetailsReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetailsReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderDetailsReport]  
+ (@BranchID  [int],  
+ @OrderID [int],  
+ @LogicalPrinterID [int],  
+ @PhysicalPrinterID [int])  
+AS  
+ SELECT DISTINCT   
+                      TOP 100 PERCENT dbo.POS_T_OrderDetails.*, dbo.BOF_M_ItemSalesItems.KitcheDescription AS Description,   
+                      dbo.POS_M_Orders.OrderMenuID AS Menu, CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) AS TableNumber,   
+                      dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers, dbo.POS_M_Orders.KitchenRemark AS KitchenRemark,   
+                      dbo.BOF_M_Employees.EmployeeName AS EmployeeName, dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter,   
+                      dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter, dbo.BOF_S_Workstations.Description AS Workstation,   
+                      dbo.BOF_M_Customers.CustomerName, dbo.BOF_M_ItemSalesItems.FunctionID,pos_m_orders.make,pos_m_orders.model,  
+      pos_m_orders.plateno,pos_m_orders.color, dbo.BOF_M_ItemSalesItems.GroupId  
+ FROM         dbo.POS_T_OrderDetails INNER JOIN  
+                      dbo.POS_M_Orders ON dbo.POS_T_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID AND   
+                      dbo.POS_T_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN  
+                      dbo.BOF_M_Employees ON dbo.POS_T_OrderDetails.BranchID = dbo.BOF_M_Employees.BranchID AND   
+                      dbo.POS_T_OrderDetails.OrderedBy = dbo.BOF_M_Employees.EmployeeID INNER JOIN  
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN  
+                      dbo.BOF_S_BranchLocations INNER JOIN  
+                      dbo.BOF_S_LogicalPrinters ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_S_LogicalPrinters.PrintOutID INNER JOIN  
+                      dbo.BOF_S_PhysicalPrinters ON dbo.BOF_S_BranchLocations.PhysicalPrinterID = dbo.BOF_S_PhysicalPrinters.PrintOutID ON   
+                      dbo.BOF_M_ItemSalesItems.PrintOut1 = dbo.BOF_S_BranchLocations.LogicalPrinterID OR   
+                      dbo.BOF_M_ItemSalesItems.PrintOut2 = dbo.BOF_S_BranchLocations.LogicalPrinterID INNER JOIN  
+                      dbo.BOF_S_Workstations ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID AND   
+                      dbo.POS_T_OrderDetails.BranchID = dbo.BOF_S_Workstations.BranchID LEFT OUTER JOIN  
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID  
+ WHERE POS_M_Orders.BranchID = @BranchID AND POS_M_Orders.OrderID = @OrderID AND (dbo.BOF_S_PhysicalPrinters.PrintOutID = @PhysicalPrinterID)  
+  AND (dbo.BOF_S_LogicalPrinters.PrintOutID = @LogicalPrinterID) AND POS_M_Orders.DeliveryTime <= GETDATE()  
+ AND dbo.POS_T_OrderDetails.Status = ''Ordered''  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemDiscounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ItemDiscounts]
+AS
+SELECT     dbo.BOF_L_Discounts.DiscountID, dbo.BOF_L_Discounts.Description, dbo.BOF_L_Discounts.Rate, dbo.BOF_L_Discounts.OpenFixed,
+dbo.BOF_L_DiscountTypes.DiscountTypeID
+FROM         dbo.BOF_L_Discounts INNER JOIN
+                      dbo.BOF_L_DiscountTypes ON dbo.BOF_L_Discounts.DiscountTypeID = dbo.BOF_L_DiscountTypes.DiscountTypeID
+WHERE     (dbo.BOF_L_DiscountTypes.DiscountTypeID in (2, 5,6))
+ORDER BY dbo.BOF_L_Discounts.Description
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnHoldOrders]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnHoldOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OnHoldOrders]
+@BranchID	int,
+@WorkStationID int
+AS
+SELECT   DISTINCT  dbo.POS_M_Orders.*, dbo.BOF_M_Customers.CustomerName + '' '' + dbo.BOF_M_Customers.FamilyName AS CustomerName
+FROM         dbo.POS_M_Orders INNER JOIN
+                      dbo.POS_M_OnHoldOrderDetails ON dbo.POS_M_Orders.BranchID = dbo.POS_M_OnHoldOrderDetails.BranchID AND 
+                      dbo.POS_M_Orders.OrderID = dbo.POS_M_OnHoldOrderDetails.OrderID LEFT OUTER JOIN
+                      dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID AND 
+                      dbo.POS_M_Orders.BranchID = dbo.BOF_M_Customers.BranchID
+WHERE     (dbo.POS_M_Orders.Status = 0) AND (dbo.POS_M_Orders.BranchID = @BranchID) AND (dbo.POS_M_Orders.OrderMenuID = 3) AND 
+                      (dbo.POS_M_Orders.WorkStationID = @WorkStationID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnHoldOrderDetails]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnHoldOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OnHoldOrderDetails]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT     dbo.POS_M_OnHoldOrderDetails.*, dbo.BOF_M_ItemSalesItems.*
+FROM         dbo.POS_M_OnHoldOrderDetails INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OnHoldOrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+WHERE      (dbo.POS_M_OnHoldOrderDetails.AffectedItem = 0) AND (dbo.POS_M_OnHoldOrderDetails.BranchID =@BranchID) 
+AND (dbo.POS_M_OnHoldOrderDetails.OrderID = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineDiscounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OnlineDiscounts]
+@BranchID	int,
+@OrderID INT
+AS
+BEGIN
+SELECT     dbo.POS_M_OnLineOrderDetails.OrderID, dbo.POS_M_OnLineOrderDetails.DiscountId, 
+           dbo.BOF_L_Discounts.DiscountTypeID, dbo.BOF_L_Discounts.Rate AS DiscountValue, SUM(dbo.POS_M_OnLineOrderDetails.Discount) AS DiscountAmount
+FROM         dbo.BOF_L_Discounts INNER JOIN
+                      dbo.POS_M_OnLineOrderDetails ON dbo.BOF_L_Discounts.DiscountID = dbo.POS_M_OnLineOrderDetails.DiscountId
+WHERE     (dbo.POS_M_OnLineOrderDetails.OrderID = @OrderID)
+AND (DBO.POS_M_OnLineOrderDetails.BranchID= @BranchID) AND(dbo.POS_M_OnLineOrderDetails.DiscountId<>0)
+GROUP BY dbo.POS_M_OnLineOrderDetails.OrderID, dbo.POS_M_OnLineOrderDetails.DiscountId, dbo.BOF_L_Discounts.DiscountTypeID, dbo.BOF_L_Discounts.Rate
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OnlineOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OnlineOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_OnlineOrderDetails]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	 @ItemID 	[int],
+	 @Quantity 	[real],
+	 @UsedPrice 	[real],
+	@CustomerNumber	[int],
+	@AffectedItem	Int,
+	@VoidReasonID	int,
+	@Status	varchar(20),
+	@OrderedBy	int,
+	@WorkstationID		int,
+	@DiscountID INT,
+	@Discount	REAL,
+	@without int=0)
+AS
+	INSERT INTO [dbo].[POS_M_OnLineOrderDetails] 
+		 ([BranchID],
+		 [OrderID],
+		 [ItemID],
+		 [Quantity],
+		 [UsedPrice],
+		[CustomerNumber],
+		[AffectedItem],
+		[VoidReasonID],
+		[Status],
+		[DiscountID],
+		[Discount],
+		[without]) 
+	VALUES 
+		( @BranchID,
+		@OrderID,
+		@ItemID,
+		@Quantity,
+		@UsedPrice,
+		@CustomerNumber,
+		@AffectedItem,
+		@VoidReasonID,
+		@Status,
+		@DiscountID,
+		@Discount,
+		@without) 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_HoldOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_HoldOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_HoldOrderDetails]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	 @ItemID 	[int],
+	 @Quantity 	[real],
+	 @UsedPrice 	[real],
+	@CustomerNumber	[int],
+	@AffectedItem	Int,
+	@VoidReasonID	int,
+	@Status	varchar(20),
+	@OrderedBy	int,
+	@WorkstationID		int,
+	@without int=0)
+AS
+	INSERT INTO [dbo].[POS_M_OnHoldOrderDetails] 
+		 ([BranchID],
+		 [OrderID],
+		 [ItemID],
+		 [Quantity],
+		 [UsedPrice],
+		[CustomerNumber],
+		[AffectedItem],
+		[VoidReasonID],
+		[Status],
+		[without]) 
+	VALUES 
+		( @BranchID,
+		@OrderID,
+		@ItemID,
+		@Quantity,
+		@UsedPrice,
+		@CustomerNumber,
+		@AffectedItem,
+		@VoidReasonID,
+		@Status,
+		@without)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_CashInOut]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_CashInOut]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_INS_CashInOut]
+	(@BranchID 	[int],
+	 @EmployeeID 	[int],
+	 @TransactionTypeID 	[int],
+	 @Amount 	[int],
+	 @Description 	[nvarchar](50),
+     @TransactionID [int] OUTPUT)
+
+AS INSERT INTO [dbo].[POS_M_Transactions] 
+	 ( [BranchID],
+	 [EmployeeID],
+	 [TransactionTypeID],
+	 [Amount],
+	 [Description]) 
+ 
+VALUES 
+	( @BranchID,
+	 @EmployeeID,
+	 @TransactionTypeID,
+	 @Amount,
+	 @Description)
+SET @TransactionID = @@Identity
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderDetails1]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderDetails1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_INS_OrderDetails1]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	@ItemID 	[int],
+	@Quantity 	[real],
+	@UsedPrice 	[real],
+	@CustomerNumber	[int],
+	@AffectedItem	Int,
+	@VoidReasonID	int,
+	@VoidMethodID		int,
+	@Status	varchar(20),
+	@OrderedBy	int,
+	@WorkstationID		int,
+	@Without int=0,
+	@PriceModeID	int,
+	@ItemRemark nvarchar(250),
+    @Assigned int,
+    @inctax DECIMAL,
+    @OrderGuid UNIQUEIDENTIFIER,
+@Coursehold varchar(10)
+	)
+AS
+ IF NOT Exists(SELECT * FROM POS_M_Orders WHERE BranchID = @BranchID AND OrderID = @OrderID and Status = 2)
+ AND NOT EXISTS(SELECT OrderDetailID FROM dbo.POS_M_OrderDetails WHERE BranchID = @BranchID AND OrderID = @OrderID and OrderGuid=@OrderGuid)
+ BEGIN
+
+	INSERT INTO [dbo].[POS_T_OrderDetails]  ([BranchID], [OrderID],	 [ItemID], [Quantity], [UsedPrice],	[CustomerNumber],[AffectedItem],
+		[VoidReasonID],	[Status],	[OrderedBy],[WorkstationID],[WithOut],[ItemRemark],[coursehold]) 
+	VALUES ( @BranchID,	@OrderID,@ItemID,@Quantity,@UsedPrice,@CustomerNumber,@AffectedItem, @VoidReasonID,@Status,	
+		@OrderedBy,@WorkstationID,@without,@ItemRemark,@Coursehold)
+
+	INSERT INTO [dbo].[POS_M_OrderDetails]  ([BranchID], [OrderID], [ItemID], [Quantity], [UsedPrice],[CustomerNumber],[AffectedItem],
+		[VoidReasonID],	[VoidMethodID],	[Status], [PriceModeID],[without],[ItemRemark],Assignto,inctax,OrderGuid,coursehold) 
+	VALUES ( @BranchID,	@OrderID,@ItemID, @Quantity  ,@UsedPrice,@CustomerNumber,@AffectedItem,@VoidReasonID,
+		@VoidMethodID, @Status, @PriceModeID,@without,@ItemRemark,@Assigned,@inctax,@OrderGuid,@Coursehold)
+
+	UPDATE BOF_M_ItemSalesItems 
+	SET MeterCounter = MeterCounter - @Quantity 
+	WHERE SalesItemID = @ItemID
+
+DECLARE @TotPrice as real
+select @TotPrice = sum(quantity*usedprice) from pos_m_orderdetails 
+where branchid = @BranchID and orderid =@OrderID
+exec [dbo].[POS_UPD_OrderPrice] @BranchID,@WorkstationID,@OrderID,@TotPrice
+
+DECLARE @ItemIng as int
+DECLARE @Qty as [real]
+DECLARE @InvFormat as [real]
+DECLARE @Count as int
+DECLARE @Loc as int
+
+SELECT DISTINCT @Loc = dbo.BOF_S_BranchLocations.Inventory_LocationId FROM dbo.BOF_S_BranchLocations 
+INNER JOIN dbo.BOF_M_ItemSalesItems ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_M_ItemSalesItems.PrintOut1
+WHERE     (dbo.BOF_S_BranchLocations.WorkstatonID = @WorkstationID) AND (dbo.BOF_M_ItemSalesItems.SalesItemID = @ItemID)
+
+
+DECLARE curs CURSOR FOR
+select IngredientId, Quantity from Item_Ingredient where itemid = @ItemID
+and PriceLevel = @PriceModeID
+OPEN curs
+FETCH NEXT FROM curs INTO @ItemIng,@Qty
+WHILE @@FETCH_STATUS = 0
+  BEGIN
+    Select @Count = count(ItemLocationID) from INV_M_ItemInLocations where ItemID = @ItemIng
+    and LocationID = @Loc
+    if @Count > 0 
+       BEGIN 
+            SELECT @InvFormat = QuantityInInvFormat from Inv_M_Items where ItemID = @ItemIng           
+            Update INV_M_ItemInLocations set 
+            Quantity = Quantity -  (@Quantity*@Qty/(case when @InvFormat<>0 then @InvFormat else 1 end)) where ItemID = @ItemIng and LocationID = @Loc
+       END 
+    FETCH NEXT FROM curs INTO @ItemIng,@Qty
+  END
+CLOSE curs
+DEALLOCATE curs
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_OrderDetails]    
+ (@BranchID  [int],    
+ @OrderID [int],    
+ @ItemID  [int],    
+ @Quantity  [real],    
+ @UsedPrice  [real],    
+ @CustomerNumber [int],    
+ @AffectedItem Int,    
+ @VoidReasonID int,    
+ @VoidMethodID  int,    
+ @Status varchar(20),    
+ @OrderedBy int,    
+ @WorkstationID  int,    
+ @Without int=0,    
+ @PriceModeID int,    
+ @ItemRemark nvarchar(250),    
+    @Assigned int,    
+    @inctax DECIMAL,    
+    @OrderGuid UNIQUEIDENTIFIER,  
+@SetMenu bit=0  ,
+@OrderingTime datetime
+ )    
+AS    
+    
+    
+IF NOT Exists(SELECT * FROM POS_M_Orders WHERE BranchID = @BranchID AND OrderID = @OrderID and Status = 2)    
+ AND NOT EXISTS(SELECT OrderDetailID FROM dbo.POS_M_OrderDetails WHERE BranchID = @BranchID AND OrderID = @OrderID and OrderGuid=@OrderGuid)    
+ BEGIN    
+  if @Status=''Void''    
+  begin    
+   INSERT INTO [dbo].[POS_T_OrderDetails]  ([BranchID], [OrderID],  [ItemID], [Quantity], [UsedPrice], [CustomerNumber],[AffectedItem],    
+    [VoidReasonID], [Status], [OrderedBy],[WorkstationID],[WithOut],[ItemRemark],VoidDate,SetMenu,OrderingTime)     
+   VALUES ( @BranchID, @OrderID,@ItemID,@Quantity,@UsedPrice,@CustomerNumber,@AffectedItem, @VoidReasonID,@Status,     
+    @OrderedBy,@WorkstationID,@without,@ItemRemark,getdate(),@SetMenu,@OrderingTime)    
+    
+   INSERT INTO [dbo].[POS_M_OrderDetails]  ([BranchID], [OrderID], [ItemID], [Quantity], [UsedPrice],[CustomerNumber],[AffectedItem],    
+    [VoidReasonID], [VoidMethodID], [Status], [PriceModeID],[without],[ItemRemark],Assignto,inctax,OrderbyEmployeeId,OrderGuid,VoidDate,SetMenu,OrderingTime)     
+   VALUES ( @BranchID, @OrderID,@ItemID, @Quantity  ,@UsedPrice,@CustomerNumber,@AffectedItem,@VoidReasonID,    
+    @VoidMethodID, @Status, @PriceModeID,@without,@ItemRemark,@Assigned,@inctax,@OrderedBy,@OrderGuid,getdate(),@SetMenu,@OrderingTime)    
+  end    
+  if  @Status<>''Void''    
+  begin    
+   INSERT INTO [dbo].[POS_T_OrderDetails]  ([BranchID], [OrderID],  [ItemID], [Quantity], [UsedPrice], [CustomerNumber],[AffectedItem],    
+    [VoidReasonID], [Status], [OrderedBy],[WorkstationID],[WithOut],[ItemRemark],VoidDate,SetMenu,OrderingTime)     
+   VALUES ( @BranchID, @OrderID,@ItemID,@Quantity,@UsedPrice,@CustomerNumber,@AffectedItem, @VoidReasonID,@Status,     
+    @OrderedBy,@WorkstationID,@without,@ItemRemark,null,@SetMenu,@OrderingTime)    
+    
+   INSERT INTO [dbo].[POS_M_OrderDetails]  ([BranchID], [OrderID], [ItemID], [Quantity], [UsedPrice],[CustomerNumber],[AffectedItem],    
+    [VoidReasonID], [VoidMethodID], [Status], [PriceModeID],[without],[ItemRemark],Assignto,inctax,OrderbyEmployeeId,OrderGuid,VoidDate,SetMenu,OrderingTime)     
+   VALUES ( @BranchID, @OrderID,@ItemID, @Quantity  ,@UsedPrice,@CustomerNumber,@AffectedItem,@VoidReasonID,    
+    @VoidMethodID, @Status, @PriceModeID,@without,@ItemRemark,@Assigned,@inctax,@OrderedBy,@OrderGuid,null,@SetMenu,@OrderingTime)    
+    
+   UPDATE BOF_M_ItemSalesItems     
+   SET MeterCounter = MeterCounter - @Quantity     
+   WHERE SalesItemID = @ItemID    
+  end    
+    
+  DECLARE @TotPrice as real    
+  select @TotPrice = sum(quantity*usedprice) from pos_m_orderdetails     
+  where branchid = @BranchID and orderid =@OrderID    
+  exec [dbo].[POS_UPD_OrderPrice] @BranchID,@WorkstationID,@OrderID,@TotPrice    
+    
+  DECLARE @ItemIng as int    
+  DECLARE @Qty as [real]    
+  DECLARE @InvFormat as [real]    
+  DECLARE @Count as int    
+  DECLARE @Loc as int    
+    
+  SELECT DISTINCT @Loc = dbo.BOF_S_BranchLocations.Inventory_LocationId FROM dbo.BOF_S_BranchLocations     
+  INNER JOIN dbo.BOF_M_ItemSalesItems ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_M_ItemSalesItems.PrintOut1    
+  WHERE     (dbo.BOF_S_BranchLocations.WorkstatonID = @WorkstationID) AND (dbo.BOF_M_ItemSalesItems.SalesItemID = @ItemID)    
+    
+    
+  DECLARE curs CURSOR FOR    
+  select IngredientId, Quantity from Item_Ingredient where itemid = @ItemID    
+  and PriceLevel = @PriceModeID    
+  OPEN curs    
+  FETCH NEXT FROM curs INTO @ItemIng,@Qty    
+  WHILE @@FETCH_STATUS = 0    
+    BEGIN    
+   Select @Count = count(ItemLocationID) from INV_M_ItemInLocations where ItemID = @ItemIng    
+   and LocationID = @Loc    
+   if @Count > 0     
+      BEGIN     
+     SELECT @InvFormat = QuantityInInvFormat from Inv_M_Items where ItemID = @ItemIng               
+     Update INV_M_ItemInLocations set     
+     Quantity = Quantity -  (@Quantity*@Qty/(case when @InvFormat<>0 then @InvFormat else 1 end)) where ItemID = @ItemIng and LocationID = @Loc    
+      END     
+   FETCH NEXT FROM curs INTO @ItemIng,@Qty    
+    END    
+  CLOSE curs    
+  DEALLOCATE curs    
+END  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_PDAOrderDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_PDAOrderDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_PDAOrderDetails]
+	(@BranchID 	[int],
+	@OrderID	[int],
+	 @ItemID 	[int],
+	 @Quantity 	[real],
+	 @UsedPrice 	[real],
+	@CustomerNumber	[int],
+	@AffectedItem	Int,
+	@VoidReasonID	int,
+	@VoidMethodID		int,
+	@Status	varchar(20),
+	@OrderedBy	int,
+	@WorkstationID		int,
+	@Without int=0,
+	@PriceModeID	int,
+	@ItemRemark nvarchar(250),
+@Assigned int,
+@inctax decimal,
+@OrderbyEmployeeId int
+	)
+AS
+	INSERT INTO [dbo].[POS_T_OrderDetails]  ([BranchID], [OrderID],	 [ItemID], [Quantity], [UsedPrice],	[CustomerNumber],[AffectedItem],
+		[VoidReasonID],	[Status],	[OrderedBy],[WorkstationID],[WithOut],[ItemRemark]) 
+	VALUES ( @BranchID,	@OrderID,@ItemID,@Quantity,@UsedPrice,@CustomerNumber,@AffectedItem, @VoidReasonID,@Status,	
+		@OrderedBy,@WorkstationID,@without,@ItemRemark)
+
+	INSERT INTO [dbo].[POS_M_OrderDetails]  ([BranchID], [OrderID], [ItemID], [Quantity], [UsedPrice],[CustomerNumber],[AffectedItem],
+		[VoidReasonID],	[VoidMethodID],	[Status], [PriceModeID],[without],[ItemRemark],Assignto,inctax,[OrderbyEmployeeId]) 
+	VALUES ( @BranchID,	@OrderID,@ItemID, @Quantity  ,@UsedPrice,@CustomerNumber,@AffectedItem,@VoidReasonID,
+		@VoidMethodID, @Status, @PriceModeID,@without,@ItemRemark,@Assigned,@inctax,@OrderbyEmployeeId)
+
+	UPDATE BOF_M_ItemSalesItems 
+	SET MeterCounter = MeterCounter - @Quantity 
+	WHERE SalesItemID = @ItemID
+
+DECLARE @ItemIng as int
+DECLARE @Qty as [real]
+DECLARE @InvFormat as [real]
+DECLARE @Count as int
+DECLARE @Loc as int
+
+SELECT DISTINCT @Loc = dbo.BOF_S_BranchLocations.Inventory_LocationId FROM dbo.BOF_S_BranchLocations 
+INNER JOIN dbo.BOF_M_ItemSalesItems ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_M_ItemSalesItems.PrintOut1
+WHERE     (dbo.BOF_S_BranchLocations.WorkstatonID = @WorkstationID) AND (dbo.BOF_M_ItemSalesItems.SalesItemID = @ItemID)
+
+
+DECLARE curs CURSOR FOR
+select IngredientId, Quantity from Item_Ingredient where itemid = @ItemID
+and PriceLevel = @PriceModeID
+OPEN curs
+FETCH NEXT FROM curs INTO @ItemIng,@Qty
+WHILE @@FETCH_STATUS = 0
+  BEGIN
+    Select @Count = count(ItemLocationID) from INV_M_ItemInLocations where ItemID = @ItemIng
+    and LocationID = @Loc
+    if @Count > 0 
+       BEGIN 
+            SELECT @InvFormat = QuantityInInvFormat from Inv_M_Items where ItemID = @ItemIng           
+            Update INV_M_ItemInLocations set 
+            Quantity = Quantity -  (@Quantity*@Qty/(case when @InvFormat<>0 then @InvFormat else 1 end)) where ItemID = @ItemIng and LocationID = @Loc
+       END 
+    FETCH NEXT FROM curs INTO @ItemIng,@Qty
+  END
+CLOSE curs
+DEALLOCATE curs
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Transactions]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Transactions]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_Transactions]
+	(@BranchID 	[int],
+	 @EmployeeID 	[int],
+	 @TransactionTypeID 	[int],
+	 @Amount 	[int],
+	 @Description 	[nvarchar](50))
+
+AS INSERT INTO [dbo].[POS_M_Transactions] 
+	 ( [BranchID],
+	 [EmployeeID],
+	 [TransactionTypeID],
+	 [Amount],
+	 [Description]) 
+ 
+VALUES 
+	( @BranchID,
+	 @EmployeeID,
+	 @TransactionTypeID,
+	 @Amount,
+	 @Description)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Tips]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Tips]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_Tips] 
+	@BranchID int,
+	@OrderID int,
+	@Amount real,
+	@PaymentTypeID int,
+	@PayAmt real,
+	@LineNo int	
+
+AS
+BEGIN
+	DECLARE @InvoiceNumber int
+	SELECT @InvoiceNumber = InvoiceID FROM POS_M_Invoices WHERE BranchID = @BranchID AND OrderID = @OrderID
+
+	INSERT INTO POS_Tips 
+		
+		(LineNumber,InvoiceNumber,BranchID, OrderID, TipAmount, PaymentTypeID,PayAmt) 
+	
+	VALUES
+	
+		(@LineNo,@InvoiceNumber,@BranchID, @OrderID, @Amount, @PaymentTypeID,@PayAmt) 
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CreditTypes]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CreditTypes]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+Create PROCEDURE [dbo].[POS_SEL_CreditTypes]
+AS
+select paymentcode, paymenttype from BOF_L_PaymentTypes where paytypeid<>1
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_EmployeeConfigurationSettings]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_EmployeeConfigurationSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_EmployeeConfigurationSettings]
+@BranchID	int,
+@EmployeeID	int
+AS
+BEGIN
+SELECT     dbo.BOF_M_Employees.EmployeeName AS EmployeeName, dbo.BOF_M_Employees.BranchID AS BranchID, 
+                      dbo.BOF_M_Employees.EmployeeID AS EmployeeID, dbo.BOF_M_EmplyeeTimePriceModes.MenuID AS MenuID, 
+                      dbo.BOF_M_EmplyeeTimePriceModes.KeyID AS KeyID, dbo.BOF_M_EmplyeeTimePriceModes.FunctionID AS FunctionID, 
+                      dbo.BOF_M_EmplyeeTimePriceModes.ScreenID AS ScreenID, dbo.BOF_M_EmplyeeTimePriceModes.TimeModeID AS TimeModeID, 
+                      dbo.BOF_L_TimeModes.Mode AS Mode, dbo.BOF_L_TimeModes.Starts AS Starts, dbo.BOF_L_TimeModes.Ends AS Ends, 
+                      dbo.BOF_M_EmplyeeTimePriceModes.PriceModeID AS PriceModeID, dbo.BOF_S_EmployeeConfiguration.*, 
+                      dbo.BOF_L_EmployeeFunctions.EmployeeFunction AS EmployeeFunction, dbo.BOF_M_ItemMenus.UseTax1 AS UseTax1, 
+                      dbo.BOF_M_ItemMenus.UseTax2 AS UseTax2, dbo.BOF_M_ItemMenus.UseTax3 AS UseTax3, 
+                      dbo.BOF_M_ItemMenus.UseService AS UseService,dbo.BOF_M_Employees.ShowCallerId
+FROM         dbo.BOF_L_TimeModes INNER JOIN
+                      dbo.BOF_M_EmplyeeTimePriceModes ON dbo.BOF_L_TimeModes.TimeModeID = dbo.BOF_M_EmplyeeTimePriceModes.TimeModeID INNER JOIN
+                      dbo.BOF_M_Employees ON dbo.BOF_M_EmplyeeTimePriceModes.EmployeeID = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+                      dbo.BOF_S_EmployeeConfiguration ON dbo.BOF_M_EmplyeeTimePriceModes.RoleID = dbo.BOF_S_EmployeeConfiguration.RoleID INNER JOIN
+                      dbo.BOF_L_EmployeeFunctions ON 
+                      dbo.BOF_M_EmplyeeTimePriceModes.FunctionID = dbo.BOF_L_EmployeeFunctions.FunctionID INNER JOIN
+                      dbo.BOF_M_ItemMenus ON dbo.BOF_M_EmplyeeTimePriceModes.MenuID = dbo.BOF_M_ItemMenus.MenuID
+WHERE   (dbo.BOF_M_Employees.EmployeeID = @EmployeeID)
+	-- (dbo.BOF_M_Employees.EmployeeCode = @EmployeeID)
+	 AND (dbo.BOF_M_Employees.BranchID = @BranchID)
+	AND (CONVERT(VarChar, GETDATE(), 8) BETWEEN CONVERT(VarChar, dbo.BOF_L_TimeModes.Starts, 8) 
+	AND CONVERT(VarChar, dbo.BOF_L_TimeModes.Ends, 8))
+	AND dbo.BOF_L_EmployeeFunctions.EmployeeFunction <> ''Day Off''
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Drivers]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Drivers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_Drivers]
+@BranchID	int
+ AS
+SELECT     dbo.BOF_M_Employees.BranchID, dbo.BOF_M_Employees.EmployeeID, dbo.BOF_M_Employees.EmployeeName AS EmployeeName, 
+                      dbo.BOF_M_Employees.Status
+FROM         dbo.BOF_L_TimeModes INNER JOIN
+                      dbo.BOF_M_EmplyeeTimePriceModes ON dbo.BOF_L_TimeModes.TimeModeID = dbo.BOF_M_EmplyeeTimePriceModes.TimeModeID INNER JOIN
+                      dbo.BOF_M_Employees ON dbo.BOF_M_EmplyeeTimePriceModes.EmployeeID = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+                      dbo.BOF_L_EmployeeFunctions ON dbo.BOF_M_EmplyeeTimePriceModes.FunctionID = dbo.BOF_L_EmployeeFunctions.FunctionID
+WHERE     (dbo.BOF_M_Employees.BranchID = @BranchID) AND (CONVERT(VarChar, GETDATE(), 8) BETWEEN CONVERT(VarChar, dbo.BOF_L_TimeModes.Starts, 8) AND 
+                      CONVERT(VarChar, dbo.BOF_L_TimeModes.Ends, 8)) AND (dbo.BOF_L_EmployeeFunctions.EmployeeFunction = N''driver'')
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DollarDiscounts]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DollarDiscounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_DollarDiscounts]
+AS
+SELECT     dbo.BOF_L_Discounts.DiscountID, dbo.BOF_L_Discounts.Description, dbo.BOF_L_Discounts.Rate, dbo.BOF_L_Discounts.OpenFixed
+FROM         dbo.BOF_L_Discounts INNER JOIN
+                      dbo.BOF_L_DiscountTypes ON dbo.BOF_L_Discounts.DiscountTypeID = dbo.BOF_L_DiscountTypes.DiscountTypeID
+WHERE     (dbo.BOF_L_DiscountTypes.DiscountTypeID = 1)
+ORDER BY dbo.BOF_L_Discounts.Description
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DiscountType_ByItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DiscountType_ByItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_DiscountType_ByItem]
+AS
+SELECT     dbo.BOF_L_Discounts.DiscountID, dbo.BOF_L_Discounts.Description, dbo.BOF_L_Discounts.Rate, dbo.BOF_L_Discounts.OpenFixed
+FROM         dbo.BOF_L_Discounts INNER JOIN
+                      dbo.BOF_L_DiscountTypes ON dbo.BOF_L_Discounts.DiscountTypeID = dbo.BOF_L_DiscountTypes.DiscountTypeID and dbo.BOF_L_Discounts.DiscountTypeID in(2,5,6)
+ORDER BY dbo.BOF_L_Discounts.Description
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DiscountType]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DiscountType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_DiscountType]
+AS
+SELECT     dbo.BOF_L_Discounts.DiscountID, dbo.BOF_L_Discounts.Description, dbo.BOF_L_Discounts.Rate, dbo.BOF_L_Discounts.OpenFixed
+FROM         dbo.BOF_L_Discounts INNER JOIN
+                      dbo.BOF_L_DiscountTypes ON dbo.BOF_L_Discounts.DiscountTypeID = dbo.BOF_L_DiscountTypes.DiscountTypeID
+ORDER BY dbo.BOF_L_Discounts.Description
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[RES_SEL_Reservation]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RES_SEL_Reservation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[RES_SEL_Reservation]
+@BranchID	int,
+@Type int,
+@Date  datetime,
+@EmpID 	int,
+@ResId int
+AS
+BEGIN
+if @type = 1
+begin
+SELECT     ID, ResDate as ''Date'', DateTo as ''Time'', Delay as TableNo, Guest as Customer, Tel, Address as ''No.Of Cust'', TotalPrice as ''Min. Spent'',EmployeeName as Employee FROM dbo.VEW_Reservation
+WHERE      (BranchID = @BranchID 
+AND CONVERT(varchar(12), ResDate, 101)  = CONVERT(varchar(12), @Date, 101)  )
+ORDER By right([DateTo],2), [DateTo]
+end
+if @Type = 2
+begin
+SELECT     ID, ResDate as ''Date'', DateTo as ''Time'', Delay as TableNo, Guest as Customer, Tel, Address as ''No.Of Cust'', TotalPrice as ''Min. Spent'',EmployeeName as Employee FROM dbo.VEW_Reservation
+WHERE      (Delay = @EmpID AND BranchID = @BranchID 
+AND CONVERT(varchar(12), ResDate, 101)  = CONVERT(varchar(12), @Date, 101)  )
+ORDER By right([DateTo],2), [DateTo]
+end
+if @type = 3
+begin
+SELECT     ID, ResDate as ''Date'', DateTo as ''Time'', Delay as TableNo, Guest as Customer, Tel, Address as ''No.Of Cust'', TotalPrice as ''Min. Spent'',EmployeeName as Employee FROM dbo.VEW_Reservation
+WHERE      (Id = @ResID AND BranchID = @BranchID 
+AND CONVERT(varchar(12), ResDate, 101)  = CONVERT(varchar(12), @Date, 101)  )
+ORDER By right([DateTo],2), [DateTo]
+end
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_Consumption1]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SP_Consumption1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[SP_Consumption1](
+@DateFrom datetime,
+@DateTo datetime)
+as
+BEGIN
+
+
+Select con.ItemID,con.productcode,con.ItemFormat,
+(select sum(Quantity) as  ''PurchaseQuantity''
+from dbo.INV_ItemPurchase where ItemID=con.ItemID and cast(CONVERT(varchar(8), InvoiceDate, 112) AS datetime) >=@DateFrom
+and cast(CONVERT(varchar(8), InvoiceDate, 112) AS datetime) <=@DateTo ) as ''PurchaseQuantity'' ,
+ (select top 1 itemformat from dbo.INV_ItemPurchase where ItemID=con.ItemID ) as ''PurchaseFormat'', 
+--sum(pur.Quantity) totalpurchase,
+
+
+(select sum(qty) as totaltransfer from dbo.INV_ItemTransfer where ItemID=con.ItemID and  deliverytime >=@DateFrom and  deliverytime <=@DateTo) totaltransfer,
+ (select top 1 itemformat from dbo.INV_ItemTransfer where ItemID=con.ItemID ) as ''TransferFormat'' ,
+--sum(trans.qty) totaltransfer
+
+
+(select sum(Quantity * SaleQty) as ''ReceQTY'' from dbo.View_Sale_Ingrident where ItemID=con.ItemID and cast(CONVERT(varchar(8), eoddate, 112) AS datetime) >=@DateFrom and cast(CONVERT(varchar(8), eoddate, 112) AS datetime) <=@DateTo) ReceQTY,
+-- (select top 1 itemformat from dbo.View_Sale_Ingrident where ItemID=con.ItemID ) as ''ReceQTYFormat'' ,
+(select top 1 dbo.INV_L_ItemFormat.itemformat from INV_M_Items INNER JOIN dbo.INV_L_ItemFormat ON INV_M_Items.usageformat = dbo.INV_L_ItemFormat.FormatID
+where ItemID=con.ItemID) ReceQTYFormat,
+--sum ingridient
+
+(select sum(pQuantity) as ''QtyProOrder'' from dbo.INV_Production where ItemID=con.ItemID and cast(CONVERT(varchar(8), creationdate, 112) AS datetime) >=@DateFrom and cast(CONVERT(varchar(8), creationdate, 112) AS datetime) <=@DateTo) QtyProOrder,
+ (select top 1 pitemformat from dbo.INV_Production where ItemID=con.ItemID ) as ''QtyProOrderFormat'' ,
+--(sum of Production)
+
+(select sum(Quantity) as ''ItemWastage'' from dbo.INV_ItemWastage where ItemID=con.ItemID and wastagedate >=@DateFrom and wastagedate <=@DateTo) ItemWastage,
+ (select top 1 itemformat from dbo.INV_ItemWastage where ItemID=con.ItemID ) as ''ItemWastageFormat'',
+--(sum item westage)
+
+(select sum(VarianceQty) as ''itemAdjustment'' from dbo.INV_ItemAdjustment where ItemID=con.ItemID and AdjustmentDate >=@DateFrom and AdjustmentDate <=@DateTo) itemAdjustment,
+(select top 1 itemformat from dbo.INV_ItemAdjustment where ItemID=con.ItemID ) as ''itemAdjustmentFormat''
+
+
+from dbo.Consumption con 
+group by con.ItemID,con.productcode,con.itemformat order by con.productcode asc
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_Consumption]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SP_Consumption]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'Create procedure [dbo].[SP_Consumption](
+@DateFrom datetime,
+ @DateTo datetime)
+as
+BEGIN
+
+Select con.ItemID,con.productcode,con.ItemFormat,
+(select sum(Quantity) as  ''PurchaseQuantity'' from dbo.INV_ItemPurchase where ItemID=con.ItemID and cast(CONVERT(varchar(8), InvoiceDate, 112) AS datetime) >=@DateFrom and cast(CONVERT(varchar(8), InvoiceDate, 112) AS datetime) <=@DateTo) ''PurchaseQuantity'',
+--sum(pur.Quantity) totalpurchase,
+(select sum(qty) as totaltransfer from dbo.INV_ItemTransfer where ItemID=con.ItemID and  deliverytime >=@DateFrom and  deliverytime <=@DateTo) totaltransfer,
+--sum(trans.qty) totaltransfer
+(select sum(Quantity *SaleQty) as ReceQTY from dbo.View_Sale_Ingrident where itemid=con.itemid and cast(CONVERT(varchar(8), eoddate, 112) AS datetime) >=@DateFrom and cast(CONVERT(varchar(8), eoddate, 112) AS datetime) <=@DateTo) ReceQTY,
+--sum ingridient
+(select sum(pQuantity) as ''QtyProOrder'' from dbo.INV_Production where cast(CONVERT(varchar(8), creationdate, 112) AS datetime) >=@DateFrom and cast(CONVERT(varchar(8), creationdate, 112) AS datetime) <=@DateTo) QtyProOrder,
+--(sum of Production)
+(select sum(Quantity) as ''ItemWastage'' from dbo.INV_ItemWastage where wastagedate >=@DateFrom and wastagedate <=@DateTo ) ItemWastage,
+--(sum item westage)
+(select sum(VarianceQty) as ''itemAdjustment'' from dbo.INV_ItemAdjustment where AdjustmentDate >=@DateFrom and AdjustmentDate <=@DateTo) itemAdjustment
+from dbo.Consumption con group by con.ItemID,con.productcode,con.ItemFormat
+
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[sp_adjustment]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_adjustment]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'Create procedure [dbo].[sp_adjustment] (
+@location varchar(100)
+
+)
+as
+begin
+select * from  dbo.INV_ItemAdjustment where locationname=@location
+end
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_SalesReport]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_SalesReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INV_VU_SalesReport] 
+	@SalesId int
+AS
+	SELECT    *
+FROM         INV_ItemSales
+WHERE     (SalesId = @SalesId)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseReport]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INV_VU_PurchaseReport] 
+	@OrderID int
+AS
+	SELECT     *
+FROM         INV_ItemPurchase
+WHERE     (OrderID = @OrderID)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseJournal]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseJournal]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INV_VU_PurchaseJournal] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT     *
+FROM         INV_ItemPurchase
+WHERE     (PurchaseType = 1)
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseInvSupplier]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseInvSupplier]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INV_VU_PurchaseInvSupplier] 
+	@OrderDateFrom datetime,
+	@OrderDateTo datetime,
+	@Company nvarchar(50),
+	@SearchType int,
+	@PurchaseType int
+AS
+if(@SearchType=1)
+begin
+select * from INV_S_Purchase where PurchaseType=@PurchaseType and InvoiceDate <= CONVERT(DATETIME, @OrderDateFrom, 102)
+and PurchaseType=@PurchaseType
+end
+	if(@SearchType=2)
+		begin
+	select * from INV_S_Purchase
+	where InvoiceDate between CONVERT(DATETIME, @OrderDateFrom, 102) and CONVERT(DATETIME, @OrderDateTo, 102)
+	and PurchaseType=@PurchaseType
+		end
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_PurchaseByDate]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_PurchaseByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INV_VU_PurchaseByDate] 
+	@OrderDateFrom datetime,
+	@OrderDateTo datetime,
+	@Company nvarchar(50),
+	@SearchType int,
+	@PurchaseType int
+AS
+if(@SearchType=1)
+begin
+select * from INV_Rep_Purchase where PurchaseType=@PurchaseType and InvoiceDate <= CONVERT(DATETIME, @OrderDateFrom, 102)
+and PurchaseType=@PurchaseType
+end
+	if(@SearchType=2)
+		begin
+	select * from INV_Rep_Purchase
+	where InvoiceDate between CONVERT(DATETIME, @OrderDateFrom, 102) and CONVERT(DATETIME, @OrderDateTo, 102)
+	and PurchaseType=@PurchaseType
+		end
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Transfer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Transfer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[InvM_Transfer] 
+@DateFrom Datetime,
+@DateTo Datetime,
+@SearchType int
+AS
+SET NOCOUNT ON;
+if (@SearchType = 1)
+	begin
+		SELECT * from Inv_ItemTransfer where CONVERT(DATETIME, Deliverytime, 102) < @DateFrom
+	end
+
+if (@SearchType = 2)
+	begin
+	  SELECT * from Inv_ItemTransfer where CONVERT(DATETIME, Deliverytime, 102) between @DateFrom and @DateTo
+	end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[J_Payments]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_Payments]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[J_Payments]
+
+AS
+
+--Cursor for all payment Types
+DECLARE curs CURSOR FOR
+	SELECT PaymentTYpeID,PaymentTYpe FROM BOF_L_PaymentTypes Order By PaymentType
+
+--Cursor for Credit Card
+DECLARE cursCredit CURSOR FOR
+	SELECT PaymentTYpeID,PaymentTYpe FROM BOF_L_PaymentTypes WHERE PayTYpeID = 3 
+
+DECLARE @cols nvarchar(MAX)
+DECLARE @subSql nvarchar(MAX)
+DECLARE @colSum nvarchar(MAX)
+DECLARE @sql nvarchar(MAX)
+DECLARE @pTypeID varchar(10)
+DECLARE @pType varchar(50)
+DECLARE @creditSum varchar(MAX)
+
+SET @cols = ''''
+SET @pType = ''''
+SET @pTypeID = ''''
+SET @sql = ''''
+SET @colSum = ''''
+SET @creditSum = ''''
+
+--
+OPEN curs
+FETCH NEXT FROM curs INTO @pTypeID,@pType
+	WHILE @@FETCH_STATUS = 0
+		BEGIN
+			--Set COLS for PaymentType for SubSelect query
+			SET @cols = @cols + ''CASE WHEN PaymentTypeID = '' + @pTYpeID + '' THEN Amount END AS ['' + @pType + ''],''
+			
+			--SUM PaymentTypes and set as PaymentType as column Name
+			SET @colSum = @colSum + ''SUM (Isnull(['' + @pType + ''],0)) AS ['' + @pType + ''],''
+			
+			FETCH NEXT FROM curs INTO @pTypeID,@pType
+		END
+CLOSE curs
+DEALLOCATE curs
+
+--Set Sum amount for Credit Card
+OPEN cursCredit
+FETCH NEXT FROM cursCredit INTO @pTypeID, @pType
+	WHILE @@FETCH_STATUS = 0
+		BEGIN
+			SET @creditSum = @creditSum + ''Isnull(['' + @pType + ''],0) +''
+			FETCH NEXT FROM cursCredit INTO @pTypeID, @pType	
+		END
+CLOSE cursCredit
+DEALLOCATE cursCredit
+
+--Remove extra character 
+SET @cols = STUFF(@cols, LEN(@cols),1,'''')
+SET @colSum = STUFF(@colSum, LEN(@colSum),1,'''')
+SET @creditSum = STUFF(@creditSum, LEN(@creditSum),1,'''')
+
+SET @creditSum = ''SUM('' + @creditSum + '') AS CreditSum''
+SET @subSQL = ''SELECT CheckNumber , '' + @cols + '' FROM vw_PaymentsByType ''
+SET @sql = ''SELECT CheckNumber As InvoiceNumber, '' + @colSum + '','' + @creditSum + '' INTO _TempPayments FROM ('' + @subsql + '') AS t GROUP BY CheckNumber''
+
+--Drop _TempPayments if Exists
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N''[dbo].[_TempPayments]'') AND type in (N''U''))
+DROP TABLE [dbo].[_TempPayments]
+
+--Run query to create TempPayment table
+exec (@sql)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemSalesDetailsByDate]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemSalesDetailsByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_GetItemSalesDetailsByDate]
+@DateFrom Datetime,
+@DateTo Datetime,
+@SearchType int
+as
+
+if (@SearchType = 1)
+	begin
+		SELECT * from INV_ItemSales where SalesDate <= @DateFrom
+	end
+
+if (@SearchType = 2)
+	begin
+	  SELECT * from INV_ItemSales where SalesDate between @DateFrom and @DateTo
+	end
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetProductionDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetProductionDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[INVM_GetProductionDetails]
+	@ProID int,
+	@filltype int
+AS
+if (@filltype=1)
+begin
+select * from INV_Production where ProductionID=@ProID
+end
+if (@filltype=2)
+select Descreption as ''Desc'',Quantity as ''Qty'',Itemformat,unitcost as ''Ucost'',totalcost as ''Tcost'',locationname,CreationDate,pQuantity as ''Quantity'',pDescription as ''Descreption'',pitemformat as ''Unit'', punitcost as ''UnitCost'',ptotalcost as ''TotalCost''
+from INV_Production where ProductionID=@ProID
+return
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_ItemSearch]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_ItemSearch]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVL_ItemSearch] 
+	@LocationId int,
+	@ProductCode nvarchar(50),
+	@SearchType int
+AS
+if(@LocationId>0)
+begin
+if(@SearchType=1)
+	begin
+	SELECT     INV_M_Items.ItemID, INV_M_Items.ProductCode AS ''Code'', INV_M_Items.Descreption, INV_M_ItemInLocations.Quantity AS ''QTY.O.H'', 
+	                      INV_M_Items.UnitCost / INV_M_Items.QauntityInBuyFormat AS ''UnitCost'', INV_M_Items.UnitCost AS ''Cost'', INV_M_Items.UsageFormat, 
+	                      INV_M_Items.BuyFormat, INV_M_Items.InventoryFormat, INV_M_Items.QauntityInBuyFormat,INV_M_Items.QuantityInInvFormat,
+                         INV_M_Items.ExpiryDate, INV_M_Items.SellingPrice1/INV_M_Items.QauntityInBuyFormat AS ''SellingPrice'', INV_M_Items.PackingFormat, QuantityInPackFormat
+	FROM         INV_M_Items INNER JOIN
+	                      INV_M_ItemInLocations ON INV_M_Items.ItemID = INV_M_ItemInLocations.ItemID
+	WHERE     (INV_M_ItemInLocations.LocationID = @LocationId) AND (INV_M_Items.ProductCode LIKE ''%'' + @ProductCode + ''%'')
+	ORDER BY INV_M_Items.ProductCode 
+	
+	end
+	
+	if(@SearchType=2)
+	begin
+	SELECT     INV_M_Items.ItemID, INV_M_Items.ProductCode as ''Code'', INV_M_Items.Descreption, INV_M_ItemInLocations.Quantity as ''QTY.O.H'',
+           (INV_M_Items.UnitCost/QauntityInBuyFormat) as ''UnitCost'',INV_M_Items.UnitCost as ''Cost'',
+            INV_M_Items.UsageFormat,
+            INV_M_Items.BuyFormat, INV_M_Items.QauntityInBuyFormat,INV_M_Items.QuantityInInvFormat,INV_M_Items.ExpiryDate, INV_M_Items.PackingFormat, QuantityInPackFormat
+FROM         INV_M_Items INNER JOIN
+             INV_M_ItemInLocations ON INV_M_Items.ItemID = INV_M_ItemInLocations.ItemID
+WHERE     (INV_M_ItemInLocations.LocationID = @LocationId) AND  (INV_M_Items.Descreption LIKE ''%'' + @ProductCode +''%'')
+ORDER BY INV_M_Items.ProductCode
+	
+	end
+	end
+	
+	
+	if(@LocationId=0)
+begin
+if(@SearchType=1)
+	begin
+	SELECT     ItemID, ProductCode AS ''Code'', Descreption, UnitCost / QauntityInBuyFormat AS ''UnitCost'', UnitCost AS ''Cost'', UsageFormat, BuyFormat, 
+	                      ExpiryDate ,'''' as ''QTY.O.H'', InventoryFormat,QauntityInBuyFormat,QuantityInInvFormat,PackingFormat, QuantityInPackFormat
+	FROM         INV_M_Items
+	GROUP BY ItemID, ProductCode, Descreption, UnitCost / QauntityInBuyFormat, UnitCost, UsageFormat, BuyFormat, ExpiryDate,InventoryFormat,QauntityInBuyFormat,QuantityInInvFormat,PackingFormat,QuantityInPackFormat
+	HAVING      (ProductCode LIKE N''%'' + @ProductCode + N''%'')
+	ORDER BY ProductCode
+	end
+	
+	if(@SearchType=2)
+	begin
+	SELECT     ItemID, ProductCode AS ''Code'', Descreption, UnitCost / QauntityInBuyFormat AS ''UnitCost'', UnitCost AS ''Cost'', UsageFormat, BuyFormat, 
+	                      ExpiryDate,'''' as ''QTY.O.H'', InventoryFormat,QauntityInBuyFormat,QuantityInInvFormat,PackingFormat, QuantityInPackFormat
+	FROM         INV_M_Items
+	GROUP BY ItemID, ProductCode, Descreption, UnitCost / QauntityInBuyFormat, UnitCost, UsageFormat, BuyFormat, ExpiryDate,InventoryFormat,QauntityInBuyFormat,QuantityInInvFormat,PackingFormat, QuantityInPackFormat
+	HAVING      (Descreption LIKE ''%'' + @ProductCode + ''%'')
+	ORDER BY ProductCode
+	
+	end
+    if(@SearchType=3)
+	begin
+	SELECT DISTINCT 
+                      dbo.INV_M_Items.ItemID, dbo.INV_M_Items.ProductCode AS ''Code'', dbo.INV_M_Items.Descreption, '''' AS ''UnitCost'', 
+                      dbo.INV_M_Items.UnitCost AS ''Cost'', dbo.INV_M_Items.UsageFormat, dbo.INV_M_Items.BuyFormat, dbo.INV_M_Items.ExpiryDate, '''' AS ''QTY.O.H'', 
+                      dbo.INV_M_Items.InventoryFormat, dbo.INV_M_Items.QauntityInBuyFormat, dbo.INV_M_Items.QuantityInInvFormat, dbo.INV_M_Items.QuantityUsed
+                   FROM         dbo.INV_M_Items INNER JOIN
+                      dbo.INV_ItemIngredient ON dbo.INV_M_Items.ItemID = dbo.INV_ItemIngredient.ItemID
+	where  (dbo.INV_M_Items.ProductCode LIKE ''%'' + @ProductCode + ''%'')
+	ORDER BY ProductCode
+	end
+  if(@SearchType=4)
+begin
+	SELECT DISTINCT 
+                      dbo.INV_M_Items.ItemID, dbo.INV_M_Items.ProductCode AS ''Code'', dbo.INV_M_Items.Descreption, '''' AS ''UnitCost'', 
+                      dbo.INV_M_Items.UnitCost AS ''Cost'', dbo.INV_M_Items.UsageFormat, dbo.INV_M_Items.BuyFormat, dbo.INV_M_Items.ExpiryDate, '''' AS ''QTY.O.H'', 
+                      dbo.INV_M_Items.InventoryFormat, dbo.INV_M_Items.QauntityInBuyFormat, dbo.INV_M_Items.QuantityInInvFormat, dbo.INV_M_Items.QuantityUsed
+                   FROM         dbo.INV_M_Items INNER JOIN
+                      dbo.INV_ItemIngredient ON dbo.INV_M_Items.ItemID = dbo.INV_ItemIngredient.ItemID
+	where  (dbo.INV_M_Items.Descreption LIKE ''%'' + @ProductCode + ''%'')
+	ORDER BY ProductCode
+	
+	end
+ if(@SearchType=5)
+	begin
+	SELECT     distinct INV_M_Items.ItemID, INV_M_Items.ProductCode as ''Code'', INV_M_Items.Descreption, 0 as ''Available Qty'', 0 as ''Quantity'',
+          dbo.INV_L_ItemFormat.ItemFormat,(INV_M_Items.UnitCost/QauntityInBuyFormat) as ''UnitCost'',INV_M_Items.UnitCost as ''Cost'', INV_M_Items.ExpiryDate
+    FROM         INV_M_Items 
+     INNER JOIN dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+    where
+    INV_M_Items.ItemID not in (select ItemID from INV_M_ItemInLocations)
+    ORDER BY INV_M_Items.ProductCode
+	end
+
+   	end
+	
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetIngredientDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetIngredientDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[INVM_GetIngredientDetails]
+	@ItemID int
+AS
+declare @Totalcost as real
+BEGIN
+select Quantity,Descreption, ItemFormat as ''Unit'',round(unitcost/(QauntityInBuyFormat*QuantityInInvFormat),4) as ''UnitCost'', round(unitcost*quantity/(QauntityInBuyFormat*QuantityInInvFormat),4) as ''TotalCost'', ItemIngId as ''ItemId'', LocationId as ''LId'', UnitId,QuantityInInvFormat as ''Format'' from INV_ItemIngredient where ItemID=@ItemID
+END
+return
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemProductionDetailsByDate]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemProductionDetailsByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_GetItemProductionDetailsByDate]
+@DateFrom Datetime,
+@DateTo Datetime,
+@SearchType int
+as
+
+if (@SearchType = 1)
+	begin
+		SELECT * from Inv_Production where CreationDate <= @DateFrom
+	end
+
+if (@SearchType = 2)
+	begin
+	  SELECT * from Inv_Production where CreationDate between @DateFrom and @DateTo
+	end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DailyCashCount]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DailyCashCount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_DailyCashCount]
+AS
+DECLARE curs CURSOR FOR
+	select * from pos_m_cashtype 
+
+DECLARE vcurs CURSOR FOR 
+select PaymentTypeID, paymenttype from BOF_L_PaymentTypes where paytypeid<>1
+
+DECLARE @pType nvarchar(50)
+DECLARE @cols nvarchar(MAX)
+DECLARE @Tcols nvarchar(MAX)
+DECLARE @vcols nvarchar(MAX)
+DECLARE @sql nvarchar(MAX)
+DECLARE @pTypeID varchar(10)
+DECLARE @Tcash varchar(50)
+
+SET @cols = ''''
+SET @vcols = ''''
+SET @Tcols = ''''
+SET @pType = ''''
+SET @pTypeID = ''''
+SET @sql = ''''
+
+OPEN curs
+FETCH NEXT FROM curs INTO @pTypeID,@pType
+	WHILE @@FETCH_STATUS <> -1
+		BEGIN
+			--Set COLS for PaymentType for SubSelect query
+			SET @cols = @cols + ''CASE WHEN ID = '' + @pTYpeID + '' THEN CType END AS ['' + @pType + ''],''
+			SET @Tcols = @Tcols + ''CASE WHEN ID = '' + @pTYpeID + '' THEN CType END AS [T'' + @pType + ''],''
+ 
+	FETCH NEXT FROM curs INTO @pTypeID,@pType
+		END
+CLOSE curs
+DEALLOCATE curs
+
+OPEN vcurs
+FETCH NEXT FROM vcurs INTO @pTypeID,@pType
+	WHILE @@FETCH_STATUS <> -1
+		BEGIN
+			--Set COLS for PaymentType for SubSelect query
+			SET @vcols = @vcols + ''CASE WHEN PaymentTypeID = '' + @pTYpeID + '' THEN PaymentType END AS ['' + @pType + ''],''
+	FETCH NEXT FROM vcurs INTO @pTypeID,@pType
+		END
+CLOSE vcurs
+DEALLOCATE vcurs
+
+SET @cols = STUFF(@cols, LEN(@cols),1,'''')
+SET @Tcols = STUFF(@Tcols, LEN(@Tcols),1,'''')
+SET @vcols = STUFF(@vcols, LEN(@vcols),1,'''')
+set @sql = ''SELECT IDENTITY(int,1,1) as Id,'' + @cols + '','' + @Tcols + '','' + @vcols + '' INTO POS_M_DailyCashCount from  POS_M_Cashtype, BOF_L_PaymentTypes AS t 
+           Alter table POS_M_DailyCashCount
+           ADD PRIMARY KEY (Id),
+           TotCash [varchar](50) null,
+           TotCount [varchar](50) null,
+           ClosingTime [datetime] NULL CONSTRAINT [DF_POS_M_DailyCashCount_ClosingTime]  DEFAULT (getdate()),
+           [Time] [nvarchar](50) COLLATE Arabic_CI_AS NULL,           
+           [EmpId] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+           [WorkStationID] [nvarchar](50) COLLATE Arabic_CI_AS NULL,
+	       [BranchId] [nvarchar](50) COLLATE Arabic_CI_AS NULL 
+           Delete from POS_M_DailyCashCount''
+exec (@sql)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Pims_sel_cgs]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pims_sel_cgs]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[Pims_sel_cgs]
+
+ 
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select sum(q) as cgs from dbo.g5pims_invcategorycgs
+
+where eoddate is null
+
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_EmployeeConfigurationSettings]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_EmployeeConfigurationSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[PDA_SEL_EmployeeConfigurationSettings]
+@BranchID	int,
+@EmployeeID	int,
+@Password	nvarchar (50)
+AS
+	IF EXISTS(SELECT  *  FROM         dbo.BOF_M_Employees  WHERE   BranchID =@BranchID AND Employeecode = @EmployeeID AND [Password] = @Password)
+		SELECT     dbo.BOF_M_Employees.EmployeeName AS EmployeeName, dbo.BOF_M_Employees.BranchID AS BranchID, 
+		                      dbo.BOF_M_Employees.EmployeeID AS EmployeeID, dbo.BOF_M_EmplyeeTimePriceModes.MenuID AS MenuID, 
+		                      dbo.BOF_M_EmplyeeTimePriceModes.KeyID AS KeyID, dbo.BOF_M_EmplyeeTimePriceModes.FunctionID AS FunctionID, 
+		                      dbo.BOF_M_EmplyeeTimePriceModes.ScreenID AS ScreenID, dbo.BOF_M_EmplyeeTimePriceModes.TimeModeID AS TimeModeID, 
+		                      dbo.BOF_L_TimeModes.Mode AS Mode, dbo.BOF_L_TimeModes.Starts AS Starts, dbo.BOF_L_TimeModes.Ends AS Ends, 
+		                      dbo.BOF_M_EmplyeeTimePriceModes.PriceModeID AS PriceModeID, dbo.BOF_L_EmployeeFunctions.EmployeeFunction AS EmployeeFunction, 
+		                      dbo.BOF_S_EmployeeConfiguration.OpenTablesAccess, dbo.BOF_S_EmployeeConfiguration.TableTransfer, 
+		                      dbo.BOF_S_EmployeeConfiguration.VoidTable, dbo.BOF_S_EmployeeConfiguration.AddOnPrintedCheck, dbo.BOF_S_EmployeeConfiguration.Del, 
+		                      dbo.BOF_S_EmployeeConfiguration.Void, dbo.BOF_S_EmployeeConfiguration.SellForAnotherServer, 
+		                      dbo.BOF_S_EmployeeConfiguration.FastCashEntry,dbo.BOF_S_EmployeeConfiguration.PRINTCHECK,
+		                          (SELECT     Rate
+		                            FROM          dbo.BOF_L_Taxes
+		                            WHERE      TaxID = 1 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseTax1 AS Tax1,
+		                          (SELECT     Rate
+		                            FROM          dbo.BOF_L_Taxes
+		                            WHERE      TaxID = 2 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseTax2 AS Tax2,
+		                          (SELECT     Rate
+		                            FROM          dbo.BOF_L_Taxes
+		                            WHERE      TaxID = 3 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseTax3 AS Tax3,
+		                          (SELECT     Rate
+		                            FROM          dbo.BOF_L_Taxes
+		                            WHERE      TaxID = 4 AND Inclusive = 0) * dbo.BOF_M_ItemMenus.UseService AS Service, dbo.BOF_M_ItemMenus.Menu
+		FROM         dbo.BOF_L_TimeModes INNER JOIN
+		                      dbo.BOF_M_EmplyeeTimePriceModes ON dbo.BOF_L_TimeModes.TimeModeID = dbo.BOF_M_EmplyeeTimePriceModes.TimeModeID INNER JOIN
+		                      dbo.BOF_M_Employees ON dbo.BOF_M_EmplyeeTimePriceModes.EmployeeID = dbo.BOF_M_Employees.EmployeeID INNER JOIN
+		                      dbo.BOF_S_EmployeeConfiguration ON dbo.BOF_M_EmplyeeTimePriceModes.RoleID = dbo.BOF_S_EmployeeConfiguration.RoleID INNER JOIN
+		                      dbo.BOF_L_EmployeeFunctions ON dbo.BOF_M_EmplyeeTimePriceModes.FunctionID = dbo.BOF_L_EmployeeFunctions.FunctionID INNER JOIN
+		                      dbo.BOF_M_ItemMenus ON dbo.BOF_M_EmplyeeTimePriceModes.MenuID = dbo.BOF_M_ItemMenus.MenuID
+		WHERE     (dbo.BOF_M_Employees.Employeecode = @EmployeeID) AND (dbo.BOF_M_Employees.BranchID = @BranchID)
+			AND (CONVERT(VarChar, GETDATE(), 8) BETWEEN CONVERT(VarChar, dbo.BOF_L_TimeModes.Starts, 8) 
+			AND CONVERT(VarChar, dbo.BOF_L_TimeModes.Ends, 8))
+			AND dbo.BOF_L_EmployeeFunctions.EmployeeFunction <> ''Day Off''
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Pims_sel_categoryinv]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pims_sel_categoryinv]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[Pims_sel_categoryinv]
+
+ 
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select category+''Inv'' as InvCategory,sum(q) as total from dbo.g5pims_invcategorycgs
+group by eoddate,category
+having eoddate is null
+
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemWastageDetailsByDate]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemWastageDetailsByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_GetItemWastageDetailsByDate]
+@DateFrom Datetime,
+@DateTo Datetime,
+@SearchType int
+as
+if (@SearchType = 1)
+	begin
+		SELECT * from Inv_ItemWastage where WastageDate <= @DateFrom
+	end
+
+if (@SearchType = 2)
+	begin
+	  SELECT * from Inv_ItemWastage where WastageDate between @DateFrom and @DateTo
+	end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemWastageDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemWastageDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE  [dbo].[INVM_GetItemWastageDetails]
+	@WastageID int,
+	@filltype int
+AS
+if(@filltype=1)
+begin
+select WastageID,Quantity, Descreption ,TotalCost,
+UnitCost,QtyOH as''OldQtyOH'',NewQtyOH as ''NewQtyOH'',ItemFormat as ''Unit'' ,WastageDate
+
+from INV_ItemWastage where WastageID=@WastageID
+end
+
+if(@filltype=2)
+begin 
+select * from INV_ItemWastage where WastageID=@WastageID
+end
+return
+
+/*	SELECT     INV_M_Items.Descreption, INV_M_ItemWastageDetails.Quantity, INV_L_WastageTypes.WastageType, INV_M_ItemWastage.WastageDate
+	FROM         INV_M_ItemWastageDetails INNER JOIN
+	                      INV_M_Items ON INV_M_ItemWastageDetails.ItemId = INV_M_Items.ItemID INNER JOIN
+	                      INV_L_WastageTypes ON INV_M_ItemWastageDetails.WastageTypeId = INV_L_WastageTypes.WastageTypeID INNER JOIN
+	                      INV_M_ItemWastage ON INV_M_ItemWastageDetails.WastageID = INV_M_ItemWastage.WastageID
+	WHERE     (INV_M_ItemWastageDetails.WastageID = @WastageID)
+	RETURN*/
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVL_FillItemAdjustment]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVL_FillItemAdjustment]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVL_FillItemAdjustment] 
+	@AdjustmentId int,
+	@LocationID int
+AS
+if(@AdjustmentId=0 and @LocationID=0)
+begin
+	SELECT     AdjustmentId, LocationId, AdjustmentDate
+FROM         INV_M_ItemAdjustment
+ORDER BY AdjustmentDate DESC
+end
+
+if(@AdjustmentId>0 and @LocationID=0)
+begin
+
+select ProductCode, Descreption,   convert(real,(Round(QtyOH,3))) as QtyOH, VarianceQty, NewQty,  ItemFormat, LocationName, BranchName,
+AdjustmentDate, ItemId, AdjustmentId,UnitID
+from INV_ItemAdjustment
+where AdjustmentId=@AdjustmentId
+ORDER BY LocationID,Category,Division,GroupName,ProductCode
+	end
+	
+	if(@LocationID>0 )
+	begin
+	
+	SELECT     INV_M_Items.ItemID, INV_M_Items.ProductCode as ''Code'', INV_M_Items.Descreption as ''Desc'', INV_M_Items.PackingFormat as ''UnitID'' , convert(real,Round(INV_M_ItemInLocations.Quantity,3)) as ''QtyOH'', 
+	   INV_M_ItemInLocations.LocationID,''0'' as ''Variance'',''0'' as ''New Qty'', INV_L_ItemFormat.ItemFormat as ''Unit'', INV_M_ItemGroups.GroupName, INV_L_ItemDivisions.Division, INV_L_ItemCategory.Category	
+    FROM         INV_M_Items INNER JOIN
+	                      INV_M_ItemInLocations ON INV_M_Items.ItemID = INV_M_ItemInLocations.ItemID INNER JOIN
+	                      INV_L_ItemFormat ON INV_M_Items.PackingFormat = INV_L_ItemFormat.FormatID INNER JOIN
+                          dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                          dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                          dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID
+                    
+	WHERE     (INV_M_ItemInLocations.LocationID = @LocationID)
+	ORDER BY INV_M_ItemInLocations.LocationID,INV_L_ItemCategory.Category,INV_L_ItemDivisions.Division,INV_M_ItemGroups.GroupName,INV_M_Items.ProductCode
+	end
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_ListofMinMaxItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_ListofMinMaxItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INV_VU_ListofMinMaxItems] 
+AS
+	SELECT    *
+FROM         INV_ItemsMaxMin 
+WHERE Quantity BETWEEN MinQty AND MaxQty
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_ListofItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_ListofItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INV_VU_ListofItems] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT    *
+FROM         INV_ListOfItems
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_FillProgramItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_FillProgramItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INV_VU_FillProgramItems] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	SELECT     *
+FROM         INV_VU_ProgramItems
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_FillIventoryItem]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_FillIventoryItem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[INV_VU_FillIventoryItem] 
+	/*
+	(
+	@parameter1 int = 5,
+	@parameter2 datatype OUTPUT
+	)
+	*/
+AS
+	select * from INV_Rep_LocationItem
+	RETURN
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INV_VU_ClientDelv]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INV_VU_ClientDelv]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INV_VU_ClientDelv] 
+	@DeliveryId int
+AS
+	SELECT     DeliveryNumber, DeliveryTime, ItemMessage, Quantity, RowType, ContactName, LocationName, 
+               DeliveryId, ItemId, Descreption, LocToId, IsLocal,ItemFormat, UnitCost
+	FROM         Inv_ClientDelv
+	WHERE     (DeliveryId = @DeliveryId)
+	RETURN
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ItemTransfer]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ItemTransfer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_ItemTransfer]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+BEGIN
+Select StartDate,EndDate,Date,Quantity,OldTable,NewTable,Description,EmployeeName,EodDate,Amount,BranchID,Name,TransType from
+	(
+	SELECT     @StartDate AS StartDate, @EndDate AS EndDate, Date,Quantity,OldTable,NewTable,Description,EmployeeName,EodDate,Amount,
+	BranchID,Name,
+	(Case when OldTable =cast(NewTable AS int) then ''Split''
+			 when OldTable <>cast(NewTable AS int) then ''Transfer'' end)TransType 
+	FROM POS_ItemTransferReport
+	WHERE  BranchID = @BranchID AND EODDate  Between @StartDate And @EndDate  
+	) A
+where TransType=''Transfer''
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_ItemSplit]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_ItemSplit]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_ItemSplit]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+BEGIN
+Select StartDate,EndDate,Date,Quantity,OldTable,NewTable,Description,EmployeeName,EodDate,Amount,BranchID,Name,TransType from
+	(
+	SELECT     @StartDate AS StartDate, @EndDate AS EndDate, Date,Quantity,OldTable,NewTable,Description,EmployeeName,EodDate,Amount,
+	BranchID,Name,
+	(Case when OldTable =cast(NewTable AS int) then ''Split''
+			 when OldTable <>cast(NewTable AS int) then ''Transfer'' end)TransType 
+	FROM POS_ItemTransferReport
+	WHERE  BranchID = @BranchID AND EODDate  Between @StartDate And @EndDate  
+	) A
+where TransType=''Split''
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DriversOrders]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DriversOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[BOF_SEL_DriversOrders]
+@BranchID int,
+
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT  * FROM dbo.VEW_BOF_DriversOrders
+				WHERE     (BranchID = @BranchID)  
+				AND EODDate IS NULL order by DeliveryDriverEmpID
+			END
+
+		ELSE
+			
+				
+					BEGIN
+						SELECT  * FROM dbo.VEW_BOF_DriversOrders
+				        WHERE     (BranchID = @BranchID)  
+					    AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+                    	order by DeliveryDriverEmpID	
+					END
+end
+ELSE
+					BEGIN
+						SELECT  * FROM dbo.VEW_BOF_DriversOrders
+				        WHERE     (BranchID = @BranchID)  
+						AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND  EODDate  <= CONVERT(varchar(12), @ToDate, 101) 		
+						order by DeliveryDriverEmpID	
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT  * FROM dbo.VEW_BOF_DriversOrders
+                WHERE     (BranchID = @BranchID) AND (DeliveryDriverEmpID = @EmployeeID)
+				AND EODDate IS NULL order by DeliveryDriverEmpID
+				end
+				else
+				begin
+				
+				SELECT  * FROM dbo.VEW_BOF_DriversOrders
+               	WHERE     (BranchID = @BranchID) AND (DeliveryDriverEmpID = @EmployeeID)
+				AND EODDate IS NULL order by DeliveryDriverEmpID
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+							SELECT  * FROM dbo.VEW_BOF_DriversOrders
+							WHERE     (BranchID = @BranchID) AND (DeliveryDriverEmpID = @EmployeeID)
+							AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) order by DeliveryDriverEmpID
+						end
+						else
+						begin
+							SELECT  * FROM dbo.VEW_BOF_DriversOrders
+							WHERE     (BranchID = @BranchID) AND (DeliveryDriverEmpID = @EmployeeID)
+							AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) order by DeliveryDriverEmpID
+						end
+								
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+							SELECT  * FROM dbo.VEW_BOF_DriversOrders
+						    WHERE     (BranchID = @BranchID) AND (DeliveryDriverEmpID = @EmployeeID)
+							AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND  EODDate < = CONVERT(varchar(12), @ToDate, 101) 	
+							order by DeliveryDriverEmpID
+						end
+						else
+						begin
+							SELECT  * FROM dbo.VEW_BOF_DriversOrders
+						   	WHERE     (BranchID = @BranchID) AND (DeliveryDriverEmpID = @EmployeeID)
+							AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) 	AND  EODDate < = CONVERT(varchar(12), @ToDate, 101) 	
+							order by DeliveryDriverEmpID
+						end					
+						END
+					
+	END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TypeItems_Not]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TypeItems_Not]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_TypeItems_Not]
+@TypeID int
+AS
+SELECT     SalesItemID, Description
+FROM         dbo.BOF_M_ItemSalesItems
+WHERE SalesItemID Not IN(SELECT ItemID FROM BOF_L_ItemTypesItems
+	WHERE BOF_L_ItemTypesItems.TypeID = @TypeID) AND FunctionID <> 1
+ORDER BY Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TypeItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TypeItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_TypeItems]
+@TypeID int
+
+AS
+
+SELECT     dbo.BOF_L_ItemTypesItems.ItemID,  dbo.BOF_M_ItemSalesItems.Description
+FROM         dbo.BOF_L_ItemTypesItems INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.BOF_L_ItemTypesItems.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+WHERE     (dbo.BOF_L_ItemTypesItems.TypeID = @TypeID)
+ORDER BY Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteReport_SectionInfo]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteReport_SectionInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[BOF_SEL_CompleteReport_SectionInfo]  
+@BranchID int,  
+@EODDate DateTime = NULL,  
+@ToDate DateTime = null  
+AS 
+
+if @ToDate is null  
+		begin  
+		  IF @EODDate IS NULL  
+			   BEGIN  
+						SELECT SECTIONREPORT.DESCRIPTION,SUM(SECTIONREPORT.TOTALPRICE) AMOUNT,SUM(BILLCOUNT)BILLCOUNT
+						FROM
+						(
+						SELECT BOF_L_FLOORMAPTABLES.TABLENO,BOF_L_FLOORMAPTABLES.FLOORMAPID,BOF_L_FLOORMAP.DESCRIPTION,POS_M_ORDERS.TOTALPRICE,
+						POS_M_ORDERS.ORDERID ,1 BILLCOUNT,EODDate
+						FROM BOF_L_FLOORMAPTABLES INNER JOIN 
+						POS_M_ORDERS ON BOF_L_FLOORMAPTABLES.TABLENO=POS_M_ORDERS.ORDERNUMBER
+						INNER JOIN BOF_L_FLOORMAP ON BOF_L_FLOORMAP.FLOORMAPID=BOF_L_FLOORMAPTABLES.FLOORMAPID
+						WHERE EODDate IS NULL
+						) SECTIONREPORT
+						GROUP BY SECTIONREPORT.DESCRIPTION,BILLCOUNT
+						
+			   END  
+		  ELSE  
+			   BEGIN  
+						SELECT SECTIONREPORT.DESCRIPTION,SUM(SECTIONREPORT.TOTALPRICE) AMOUNT,SUM(BILLCOUNT)BILLCOUNT
+						FROM
+						(
+						SELECT BOF_L_FLOORMAPTABLES.TABLENO,BOF_L_FLOORMAPTABLES.FLOORMAPID,BOF_L_FLOORMAP.DESCRIPTION,POS_M_ORDERS.TOTALPRICE,
+						POS_M_ORDERS.ORDERID ,1 BILLCOUNT,EODDate
+						FROM BOF_L_FLOORMAPTABLES INNER JOIN 
+						POS_M_ORDERS ON BOF_L_FLOORMAPTABLES.TABLENO=POS_M_ORDERS.ORDERNUMBER
+						INNER JOIN BOF_L_FLOORMAP ON BOF_L_FLOORMAP.FLOORMAPID=BOF_L_FLOORMAPTABLES.FLOORMAPID
+						WHERE CONVERT(varchar(12), EODDate, 101) = CONVERT(varchar(12), @EODDate, 101) 
+						) SECTIONREPORT
+						GROUP BY SECTIONREPORT.DESCRIPTION,BILLCOUNT
+						ORDER BY SECTIONREPORT.DESCRIPTION
+			   End  
+		end  
+Else  
+     BEGIN  
+						SELECT SECTIONREPORT.DESCRIPTION,SUM(SECTIONREPORT.TOTALPRICE) AMOUNT,SUM(BILLCOUNT)BILLCOUNT
+						FROM
+						(
+						SELECT BOF_L_FLOORMAPTABLES.TABLENO,BOF_L_FLOORMAPTABLES.FLOORMAPID,BOF_L_FLOORMAP.DESCRIPTION,POS_M_ORDERS.TOTALPRICE,
+						POS_M_ORDERS.ORDERID ,1 BILLCOUNT,EODDate
+						FROM BOF_L_FLOORMAPTABLES INNER JOIN 
+						POS_M_ORDERS ON BOF_L_FLOORMAPTABLES.TABLENO=POS_M_ORDERS.ORDERNUMBER
+						INNER JOIN BOF_L_FLOORMAP ON BOF_L_FLOORMAP.FLOORMAPID=BOF_L_FLOORMAPTABLES.FLOORMAPID
+						WHERE CONVERT(varchar(12), EODDate, 101) between CONVERT(varchar(12), @EODDate, 101) and CONVERT(varchar(12), @ToDate, 101)
+						) SECTIONREPORT
+						GROUP BY SECTIONREPORT.DESCRIPTION,BILLCOUNT
+						ORDER BY SECTIONREPORT.DESCRIPTION
+	   
+ END
+  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryZone]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryZone]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_DeliveryZone]
+@BranchID	int,
+@Zone Varchar(50),
+@SearchType int,
+@StartDate DateTime,
+@EndDate	DateTime
+
+AS
+BEGIN
+if @SearchType=1 and @Zone =''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, MailAddressZone, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID and
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=1 and @Zone <> ''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, MailAddressZone, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND MailAddressZone LIKE @Zone AND
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=2 and @Zone =''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, MailAddressZone, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID and
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+
+if @SearchType=2 and @Zone <> '''' 
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, MailAddressZone, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND MailAddressZone LIKE @Zone AND
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryCustomers]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryCustomers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_DeliveryCustomers]-- 1,0,1,''2016-01-01'',''2016-06-17''
+@BranchID	int,
+@CustId int,
+@SearchType int,
+@StartDate DateTime,
+@EndDate	DateTime
+
+AS
+BEGIN
+if @SearchType=1 and @Custid = 0
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, InvoiceNumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=1 and @Custid <> 0
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, InvoiceNumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND CustomerID= @CustId AND
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=2 and @Custid = 0
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, InvoiceNumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+
+if @SearchType=2 and @Custid <> 0 
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, InvoiceNumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND CustomerID= @CustId AND
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryCompanies]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryCompanies]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_DeliveryCompanies]
+@BranchID	int,
+@Company Varchar(50),
+@SearchType int,
+@StartDate DateTime,
+@EndDate	DateTime
+
+AS
+BEGIN
+if @SearchType=1 and @Company =''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Company <> '''' and
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=1 and @Company <> ''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Company LIKE @Company AND
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=2 and @Company =''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Company <>'''' and
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+
+if @SearchType=2 and @Company <> '''' 
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Company LIKE @Company AND
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DeliveryBuilding]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DeliveryBuilding]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[BOF_SEL_DeliveryBuilding]
+@BranchID	int,
+@Building Varchar(50),
+@SearchType int,
+@StartDate DateTime,
+@EndDate	DateTime
+
+AS
+BEGIN
+if @SearchType=1 and @Building =''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Building <> '''' and
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=1 and @Building <> ''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Building LIKE @Building AND
+CONVERT(DateTime,EODDate,102) <= @EndDate
+end
+
+if @SearchType=2 and @Building =''''
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Building <>'''' and
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+
+if @SearchType=2 and @Building <> '''' 
+begin
+SELECT CustomerId, Title, CustomerName, FamilyName, Company, mobile, email, Building, ordernumber, totalpaid, EODDATE
+FROM VEW_BOF_DeliveryCustomers WHERE BranchID = @BranchID AND Building LIKE @Building AND
+CONVERT(DateTime,EODDate,102) BETWEEN @StartDate AND @EndDate
+end
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_INS_ItemTypesItems]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_INS_ItemTypesItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[BOF_INS_ItemTypesItems]
+	(@TypeID 	[int],
+	 @ItemID 	[int])
+
+AS INSERT INTO [dbo].[BOF_L_ItemTypesItems] 
+	 ( [TypeID],
+	 [ItemID]) 
+ 
+VALUES 
+	( @TypeID,
+	 @ItemID)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_DEL_ItemTypesItems]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_DEL_ItemTypesItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[BOF_DEL_ItemTypesItems]
+	(@TypeID 	[int],
+	 @ItemID 	[int])
+
+AS DELETE [dbo].[BOF_L_ItemTypesItems] 
+	WHERE  [TypeID] = @TypeID
+	AND	 [ItemID]  = @ItemID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_BOFConfiguration]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_BOFConfiguration]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[BOF_SEL_BOFConfiguration]
+	-- Add the parameters for the stored procedure here
+	@BranchID	int,
+@EmployeeID	int
+AS
+BEGIN
+	
+	SELECT * from Vew_BOFConfiguration where employeeid=@EmployeeID and BranchID = @BranchID
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CashOut]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CashOut]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_CashOut]
+@BranchID int,
+@EODDate	DateTime = NULL,
+@ToDate DateTime = null
+AS
+if @todate is null
+begin
+  IF @EODDate IS NULL
+	 BEGIN
+     select * from Vew_BOF_Transaction where branchid=@BranchID 
+     And orderid is null and transactime>=
+        (select max(openingtime) from pos_m_orders WHERE EodDate IS NULL)
+     END
+   ELSE IF @EODDate IS not NULL
+     BEGIN
+     select * from Vew_BOF_Transaction where branchid=@BranchID 
+     And orderid is null And transactime>=@EODDate
+     END
+END
+ELSE IF @todate is NOT null
+     BEGIN
+     select * from Vew_BOF_Transaction where branchid=@BranchID 
+     And orderid is null And transactime>=@EODDate 
+     And transactime<=@ToDate
+     END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CATEGORYCOSTPROFIT]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CATEGORYCOSTPROFIT]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_CATEGORYCOSTPROFIT]
+@FromDate datetime,
+@ToDate datetime,
+@BranchID int,
+@Category varchar(30)
+AS
+
+if isnull(@Category,'''')=''''
+	begin
+			if isnull(@FromDate,'''')=''''
+				begin
+						select a.Category,sum(a.SalesValue)SalesValue,sum(a.CostValue)CostValue
+						from
+						(		
+						select ic.Category,isnull(sum(od.UsedPrice),0) ''SalesValue'',
+								--(SELECT COUNT(*) FROM BOF_M_ItemSalesItems in_isi where in_isi.GroupID=itms.GroupID  ) as [Count],
+								(select isnull(sum(unitcost),0.00)  from inv_m_items,item_ingredient,BOF_M_ItemSalesItems
+								where inv_m_items.itemid=item_ingredient.ingredientId and BOF_M_ItemSalesItems.SalesItemID=item_ingredient.itemid
+								and BOF_M_ItemSalesItems.GroupID=itms.GroupID) ''CostValue''
+								from BOF_M_ItemSalesItems itms, dbo.BOF_M_ItemGroups ig, pos_m_orderdetails od,pos_m_Orders ord,BOF_L_ItemDivisions id,BOF_L_ItemCategories ic
+								where
+								itms.GroupID = ig.GroupID and itms.salesitemid=od.itemid and od.Status=''Ordered'' and ord.orderid=od.orderid
+								and ord.eoddate is null 
+								and od.BranchID=@BranchID and ig.DivisionID=id.DivisionID and id.CategoryID=ic.CategoryID and od.UsedPrice>0
+								group by ic.Category,itms.GroupID,ig.GroupName
+						) a 
+						group by a.Category
+				end
+			else
+				begin
+						select a.Category,sum(a.SalesValue)SalesValue,sum(a.CostValue)CostValue
+						from
+						(		
+						select ic.Category,isnull(sum(od.UsedPrice),0) ''SalesValue'',
+								--(SELECT COUNT(*) FROM BOF_M_ItemSalesItems in_isi where in_isi.GroupID=itms.GroupID  ) as [Count],
+								(select isnull(sum(unitcost),0.00)  from inv_m_items,item_ingredient,BOF_M_ItemSalesItems
+								where inv_m_items.itemid=item_ingredient.ingredientId and BOF_M_ItemSalesItems.SalesItemID=item_ingredient.itemid
+								and BOF_M_ItemSalesItems.GroupID=itms.GroupID) ''CostValue''
+								from BOF_M_ItemSalesItems itms, dbo.BOF_M_ItemGroups ig, pos_m_orderdetails od,pos_m_Orders ord,BOF_L_ItemDivisions id,BOF_L_ItemCategories ic
+								where
+								itms.GroupID = ig.GroupID and itms.salesitemid=od.itemid and od.Status=''Ordered'' and ord.orderid=od.orderid
+								and ord.eoddate between @FromDate and @ToDate
+								and od.BranchID=@BranchID and ig.DivisionID=id.DivisionID and id.CategoryID=ic.CategoryID and od.UsedPrice>0
+								group by ic.Category,itms.GroupID,ig.GroupName
+						) a 
+						group by a.Category
+				end
+		end
+else
+			if isnull(@FromDate,'''')=''''
+				begin
+						select a.Category,sum(a.SalesValue)SalesValue,sum(a.CostValue)CostValue
+						from
+						(		
+						select ic.Category,isnull(sum(od.UsedPrice),0) ''SalesValue'',
+								--(SELECT COUNT(*) FROM BOF_M_ItemSalesItems in_isi where in_isi.GroupID=itms.GroupID  ) as [Count],
+								(select isnull(sum(unitcost),0.00)  from inv_m_items,item_ingredient,BOF_M_ItemSalesItems
+								where inv_m_items.itemid=item_ingredient.ingredientId and BOF_M_ItemSalesItems.SalesItemID=item_ingredient.itemid
+								and BOF_M_ItemSalesItems.GroupID=itms.GroupID) ''CostValue''
+								from BOF_M_ItemSalesItems itms, dbo.BOF_M_ItemGroups ig, pos_m_orderdetails od,pos_m_Orders ord,BOF_L_ItemDivisions id,BOF_L_ItemCategories ic
+								where
+								itms.GroupID = ig.GroupID and itms.salesitemid=od.itemid and od.Status=''Ordered'' and ord.orderid=od.orderid
+								and ord.eoddate is null 
+								and od.BranchID=@BranchID and ig.DivisionID=id.DivisionID and id.CategoryID=ic.CategoryID and od.UsedPrice>0  and  ic.Category=@Category
+								group by ic.Category,itms.GroupID,ig.GroupName
+						) a 
+						group by a.Category
+				end
+			else
+				begin
+						select a.Category,sum(a.SalesValue)SalesValue,sum(a.CostValue)CostValue
+						from
+						(		
+						select ic.Category,isnull(sum(od.UsedPrice),0) ''SalesValue'',
+								--(SELECT COUNT(*) FROM BOF_M_ItemSalesItems in_isi where in_isi.GroupID=itms.GroupID  ) as [Count],
+								(select isnull(sum(unitcost),0.00)  from inv_m_items,item_ingredient,BOF_M_ItemSalesItems
+								where inv_m_items.itemid=item_ingredient.ingredientId and BOF_M_ItemSalesItems.SalesItemID=item_ingredient.itemid
+								and BOF_M_ItemSalesItems.GroupID=itms.GroupID) ''CostValue''
+								from BOF_M_ItemSalesItems itms, dbo.BOF_M_ItemGroups ig, pos_m_orderdetails od,pos_m_Orders ord,BOF_L_ItemDivisions id,BOF_L_ItemCategories ic
+								where
+								itms.GroupID = ig.GroupID and itms.salesitemid=od.itemid and od.Status=''Ordered'' and ord.orderid=od.orderid
+								and ord.eoddate between @FromDate and @ToDate
+								and od.BranchID=@BranchID and ig.DivisionID=id.DivisionID and id.CategoryID=ic.CategoryID and od.UsedPrice>0  and  ic.Category=@Category
+								group by ic.Category,itms.GroupID,ig.GroupName
+						) a 
+						group by a.Category
+				end
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CheckReport]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CheckReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_CheckReport]  
+@BranchID int,  
+@StartDate DateTime,  
+@EndDate DateTime  
+AS  
+BEGIN  
+
+SELECT     @StartDate AS StartDate, @EndDate AS EndDate,  dbo.POS_M_Orders.EODDate, 
+dbo.BOF_L_PayTypes.PayType, dbo.POS_M_Payments.InvoiceNumber, dbo.POS_M_Orders.ClosingTime,   
+                      dbo.POS_M_Orders.OrderNumber, dbo.POS_M_Orders.NumberOfCustomers,   
+                       dbo.POS_M_Orders.TotalPrice, dbo.POS_M_Orders.TotalTax, dbo.POS_M_Orders.TotalService, 
+					dbo.POS_M_Orders.TotalDiscount,   
+             SUM(dbo.POS_M_Payments.Amount*dbo.POS_M_Payments.DollarRate) AS Amount, dbo.BOF_M_Employees.EmployeeName,
+(select EmployeeName from BOF_M_Employees where EmployeeID=POS_M_Orders.ClosedBy)  EmpClose,
+dbo.BOF_L_PaymentTypes.PaymentType, 
+(case when dbo.BOF_L_PaymentTypes.PaymentType=''Beam Valet'' then dbo.POS_M_Payments.BeamRefno else 0 end)  BeamRefno
+FROM         dbo.BOF_L_PaymentTypes INNER JOIN  
+                      dbo.BOF_L_PayTypes ON dbo.BOF_L_PaymentTypes.PayTypeID = dbo.BOF_L_PayTypes.PayTypeID INNER JOIN  
+                      dbo.POS_M_Payments ON dbo.BOF_L_PaymentTypes.PaymentTypeID = dbo.POS_M_Payments.PaymentTypeID INNER JOIN  
+                      dbo.POS_M_Orders ON dbo.POS_M_Payments.OrderID = dbo.POS_M_Orders.OrderID AND   
+                      dbo.POS_M_Payments.BranchID = dbo.POS_M_Orders.BranchID INNER JOIN  
+                      dbo.POS_M_Invoices ON dbo.POS_M_Orders.OrderID = dbo.POS_M_Invoices.OrderID AND   
+                      dbo.POS_M_Orders.BranchID = dbo.POS_M_Invoices.BranchID INNER JOIN  
+                      dbo.BOF_M_Employees ON dbo.POS_M_Invoices.ReceivedBy = dbo.BOF_M_Employees.EmployeeID AND   
+                      dbo.POS_M_Invoices.BranchID = dbo.BOF_M_Employees.BranchID  
+WHERE  dbo.POS_M_Orders.BranchID = @BranchID   
+AND Convert(varchar(20),EODDate,101) BETWEEN @StartDate AND @EndDate  
+AND     (dbo.POS_M_Orders.Voided = 0) AND (dbo.POS_M_Payments.Voided = 0) AND (dbo.POS_M_Orders.Status = 2)  
+GROUP BY dbo.POS_M_Orders.EODDate, dbo.BOF_L_PayTypes.PayType, dbo.POS_M_Payments.InvoiceNumber, dbo.POS_M_Orders.ClosingTime,   
+dbo.POS_M_Orders.OrderNumber, dbo.POS_M_Orders.NumberOfCustomers,  dbo.POS_M_Orders.TotalPrice, dbo.POS_M_Orders.TotalTax,   
+dbo.POS_M_Orders.TotalService, dbo.POS_M_Orders.TotalDiscount, dbo.BOF_M_Employees.EmployeeName  ,POS_M_Orders.ClosedBy,dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.BeamRefno
+END  
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CreditCollection]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CreditCollection]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CreditCollection] @branchID int,@startDate datetime, @endDate datetime
+AS
+select (customername +'' ''+ familyname) as Customer,paymenttype,sum(amount) as amount,date from cust_debt_pay
+inner join bof_l_paymenttypes on bof_l_paymenttypes.paymenttypeid=cust_debt_pay.paymenttypeid
+inner join bof_m_customers on bof_m_customers.customerid=cust_debt_pay.customerid
+where date between CONVERT(varchar(20),@startDate, 101) and CONVERT(varchar(20),@enddate, 101)
+and cust_debt_pay.branchid=1
+group by customername,familyname,cust_debt_pay.paymenttypeid,paymenttype,date
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[COPY_CHANGE_TO_TIPS]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[COPY_CHANGE_TO_TIPS]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[COPY_CHANGE_TO_TIPS]
+@InvoiceNumber nvarchar(100),
+@PaymentType int
+AS
+
+INSERT INTO POS_tips(LineNumber,InvoiceNumber,BranchID,OrderID,TipAmount,PaymentTypeID,PayAmt) 
+SELECT ''1'' LineNumber,InvoiceNumber,''1'' BranchID,OrderID,Amount*-1 TipAmount,@PaymentType,
+(select sum(a.Payamnt) from
+(SELECT (case when Amount<0 then Amount*-1 else Amount end) Payamnt FROM POS_M_PAYMENTS WHERE INVOICENUMBER=@InvoiceNumber ) a
+) from POS_M_PAYMENTS where INVOICENUMBER=@InvoiceNumber and amount<0
+
+INSERT INTO POS_M_PAYMENTS_TEMP 
+SELECT PaymentID,BranchID,InvoiceNumber,PaymentTypeID,Amount,CustomerID,OrderID,Voided,VoidReasonID,RevenueID,DollarRate,BeamRefno 
+FROM POS_M_PAYMENTS WHERE InvoiceNumber=@InvoiceNumber AND AMOUNT<0
+
+DELETE FROM POS_M_PAYMENTS WHERE InvoiceNumber=@InvoiceNumber AND AMOUNT<0
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesItemsReport]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesItemsReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE Procedure [dbo].[BOF_SEL_SalesItemsReport]  
+AS  
+SELECT     dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_L_ItemDivisions.DivisionID, dbo.BOF_M_ItemGroups.GroupID, 1 AS SalesItemID,  
+                      dbo.BOF_L_ItemCategories.Category, dbo.BOF_L_ItemDivisions.Division, dbo.BOF_M_ItemGroups.GroupName,   
+                      dbo.BOF_M_ItemSalesItems.Description, dbo.BOF_M_ItemSalesItems.MenuDescription, dbo.BOF_M_ItemSalesItems.KitcheDescription,   
+                      dbo.BOF_M_ItemSalesItems.PriceMode1, dbo.BOF_M_ItemSalesItems.PriceMode2, dbo.BOF_M_ItemSalesItems.PriceMode3,   
+                      dbo.BOF_M_ItemSalesItems.PriceMode4  
+FROM         dbo.BOF_L_ItemDivisions INNER JOIN  
+                      dbo.BOF_L_ItemCategories ON dbo.BOF_L_ItemDivisions.CategoryID = dbo.BOF_L_ItemCategories.CategoryID INNER JOIN  
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_L_ItemDivisions.DivisionID = dbo.BOF_M_ItemGroups.DivisionID INNER JOIN  
+                      dbo.BOF_M_ItemSalesItems ON dbo.BOF_M_ItemGroups.GroupID = dbo.BOF_M_ItemSalesItems.GroupID  
+ 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_Screens]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_Screens]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PDA_SEL_Screens]
+
+ AS
+
+SELECT     dbo.BOF_M_ItemSalesItems.SalesItemID, dbo.BOF_M_ItemSalesItems.MenuDescription, dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_L_ItemCategories.Category, dbo.BOF_M_ItemGroups.GroupID, dbo.BOF_M_ItemGroups.GroupName, 
+                      dbo.BOF_M_ItemSalesItems.PriceMode1, 
+                      dbo.BOF_M_ItemSalesItems.PriceMode2, dbo.BOF_M_ItemSalesItems.PriceMode3, dbo.BOF_M_ItemSalesItems.PriceMode4, 
+                      dbo.BOF_M_ItemSalesItems.FunctionID, dbo.BOF_M_ItemSalesItems.Modifier1, dbo.BOF_M_ItemSalesItems.Modifier2, 
+                      dbo.BOF_M_ItemSalesItems.Modifier3, dbo.BOF_M_ItemSalesItems.MeterCounter, dbo.BOF_M_ItemSalesItems.ScreenColor, 
+                      dbo.BOF_M_ItemSalesItems.Formula, dbo.BOF_M_ItemSalesItems.Modifier1Remarks, dbo.BOF_M_ItemSalesItems.Modifier2Remarks, 
+                      dbo.BOF_M_ItemSalesItems.Modifier3Remarks,dbo.BOF_M_ItemGroups.useasextra,dbo.BOF_M_ItemSalesItems.openextras
+FROM         dbo.BOF_M_ItemSalesItems INNER JOIN
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID INNER JOIN
+                      dbo.BOF_L_ItemDivisions ON dbo.BOF_M_ItemGroups.DivisionID = dbo.BOF_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.BOF_L_ItemCategories ON dbo.BOF_L_ItemDivisions.CategoryID = dbo.BOF_L_ItemCategories.CategoryID
+WHERE     (dbo.BOF_M_ItemSalesItems.Available = 1)and(dbo.BOF_M_ItemSalesItems.Showinpda = 1)
+ORDER BY dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_M_ItemGroups.GroupID,dbo.BOF_M_Itemsalesitems.Pda_SeqNo
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_ScreenRemarks]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_ScreenRemarks]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_SEL_ScreenRemarks]
+
+ AS
+
+SELECT     TOP (100) PERCENT dbo.BOF_PDAItemGroupLoc.ID, dbo.BOF_PDAItemGroupLoc.PDAGroupLoc, dbo.BOF_PDAItemGroupLoc.GroupID, 
+                      dbo.BOF_PDAItemGroupLoc.SalesItemID, dbo.BOF_PDAItemGroupLoc.MenuDescription, dbo.BOF_L_ItemCategories.CategoryID, 
+                      dbo.BOF_L_ItemCategories.Category, dbo.BOF_PDAItemGroupLoc.PriceMode1, dbo.BOF_PDAItemGroupLoc.PriceMode2, 
+                      dbo.BOF_PDAItemGroupLoc.PriceMode3, dbo.BOF_PDAItemGroupLoc.PriceMode4, dbo.BOF_PDAItemGroupLoc.FunctionID, 
+                      dbo.BOF_PDAItemGroupLoc.Modifier1, dbo.BOF_PDAItemGroupLoc.Modifier2, dbo.BOF_PDAItemGroupLoc.Modifier3, 
+                      dbo.BOF_PDAItemGroupLoc.MeterCounter, dbo.BOF_PDAItemGroupLoc.ScreenColor, dbo.BOF_PDAItemGroupLoc.Formula, 
+                      dbo.BOF_PDAItemGroupLoc.Modifier1Remarks, dbo.BOF_PDAItemGroupLoc.Modifier2Remarks, dbo.BOF_PDAItemGroupLoc.Modifier3Remarks, 
+                      dbo.BOF_M_ItemGroups.UseAsExtra, dbo.BOF_PDAItemGroupLoc.OpenExtras, dbo.BOF_M_ItemGroups.GroupName
+FROM         dbo.BOF_M_ItemGroups INNER JOIN
+                      dbo.BOF_L_ItemDivisions ON dbo.BOF_M_ItemGroups.DivisionID = dbo.BOF_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.BOF_L_ItemCategories ON dbo.BOF_L_ItemDivisions.CategoryID = dbo.BOF_L_ItemCategories.CategoryID INNER JOIN
+                      dbo.BOF_PDAItemGroupLoc ON dbo.BOF_M_ItemGroups.GroupID = dbo.BOF_PDAItemGroupLoc.PDAGroupLoc
+WHERE     (dbo.BOF_PDAItemGroupLoc.Available = 1) AND (dbo.BOF_PDAItemGroupLoc.ShowInPDA = 1)
+ORDER BY dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_M_ItemGroups.GroupID, dbo.BOF_PDAItemGroupLoc.PDA_SeqNo
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_SEL_ItemGroups]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_SEL_ItemGroups]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[PDA_SEL_ItemGroups]
+AS
+
+SELECT     TOP 100 PERCENT dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_L_ItemCategories.Category, dbo.BOF_M_ItemGroups.GroupID, 
+                      dbo.BOF_M_ItemGroups.GroupName,dbo.BOF_M_ItemGroups.useasextra,dbo.BOF_M_ItemGroups.PDAGroupLoc,dbo.BOF_M_ItemGroups.PDAGroupLoc2
+FROM         dbo.BOF_M_ItemGroups INNER JOIN
+                      dbo.BOF_L_ItemDivisions ON dbo.BOF_M_ItemGroups.DivisionID = dbo.BOF_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.BOF_L_ItemCategories ON dbo.BOF_L_ItemDivisions.CategoryID = dbo.BOF_L_ItemCategories.CategoryID INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.BOF_M_ItemGroups.GroupID = dbo.BOF_M_ItemSalesItems.GroupID
+GROUP BY dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_L_ItemCategories.Category, dbo.BOF_M_ItemGroups.GroupID, 
+                      dbo.BOF_M_ItemGroups.GroupName,dbo.BOF_M_ItemGroups.useasextra, dbo.BOF_M_ItemGroups.PDAGroupLoc,dbo.BOF_M_ItemGroups.PDAGroupLoc2
+HAVING      (COUNT(dbo.BOF_M_ItemSalesItems.SalesItemID) > 0)
+ORDER BY dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_M_ItemGroups.GroupID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_DEL_OrderDisconts]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_DEL_OrderDisconts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_DEL_OrderDisconts]
+	(@BranchID 	[int],
+	 @OrderID 	[int])
+
+AS 
+	DELETE  [dbo].[POS_M_OrderDiscounts] 
+	WHERE BranchID = @BranchID
+	AND OrderID = @OrderID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemIngredients]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemIngredients]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[INVM_GetItemIngredients]
+@Type int,	
+@ItemID int
+    
+AS
+BEGIN
+IF @Type = 1
+BEGIN
+select * from INV_ItemsIngredients
+END
+IF @Type = 2
+BEGIN
+select * from INV_ItemsIngredients where ItemID=@ItemID
+END
+END
+return
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_GetItemsReciepe]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_GetItemsReciepe]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[INVM_GetItemsReciepe]
+@Type int,	
+@ItemID int
+    
+AS
+BEGIN
+IF @Type = 1
+BEGIN
+select * from INV_ItemsReciepe
+END
+IF @Type = 2
+BEGIN
+select * from INV_ItemsReciepe where ItemID=@ItemID
+END
+END
+return
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_BOF_SEL_DISCTYPE]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_BOF_SEL_DISCTYPE]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[usp_BOF_SEL_DISCTYPE]
+@fromDate varchar(50),
+@toDate varchar(50)
+AS
+BEGIN
+
+	SELECT 
+od.DiscountID,
+     d.Description as DiscountTypes,
+     COUNT(*)NoTrans,
+     SUM(od.DiscountAmount)TotalValue
+FROM POS_M_OrderDiscounts od
+INNER JOIN POS_M_Orders o 
+ON o.OrderID=od.OrderID 
+Inner Join BOF_L_Discounts d
+on od.DiscountID = d.DiscountID
+where 
+o.EODDate BETWEEN @fromDate + '' 00:00:00.000'' AND @toDate + '' 23:59:59.999''
+GROUP BY od.DiscountID, d.Description;
+END  
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_VoidInvoice]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_VoidInvoice]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_VoidInvoice]
+	(@BranchID 	[int],
+	 @OrderID 	int,
+	@OrderMenuID	int,
+	 @VoidReasonID 	[int])
+AS 
+	DECLARE @InvoiceID int
+	SELECT @InvoiceID = ISNULL(MAX(InvoiceID), 0)  + 1  FROM POS_M_Invoices
+	 WHERE BranchID = @BranchID AND  InvoiceID <=10000000
+
+	INSERT INTO [dbo].[POS_M_Invoices] 
+	(InvoiceID, [BranchID], [OrderID], [InvoiceValue], [ReceivedBy]) 
+	SELECT @InvoiceID, BranchID, OrderID,- InvoiceValue, ReceivedBy
+	FROM POS_M_Invoices
+	WHERE BranchID = @BranchID AND OrderID = @OrderID
+
+	UPDATE [dbo].[POS_M_Orders] 
+	SET Voided = 1, VoidReasonID = @VoidReasonID
+	WHERE ( [BranchID]	 = @BranchID AND [OrderID]	 = @OrderID)
+
+	 INSERT INTO [dbo].[POS_M_OrderDetails]  ( [BranchID],	 [OrderID], [InvoiceID], [ItemID], [Status], [Quantity], [UnitID], [UsedPrice], [AffectedItem],
+		 [VoidReasonID],[VoidMethodID],  [CustomerNumber], [OrderbyEmployeeId],[Discount])
+	SELECT  [BranchID], [OrderID], @InvoiceID, [ItemID], ''Void'', -Quantity, [UnitID], UsedPrice,OrderDetailID,  @VoidReasonID, 3, [CustomerNumber], [OrderbyEmployeeId], -[Discount]
+	FROM [dbo].[POS_M_OrderDetails]
+	 WHERE  ( [BranchID] = @BranchID AND [OrderID] = @OrderID)
+
+	UPDATE [dbo].[POS_M_Payments] 
+	SET  [Voided]	 = 1,  [VoidReasonID]	 = @VoidReasonID 
+	WHERE ( [BranchID]	 = @BranchID AND  [OrderID]	 = @OrderID)
+
+	INSERT INTO [dbo].[POS_M_Payments] (  [BranchID], [InvoiceNumber],  [PaymentTypeID], [Amount],  
+		[CustomerID], [OrderID], [Voided], [VoidReasonID], [RevenueID], [DollarRate]) 
+	SELECT  [BranchID], @InvoiceID,  [PaymentTypeID], -[Amount],  
+		[CustomerID], [OrderID], [Voided], [VoidReasonID], 3, [DollarRate]
+	FROM [dbo].[POS_M_Payments] 
+	WHERE  ( [BranchID]	 = @BranchID AND  [OrderID]	 = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_ViodOrder]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_ViodOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_ViodOrder]
+		(@BranchID 	[int],
+	@OrderType 	[int],
+	 @OrderNumber 	[real],
+	 @Reason 	[int],
+	@VoidedBy	[int])
+
+AS 
+	DECLARE @OrderID	int
+	SELECT @OrderID = OrderID FROM  [dbo].[POS_M_Orders] 
+	WHERE ( [BranchID] = @BranchID AND [OrderNumber] = @OrderNumber AND ([Status] = 0 OR [Status] = 1))
+		
+	DECLARE @InvoiceID int
+	SELECT @InvoiceID = InvoiceID  FROM POS_M_Invoices
+	 WHERE BranchID = @BranchID AND OrderID = @OrderID
+
+	IF @InvoiceID > 0
+		BEGIN
+			 INSERT INTO [dbo].[POS_M_OrderDetails]  ( [BranchID],	 [OrderID], [InvoiceID], [ItemID], [Status], [Quantity], [UnitID], [UsedPrice], [AffectedItem],
+				 [VoidReasonID],[VoidMethodID],  [CustomerNumber], [OrderbyEmployeeId], [Discount],[VoidDate])
+			SELECT  [BranchID], [OrderID], @InvoiceID, [ItemID], ''Void'', -Quantity, [UnitID], UsedPrice,OrderDetailID,  @Reason, 2, [CustomerNumber],[OrderbyEmployeeId], -[Discount],getdate()
+			FROM [dbo].[POS_M_OrderDetails]
+			 WHERE  ( [BranchID] = @BranchID AND [OrderID] = @OrderID)
+
+			UPDATE POS_M_Invoices SET InvoiceValue = 0 
+			WHERE  [BranchID] = @BranchID AND [OrderID] = @OrderID
+		END
+	ELSE
+		BEGIN
+			SELECT @InvoiceID = ISNULL(MAX(InvoiceID),  10000000)  + 1  FROM POS_M_Invoices
+			 WHERE BranchID = @BranchID
+		
+			 INSERT INTO [dbo].[POS_M_Invoices] 
+			 (InvoiceID, [BranchID], [OrderID], [InvoiceValue], [ReceivedBy]) 
+			SELECT @InvoiceID, BranchID, OrderID, 0, @VoidedBy
+			FROM [dbo].[POS_M_Orders] 
+			WHERE ( [BranchID] = @BranchID AND OrderID = @OrderID)
+
+		
+			 INSERT INTO [dbo].[POS_M_OrderDetails]  ( [BranchID],	 [OrderID], [InvoiceID], [ItemID], [Status], [Quantity], [UnitID], [UsedPrice], [AffectedItem],
+				 [VoidReasonID],[VoidMethodID], [CustomerNumber], [OrderbyEmployeeId],[VoidDate])
+			SELECT  [BranchID], [OrderID],@InvoiceID, [ItemID], ''Void'', -Quantity, [UnitID], UsedPrice,OrderDetailID,  @Reason, 2,  [CustomerNumber], [OrderbyEmployeeId],getdate()
+			FROM [dbo].[POS_M_OrderDetails] 
+			WHERE  ( [BranchID] = @BranchID AND [OrderID] = @OrderID)
+		
+			UPDATE  [dbo].[POS_M_OrderDetails] SET InvoiceID = @InvoiceID,VoidDate=getdate()
+			WHERE  [BranchID] = @BranchID AND [OrderID] = @OrderID
+		END
+
+	UPDATE [dbo].[POS_M_Orders] 
+SET Status = 2,  Voided = 1,VoidReasonID = @Reason, ClosedBy = @VoidedBy, InvoiceNumber = @InvoiceID
+--SET Status = 2,  Voided = 1,VoidReasonID = @Reason, ClosedBy = ''73'', InvoiceNumber = @InvoiceID
+	WHERE ( [BranchID] = @BranchID AND OrderID = @OrderID)
+
+	DELETE  [dbo].[POS_M_OrderDiscounts] 
+	WHERE ( [BranchID] = @BranchID AND OrderID = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[showProfit]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[showProfit]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[showProfit]
+	
+AS
+BEGIN
+	SELECT     dbo.BOF_M_ItemSalesItems.SalesItemID, dbo.BOF_M_ItemSalesItems.Description, ISNULL(dbo.BOF_M_ItemSalesItems.PriceMode1, 0) AS Selling, 
+                      ISNULL(dbo.BOF_M_ItemSalesItems.Cost, 0) AS Cost, ISNULL(dbo.BOF_M_ItemSalesItems.PriceMode1, 0) - ISNULL(dbo.BOF_M_ItemSalesItems.Cost, 
+                      0) AS Profit, ISNULL(dbo.BOF_M_ItemSalesItems.Cost / dbo.BOF_M_ItemSalesItems.PriceMode1 * 100, 0) AS pcost, 
+                      ISNULL((dbo.BOF_M_ItemSalesItems.PriceMode1 - dbo.BOF_M_ItemSalesItems.Cost) / dbo.BOF_M_ItemSalesItems.PriceMode1 * 100, 0) AS Pprofit, 
+                      dbo.BOF_M_ItemGroups.GroupName
+FROM         dbo.BOF_M_ItemSalesItems INNER JOIN
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[showIngredients]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[showIngredients]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[showIngredients]
+AS
+BEGIN
+SELECT     dbo.Item_Ingredient.Quantity, dbo.Pos_IngredientList.UnitCost AS cost, dbo.BOF_M_ItemSalesItems.Description AS RecipeDesc, 
+                      dbo.BOF_M_ItemSalesItems.PriceMode1, dbo.BOF_M_ItemGroups.GroupName, dbo.Pos_IngredientList.Descreption, 
+                      dbo.Pos_IngredientList.ItemFormat, dbo.BOF_M_ItemSalesItems.PriceMode2, dbo.BOF_M_ItemSalesItems.PriceMode3, 
+                      dbo.BOF_M_ItemSalesItems.PriceMode4,dbo.Item_Ingredient.PriceLevel,dbo.BOF_M_ItemSalesItems.SalesItemId
+FROM         dbo.Item_Ingredient INNER JOIN
+                      dbo.Pos_IngredientList ON dbo.Item_Ingredient.ingredientId = dbo.Pos_IngredientList.ItemID INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.Item_Ingredient.Itemid = dbo.BOF_M_ItemSalesItems.SalesItemID INNER JOIN
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_MergeTables]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_MergeTables]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_MergeTables]
+	(@BranchID 	[int],
+	@OrderType	[int],
+	@OldOrderNumber	[real],
+	 @NewOrderNumber 	[real],
+     @UserID [int])
+
+AS 
+BEGIN
+DECLARE @NewOrderID AS [real]
+DECLARE @OldOrderID AS [real]
+DECLARE @InvoiceID AS [real]
+DECLARE @InvoiceValue AS [real]
+DECLARE @NoCust AS [int]
+DECLARE @TotalPrice AS [real]
+DECLARE @TotalTax AS [real]
+DECLARE @TotalService AS [real]
+DECLARE @TotalDisc AS [real]
+DECLARE @Tip AS [real]
+
+
+INSERT INTO POS_M_ItemTransfer ([BranchID],[UserID],[ItemID],[Quantity],[Date],[EODDate],[OldTable],[NewTable],Amount)
+SELECT @BranchID,@UserID,[ItemID],[Quantity],GetDate(),Null,@OldOrderNumber,@NewOrderNumber,Quantity*usedprice
+FROM POS_M_OrderDetails
+WHERE Branchid=@BranchID and orderid=(SELECT OrderID FROM [dbo].[POS_M_Orders] where ( [BranchID]	 = @BranchID AND
+	 [OrderMenuID]	 = @OrderType AND
+	[OrderNumber]	= @OldOrderNumber AND
+	([Status] = 0 OR [Status] = 1)))
+
+SELECT @OldOrderID= OrderID, @NoCust=NumberOfCustomers, @TotalPrice=TotalPrice, @TotalTax=TotalTax, @TotalService=TotalService,
+@TotalDisc=TotalDiscount,@Tip=Tip FROM [dbo].[POS_M_Orders] WHERE
+( [BranchID]	 = @BranchID AND
+	 [OrderMenuID]	 = @OrderType AND
+	[OrderNumber]	= @OldOrderNumber AND
+	([Status] = 0 OR [Status] = 1))
+
+UPDATE [dbo].[POS_M_Orders] 
+SET  NumberOfCustomers=NumberOfCustomers+@NoCust,
+TotalPrice=TotalPrice+@TotalPrice,TotalTax=TotalTax+@TotalTax, TotalService=TotalService+@TotalService,
+TotalDiscount=TotalDiscount+@TotalDisc,Tip=Tip+@Tip
+WHERE 
+	( [BranchID]	 = @BranchID AND
+	 [OrderMenuID]	 = @OrderType AND
+	[OrderNumber]	= @NewOrderNumber AND
+	([Status] = 0 OR [Status] = 1))
+
+SELECT @NewOrderID=OrderID, @InvoiceID=InvoiceNumber FROM [dbo].[POS_M_Orders] WHERE
+( [BranchID]	 = @BranchID AND
+	 [OrderMenuID]	 = @OrderType AND
+	[OrderNumber]	= @NewOrderNumber AND
+	([Status] = 0 OR [Status] = 1))
+
+UPDATE [dbo].[POS_M_OrderDetails] SET [OrderId]= @NewOrderID, InvoiceID=@InvoiceID
+WHERE Branchid=@BranchID and orderid=(SELECT OrderID FROM [dbo].[POS_M_Orders] where ( [BranchID]	 = @BranchID AND
+	 [OrderMenuID]	 = @OrderType AND
+	[OrderNumber]	= @OldOrderNumber AND
+	([Status] = 0 OR [Status] = 1)))
+
+SELECT @InvoiceValue= InvoiceValue FROM [dbo].[POS_M_Invoices] WHERE OrderID = @OldOrderID
+IF @InvoiceValue IS NOT NULL 
+BEGIN
+UPDATE [dbo].[POS_M_Invoices] SET InvoiceValue=InvoiceValue+@InvoiceValue WHERE
+OrderID=@NewOrderID
+END
+
+UPDATE [dbo].[POS_M_OrderDiscounts] SET [OrderId]= @NewOrderID
+WHERE OrderID=@OldOrderID
+
+if (@NewOrderNumber <> @OldOrderNumber) 
+begin
+DELETE FROM [dbo].[POS_M_Orders] WHERE OrderID=@OldOrderID
+end
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_InvoicePayType]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_InvoicePayType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_InvoicePayType]  
+ (@BranchID  [int],  
+  @InvoiceNumber VARCHAR (50),  
+  @PayTypeID  [int],  
+     @CustID [int]  
+  ,@PayAmnt decimal (18,2) 
+  ,@PaymentID decimal  
+  ,@Rate decimal  
+)  
+AS  
+IF @CustID>0  
+  
+ BEGIN   
+  UPDATE [dbo].[POS_M_Payments]   
+  SET PaymentTypeID  =@PayTypeID, CustomerID=@CustID,Amount=@PayAmnt,DollarRate=@Rate  
+  WHERE   
+   ( [BranchID]  = @BranchID AND  
+    [InvoiceNumber]  = @InvoiceNumber) and PaymentID=@PaymentID  
+  
+  UPDATE [dbo].[POS_M_Orders]  set CustomerID=@CustID   
+  WHERE   
+   ( [BranchID]  = @BranchID AND  
+    [InvoiceNumber]  = @InvoiceNumber)  
+ END  
+ELSE  
+ BEGIN  
+  UPDATE [dbo].[POS_M_Payments]   
+  SET PaymentTypeID  =@PayTypeID,Amount=@PayAmnt,DollarRate=@Rate  
+  WHERE   
+   ( [BranchID]  = @BranchID AND  
+    [InvoiceNumber]  = @InvoiceNumber) and PaymentID=@PaymentID  
+ END 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_EndOfDay]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_EndOfDay]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_UPD_EndOfDay]    
+ @BranchID  int 
+AS    
+BEGIN     
+ DECLARE @EODDate DATETIME    
+ EXEC [dbo].[POS_SEL_MainReading_Adjust]    
+ SELECT @EODDate = MIN(OpeningTime) FROM  [dbo].[POS_M_Orders]     
+ WHERE EODDate IS NULL  and CAST(FLOOR(CAST(deliverytime as float)) as DATETIME) <=  GETDATE();  
+      
+ UPDATE [dbo].[POS_M_Orders]     
+ SET  [EODDate]  = @EODDate    
+ WHERE ( [BranchID] = @BranchID AND  [EODDate] IS NULL AND Status = 2)   
+ and CAST(FLOOR(CAST(deliverytime as float)) as DATETIME) <=  GETDATE();    
+    
+ DELETE FROM  [dbo].[POS_M_Orders] WHERE (status=0 or status=1) and [BranchID] =@BranchID  and CAST(FLOOR(CAST(deliverytime as FLOAT)) as DATETIME) <=  GETDATE();  
+  
+ UPDATE Cust_debt_pay SET eoddate=@EODDate WHERE  ( [BranchID] = @BranchID AND  [EODDate] IS NULL);  
+ UPDATE POS_M_ItemTransfer SET eoddate=@EODDate WHERE  ( [BranchID] = @BranchID AND  [EODDate] IS NULL);    
+
+END  ' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_DiscountedItems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_DiscountedItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[POS_UPD_DiscountedItems] 
+(   @BranchID int,
+    @OrderId int,
+    @Discount	[real]
+     ) 
+AS 
+BEGIN  
+Declare @TPrice real
+Select @TPrice = Sum(POS_M_OrderDetails.UsedPrice*POS_M_OrderDetails.Quantity) FROM 
+dbo.BOF_M_ItemSalesItems INNER JOIN
+dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID INNER JOIN
+dbo.POS_M_OrderDetails ON dbo.BOF_M_ItemSalesItems.SalesItemID = dbo.POS_M_OrderDetails.ItemID
+WHERE     dbo.POS_M_OrderDetails.OrderID = @OrderId and dbo.POS_M_OrderDetails.BranchID = @BranchID
+          and (dbo.BOF_M_ItemGroups.Discount = 1)
+   
+if @TPrice <> 0
+BEGIN
+Update Pos_M_OrderDetails set Discount = (@Discount * POS_M_OrderDetails.UsedPrice * POS_M_OrderDetails.Quantity)/@TPrice where 
+orderdetailid in (SELECT orderdetailid                   
+FROM         dbo.BOF_M_ItemSalesItems INNER JOIN
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID INNER JOIN
+                      dbo.POS_M_OrderDetails ON dbo.BOF_M_ItemSalesItems.SalesItemID = dbo.POS_M_OrderDetails.ItemID
+WHERE     dbo.POS_M_OrderDetails.OrderID = @OrderId and dbo.POS_M_OrderDetails.BranchID = @BranchID
+          and (dbo.BOF_M_ItemGroups.Discount = 1))
+END
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Pro_Web_Itemdisplay]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Pro_Web_Itemdisplay]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[Pro_Web_Itemdisplay]  (  
+@groupid int)  
+as   
+begin  
+  
+SELECT     dbo.BOF_M_ItemSalesItems.PriceMode1, dbo.BOF_L_ItemCategories.CategoryID, dbo.BOF_L_ItemCategories.Category, dbo.BOF_L_ItemDivisions.DivisionID,   
+                      dbo.BOF_L_ItemDivisions.Division, dbo.BOF_M_ItemGroups.GroupID, dbo.BOF_M_ItemGroups.course, dbo.BOF_M_ItemGroups.GroupName, dbo.BOF_M_ItemSalesItems.SalesItemID,   
+                      dbo.BOF_M_ItemSalesItems.Description, dbo.BOF_M_ItemSalesItems.PriceMode2, dbo.BOF_M_ItemSalesItems.PriceMode3, 
+                      dbo.BOF_M_ItemSalesItems.Modifier1,dbo.BOF_M_ItemSalesItems.Modifier2,dbo.BOF_M_ItemSalesItems.Modifier3,dbo.BOF_M_ItemSalesItems.Modifier4,
+                      dbo.BOF_M_ItemSalesItems.PriceMode4, dbo.BOF_M_ItemSalesItems.Modifier3Remarks, dbo.BOF_M_ItemSalesItems.Modifier4Remarks,   
+                      dbo.BOF_M_ItemSalesItems.Cost, dbo.BOF_M_ItemSalesItems.MenuDescription  
+FROM         dbo.BOF_L_ItemCategories INNER JOIN  
+                      dbo.BOF_L_ItemDivisions ON dbo.BOF_L_ItemCategories.CategoryID = dbo.BOF_L_ItemDivisions.CategoryID INNER JOIN  
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_L_ItemDivisions.DivisionID = dbo.BOF_M_ItemGroups.DivisionID INNER JOIN  
+                      dbo.BOF_M_ItemSalesItems ON dbo.BOF_M_ItemGroups.GroupID = dbo.BOF_M_ItemSalesItems.GroupID 
+  
+where  dbo.BOF_M_ItemGroups.GroupID = @groupid  
+order by BOF_M_ItemGroups.GroupID  
+end  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_OrderStatus]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_OrderStatus]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_OrderStatus]  
+ (@BranchID  [int],  
+  @OrderID  [int],  
+  @ClosedBy  [int],  
+  @ClosingTime  [datetime],  
+  @TotalPrice  [real],  
+ @Status int
+, @OpenedBy  [int] ,
+@OrderLocID int
+)  
+AS   
+ UPDATE [dbo].[POS_M_Orders]   
+ SET  [ClosedBy]  = @ClosedBy,  
+   [ClosingTime]  = @ClosingTime,  
+   [Status]  = @Status,  
+   [TotalPrice]  = @TotalPrice,  
+--[OpenedBy]=@OpenedBy,  -- commented as on 22-oct-2015
+         [OrderTime]=GetDate()  ,
+OrderLocID=@OrderLocID
+ WHERE   
+  ( [BranchID]  = @BranchID AND  
+   [OrderID]  = @OrderID)  
+  
+ DELETE  [dbo].[POS_M_OrderDiscounts]   
+ WHERE BranchID = @BranchID  
+ AND OrderID = @OrderID  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_DiscountedItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_DiscountedItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_DiscountedItems] 
+(   @OrderId int,
+    @BranchID int
+ ) 
+AS 
+BEGIN     
+SELECT     Sum(dbo.POS_M_OrderDetails.Quantity * dbo.POS_M_OrderDetails.UsedPrice)                   
+FROM         dbo.BOF_M_ItemSalesItems INNER JOIN
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID INNER JOIN
+                      dbo.POS_M_OrderDetails ON dbo.BOF_M_ItemSalesItems.SalesItemID = dbo.POS_M_OrderDetails.ItemID
+WHERE     dbo.POS_M_OrderDetails.OrderID = @OrderId and dbo.POS_M_OrderDetails.BranchID = @BranchId
+          and (dbo.BOF_M_ItemGroups.Discount = 1)
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CourseFired 1,26790]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CourseFired 1,26790]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+Create PROCEDURE [dbo].[POS_SEL_CourseFired 1,26790]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT     dbo.POS_M_OrderDetails.*, dbo.BOF_M_ItemSalesItems.*, dbo.BOF_M_ItemGroups.course
+FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+INNER JOIN
+ dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemGroups.GroupID = dbo.BOF_M_ItemSalesItems.groupid
+WHERE     
+(dbo.POS_M_OrderDetails.BranchID =@BranchID) AND (dbo.POS_M_OrderDetails.OrderID = @OrderID)
+and  dbo.POS_M_OrderDetails.OrderingTime <= GETDATE()  
+
+	AND (dbo.POS_M_OrderDetails.Status = ''Ordered'' or dbo.POS_M_OrderDetails.Status = ''Extra Remark'')
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CourseFired]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CourseFired]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+Create PROCEDURE [dbo].[POS_SEL_CourseFired]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT     dbo.POS_M_OrderDetails.*, dbo.BOF_M_ItemSalesItems.*, dbo.BOF_M_ItemGroups.course
+FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+INNER JOIN
+ dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemGroups.GroupID = dbo.BOF_M_ItemSalesItems.groupid
+WHERE     
+(dbo.POS_M_OrderDetails.BranchID =@BranchID) AND (dbo.POS_M_OrderDetails.OrderID = @OrderID)
+and  dbo.POS_M_OrderDetails.OrderingTime <= GETDATE()  
+
+	AND (dbo.POS_M_OrderDetails.Status = ''Ordered'' or dbo.POS_M_OrderDetails.Status = ''Extra Remark'')
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_CashInOut]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_CashInOut]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_CashInOut]
+@BranchID int,
+@TransID	int
+AS
+BEGIN
+     SELECT * FROM Vew_BOF_Transaction WHERE branchid=@BranchID 
+        AND TransactionID =@TransID
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersPaymentDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersPaymentDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_ClosedOrdersPaymentDetails]
+@BranchID	int
+ AS
+
+SELECT    dbo.POS_M_Orders.OrderNumber,  dbo.POS_M_Invoices.InvoiceID AS InvoiceNumber,dbo.POS_M_Payments.PaymentID, dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount,
+		 (CASE WHEN  dbo.POS_M_Payments.Amount >0 THEN ''RECEIVED''
+		 WHEN   dbo.POS_M_Payments.Amount < 0 THEN ''CHANGE'' END)  AS PaymentFunction,
+                      dbo.POS_M_Orders.OrderID, dbo.POS_M_Payments.PaymentTypeID, dbo.POS_M_Orders.BranchID
+FROM         dbo.POS_M_Invoices INNER JOIN
+                      dbo.POS_M_Orders ON dbo.POS_M_Invoices.OrderID = dbo.POS_M_Orders.OrderID AND 
+                      dbo.POS_M_Invoices.BranchID = dbo.POS_M_Orders.BranchID LEFT OUTER JOIN
+                      dbo.POS_M_Payments INNER JOIN
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID ON 
+                      dbo.POS_M_Orders.BranchID = dbo.POS_M_Payments.BranchID AND dbo.POS_M_Orders.OrderID = dbo.POS_M_Payments.OrderID
+WHERE     (dbo.POS_M_Orders.EODDate IS NULL) AND (dbo.POS_M_Orders.Status = 2) AND (dbo.POS_M_Orders.BranchID = @BranchID) 
+	--AND (dbo.POS_M_Orders.Voided = 0) AND (dbo.POS_M_Payments.Voided = 0)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ChangeType]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ChangeType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE  [dbo].[POS_SEL_ChangeType]
+@BranchID int,
+@InvoiceNumber int
+AS
+SELECT * FROM         dbo.POS_M_Payments
+WHERE     (BranchID =@BranchID) 
+AND (InvoiceNumber = @InvoiceNumber) 
+AND (RevenueID = 2)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_Payment]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_Payment]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_INS_Payment]
+	(@BranchID 	[int],
+	 @PaymentTypeID 	[int],
+	 @Amount 	[real],
+	 @CustomerID 	[int],
+	 @OrderID 	[char](10),
+	@RevenueID	int,
+@DollarRate [real],
+@BeamRefNo int)
+
+AS 
+BEGIN
+	DECLARE @InvoiceNumber int
+	SELECT @InvoiceNumber = InvoiceID FROM POS_M_Invoices WHERE BranchID = @BranchID AND OrderID = @OrderID
+	INSERT INTO [dbo].[POS_M_Payments] 
+		 ( [BranchID],
+		 [InvoiceNumber],
+		 [PaymentTypeID],
+		 [Amount],
+		 [CustomerID],
+		 [OrderID],
+		 [RevenueID],
+		 [DollarRate],BeamRefno) 
+	 
+	VALUES 
+		( @BranchID,
+		 @InvoiceNumber,
+		 @PaymentTypeID,
+		 @Amount,
+		 @CustomerID,
+		 @OrderID,
+		@RevenueID,
+		@DollarRate,@BeamRefNo)
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_INS_OrderDiscount]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_INS_OrderDiscount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_INS_OrderDiscount]
+	(@BranchID 	[int],
+	 @OrderID 	[int],
+	 @OrderDetailID 	[int],
+	 @DiscountID 	[int],
+	 @DiscountTypeID 	[int],
+	 @DiscountValue 	[real],
+	 @DiscountAmount 	[real],
+	@Quantity	[real])
+AS 
+INSERT INTO [dbo].[POS_M_OrderDiscounts] 
+	 ( [BranchID],
+	 [OrderID],
+	 [OrderDetailID],
+	 [DiscountID],
+	 [DiscountTypeID],
+	 [DiscountValue],
+	 [DiscountAmount],
+	[Quantity]) 
+ 
+VALUES 
+	( @BranchID,
+	 @OrderID,
+	 @OrderDetailID,
+	 @DiscountID,
+	 @DiscountTypeID,
+	 @DiscountValue,
+	 @DiscountAmount,
+	@Quantity)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OnlineDeliveryCharges]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OnlineDeliveryCharges]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OnlineDeliveryCharges]
+
+AS
+SELECT     dbo.BOF_M_ItemSalesItems.SalesItemID
+FROM         dbo.BOF_M_ItemSalesItems INNER JOIN
+                      dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID INNER JOIN
+                      dbo.BOF_L_ItemDivisions ON dbo.BOF_M_ItemGroups.DivisionID = dbo.BOF_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.BOF_L_ItemCategories ON dbo.BOF_L_ItemDivisions.CategoryID = dbo.BOF_L_ItemCategories.CategoryID
+WHERE     (dbo.BOF_L_ItemCategories.CategoryCode = 1000)
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemTaxServ]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemTaxServ]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'  
+CREATE PROCEDURE [dbo].[POS_SEL_ItemTaxServ]  
+  (@MenuId  [int],  
+      @ItemID  [int],  
+      @UsedPrice real)  
+AS  
+BEGIN  
+SELECT Menuid,(SELECT CASE WHEN  
+  (SELECT     tax1 FROM bof_M_ItemGroups INNER JOIN bof_M_ItemSalesItems AS A ON   
+    bof_m_ItemGroups.Groupid = A.groupid WHERE    
+    A.SalesItemID = @ItemID) = 0 THEN  
+    (  
+      (SELECT CASE WHEN 
+      (SELECT rate FROM bof_l_taxes  WHERE taxid = 1 AND inclusive = 1) IS NULL THEN 0 ELSE (SELECT  rate FROM  bof_l_taxes WHERE taxid = 1 AND inclusive = 1) END 
+      * dbo.BOF_M_ItemMenus.UseTax1  +  
+      (SELECT CASE WHEN   
+      (SELECT rate FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1) IS NULL THEN 0 ELSE (SELECT rate FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1) END)
+       
+      * dbo.BOF_M_ItemMenus.UseTax2 +
+      (SELECT CASE WHEN 
+      (SELECT rate FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1) IS NULL THEN 0 ELSE (SELECT rate FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1) END) 
+      * dbo.BOF_M_ItemMenus.UseTax3 ) * @UsedPrice) ELSE 0 END AS Expr1) AS TotalTax,  
+(SELECT Rate FROM dbo.BOF_L_Taxes WHERE (TaxID = 4) AND (Inclusive = 0))   
+ * dbo.BOF_M_ItemMenus.UseService * @UsedPrice AS TotalService  
+FROM dbo.BOF_M_ItemMenus WHERE dbo.BOF_M_ItemMenus.MenuID = @MenuId  
+End  ' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_CCPaymentType]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_CCPaymentType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_CCPaymentType]
+@EmployeeID int = NULL,
+@EODDate	DateTime =NULL,
+@ToDate DateTime=NULL,
+@Branchid int
+AS
+
+begin
+--if @EODDate is null
+--begin
+--SELECT TRANSTYPE,TotalAmount TotalAmount,TipAmount Tips FROM fn_POS_MainReading_CCTips_1(@Branchid)
+--end
+--else
+--SELECT TRANSTYPE,TotalAmount TotalAmount,TipAmount Tips FROM fn_POS_MainReading_CCTips(@EODDate,@ToDate,@Branchid)
+--end
+if @EODDate is null
+begin 
+				SELECT A.PAYMENTTYPE TRANSTYPE,isnull(SUM(A.AMOUNT),0)TotalAmount, isnull(sum(A.TipAmount),0)TipAmount FROM
+					(
+					SELECT DBO.BOF_L_PAYMENTTYPES.PAYMENTTYPE, SUM(ISNULL(POS_M_PAYMENTS.AMOUNT,0) ) AMOUNT,POS_M_ORDERS.EODDate,
+					(SELECT ISNULL(TipAmount,0)TipAmount FROM POS_Tips WHERE OrderID=DBO.POS_M_PAYMENTS.OrderID AND PaymentTypeID=DBO.POS_M_PAYMENTS.PAYMENTTYPEID)TipAmount		
+							FROM     DBO.POS_M_PAYMENTS 
+							INNER JOIN  DBO.BOF_L_PAYMENTTYPES ON DBO.POS_M_PAYMENTS.PAYMENTTYPEID = DBO.BOF_L_PAYMENTTYPES.PAYMENTTYPEID
+ AND POS_M_PAYMENTS.BranchID=@Branchid
+							AND DBO.BOF_L_PAYMENTTYPES.PAYTYPEID =3 
+							INNER JOIN  DBO.POS_M_ORDERS ON DBO.POS_M_ORDERS.ORDERID=POS_M_PAYMENTS.ORDERID
+					--WHERE CAST(FLOOR(CAST(POS_M_ORDERS.EODDate as float)) as datetime) Between @EODDate And @ToDate
+WHERE CONVERT(varchar(12), POS_M_ORDERS.EODDate, 101) is null
+							GROUP BY DBO.BOF_L_PAYMENTTYPES.PAYMENTTYPE,DBO.POS_M_ORDERS.EODDate,DBO.POS_M_PAYMENTS.OrderID,DBO.POS_M_PAYMENTS.PaymentTypeID
+					) A
+					group by A.PAYMENTTYPE
+end
+else
+begin
+				SELECT A.PAYMENTTYPE TRANSTYPE,isnull(SUM(A.AMOUNT),0)TotalAmount, isnull(sum(A.TipAmount),0)TipAmount FROM
+					(
+					SELECT DBO.BOF_L_PAYMENTTYPES.PAYMENTTYPE, SUM(ISNULL(POS_M_PAYMENTS.AMOUNT,0) ) AMOUNT,POS_M_ORDERS.EODDate,
+					(SELECT ISNULL(TipAmount,0)TipAmount FROM POS_Tips WHERE OrderID=DBO.POS_M_PAYMENTS.OrderID AND PaymentTypeID=DBO.POS_M_PAYMENTS.PAYMENTTYPEID)TipAmount		
+							FROM     DBO.POS_M_PAYMENTS 
+							INNER JOIN  DBO.BOF_L_PAYMENTTYPES ON DBO.POS_M_PAYMENTS.PAYMENTTYPEID = DBO.BOF_L_PAYMENTTYPES.PAYMENTTYPEID
+ AND POS_M_PAYMENTS.BranchID=@Branchid
+							AND DBO.BOF_L_PAYMENTTYPES.PAYTYPEID =3 
+							INNER JOIN  DBO.POS_M_ORDERS ON DBO.POS_M_ORDERS.ORDERID=POS_M_PAYMENTS.ORDERID
+					WHERE POS_M_ORDERS.EODDate Between  @EODDate And @ToDate
+							GROUP BY DBO.BOF_L_PAYMENTTYPES.PAYMENTTYPE,DBO.POS_M_ORDERS.EODDate,DBO.POS_M_PAYMENTS.OrderID,DBO.POS_M_PAYMENTS.PaymentTypeID
+					) A
+					group by A.PAYMENTTYPE
+end
+end 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetails_New]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetails_New]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderDetails_New]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT     dbo.POS_M_OrderDetails.*, dbo.BOF_M_ItemSalesItems.*, dbo.BOF_M_ItemGroups.course
+FROM         dbo.POS_M_OrderDetails INNER JOIN
+                      dbo.BOF_M_ItemSalesItems ON dbo.POS_M_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+INNER JOIN
+ dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemGroups.GroupID = dbo.BOF_M_ItemSalesItems.groupid
+WHERE      /*(dbo.POS_M_OrderDetails.Quantity > 0) AND */(dbo.POS_M_OrderDetails.BranchID =@BranchID) AND (dbo.POS_M_OrderDetails.OrderID = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDetails_Ingredients]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDetails_Ingredients]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[POS_SEL_OrderDetails_Ingredients] 
+	-- Add the parameters for the stored procedure here
+	@branchid int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT IngredientId,sum (qty),Inventory_LocationId from orderdetails_ingredients where qty <>0 and EODDate is null and branchid=@branchid and not Inventory_LocationId is null group by IngredientId ,Inventory_LocationId
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_KitchenOrderReport1]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_KitchenOrderReport1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_KitchenOrderReport1]  
+ (@BranchID  [int],  
+ @OrderID [int])  
+AS  
+WAITFOR DELAY ''000:00:02''
+  
+create table #temp1(
+tid int identity(1,1),
+TempOrderDetailID int,
+BranchID int,
+WorkstationID int,
+OrderedBy int,  
+OrderID int,
+ItemID int,
+Quantity real,
+UsedPrice real,
+CustomerNumber int,
+AffectedItem int,  
+VoidReasonID int,
+Status nvarchar(50),
+OrderingTime datetime,
+Without tinyint,
+ItemRemark nvarchar(250),
+coursehold varchar(10),  
+VoidDate datetime,
+[Description] nvarchar(50),Menu int,  
+TableNumber varchar(50),
+NumberOfCustomers int,  
+KitchenRemark nvarchar(250),
+EmployeeName nvarchar(50),
+PhysicalPrinter  nvarchar(50),
+LogicalPrinter nvarchar(50),  
+PrintOutID int,
+PrinterID int,
+Workstation nvarchar(50),
+CustomerName nvarchar(50),
+FunctionID int, menudesc nvarchar(50),
+make nvarchar(50),
+model nvarchar(50),
+plateno nvarchar(50),
+color nvarchar(50),
+TypeId int,
+Location int,
+course int)  
+  
+insert into #temp1  
+  
+SELECT DISTINCT TOP 100 PERCENT  dbo.POS_T_OrderDetails.*,
+                CASE
+                    WHEN (WITHOUT) = 1 THEN
+                           (SELECT MinusExtraDesc
+                            FROM BOF_S_SystemSettings)+'' ''+ (CASE
+                                                                 WHEN(ItemRemark) ='''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                                 ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                             END)
+    +'' ''+  ( case when (dbo.POS_T_OrderDetails.Status=''Hold'') then ''  ('' + dbo.POS_T_OrderDetails.Status + '')''  end)
+
+                    ELSE CASE
+                             WHEN (WITHOUT) = 2 THEN
+                                    (SELECT PlusExtraDesc
+                                     FROM BOF_S_SystemSettings)+'' ''+ (CASE
+                                                                          WHEN(ItemRemark) ='''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                                          ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                                      END)
+    +'' ''+  ( case when (dbo.POS_T_OrderDetails.Status=''Hold'') then ''  ('' + dbo.POS_T_OrderDetails.Status + '')''  end)
+
+                             ELSE (CASE
+                                       WHEN(ItemRemark) ='''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                       ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                   END)
+    +'' ''+  ( case when (dbo.POS_T_OrderDetails.Status=''Hold'') then ''  ('' + dbo.POS_T_OrderDetails.Status + '')''  end)
+
+                         END
+                END AS Description,
+                dbo.POS_M_Orders.OrderMenuID AS Menu,
+                CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) AS TableNumber,
+                dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers,
+                dbo.POS_M_Orders.KitchenRemark AS KitchenRemark,
+                dbo.BOF_M_Employees.EmployeeName AS EmployeeName,
+                dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter,
+                dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter,
+                dbo.BOF_S_LogicalPrinters.PrintOutID AS PrintOutID,
+                dbo.BOF_S_PhysicalPrinters.PrintOutID AS PrinterID,
+                dbo.BOF_S_Workstations.Description AS Workstation,
+                dbo.BOF_M_Customers.CustomerName AS CustomerName,
+                dbo.BOF_M_ItemSalesItems.FunctionID AS FunctionID,
+
+  (SELECT menu
+   FROM BOF_M_ItemMenus
+   WHERE menuid= dbo.POS_M_Orders.OrderMenuID)AS menudesc,
+                pos_m_orders.make,
+                pos_m_orders.model,
+                pos_m_orders.plateno,
+                pos_m_orders.color,
+                dbo.BOF_M_ItemSalesItems.TypeId,
+                BOF_M_ItemGroups.Location,
+                BOF_M_ItemGroups.Course
+FROM dbo.POS_T_OrderDetails
+INNER JOIN dbo.POS_M_Orders ON dbo.POS_T_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID
+AND dbo.POS_T_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID
+INNER JOIN dbo.BOF_M_Employees ON dbo.POS_T_OrderDetails.BranchID = dbo.BOF_M_Employees.BranchID
+AND dbo.POS_T_OrderDetails.OrderedBy = dbo.BOF_M_Employees.EmployeeID
+INNER JOIN dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+INNER
+
+JOIN dbo.BOF_S_BranchLocations
+INNER JOIN dbo.BOF_S_LogicalPrinters ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_S_LogicalPrinters.PrintOutID
+INNER JOIN dbo.BOF_S_PhysicalPrinters ON dbo.BOF_S_BranchLocations.PhysicalPrinterID = dbo.BOF_S_PhysicalPrinters.PrintOutID ON dbo.BOF_M_ItemSalesItems.PrintOut1 = dbo.BOF_S_BranchLocations.LogicalPrinterID
+INNER JOIN dbo.BOF_S_Workstations ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID
+AND dbo.POS_T_OrderDetails.BranchID = dbo.BOF_S_Workstations.BranchID
+AND dbo.BOF_S_BranchLocations.WorkstatonID = dbo.POS_M_Orders.WorkStationID
+INNER JOIN dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID
+LEFT OUTER JOIN dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID
+WHERE POS_M_Orders.BranchID = @BranchID
+  AND POS_M_Orders.OrderID = @OrderID
+  AND POS_M_Orders.DeliveryTime <= GETDATE() 
+  --AND (POS_T_OrderDetails.coursehold <> ''H'') or (POS_T_OrderDetails.coursehold is null)
+
+  AND (dbo.POS_T_OrderDetails.Status = ''Ordered'' or dbo.POS_T_OrderDetails.Status = ''Hold'' 
+       OR dbo.POS_T_OrderDetails.Status = ''Extra Remark'')
+UNION ALL
+SELECT DISTINCT TOP 100 PERCENT dbo.POS_T_OrderDetails.*,
+                CASE
+                    WHEN (WITHOUT) = 1 THEN
+                           (SELECT MinusExtraDesc
+                            FROM BOF_S_SystemSettings)+'' ''+ (CASE
+                                                                 WHEN(ItemRemark) ='''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                                 ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                             END)
+    +'' ''+  ( case when (dbo.POS_T_OrderDetails.Status=''Hold'') then ''  ('' + dbo.POS_T_OrderDetails.Status + '')''  end)
+
+                    ELSE CASE
+                             WHEN (WITHOUT) = 2 THEN
+                                    (SELECT PlusExtraDesc
+                                     FROM BOF_S_SystemSettings)+'' ''+ (CASE
+                                                                          WHEN(ItemRemark) ='''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                                          ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                                                      END)
+    +'' ''+  ( case when (dbo.POS_T_OrderDetails.Status=''Hold'') then ''  ('' + dbo.POS_T_OrderDetails.Status + '')''  end)
+
+                             ELSE (CASE
+                                       WHEN(ItemRemark) ='''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                       ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription
+                                   END)
+    +'' ''+  ( case when (dbo.POS_T_OrderDetails.Status=''Hold'') then ''  ('' + dbo.POS_T_OrderDetails.Status + '')''  end)
+
+                         END
+                END AS Description,
+                --case when (without) = 1 then
+--''(-)''+dbo.BOF_M_ItemSalesItems.KitcheDescription else
+--dbo.BOF_M_ItemSalesItems.KitcheDescription end AS Description,
+dbo.POS_M_Orders.OrderMenuID AS Menu,
+-- dbo.POS_M_Orders.OrderMenuID AS Menu,
+CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) AS TableNumber,
+dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers,
+dbo.POS_M_Orders.KitchenRemark AS KitchenRemark,
+dbo.BOF_M_Employees.EmployeeName AS EmployeeName,
+dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter,
+dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter,
+dbo.BOF_S_LogicalPrinters.PrintOutID AS PrintOutID,
+dbo.BOF_S_PhysicalPrinters.PrintOutID AS PrinterID,
+dbo.BOF_S_Workstations.Description AS Workstation,
+dbo.BOF_M_Customers.CustomerName AS CustomerName,
+dbo.BOF_M_ItemSalesItems.FunctionID AS FunctionID,
+
+  (SELECT menu
+   FROM BOF_M_ItemMenus
+   WHERE menuid= dbo.POS_M_Orders.OrderMenuID)AS menudesc,
+pos_m_orders.make,
+pos_m_orders.model,
+pos_m_orders.plateno,
+pos_m_orders.color,
+dbo.BOF_M_ItemSalesItems.TypeId,
+BOF_M_ItemGroups.Location,
+BOF_M_ItemGroups.Course
+FROM dbo.POS_T_OrderDetails
+INNER JOIN dbo.POS_M_Orders ON dbo.POS_T_OrderDetails.OrderID = dbo.POS_M_Orders.OrderID
+AND dbo.POS_T_OrderDetails.BranchID = dbo.POS_M_Orders.BranchID
+INNER JOIN dbo.BOF_M_Employees ON dbo.POS_T_OrderDetails.BranchID = dbo.BOF_M_Employees.BranchID
+AND dbo.POS_T_OrderDetails.OrderedBy = dbo.BOF_M_Employees.EmployeeID
+INNER JOIN dbo.BOF_M_ItemSalesItems ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID
+INNER
+JOIN dbo.BOF_S_BranchLocations
+INNER JOIN dbo.BOF_S_LogicalPrinters ON dbo.BOF_S_BranchLocations.LogicalPrinterID = dbo.BOF_S_LogicalPrinters.PrintOutID
+INNER JOIN dbo.BOF_S_PhysicalPrinters ON dbo.BOF_S_BranchLocations.PhysicalPrinterID = dbo.BOF_S_PhysicalPrinters.PrintOutID ON dbo.BOF_M_ItemSalesItems.PrintOut2 = dbo.BOF_S_BranchLocations.LogicalPrinterID
+INNER JOIN dbo.BOF_S_Workstations ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID
+AND dbo.POS_T_OrderDetails.BranchID = dbo.BOF_S_Workstations.BranchID
+AND dbo.BOF_S_BranchLocations.WorkstatonID = dbo.POS_M_Orders.WorkStationID
+INNER JOIN dbo.BOF_M_ItemGroups ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID
+LEFT OUTER JOIN dbo.BOF_M_Customers ON dbo.POS_M_Orders.CustomerID = dbo.BOF_M_Customers.CustomerID
+WHERE POS_M_Orders.BranchID = @BranchID
+  AND POS_M_Orders.OrderID = @OrderID
+  AND POS_M_Orders.DeliveryTime <= GETDATE() 
+  --AND (POS_T_OrderDetails.coursehold <> ''H'') or (POS_T_OrderDetails.coursehold is null)
+
+  AND (dbo.POS_T_OrderDetails.Status = ''Ordered'' OR dbo.POS_T_OrderDetails.Status = ''Hold''
+       OR dbo.POS_T_OrderDetails.Status = ''Extra Remark'') 
+  
+declare @oldPrinterID int  
+set @oldPrinterID=0  
+declare @oldPrintoutID int  
+set @oldPrintoutID=0  
+declare @itemID int  
+declare @PrintOutID int  
+declare @printerid int  
+declare @ExtraRemark nvarchar(50)  
+declare @TID int  
+declare GetPrinters cursor for select   
+ItemID,PrintOutID,printerid,Status,TID from #temp1  
+open getprinters  
+fetch next from GetPrinters into   
+@itemID,@printOutID,@printerid,@ExtraREmark,@TID  
+while @@fetch_Status = 0  
+ begin  
+ if @ExtraRemark=''Extra Remark''  
+  begin  
+   update #temp1 set printoutid=@oldprintoutid,printerid=@printerid where   
+  TID=@TID  
+end  
+  else  
+begin  
+set @oldPrinterID=@printerid  
+  set @oldPrintOutID=@printOutID  
+end  
+    
+ ---set @oldPrintOutID=@printOutID  
+fetch next from GetPrinters into   
+@itemID,@printOutID,@printerid,@ExtraREmark,@TID  
+ end  
+select  * from #temp1  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_KitchenOrderReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_KitchenOrderReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'  
+  
+  
+  
+CREATE PROCEDURE [dbo].[POS_SEL_KitchenOrderReport] (@BranchID [int],    
+@OrderID [int])    
+AS 
+BEGIN   
+  WAITFOR DELAY ''000:00:02''    
+  CREATE TABLE #temp1 (    
+    tid int IDENTITY (1, 1),    
+    TempOrderDetailID int,    
+    BranchID int,    
+    WorkstationID    
+    int,    
+    OrderedBy int,    
+    OrderID int,    
+    ItemID int,    
+    Quantity real,    
+    UsedPrice real,    
+    CustomerNumber    
+    int,    
+    AffectedItem int,    
+    VoidReasonID int,    
+    Status nvarchar(50),    
+    OrderingTime datetime,    
+    Without    
+    tinyint,    
+    ItemRemark nvarchar(250),    
+    coursehold varchar(10),    
+    voidate datetime,    
+ SetMenu bit,  
+    [Description] nvarchar(MAX),    
+    Menu int,    
+    TableNumber    
+    varchar(50),    
+    NumberOfCustomers int,    
+    KitchenRemark nvarchar(250),    
+    EmployeeName nvarchar(50),    
+    PhysicalPrinter    
+    nvarchar(50),    
+    LogicalPrinter nvarchar(50),    
+    PrintOutID int,    
+    PrinterID int,    
+    Workstation nvarchar(50),    
+    CustomerName    
+    nvarchar(50),    
+    FunctionID int,    
+    menudesc nvarchar(50),    
+    make nvarchar(50),    
+    model nvarchar(50),    
+    plateno nvarchar(50),    
+    color nvarchar(50),    
+    TypeId int,    
+    Location int    
+  )    
+    
+  INSERT INTO #temp1    
+    
+SELECT  DISTINCT TOP 100 PERCENT    
+      dbo.POS_T_OrderDetails.*,    
+  
+      CASE    
+        WHEN (without) = 1 THEN   
+   (CASE  WHEN (SetMenu = 1)  THEN ''>> '' ELSE '''' END) +  
+   (SELECT  MinusExtraDesc  FROM BOF_S_SystemSettings)  + '' '' +   
+    (CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription + '' ('' + POS_T_OrderDetails.ItemRemark + '')'' END)  +   
+--(CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription +'' - ''+ cast(CustomerNumber as varchar(10))  ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription +  POS_T_OrderDetails.ItemRemark +'' - ''+ cast(CustomerNumber as varchar(10)) END) 
+	(CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Hold'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)  + '' '' + (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Fire'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)    
+  ELSE CASE WHEN (without) = 2 THEN   
+   (CASE  WHEN (SetMenu = 1)  THEN ''>> '' ELSE '''' END) +  
+   (SELECT  PlusExtraDesc  FROM BOF_S_SystemSettings)  + '' '' +   
+    (CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription  ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription + '' ('' + POS_T_OrderDetails.ItemRemark + '')''  END)  + '' '' +   
+--(CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription  +'' - ''+ cast(CustomerNumber as varchar(10)) ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription + POS_T_OrderDetails.ItemRemark  +'' - ''+ cast(CustomerNumber as varchar(10))  END)
+  + '' '' +   
+    (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Hold'') THEN '' ( '' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)  + '' '' + (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Fire'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)   
+         
+  ELSE   
+   (CASE  WHEN (SetMenu = 1)  THEN ''>> '' ELSE '''' END) +  
+   (CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription  ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription + '' ('' + POS_T_OrderDetails.ItemRemark + '')''  END)  + '' '' +   
+--(CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription  +'' - ''+ cast(CustomerNumber as varchar(10)) ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription  + POS_T_OrderDetails.ItemRemark + '' - ''+ cast(CustomerNumber as varchar(10)) END)
+  + '' '' +   
+   (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Hold'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  ELSE ''''  END)  + '' '' +   
+   (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Fire'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  ELSE ''''  END)   
+     
+END  END   
+     
+   AS Description,    
+      dbo.POS_M_Orders.OrderMenuID AS Menu,    
+      CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) AS TableNumber,    
+      dbo.POS_M_Orders.NumberOfCustomers AS NumberOfCustomers,    
+      dbo.POS_M_Orders.KitchenRemark AS KitchenRemark,    
+      dbo.BOF_M_Employees.EmployeeName AS EmployeeName,    
+      dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter,    
+      dbo.BOF_S_LogicalPrinters.Description AS LogicalPrinter,    
+      dbo.BOF_S_LogicalPrinters.PrintOutID AS PrintOutID,    
+      dbo.BOF_S_PhysicalPrinters.PrintOutID AS PrinterID,    
+      dbo.BOF_S_Workstations.Description AS Workstation,    
+      dbo.BOF_M_Customers.CustomerName AS CustomerName,    
+      dbo.BOF_M_ItemSalesItems.FunctionID AS FunctionID,    
+      (SELECT    
+        menu    
+      FROM BOF_M_ItemMenus    
+      WHERE menuid = dbo.POS_M_Orders.OrderMenuID)    
+      AS menudesc,    
+      pos_m_orders.make,    
+      pos_m_orders.model,    
+      pos_m_orders.plateno,    
+      pos_m_orders.color,    
+      dbo.BOF_M_ItemSalesItems.TypeId,    
+      BOF_M_ItemGroups.Location    
+    FROM dbo.POS_T_OrderDetails    
+    INNER JOIN dbo.POS_M_Orders    
+      ON dbo.POS_T_OrderDetails.OrderID =    
+      dbo.POS_M_Orders.OrderID    
+      AND dbo.POS_T_OrderDetails.BranchID =    
+      dbo.POS_M_Orders.BranchID    
+    INNER JOIN dbo.BOF_M_Employees    
+      ON dbo.POS_T_OrderDetails.BranchID    
+      = dbo.BOF_M_Employees.BranchID    
+      AND dbo.POS_T_OrderDetails.OrderedBy =    
+      dbo.BOF_M_Employees.EmployeeID    
+    INNER JOIN dbo.BOF_M_ItemSalesItems    
+      ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID    
+    INNER    
+    
+    JOIN dbo.BOF_S_BranchLocations    
+    INNER JOIN dbo.BOF_S_LogicalPrinters    
+      ON dbo.BOF_S_BranchLocations.LogicalPrinterID =    
+      dbo.BOF_S_LogicalPrinters.PrintOutID    
+    INNER JOIN dbo.BOF_S_PhysicalPrinters    
+      ON dbo.BOF_S_BranchLocations.PhysicalPrinterID =    
+      dbo.BOF_S_PhysicalPrinters.PrintOutID    
+      ON dbo.BOF_M_ItemSalesItems.PrintOut1 =    
+      dbo.BOF_S_BranchLocations.LogicalPrinterID    
+    INNER JOIN dbo.BOF_S_Workstations    
+      ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID    
+      AND dbo.POS_T_OrderDetails.BranchID =    
+      dbo.BOF_S_Workstations.BranchID    
+      AND dbo.BOF_S_BranchLocations.WorkstatonID = dbo.POS_M_Orders.WorkStationID    
+    INNER JOIN dbo.BOF_M_ItemGroups    
+      ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID    
+    LEFT OUTER JOIN dbo.BOF_M_Customers    
+      ON dbo.POS_M_Orders.CustomerID =    
+      dbo.BOF_M_Customers.CustomerID    
+    WHERE POS_M_Orders.BranchID = @BranchID    
+    AND POS_M_Orders.OrderID = @OrderID    
+    AND POS_M_Orders.DeliveryTime <= GETDATE()    
+    AND dbo.POS_T_OrderDetails.Status in (''Ordered'', ''Hold'', ''Extra Remark'', ''Selected'',''Fire'')    
+    UNION ALL    
+    SELECT DISTINCT TOP 100 PERCENT    
+      dbo.POS_T_OrderDetails.*,    
+  
+      CASE   WHEN (without) = 1 THEN   
+   (CASE  WHEN (SetMenu = 1)  THEN ''>> '' ELSE '''' END) +  
+   (SELECT  MinusExtraDesc  FROM BOF_S_SystemSettings)  + '' '' + (CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription   ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription + '' ('' + POS_T_OrderDetails.ItemRemark + '')''  END)  + '' '' +   
+   (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Hold'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)  + '' '' + (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Fire'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)    
+   ELSE  CASE  WHEN (without) = 2 THEN   
+   (CASE  WHEN (SetMenu = 1)  THEN ''>> '' ELSE '''' END) +     
+   (SELECT  PlusExtraDesc  FROM BOF_S_SystemSettings)  + '' '' + (CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription  ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription + '' ('' + POS_T_OrderDetails.ItemRemark + '')''  END)  + '' '' +   
+   (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Hold'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)  + '' '' + (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Fire'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  END)    
+   ELSE   
+   (CASE  WHEN (SetMenu = 1)  THEN ''>> '' ELSE '''' END) +  
+   (CASE  WHEN (ItemRemark) = '''' THEN dbo.BOF_M_ItemSalesItems.KitcheDescription  ELSE dbo.BOF_M_ItemSalesItems.KitcheDescription + '' ('' + POS_T_OrderDetails.ItemRemark + '')'' END)  + '' '' +   
+   (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Hold'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  ELSE ''''  END)  + '' '' + (CASE  WHEN (dbo.POS_T_OrderDetails.Status = ''Fire'') THEN '' ('' + UPPER(dbo.POS_T_OrderDetails.Status) + '')''  ELSE ''''  END) END    
+      END AS Description,    
+      --case when (without) = 1 then       
+      --''(-)''+dbo.BOF_M_ItemSalesItems.KitcheDescription else       
+      --dbo.BOF_M_ItemSalesItems.KitcheDescription end AS Description,      
+      dbo.POS_M_Orders.OrderMenuID AS Menu,    
+      -- dbo.POS_M_Orders.OrderMenuID AS Menu,      
+      CAST(dbo.POS_M_Orders.OrderNumber AS varchar(50)) AS TableNumber,    
+      dbo.POS_M_Orders.NumberOfCustomers AS    
+      NumberOfCustomers,    
+      dbo.POS_M_Orders.KitchenRemark AS KitchenRemark,    
+      dbo.BOF_M_Employees.EmployeeName AS EmployeeName,    
+      dbo.BOF_S_PhysicalPrinters.Description AS PhysicalPrinter,    
+      dbo.BOF_S_LogicalPrinters.Description AS    
+      LogicalPrinter,    
+      dbo.BOF_S_LogicalPrinters.PrintOutID AS PrintOutID,    
+      dbo.BOF_S_PhysicalPrinters.PrintOutID AS PrinterID,    
+      dbo.BOF_S_Workstations.Description AS Workstation,    
+      dbo.BOF_M_Customers.CustomerName AS CustomerName,    
+      dbo.BOF_M_ItemSalesItems.FunctionID AS FunctionID,    
+      (SELECT    
+        menu    
+      FROM BOF_M_ItemMenus    
+      WHERE menuid = dbo.POS_M_Orders.OrderMenuID)    
+      AS menudesc,    
+      pos_m_orders.make,    
+      pos_m_orders.model,    
+      pos_m_orders.plateno,    
+      pos_m_orders.color,    
+      dbo.BOF_M_ItemSalesItems.TypeId,    
+      BOF_M_ItemGroups.Location    
+    FROM dbo.POS_T_OrderDetails    
+    INNER JOIN dbo.POS_M_Orders    
+      ON dbo.POS_T_OrderDetails.OrderID =    
+      dbo.POS_M_Orders.OrderID    
+      AND dbo.POS_T_OrderDetails.BranchID =    
+      dbo.POS_M_Orders.BranchID    
+    INNER JOIN dbo.BOF_M_Employees    
+      ON dbo.POS_T_OrderDetails.BranchID    
+      = dbo.BOF_M_Employees.BranchID    
+      AND dbo.POS_T_OrderDetails.OrderedBy =    
+      dbo.BOF_M_Employees.EmployeeID    
+    INNER JOIN dbo.BOF_M_ItemSalesItems    
+      ON dbo.POS_T_OrderDetails.ItemID = dbo.BOF_M_ItemSalesItems.SalesItemID    
+    INNER    
+    JOIN dbo.BOF_S_BranchLocations    
+    INNER JOIN dbo.BOF_S_LogicalPrinters    
+      ON dbo.BOF_S_BranchLocations.LogicalPrinterID =    
+      dbo.BOF_S_LogicalPrinters.PrintOutID    
+    INNER JOIN dbo.BOF_S_PhysicalPrinters    
+      ON dbo.BOF_S_BranchLocations.PhysicalPrinterID =    
+      dbo.BOF_S_PhysicalPrinters.PrintOutID    
+      ON dbo.BOF_M_ItemSalesItems.PrintOut2 =    
+      dbo.BOF_S_BranchLocations.LogicalPrinterID    
+    INNER JOIN dbo.BOF_S_Workstations    
+      ON dbo.POS_T_OrderDetails.WorkstationID = dbo.BOF_S_Workstations.WorkstationID    
+      AND dbo.POS_T_OrderDetails.BranchID =    
+      dbo.BOF_S_Workstations.BranchID    
+      AND dbo.BOF_S_BranchLocations.WorkstatonID = dbo.POS_M_Orders.WorkStationID    
+    INNER JOIN dbo.BOF_M_ItemGroups    
+      ON dbo.BOF_M_ItemSalesItems.GroupID = dbo.BOF_M_ItemGroups.GroupID    
+    LEFT OUTER JOIN dbo.BOF_M_Customers    
+      ON dbo.POS_M_Orders.CustomerID =    
+      dbo.BOF_M_Customers.CustomerID    
+    WHERE POS_M_Orders.BranchID = @BranchID    
+    AND POS_M_Orders.OrderID = @OrderID    
+    AND POS_M_Orders.DeliveryTime <= GETDATE()    
+    --and (POS_T_OrderDetails.coursehold <> ''H'') or (POS_T_OrderDetails.coursehold is null)       
+    AND dbo.POS_T_OrderDetails.Status in (''Ordered'', ''Extra Remark'',''Hold'',''Selected'',''Fire'')    
+    
+  DECLARE @oldPrinterID int    
+  SET @oldPrinterID = 0    
+  DECLARE @oldPrintoutID int    
+  SET @oldPrintoutID = 0    
+  DECLARE @itemID int    
+  DECLARE @PrintOutID int    
+  DECLARE @printerid int    
+  DECLARE @ExtraRemark nvarchar(50)    
+  DECLARE @TID int    
+  DECLARE GetPrinters CURSOR FOR    
+  SELECT    
+    ItemID,    
+    PrintOutID,    
+    printerid,    
+    Status,    
+    TID    
+  FROM #temp1    
+  OPEN getprinters    
+  FETCH NEXT FROM GetPrinters INTO    
+  @itemID, @printOutID, @printerid, @ExtraREmark, @TID    
+  WHILE @@fetch_Status = 0    
+  BEGIN    
+    IF @ExtraRemark = ''Extra Remark''    
+    BEGIN    
+      UPDATE #temp1    
+      SET printoutid = @oldprintoutid,    
+          printerid = @printerid    
+  WHERE TID = @TID    
+    END    
+    ELSE    
+    BEGIN    
+      SET @oldPrinterID = @printerid    
+      SET @oldPrintOutID = @printOutID    
+    END    
+    
+    ---set @oldPrintOutID=@printOutID      
+    FETCH NEXT FROM GetPrinters INTO    
+    @itemID, @printOutID, @printerid, @ExtraREmark, @TID    
+  END    
+  SELECT    
+    *    
+  FROM #temp1;
+END' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ItemGroups]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ItemGroups]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ItemGroups]
+AS
+SELECT GroupID, GroupName 
+FROM BOF_M_ItemGroups
+ORDER BY GroupName
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_CustomerDebt_Pay]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_CustomerDebt_Pay]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_CustomerDebt_Pay]
+@BranchID	int,
+@CustomerID	int,
+@Amount	real,
+@date                   datetime,
+@PayTypeId      int,
+@PayType int,
+@DiscountID	int,
+@DiscountTypeID int,
+@DiscountValue real,
+@RecId int
+
+AS
+BEGIN
+DECLARE @debt	REAL
+
+SELECT @debt = debt FROM BOF_M_Customers WHERE BranchID	= @BranchID
+		AND CustomerID	= @CustomerID
+
+BEGIN
+IF @PayType = 1
+BEGIN
+		UPDATE BOF_M_Customers
+		SET Debt	= Debt - @Amount
+		WHERE BranchID	= @BranchID
+		AND CustomerID	= @CustomerID
+insert into cust_debt_pay values (@CustomerID,@date,null,@PayTypeId,@BranchID,@Amount,0,0,0)
+
+END 
+
+IF @PayType = 2
+BEGIN
+		UPDATE BOF_M_Customers
+		SET Debt	= Debt - @DiscountValue
+		WHERE BranchID	= @BranchID
+		AND CustomerID	= @CustomerID
+insert into cust_debt_pay values (@CustomerID,@date,null,@PayTypeId,@BranchID,0,@DiscountID,@DiscountTypeID,@DiscountValue) 
+select newid = @@identity from cust_debt_pay
+END		
+
+IF @PayType = 3
+BEGIN
+		UPDATE BOF_M_Customers
+		SET Debt	= Debt + @DiscountValue
+		WHERE BranchID	= @BranchID
+		AND CustomerID	= @CustomerID
+
+        Delete  from cust_debt_pay where debtpayid = @RecId
+	END
+END
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_BEAMREF]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_BEAMREF]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_BEAMREF] 
+@BranchID int,	
+@OrderId int,
+@BeamRefNo int
+AS
+BEGIN
+	SET NOCOUNT ON;    
+	UPDATE POS_M_PAYMENTS SET BEAMREFNO=@BeamRefNo where BranchID=@BranchID and OrderID=@OrderId
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SWT_Customers]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SWT_Customers]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SWT_Customers]
+	(@BranchID 	[int],
+	@CustfID 	[int],
+    @CustmID 	[int],
+    @FirstOrderDate datetime,
+    @LastOrderDate datetime,
+    @NoOfOrders [int],
+    @AmountPaid real,
+    @Debt real,
+    @Type [int])
+
+AS 
+UPDATE [dbo].[POS_M_Orders] 
+SET  [CustomerId] = @CustmId
+WHERE [BranchID] = @BranchID and [CustomerId] = @CustfId
+
+UPDATE [dbo].[POS_M_Payments] 
+SET  [CustomerId] = @CustmId
+WHERE [BranchID] = @BranchID and [CustomerId] = @CustfId
+
+UPDATE [dbo].[Cust_debt_pay]
+SET  [CustomerId] = @CustmId
+WHERE [CustomerId] = @CustfId
+
+UPDATE [dbo].[BOF_M_Customers] SET
+FirstOrderDate = @FirstOrderDate, LastOrderDate=@LastOrderDate,
+NoOfOrders=@NoOfOrders, AmountPaid=@AmountPaid, Debt=@Debt 
+WHERE [BranchID] = @BranchID and [CustomerId] = @CustmId
+
+IF @Type =1 
+BEGIN
+DELETE FROM [dbo].[BOF_M_Customers] 
+WHERE [BranchID] = @BranchID and [CustomerId] = @CustfId
+END
+
+IF @Type = 2
+BEGIN
+UPDATE [dbo].[BOF_M_Customers] SET
+FirstOrderDate = Null, LastOrderDate=Null,
+NoOfOrders=0, AmountPaid=0, Debt=0
+WHERE [BranchID] = @BranchID and [CustomerId] = @CustfId
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentsBillReport_Arabic]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentsBillReport_Arabic]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderPaymentsBillReport_Arabic]  
+@BranchID int,  
+@OrderID  int  
+AS  
+
+
+SELECT     dbo.POS_M_Payments.BranchID, dbo.POS_M_Payments.OrderID, dbo.BOF_L_PaymentTypes.PaymentType,   
+-- convert(decimal(18,6),SUM(dbo.POS_M_Payments.Amount)) Amount  
+ SUM(convert(decimal(18,2),dbo.POS_M_Payments.Amount)) Amount  
+
+FROM         dbo.POS_M_Payments INNER JOIN    
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID  
+    
+WHERE dbo.POS_M_Payments.BranchID = @BranchID AND dbo.POS_M_Payments.OrderID = @OrderID      
+      AND dbo.POS_M_Payments.RevenueID <>3 AND dbo.POS_M_Payments.Amount>0
+group by     dbo.POS_M_Payments.BranchID, dbo.POS_M_Payments.OrderID, dbo.BOF_L_PaymentTypes.PaymentType     
+UNION
+SELECT BRANCHID,ORDERID, ''Tips'',  (convert(decimal(18,2),TIPAMOUNT))TIPAMOUNT
+FROM POS_TIPS 
+ WHERE ORDERID=@OrderID AND BRANCHID=@BranchID 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderPaymentsBillReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderPaymentsBillReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderPaymentsBillReport]  
+@BranchID int,  
+@OrderID  int  
+AS  
+
+
+--SELECT     dbo.POS_M_Payments.BranchID, dbo.POS_M_Payments.OrderID, dbo.BOF_L_PaymentTypes.PaymentType, 
+--coalesce(case when  dbo.BOF_L_PaymentTypes.PaymentType=''Cash DHS'' then 0 end, 
+--isnull(case when  dbo.BOF_L_PaymentTypes.PaymentType=''VISA'' then isnull(dbo.POS_TIPS.TipAmount,0) else 0 end,0),
+--isnull(case when  dbo.BOF_L_PaymentTypes.PaymentType=''AMEX'' then isnull(dbo.POS_TIPS.TipAmount,0) else 0 end,0) ,
+--isnull(case when  dbo.BOF_L_PaymentTypes.PaymentType=''MASTER'' then isnull(dbo.POS_TIPS.TipAmount,0) else 0 end,0) ,
+--isnull(case when  dbo.BOF_L_PaymentTypes.PaymentType=''DINNERS'' then isnull(dbo.POS_TIPS.TipAmount,0) else 0 end,0) 
+--) TipAmount,
+--dbo.POS_M_Payments.Amount  
+--FROM         dbo.POS_M_Payments INNER JOIN  
+--                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID
+--				INNER JOIN POS_TIPS on dbo.POS_TIPS.OrderID =dbo.POS_M_Payments.OrderID 
+--WHERE dbo.POS_M_Payments.BranchID = @BranchID AND dbo.POS_M_Payments.OrderID = @OrderID   
+--      AND dbo.POS_M_Payments.RevenueID <>3 AND dbo.POS_M_Payments.Amount>0  
+--
+
+
+SELECT     dbo.POS_M_Payments.BranchID, dbo.POS_M_Payments.OrderID, dbo.BOF_L_PaymentTypes.PaymentType,   
+-- convert(decimal(18,6),SUM(dbo.POS_M_Payments.Amount)) Amount  
+ SUM(convert(decimal(18,2),dbo.POS_M_Payments.Amount)) Amount  
+
+FROM         dbo.POS_M_Payments INNER JOIN    
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID  
+    
+WHERE dbo.POS_M_Payments.BranchID = @BranchID AND dbo.POS_M_Payments.OrderID = @OrderID      
+      AND dbo.POS_M_Payments.RevenueID <>3 AND dbo.POS_M_Payments.Amount>0
+group by     dbo.POS_M_Payments.BranchID, dbo.POS_M_Payments.OrderID, dbo.BOF_L_PaymentTypes.PaymentType     
+UNION
+SELECT BRANCHID,ORDERID, ''Tips'',  (convert(decimal(18,2),TIPAMOUNT))TIPAMOUNT
+FROM POS_TIPS 
+ WHERE ORDERID=@OrderID AND BRANCHID=@BranchID 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDiscoutsBillReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDiscoutsBillReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_OrderDiscoutsBillReport]
+@BranchID	int,
+@OrderID 	int
+AS
+SELECT     dbo.POS_M_OrderDiscounts.BranchID, dbo.POS_M_OrderDiscounts.OrderID, dbo.BOF_L_Discounts.[Description], 
+                      -dbo.POS_M_OrderDiscounts.DiscountAmount AS DiscountAmount, dbo.POS_M_OrderDiscounts.DiscountValue, dbo.BOF_L_DiscountTypes.DiscountType
+FROM         dbo.POS_M_OrderDiscounts INNER JOIN
+                      dbo.BOF_L_Discounts ON dbo.POS_M_OrderDiscounts.DiscountID = dbo.BOF_L_Discounts.DiscountID INNER JOIN
+                      dbo.BOF_L_DiscountTypes ON dbo.BOF_L_Discounts.DiscountTypeID = dbo.BOF_L_DiscountTypes.DiscountTypeID
+WHERE dbo.POS_M_OrderDiscounts.BranchID = @BranchID AND dbo.POS_M_OrderDiscounts.OrderID = @OrderID
+
+
+
+
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderDiscounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_OrderDiscounts]
+	@BranchID	int,
+	@OrderID	int
+AS
+SELECT     dbo.POS_M_OrderDetails.Status AS Status, dbo.POS_M_OrderDetails.CustomerNumber AS CustomerNumber, 
+                      dbo.POS_M_OrderDiscounts.Quantity * dbo.POS_M_OrderDetails.UsedPrice AS TotalPrice, dbo.BOF_M_ItemSalesItems.Description AS ItemName, 
+                      dbo.POS_M_OrderDiscounts.Quantity AS Quantity, dbo.BOF_L_Discounts.Description AS Description, dbo.POS_M_OrderDiscounts.*, 
+                      dbo.BOF_M_ItemSalesItems.SalesItemID AS ItemID
+FROM         dbo.BOF_M_ItemSalesItems INNER JOIN
+                      dbo.POS_M_OrderDetails ON dbo.BOF_M_ItemSalesItems.SalesItemID = dbo.POS_M_OrderDetails.ItemID RIGHT OUTER JOIN
+                      dbo.POS_M_OrderDiscounts INNER JOIN
+                      dbo.BOF_L_Discounts ON dbo.POS_M_OrderDiscounts.DiscountID = dbo.BOF_L_Discounts.DiscountID ON 
+                      dbo.POS_M_OrderDetails.OrderDetailID = dbo.POS_M_OrderDiscounts.OrderDetailID AND 
+                      dbo.POS_M_OrderDetails.BranchID = dbo.POS_M_OrderDiscounts.BranchID
+	WHERE     (POS_M_OrderDiscounts.BranchID = @BranchID) AND (POS_M_OrderDiscounts.OrderID = @OrderID)
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_SALESDETAIL]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_SALESDETAIL]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_SALESDETAIL]  
+@EODDate DATETIME=NULL,  
+@ToDate DATETIME=NULL,  
+@Branchid int
+
+AS  
+create table #tempReport  
+(  
+ InvoiceDate  varchar(max),  
+ InvoiceNo  varchar(50),  
+ ClerkName varchar(max),  
+ Items   varchar(max),  
+ Payment  varchar(200) ,
+ EODDate datetime 
+);  
+			DECLARE @InvoiceDate DATETIME;   
+			DECLARE @InvoiceNumber VARCHAR(20);   
+			DECLARE @Clerk VARCHAR(MAX);   
+			DECLARE @OrderEODDate datetime;
+			--------------------------------------------------------   
+			DECLARE @Invoices CURSOR;  
+			   --- Start of Payment Cursor ---  
+			  DECLARE @PaymentTypes varchar(max);   
+			  -----------------------------------  
+			  DECLARE @Payment CURSOR;   
+			  DECLARE @PaymentTypesList NVARCHAR(MAX);  
+			  DECLARE @ItemName varchar(max);   
+			  -----------------------------------  
+			  DECLARE @Items CURSOR;   
+			  Declare @count int;  
+
+if isnull(@EODDate,'''')=''''
+	begin
+ 
+			  
+			SET @Invoices = CURSOR fast_forward   
+			FOR SELECT ord.OpeningTime, CONVERT(BIGINT, ord.InvoiceNumber)AS [InvoiceNumber], (SELECT EmployeeName FROM BOF_M_Employees WHERE EmployeeID=ord.OpenedBy) AS Clerk,ord.EODDate  
+			  FROM POS_M_Orders ord where ord.InvoiceNumber is not null AND ord.Branchid=@Branchid and ord.EODDate is null ORDER BY [InvoiceNumber]  
+			  
+			OPEN @Invoices   
+			  
+			FETCH next FROM @Invoices INTO @InvoiceDate, @InvoiceNumber,  @Clerk  ,@OrderEODDate
+			  
+			WHILE @@FETCH_STATUS = 0   
+			  BEGIN   
+			  
+
+			    
+			  SET @Payment = CURSOR fast_forward   
+			  FOR select distinct PaymentType from POS_M_Payments p, BOF_L_PaymentTypes pt where p.PaymentTypeID= pt.PaymentTypeID and  InvoiceNumber=@InvoiceNumber  and p.BranchID=@Branchid
+			    
+			    
+			  set @PaymentTypesList = '''';  
+			  OPEN @Payment   
+			  FETCH next FROM @Payment INTO @PaymentTypes  
+			   WHILE @@FETCH_STATUS = 0   
+			   BEGIN   
+			        
+				 set @PaymentTypesList = @PaymentTypesList+'', ''+ @PaymentTypes;  
+				  FETCH next FROM @Payment INTO @PaymentTypes  
+			   END  
+			  CLOSE @Payment;  
+			  DEALLOCATE @Payment;  
+			   --- End of Payment Cursor ---  
+			  
+			  set @PaymentTypesList = substring(@PaymentTypesList,3, len(@PaymentTypesList) );    
+			    
+				  --- Start of Item Name Cursor ---  
+
+			    
+			  SET @Items = CURSOR fast_forward   
+			  FOR select Description from POS_M_OrderDetails od, BOF_M_ItemSalesItems si where od.itemid= si.SalesItemID and  InvoiceID=@InvoiceNumber  and od.BranchID=@Branchid
+			    
+			  OPEN @Items  
+			  SET @count=0;  
+			  FETCH next FROM @Items INTO @ItemName  
+			   WHILE @@FETCH_STATUS = 0   
+			   BEGIN          
+					 if @count = 0   
+					 begin  
+					  insert into #tempReport values(convert(varchar,@InvoiceDate), @InvoiceNumber ,  @Clerk,  @ItemName, @PaymentTypesList,@OrderEODDate);  
+					 end  
+					 else  
+					 begin  
+					  insert into #tempReport values('''', '''' ,  '''',  @ItemName,'''',@OrderEODDate);  
+					 end        
+					  set @count = @count+1;  
+					  FETCH next FROM @Items INTO @ItemName  
+				   END  
+				  CLOSE @Items;  
+				  DEALLOCATE @Items;  
+				   --- End of Item Name Cursor ---     
+					  FETCH next FROM @Invoices INTO @InvoiceDate, @InvoiceNumber,  @Clerk  ,@OrderEODDate
+			  END     
+			CLOSE @Invoices ;    
+			DEALLOCATE @Invoices ;  
+
+			select * from  #tempReport;  
+			  
+			drop table  #tempReport;
+	end
+else 
+	begin
+			  
+			SET @Invoices = CURSOR fast_forward   
+			FOR SELECT ord.OpeningTime, CONVERT(BIGINT, ord.InvoiceNumber)AS [InvoiceNumber], (SELECT EmployeeName FROM BOF_M_Employees WHERE EmployeeID=ord.OpenedBy) AS Clerk,ord.EODDate 
+			  FROM POS_M_Orders ord where ord.InvoiceNumber is not null AND ord.Branchid=@Branchid and ord.EODDate  between @EODDate and @ToDate ORDER BY [InvoiceNumber]  
+			  
+			OPEN @Invoices   
+			  
+			FETCH next FROM @Invoices INTO @InvoiceDate, @InvoiceNumber,  @Clerk  ,@OrderEODDate
+			  
+			WHILE @@FETCH_STATUS = 0   
+			  BEGIN   
+			  
+			    
+			  SET @Payment = CURSOR fast_forward   
+			  FOR select distinct PaymentType from POS_M_Payments p, BOF_L_PaymentTypes pt where p.PaymentTypeID= pt.PaymentTypeID and  InvoiceNumber=@InvoiceNumber  and p.BranchID=@Branchid
+			    
+
+			  set @PaymentTypesList = '''';  
+			  OPEN @Payment   
+			  FETCH next FROM @Payment INTO @PaymentTypes  
+			   WHILE @@FETCH_STATUS = 0   
+			   BEGIN   
+			        
+				 set @PaymentTypesList = @PaymentTypesList+'', ''+ @PaymentTypes;  
+				  FETCH next FROM @Payment INTO @PaymentTypes  
+			   END  
+			  CLOSE @Payment;  
+			  DEALLOCATE @Payment;  
+			   --- End of Payment Cursor ---  
+			  
+			  set @PaymentTypesList = substring(@PaymentTypesList,3, len(@PaymentTypesList) );    
+			    
+				  --- Start of Item Name Cursor ---  
+
+			    
+			  SET @Items = CURSOR fast_forward   
+			  FOR select Description from POS_M_OrderDetails od, BOF_M_ItemSalesItems si where od.itemid= si.SalesItemID and  InvoiceID=@InvoiceNumber  and od.BranchID=@Branchid
+			    
+			  OPEN @Items  
+
+			  SET @count=0;  
+			  FETCH next FROM @Items INTO @ItemName  
+			   WHILE @@FETCH_STATUS = 0   
+			   BEGIN          
+					 if @count = 0   
+					 begin  
+					  insert into #tempReport values(convert(varchar,@InvoiceDate), @InvoiceNumber ,  @Clerk,  @ItemName, @PaymentTypesList,@OrderEODDate);  
+					 end  
+					 else  
+					 begin  
+					  insert into #tempReport values('''', '''' ,  '''',  @ItemName,'''',@OrderEODDate);  
+					 end        
+					  set @count = @count+1;  
+					  FETCH next FROM @Items INTO @ItemName  
+				   END  
+				  CLOSE @Items;  
+				  DEALLOCATE @Items;  
+				   --- End of Item Name Cursor ---     
+					  FETCH next FROM @Invoices INTO @InvoiceDate, @InvoiceNumber,  @Clerk  ,@OrderEODDate
+			  END     
+			CLOSE @Invoices ;    
+			DEALLOCATE @Invoices ;  
+
+			select * from  #tempReport;  
+			  
+			drop table  #tempReport;
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_VoidedTableBill]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_VoidedTableBill]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_VoidedTableBill]
+@BranchID	int,
+@OrderID 	int
+AS
+SELECT     BranchID, OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, 
+                      InvoiceRemark, Driver, CustomerAddress, CustomerName, TotalTax, TotalService, TotalDiscount, Description, Quantity, 
+                      UsedPrice AS UsedPrice,TotalPaid, Change, Refund
+FROM         dbo.VEW_POS_OrderBill
+WHERE      (OrderID = @OrderID AND BranchID = @BranchID)
+ORDER BY OrderDetailID
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_VoidedInvoiceBill]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_VoidedInvoiceBill]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_VoidedInvoiceBill]
+@BranchID	int,
+@OrderID 	int
+AS
+if (select taxablediscount from bof_s_systemsettings)=0
+begin
+SELECT     BranchID, OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, RoomCharge,
+                      InvoiceRemark, Driver, CustomerAddress, CustomerName, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount AS TotalDiscount, Description,
+ (Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity,
+Address, UsedPrice AS UsedPrice,TotalPaid, Change, Refund,Phone,OrderType,taxdesc1,taxdesc2,taxdesc3,taxdesc4,
+City,Street,NEAR,Building,Floor,Appartment,MailAddressZone,Remarks,cPhone,Mobile,OfficePhone,OtherPhone,plateno,make,model,color,service1,service1desc,CompanyLogo, InvoiceMessage1, InvoiceMessage2,Category, CategoryID, Location, SalesItemID,company
+FROM         dbo.VEW_POS_OrderBill
+WHERE      (OrderID = @OrderID AND BranchID = @BranchID AND VoidMethodID > 1)
+ORDER BY OrderDetailID
+end
+else
+begin
+SELECT     BranchID, OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, RoomCharge,
+                      InvoiceRemark, Driver, CustomerAddress, CustomerName, TotalTax*(1- TotalDiscount/case when totalprice = 0 then 1 else totalprice end) AS TotalTax, TotalService*(1- TotalDiscount/case when totalprice = 0 then 1 else totalprice end) AS TotalService, TotalDiscount AS TotalDiscount, Description,
+(Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity,
+Address, UsedPrice AS UsedPrice,TotalPaid, Change, Refund,Phone,OrderType,taxdesc1,taxdesc2,taxdesc3,taxdesc4,
+City,Street,NEAR,Building,Floor,Appartment,MailAddressZone,Remarks,cPhone,Mobile,OfficePhone,OtherPhone,plateno,make,model,color,service1,service1desc,CompanyLogo, InvoiceMessage1, InvoiceMessage2,Category, CategoryID, Location, SalesItemID,company
+FROM         dbo.VEW_POS_OrderBill
+WHERE      (OrderID = @OrderID AND BranchID = @BranchID AND VoidMethodID > 1)
+ORDER BY OrderDetailID
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderInvoiceBill]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderInvoiceBill]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_OrderInvoiceBill] --1, 1066
+  @BranchID  INT, 
+  @InvoiceID INT 
+AS 
+  IF ( SELECT taxablediscount FROM   bof_s_systemsettings)=0 
+  BEGIN 
+  
+    
+    SELECT   branchid, 
+             orderid, 
+             menu, 
+             Cast(tablenumber AS VARCHAR(50)) AS tablenumber, 
+             branch, 
+             Phone ,
+             server, 
+             closer, 
+             printingtime, 
+             checknumber, 
+             Sum(CONVERT(DECIMAL(18,2),itemprice) ) itemprice, 
+             resturantname, 
+             roomcharge, 
+             invoiceremark, 
+             driver, 
+             customeraddress, 
+             customername,
+			 isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1), 0) as taxRate1,
+             isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1), 0) as taxRate2,
+             isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1), 0) as taxRate3,
+			 isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 4 AND inclusive = 0), 0) as taxRate4,
+             isnull(SUM(taxAmt1), 0)as taxAmt1,  
+             isnull(SUM(taxAmt2), 0) as taxAmt2,  
+             isnull(SUM(taxAmt3), 0) as taxAmt3,
+             Sum(CONVERT(DECIMAL(18,2),totaltax))    totaltax, 
+             Sum(CONVERT(DECIMAL(18,2),totalservice))totalservice, 
+             address, 
+             Sum( 
+             CASE 
+                      WHEN refund = 0 THEN CONVERT(DECIMAL(18,2),-totaldiscount) 
+                      WHEN refund < 0 THEN CONVERT(DECIMAL(18,2),totaldiscount) 
+             END) AS totaldiscount, 
+             description, 
+             Sum( 
+             CASE 
+                      WHEN showqty = 0 THEN ( 
+                               CASE 
+                                        WHEN quantity >=1 THEN quantity 
+                                        ELSE 0 
+                               END) 
+                      ELSE quantity 
+             END)                                  AS quantity, 
+             Sum(CONVERT(DECIMAL(18,2),usedprice)) AS usedprice, 
+             Sum(CONVERT(DECIMAL(18,2),totalpaid))    totalpaid, 
+             change, 
+             refund, 
+             phone, 
+             ordertype, 
+             taxdesc1, 
+             taxdesc2, 
+             taxdesc3, 
+             taxdesc4, 
+             numberofcustomers AS guests, 
+             openingtime, 
+             city, 
+             street, 
+             near, 
+             building, 
+             floor, 
+             appartment, 
+             mailaddresszone, 
+             remarks, 
+             cphone, 
+             mobile, 
+             officephone, 
+             otherphone, 
+             plateno, 
+             make, 
+             model, 
+             color, 
+             service1, 
+             service1desc, 
+             ( 
+                    SELECT TOP(1) 
+                           companylogo 
+                    FROM   dbo.vew_pos_orderbill 
+                    WHERE  ( 
+                                  checknumber = @InvoiceID 
+                           AND    branchid = @BranchID))companylogo, 
+             invoicemessage1, 
+             invoicemessage2, 
+             invoicemessage3, 
+             category, 
+             categoryid, 
+             location, 
+             salesitemid, 
+             company , 
+             ( 
+                    SELECT Max(beamrefno)beamrefno 
+                    FROM   pos_m_payments 
+                    WHERE  vew_pos_orderbill.orderid=pos_m_payments.orderid)beamrefno, 
+             otherdesc,
+             (Select top 1 paidby from POS_Delivery_CusOrdList where OrderID = vew_pos_orderbill.OrderID order by CusOrdNo desc)as PaidBy  ,
+             DeliveryTime
+    FROM     dbo.vew_pos_orderbill 
+    WHERE    ( 
+                      checknumber = @InvoiceID 
+             AND      branchid = @BranchID) 
+    GROUP BY description, 
+             branchid, 
+             orderid, 
+             menu, 
+             tablenumber, 
+             branch, 
+             server, 
+             closer, 
+             printingtime, 
+             checknumber, 
+             resturantname, 
+             roomcharge, 
+             invoiceremark, 
+             driver, 
+             customeraddress, 
+             customername, 
+             address , 
+             change, 
+             refund, 
+             phone, 
+             ordertype, 
+             taxdesc1, 
+             taxdesc2, 
+             taxdesc3, 
+             taxdesc4, 
+             numberofcustomers , 
+             openingtime, 
+             city, 
+             street, 
+             near, 
+             building, 
+             floor, 
+             appartment, 
+             mailaddresszone, 
+             remarks, 
+             cphone, 
+             mobile, 
+             officephone, 
+             otherphone, 
+             plateno, 
+             make, 
+             model, 
+             color, 
+             service1, 
+             service1desc, 
+             invoicemessage1, 
+             invoicemessage2, 
+             invoicemessage3, 
+             category, 
+             categoryid, 
+             location, 
+             salesitemid, 
+             company, 
+             otherdesc ,DeliveryTime
+    ORDER BY quantity DESC 
+  END 
+  else 
+  BEGIN 
+  
+    SELECT   branchid, 
+             orderid, 
+             menu, 
+             Cast(tablenumber AS VARCHAR(50)) AS tablenumber, 
+             branch,
+             phone, 
+             server, 
+             closer, 
+             printingtime, 
+             checknumber, 
+             Sum(CONVERT(DECIMAL(18,2),itemprice))itemprice, 
+             resturantname, 
+             roomcharge, 
+             invoiceremark, 
+             driver, 
+             customeraddress, 
+             customername, 
+			 isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1), 0) as taxRate1,
+             isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1), 0) as taxRate2,
+             isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1), 0) as taxRate3,
+			 isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 4 AND inclusive = 0), 0) as taxRate4,
+             isnull(SUM(taxAmt1), 0)as taxAmt1,  
+             isnull(SUM(taxAmt2), 0) as taxAmt2,  
+             isnull(SUM(taxAmt3), 0) as taxAmt3,
+             Sum (totaltax*(1- totaldiscount/ 
+             CASE 
+                      WHEN totalprice = 0 THEN 1 
+                      ELSE totalprice 
+             END))AS totaltax, 
+             Sum(totalservice*(1-totaldiscount/ 
+             CASE 
+                      WHEN totalprice = 0 THEN 1 
+                      ELSE totalprice 
+             END)) AS totalservice, 
+             address, 
+             Sum( 
+             CASE 
+                      WHEN refund = 0 THEN CONVERT(DECIMAL(18,2),-totaldiscount) 
+                      WHEN refund < 0 THEN CONVERT(DECIMAL(18,2),totaldiscount) 
+             END) AS totaldiscount, 
+             description, 
+             Sum( 
+             CASE 
+                      WHEN showqty = 0 THEN ( 
+                               CASE 
+                                        WHEN quantity >=1 THEN quantity 
+                                        ELSE 0 
+                               END) 
+                      ELSE quantity 
+             END)                                  AS quantity, 
+             Sum(CONVERT(DECIMAL(18,2),usedprice)) AS usedprice, 
+             Sum(CONVERT(DECIMAL(18,2),totalpaid))    totalpaid, 
+             Sum(CONVERT(DECIMAL(18,2),change))       change, 
+             Sum(CONVERT(DECIMAL(18,2),refund))       refund, 
+              
+             ordertype, 
+             taxdesc1, 
+             taxdesc2, 
+             taxdesc3, 
+             taxdesc4, 
+             numberofcustomers AS guests, 
+             openingtime, 
+             city, 
+             street, 
+             near, 
+             building, 
+             floor, 
+             appartment, 
+             mailaddresszone, 
+             remarks, 
+             cphone, 
+             mobile, 
+             officephone, 
+             otherphone, 
+             plateno, 
+             make, 
+             model, 
+             color, 
+             service1, 
+             service1desc, 
+             ( 
+                    SELECT TOP(1) 
+                           companylogo 
+                    FROM   dbo.vew_pos_orderbill 
+                    WHERE  ( 
+                                  checknumber = @InvoiceID 
+                           AND    branchid = @BranchID))companylogo, 
+             invoicemessage1, 
+             invoicemessage2, 
+             invoicemessage3, 
+             category, 
+             categoryid, 
+             location, 
+             salesitemid, 
+             company , 
+             ( 
+                    SELECT Max(beamrefno)beamrefno 
+                    FROM   pos_m_payments 
+                    WHERE  vew_pos_orderbill.orderid=pos_m_payments.orderid)beamrefno , 
+             otherdesc,
+             (Select top 1 paidby from POS_Delivery_CusOrdList where OrderID = vew_pos_orderbill.OrderID order by CusOrdNo desc)as PaidBy,
+             DeliveryTime
+             
+    FROM     dbo.vew_pos_orderbill 
+    WHERE    ( 
+                      checknumber = @InvoiceID 
+             AND      branchid = @BranchID) 
+    GROUP BY description, 
+             branchid, 
+             orderid, 
+             menu, 
+             tablenumber, 
+             branch, 
+             server, 
+             closer, 
+             printingtime, 
+             checknumber, 
+             resturantname, 
+             roomcharge, 
+             invoiceremark, 
+             driver, 
+             customeraddress, 
+             customername, 
+             address , 
+             change, 
+             refund, 
+             phone, 
+             ordertype, 
+             taxdesc1, 
+             taxdesc2, 
+             taxdesc3, 
+             taxdesc4, 
+             numberofcustomers , 
+             openingtime, 
+             city, 
+             street, 
+             near, 
+             building, 
+             floor, 
+             appartment, 
+             mailaddresszone, 
+             remarks, 
+             cphone, 
+             mobile, 
+             officephone, 
+             otherphone, 
+             plateno, 
+             make, 
+             model, 
+             color, 
+             service1, 
+             service1desc, 
+             invoicemessage1, 
+             invoicemessage2, 
+             invoicemessage3, 
+             category, 
+             categoryid, 
+             location, 
+             salesitemid, 
+             company, 
+             otherdesc ,DeliveryTime
+    ORDER BY quantity DESC 
+  END
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersReportByInvoice]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersReportByInvoice]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ClosedOrdersReportByInvoice]
+@BranchID	int,
+@InvoiceNumber	int
+AS
+if (select taxablediscount from bof_s_systemsettings)=0
+BEGIN
+SELECT     dbo.VEW_POS_OrderBill_NULL.Menu AS OrderMenuID, dbo.VEW_POS_OrderBill_NULL.TableNumber AS OrderNumber, 
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber AS InvoiceNumber, dbo.VEW_POS_OrderBill_NULL.Server AS OpenedByServer, 
+                      dbo.VEW_POS_OrderBill_NULL.Closer AS ClosedByServer, dbo.VEW_POS_OrderBill_NULL.TotalPaid, Round(SUM(dbo.VEW_POS_OrderBill_NULL.ItemPrice),2) AS TotalPrice, 
+                      ROUND(SUM(dbo.VEW_POS_OrderBill_NULL.TotalTax),2) AS TotalTax, ROUND(SUM(dbo.VEW_POS_OrderBill_NULL.TotalService)+avg( dbo.VEW_POS_OrderBill_NULL.service1),2) AS TotalService, dbo.VEW_POS_OrderBill_NULL.TotalDiscount, 
+                      dbo.VEW_POS_OrderBill_NULL.BranchID, dbo.VEW_POS_OrderBill_NULL.OrderID, dbo.VEW_POS_OrderBill_NULL.CustomerName AS CustomerName, 
+                      dbo.VEW_POS_OrderBill_NULL.OrderType AS Menu, dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, 
+                      dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill_NULL.Voided,dbo.POS_M_Payments.BeamRefno
+FROM         dbo.VEW_POS_OrderBill_NULL INNER JOIN
+                      dbo.POS_M_Payments ON dbo.VEW_POS_OrderBill_NULL.BranchID = dbo.POS_M_Payments.BranchID AND 
+                      dbo.VEW_POS_OrderBill_NULL.OrderID = dbo.POS_M_Payments.OrderID AND 
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber = dbo.POS_M_Payments.InvoiceNumber INNER JOIN
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID
+GROUP BY dbo.VEW_POS_OrderBill_NULL.Menu, dbo.VEW_POS_OrderBill_NULL.TableNumber, dbo.VEW_POS_OrderBill_NULL.CheckNumber, dbo.VEW_POS_OrderBill_NULL.Server, 
+                      dbo.VEW_POS_OrderBill_NULL.Closer, dbo.VEW_POS_OrderBill_NULL.TotalPaid,  dbo.VEW_POS_OrderBill_NULL.TotalDiscount, 
+                      dbo.VEW_POS_OrderBill_NULL.BranchID, dbo.VEW_POS_OrderBill_NULL.OrderID, dbo.VEW_POS_OrderBill_NULL.CustomerName, dbo.VEW_POS_OrderBill_NULL.OrderType, 
+                      dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill_NULL.Voided, 
+		dbo.VEW_POS_OrderBill_NULL.EODDate,dbo.POS_M_Payments.BeamRefno
+HAVING     ( dbo.VEW_POS_OrderBill_NULL.BranchID =@BranchID AND  dbo.VEW_POS_OrderBill_NULL.EODDate IS NULL AND dbo.VEW_POS_OrderBill_NULL.CheckNumber=@InvoiceNumber)
+ORDER BY  dbo.VEW_POS_OrderBill_NULL.CheckNumber
+end
+else
+begin
+SELECT     dbo.VEW_POS_OrderBill_NULL.Menu AS OrderMenuID, dbo.VEW_POS_OrderBill_NULL.TableNumber AS OrderNumber, 
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber AS InvoiceNumber, dbo.VEW_POS_OrderBill_NULL.Server AS OpenedByServer, 
+                      dbo.VEW_POS_OrderBill_NULL.Closer AS ClosedByServer, dbo.VEW_POS_OrderBill_NULL.TotalPaid, Round(SUM(dbo.VEW_POS_OrderBill_NULL.ItemPrice),2) AS TotalPrice, 
+                      ROUND(SUM(dbo.VEW_POS_OrderBill_NULL.TotalTax*(1- dbo.VEW_POS_OrderBill_NULL.TotalDiscount/case when totalprice = 0 then 1 else totalprice end)),2) AS TotalTax, ROUND(SUM(dbo.VEW_POS_OrderBill_NULL.TotalService*(1- dbo.VEW_POS_OrderBill_NULL.TotalDiscount/case when totalprice = 0 then 1 else totalprice end))+avg( dbo.VEW_POS_OrderBill_NULL.service1*(1- dbo.VEW_POS_OrderBill_NULL.TotalDiscount/case when totalprice = 0 then 1 else totalprice end)),2) AS TotalService, dbo.VEW_POS_OrderBill_NULL.TotalDiscount, 
+                      dbo.VEW_POS_OrderBill_NULL.BranchID, dbo.VEW_POS_OrderBill_NULL.OrderID, dbo.VEW_POS_OrderBill_NULL.CustomerName AS CustomerName, 
+                      dbo.VEW_POS_OrderBill_NULL.OrderType AS Menu, dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, 
+                      dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill_NULL.Voided,dbo.POS_M_Payments.BeamRefno
+FROM         dbo.VEW_POS_OrderBill_NULL INNER JOIN
+                      dbo.POS_M_Payments ON dbo.VEW_POS_OrderBill_NULL.BranchID = dbo.POS_M_Payments.BranchID AND 
+                      dbo.VEW_POS_OrderBill_NULL.OrderID = dbo.POS_M_Payments.OrderID AND 
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber = dbo.POS_M_Payments.InvoiceNumber INNER JOIN
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID
+GROUP BY dbo.VEW_POS_OrderBill_NULL.Menu, dbo.VEW_POS_OrderBill_NULL.TableNumber, dbo.VEW_POS_OrderBill_NULL.CheckNumber, dbo.VEW_POS_OrderBill_NULL.Server, 
+                      dbo.VEW_POS_OrderBill_NULL.Closer, dbo.VEW_POS_OrderBill_NULL.TotalPaid,  dbo.VEW_POS_OrderBill_NULL.TotalDiscount, 
+                      dbo.VEW_POS_OrderBill_NULL.BranchID, dbo.VEW_POS_OrderBill_NULL.OrderID, dbo.VEW_POS_OrderBill_NULL.CustomerName, dbo.VEW_POS_OrderBill_NULL.OrderType, 
+                      dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill_NULL.Voided, 
+		dbo.VEW_POS_OrderBill_NULL.EODDate,dbo.POS_M_Payments.BeamRefno
+HAVING     ( dbo.VEW_POS_OrderBill_NULL.BranchID =@BranchID AND  dbo.VEW_POS_OrderBill_NULL.EODDate IS NULL AND dbo.VEW_POS_OrderBill_NULL.CheckNumber=@InvoiceNumber)
+ORDER BY  dbo.VEW_POS_OrderBill_NULL.CheckNumber
+end
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersReport_Retail]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersReport_Retail]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_ClosedOrdersReport_Retail]   
+@BranchID int  
+AS
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED  
+if (select taxablediscount from bof_s_systemsettings)=0  
+BEGIN  
+SELECT dbo.VEW_POS_OrderBill_NULL.OrderType AS Menu,dbo.VEW_POS_OrderBill_NULL.TableNumber AS ''Order #'',
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber AS ''Invoice #'', dbo.VEW_POS_OrderBill_NULL.Server AS ''Opened By'', 
+                      dbo.VEW_POS_OrderBill_NULL.Closer AS ''Closed By'', 
+					  Round(SUM(dbo.VEW_POS_OrderBill_NULL.ItemPrice),2) AS ''T.Price'', 					     
+                      Round(SUM(dbo.VEW_POS_OrderBill_NULL.TotalTax),2) AS ''Tax'', 
+					  Round(SUM(dbo.VEW_POS_OrderBill_NULL.TotalService)+avg( dbo.VEW_POS_OrderBill_NULL.service1),2) AS ''Service'', dbo.VEW_POS_OrderBill_NULL.TotalDiscount ''Discount'',                             
+                       dbo.BOF_L_PaymentTypes.PaymentType ''Type'', dbo.POS_M_Payments.Amount ''Amount'',   
+                      dbo.VEW_POS_OrderBill_NULL.CustomerName AS ''Customer Name'' 
+FROM         dbo.VEW_POS_OrderBill_NULL INNER JOIN  
+                      dbo.POS_M_Payments ON dbo.VEW_POS_OrderBill_NULL.BranchID = dbo.POS_M_Payments.BranchID AND   
+                      dbo.VEW_POS_OrderBill_NULL.OrderID = dbo.POS_M_Payments.OrderID AND   
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber = dbo.POS_M_Payments.InvoiceNumber INNER JOIN  
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID  
+GROUP BY dbo.VEW_POS_OrderBill_NULL.Menu, dbo.VEW_POS_OrderBill_NULL.TableNumber, dbo.VEW_POS_OrderBill_NULL.CheckNumber, dbo.VEW_POS_OrderBill_NULL.Server,   
+                      dbo.VEW_POS_OrderBill_NULL.Closer, dbo.VEW_POS_OrderBill_NULL.TotalPaid,  dbo.VEW_POS_OrderBill_NULL.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill_NULL.BranchID, dbo.VEW_POS_OrderBill_NULL.OrderID, dbo.VEW_POS_OrderBill_NULL.CustomerName, dbo.VEW_POS_OrderBill_NULL.OrderType,   
+                      dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill_NULL.Voided,   
+  dbo.VEW_POS_OrderBill_NULL.EODDate  
+HAVING     ( dbo.VEW_POS_OrderBill_NULL.BranchID =@BranchID AND  dbo.VEW_POS_OrderBill_NULL.EODDate IS NULL )  
+ORDER BY  dbo.VEW_POS_OrderBill_NULL.CheckNumber  
+end  
+else  
+begin  
+SELECT dbo.VEW_POS_OrderBill_NULL.OrderType AS Menu,dbo.VEW_POS_OrderBill_NULL.TableNumber AS ''Order #'',
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber AS ''Invoice #'', dbo.VEW_POS_OrderBill_NULL.Server AS ''Opened By'', 
+                      dbo.VEW_POS_OrderBill_NULL.Closer AS ''Closed By'',
+					  Round(SUM(dbo.VEW_POS_OrderBill_NULL.ItemPrice),2) AS ''T.Price'', 					     
+                      Round(SUM(dbo.VEW_POS_OrderBill_NULL.TotalTax),2) AS ''Tax'', 
+					  Round(SUM(dbo.VEW_POS_OrderBill_NULL.TotalService)+avg( dbo.VEW_POS_OrderBill_NULL.service1),2) AS ''Service'', dbo.VEW_POS_OrderBill_NULL.TotalDiscount ''Discount'',                             
+                       dbo.BOF_L_PaymentTypes.PaymentType ''Type'', dbo.POS_M_Payments.Amount ''Amount'',   
+                      dbo.VEW_POS_OrderBill_NULL.CustomerName AS ''Customer Name''  
+FROM         dbo.VEW_POS_OrderBill_NULL INNER JOIN  
+                      dbo.POS_M_Payments ON dbo.VEW_POS_OrderBill_NULL.BranchID = dbo.POS_M_Payments.BranchID AND   
+                      dbo.VEW_POS_OrderBill_NULL.OrderID = dbo.POS_M_Payments.OrderID AND   
+                      dbo.VEW_POS_OrderBill_NULL.CheckNumber = dbo.POS_M_Payments.InvoiceNumber INNER JOIN  
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID  
+GROUP BY dbo.VEW_POS_OrderBill_NULL.Menu, dbo.VEW_POS_OrderBill_NULL.TableNumber, dbo.VEW_POS_OrderBill_NULL.CheckNumber, dbo.VEW_POS_OrderBill_NULL.Server,   
+                      dbo.VEW_POS_OrderBill_NULL.Closer, dbo.VEW_POS_OrderBill_NULL.TotalPaid,  dbo.VEW_POS_OrderBill_NULL.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill_NULL.BranchID, dbo.VEW_POS_OrderBill_NULL.OrderID, dbo.VEW_POS_OrderBill_NULL.CustomerName, dbo.VEW_POS_OrderBill_NULL.OrderType,   
+                      dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill_NULL.Voided,   
+  dbo.VEW_POS_OrderBill_NULL.EODDate  
+HAVING     ( dbo.VEW_POS_OrderBill_NULL.BranchID =@BranchID AND  dbo.VEW_POS_OrderBill_NULL.EODDate IS NULL )  
+ORDER BY  dbo.VEW_POS_OrderBill_NULL.CheckNumber  
+END  
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ClosedOrdersReport]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ClosedOrdersReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_ClosedOrdersReport] @BranchID INT 
+AS 
+    SET TRANSACTION isolation level READ uncommitted 
+
+    IF (SELECT taxablediscount 
+        FROM   bof_s_systemsettings) = 0 
+      BEGIN 
+          SELECT A.ordermenuid, 
+                 A.ordernumber, 
+                 A.invoicenumber, 
+                 A.openedbyserver,
+                 A.Opened, 
+                 A.closedbyserver, 
+                 A.Closed,
+                 A.totalpaid, 
+                 A.totalprice, 
+                 A.totaltax, 
+                 A.totalservice, 
+                 A.totaldiscount, 
+                 A.branchid, 
+                 A.orderid, 
+                 A.customername, 
+                 A.menu, 
+                 A.paymenttype, 
+                 A.amount, 
+                 A.paymentid, 
+                 A.voided, 
+                 A.paytypeid, 
+                 A.paymenttypeid, 
+                 A.beamrefno 
+          FROM   (SELECT dbo.vew_pos_orderbill_null.menu 
+                         AS 
+                         OrderMenuID, 
+                         dbo.vew_pos_orderbill_null.tablenumber 
+                         AS 
+                         OrderNumber, 
+                         dbo.vew_pos_orderbill_null.checknumber 
+                         AS 
+                         InvoiceNumber, 
+                         dbo.vew_pos_orderbill_null.server 
+                         AS 
+                         OpenedByServer, 
+                          dbo.vew_pos_orderbill_null.OpeningTime 
+                         AS 
+                         Opened,
+                         dbo.vew_pos_orderbill_null.closer 
+                         AS 
+                         ClosedByServer, 
+                         dbo.vew_pos_orderbill_null.PrintingTime 
+                         AS 
+                         Closed,
+                         dbo.vew_pos_orderbill_null.totalpaid, 
+                         Round(Sum(dbo.vew_pos_orderbill_null.itemprice), 2) 
+                         AS 
+                         TotalPrice, 
+                         Round(Sum(dbo.vew_pos_orderbill_null.totaltax), 2) 
+                         AS 
+                         TotalTax 
+                         , 
+          Round(Sum(dbo.vew_pos_orderbill_null.totalservice) 
+                + Avg( dbo.vew_pos_orderbill_null.service1), 2) AS TotalService, 
+          dbo.vew_pos_orderbill_null.totaldiscount, 
+          dbo.vew_pos_orderbill_null.branchid, 
+          dbo.vew_pos_orderbill_null.orderid, 
+          dbo.vew_pos_orderbill_null.customername               AS CustomerName, 
+          dbo.vew_pos_orderbill_null.ordertype                  AS Menu, 
+          dbo.bof_l_paymenttypes.paymenttype, 
+          dbo.pos_m_payments.amount, 
+          dbo.pos_m_payments.paymentid, 
+          dbo.vew_pos_orderbill_null.voided, 
+          dbo.bof_l_paymenttypes.paytypeid, 
+          dbo.bof_l_paymenttypes.paymenttypeid, 
+          dbo.pos_m_payments.beamrefno 
+          FROM   dbo.vew_pos_orderbill_null 
+          INNER JOIN dbo.pos_m_payments 
+                  ON dbo.vew_pos_orderbill_null.branchid = 
+                     dbo.pos_m_payments.branchid 
+                     AND dbo.vew_pos_orderbill_null.orderid = 
+                         dbo.pos_m_payments.orderid 
+                     AND dbo.vew_pos_orderbill_null.checknumber = 
+                         dbo.pos_m_payments.invoicenumber 
+          INNER JOIN dbo.bof_l_paymenttypes 
+                  ON dbo.pos_m_payments.paymenttypeid = 
+                     dbo.bof_l_paymenttypes.paymenttypeid 
+          GROUP  BY dbo.vew_pos_orderbill_null.menu, 
+             dbo.vew_pos_orderbill_null.tablenumber, 
+             dbo.vew_pos_orderbill_null.checknumber, 
+             dbo.vew_pos_orderbill_null.server,
+             dbo.vew_pos_orderbill_null.OpeningTime, 
+             dbo.vew_pos_orderbill_null.closer,
+             dbo.vew_pos_orderbill_null.PrintingTime, 
+             dbo.vew_pos_orderbill_null.totalpaid, 
+             dbo.vew_pos_orderbill_null.totaldiscount, 
+             dbo.vew_pos_orderbill_null.branchid, 
+             dbo.vew_pos_orderbill_null.orderid, 
+             dbo.vew_pos_orderbill_null.customername, 
+             dbo.vew_pos_orderbill_null.ordertype, 
+             dbo.bof_l_paymenttypes.paymenttype, 
+             dbo.pos_m_payments.amount, 
+             dbo.pos_m_payments.paymentid, 
+             dbo.vew_pos_orderbill_null.voided, 
+             dbo.vew_pos_orderbill_null.eoddate, 
+             dbo.bof_l_paymenttypes.paytypeid, 
+             dbo.bof_l_paymenttypes.paymenttypeid, 
+             dbo.pos_m_payments.beamrefno 
+          HAVING ( dbo.vew_pos_orderbill_null.branchid = @BranchID 
+            AND dbo.vew_pos_orderbill_null.eoddate IS NULL ) 
+          UNION 
+          SELECT dbo.vew_pos_orderbill_null.menu                       AS 
+                 OrderMenuID, 
+          dbo.vew_pos_orderbill_null.tablenumber                AS OrderNumber, 
+          dbo.vew_pos_orderbill_null.checknumber                AS InvoiceNumber 
+                 , 
+          dbo.vew_pos_orderbill_null.server 
+                 AS OpenedByServer, 
+                 dbo.vew_pos_orderbill_null.OpeningTime 
+                 AS Opened, 
+          dbo.vew_pos_orderbill_null.closer                     AS 
+                 ClosedByServer,
+                 dbo.vew_pos_orderbill_null.PrintingTime 
+                 AS Closed,  
+          dbo.vew_pos_orderbill_null.totalpaid, 
+          Round(Sum(dbo.vew_pos_orderbill_null.itemprice), 2)   AS TotalPrice, 
+          Round(Sum(dbo.vew_pos_orderbill_null.totaltax), 2)    AS TotalTax, 
+          Round(Sum(dbo.vew_pos_orderbill_null.totalservice) 
+                + Avg( dbo.vew_pos_orderbill_null.service1), 2) AS TotalService, 
+          dbo.vew_pos_orderbill_null.totaldiscount, 
+          dbo.vew_pos_orderbill_null.branchid, 
+          dbo.vew_pos_orderbill_null.orderid, 
+          dbo.vew_pos_orderbill_null.customername               AS CustomerName, 
+          dbo.vew_pos_orderbill_null.ordertype                  AS Menu, 
+          ''Void''                                                PaymentType, 
+          0                                                     Amount, 
+          0                                                     PaymentID, 
+          dbo.vew_pos_orderbill_null.voided, 
+          0                                                     paytypeid, 
+          0                                                     PaymentTypeID, 
+          ''''                                                    BeamRefno 
+          FROM   dbo.vew_pos_orderbill_null 
+          GROUP  BY dbo.vew_pos_orderbill_null.menu, 
+             dbo.vew_pos_orderbill_null.tablenumber, 
+             dbo.vew_pos_orderbill_null.checknumber, 
+             dbo.vew_pos_orderbill_null.server,
+             dbo.vew_pos_orderbill_null.OpeningTime, 
+             dbo.vew_pos_orderbill_null.closer, 
+             dbo.vew_pos_orderbill_null.PrintingTime,
+             dbo.vew_pos_orderbill_null.totalpaid, 
+             dbo.vew_pos_orderbill_null.totaldiscount, 
+             dbo.vew_pos_orderbill_null.branchid, 
+             dbo.vew_pos_orderbill_null.orderid, 
+             dbo.vew_pos_orderbill_null.customername, 
+             dbo.vew_pos_orderbill_null.ordertype, 
+             dbo.vew_pos_orderbill_null.voided, 
+             dbo.vew_pos_orderbill_null.eoddate 
+          HAVING ( dbo.vew_pos_orderbill_null.branchid = @BranchID 
+            AND dbo.vew_pos_orderbill_null.eoddate IS NULL 
+            AND vew_pos_orderbill_null.voided = 1 )) A 
+          ORDER  BY A.invoicenumber 
+      END 
+    ELSE 
+      BEGIN 
+          SELECT A.ordermenuid, 
+                 A.ordernumber, 
+                 A.invoicenumber, 
+                 A.openedbyserver,
+                 A.Opened,
+                 A.closedbyserver,
+                 A.Closed,
+                 A.totalpaid, 
+                 A.totalprice, 
+                 A.totaltax, 
+                 A.totalservice, 
+                 A.totaldiscount, 
+                 A.branchid, 
+                 A.orderid, 
+                 A.customername, 
+                 A.menu, 
+                 A.paymenttype, 
+                 A.amount, 
+                 A.paymentid, 
+                 A.voided, 
+                 A.paytypeid, 
+                 A.paymenttypeid, 
+                 A.beamrefno 
+          FROM   (SELECT dbo.vew_pos_orderbill_null.menu 
+                         AS 
+                                OrderMenuID, 
+                         dbo.vew_pos_orderbill_null.tablenumber 
+                         AS 
+                                 OrderNumber, 
+                         dbo.vew_pos_orderbill_null.checknumber 
+                         AS 
+                                 InvoiceNumber, 
+                         dbo.vew_pos_orderbill_null.server 
+                         AS 
+                                 OpenedByServer,
+                                 dbo.vew_pos_orderbill_null.OpeningTime 
+                         AS 
+                         Opened, 
+                         dbo.vew_pos_orderbill_null.closer 
+                         AS 
+                                 ClosedByServer,
+                                 dbo.vew_pos_orderbill_null.PrintingTime 
+                         AS 
+                         Closed, 
+                         dbo.vew_pos_orderbill_null.totalpaid, 
+                         Round(Sum(dbo.vew_pos_orderbill_null.itemprice), 2) 
+                         AS 
+                                 TotalPrice, 
+                         Round(Sum(dbo.vew_pos_orderbill_null.totaltax * ( 1 - 
+          dbo.vew_pos_orderbill_null.totaldiscount / CASE 
+          WHEN totalprice = 0 THEN 1 
+          ELSE totalprice 
+                                           END )), 2) AS 
+          TotalTax, 
+          Round(Sum(dbo.vew_pos_orderbill_null.totalservice*(1- 
+          dbo.vew_pos_orderbill_null.totaldiscount/CASE WHEN totalprice = 0 
+          THEN 1 
+          ELSE totalprice END)) + Avg( 
+          dbo.vew_pos_orderbill_null.service1*(1- 
+          dbo.vew_pos_orderbill_null.totaldiscount/ CASE WHEN 
+          totalprice = 0 THEN 1 ELSE totalprice END)), 2)           AS 
+          TotalService, 
+          dbo.vew_pos_orderbill_null.totaldiscount, 
+          dbo.vew_pos_orderbill_null.branchid, 
+          dbo.vew_pos_orderbill_null.orderid, 
+          dbo.vew_pos_orderbill_null.customername                         AS 
+          CustomerName, 
+          dbo.vew_pos_orderbill_null.ordertype                            AS 
+                         Menu, 
+          dbo.bof_l_paymenttypes.paymenttype, 
+          dbo.pos_m_payments.amount, 
+          dbo.pos_m_payments.paymentid, 
+          dbo.vew_pos_orderbill_null.voided, 
+          dbo.bof_l_paymenttypes.paytypeid, 
+          dbo.bof_l_paymenttypes.paymenttypeid, 
+          dbo.pos_m_payments.beamrefno 
+          FROM   dbo.vew_pos_orderbill_null 
+          INNER JOIN dbo.pos_m_payments 
+          ON dbo.vew_pos_orderbill_null.branchid = 
+          dbo.pos_m_payments.branchid 
+          AND dbo.vew_pos_orderbill_null.orderid = 
+          dbo.pos_m_payments.orderid 
+          AND dbo.vew_pos_orderbill_null.checknumber = 
+          dbo.pos_m_payments.invoicenumber 
+          INNER JOIN dbo.bof_l_paymenttypes 
+          ON dbo.pos_m_payments.paymenttypeid = 
+          dbo.bof_l_paymenttypes.paymenttypeid 
+          GROUP  BY dbo.vew_pos_orderbill_null.menu, 
+          dbo.vew_pos_orderbill_null.tablenumber, 
+          dbo.vew_pos_orderbill_null.checknumber, 
+          dbo.vew_pos_orderbill_null.server, 
+          dbo.vew_pos_orderbill_null.OpeningTime,
+          dbo.vew_pos_orderbill_null.closer,
+          dbo.vew_pos_orderbill_null.PrintingTime, 
+          dbo.vew_pos_orderbill_null.totalpaid, 
+          dbo.vew_pos_orderbill_null.totaldiscount, 
+          dbo.vew_pos_orderbill_null.branchid, 
+          dbo.vew_pos_orderbill_null.orderid, 
+          dbo.vew_pos_orderbill_null.customername, 
+          dbo.vew_pos_orderbill_null.ordertype, 
+          dbo.bof_l_paymenttypes.paymenttype, 
+          dbo.pos_m_payments.amount, 
+          dbo.pos_m_payments.paymentid, 
+          dbo.vew_pos_orderbill_null.voided, 
+          dbo.vew_pos_orderbill_null.eoddate, 
+          dbo.bof_l_paymenttypes.paytypeid, 
+          dbo.bof_l_paymenttypes.paymenttypeid, 
+          dbo.pos_m_payments.beamrefno 
+          HAVING ( dbo.vew_pos_orderbill_null.branchid = @BranchID 
+          AND dbo.vew_pos_orderbill_null.eoddate IS NULL ) 
+          --ORDER BY  dbo.VEW_POS_OrderBill_NULL.CheckNumber       
+          UNION 
+          SELECT dbo.vew_pos_orderbill_null.menu                       AS 
+                 OrderMenuID, 
+          dbo.vew_pos_orderbill_null.tablenumber                AS OrderNumber, 
+          dbo.vew_pos_orderbill_null.checknumber                AS InvoiceNumber 
+                 , 
+          dbo.vew_pos_orderbill_null.server 
+                 AS OpenedByServer, 
+                    dbo.vew_pos_orderbill_null.OpeningTime 
+                 AS Opened,
+          dbo.vew_pos_orderbill_null.closer                     AS 
+                 ClosedByServer, 
+                    dbo.vew_pos_orderbill_null.PrintingTime 
+                 AS Closed,
+          dbo.vew_pos_orderbill_null.totalpaid, 
+          Round(Sum(dbo.vew_pos_orderbill_null.itemprice), 2)   AS TotalPrice, 
+          Round(Sum(dbo.vew_pos_orderbill_null.totaltax), 2)    AS TotalTax, 
+          Round(Sum(dbo.vew_pos_orderbill_null.totalservice) 
+          + Avg( dbo.vew_pos_orderbill_null.service1), 2) AS TotalService, 
+          dbo.vew_pos_orderbill_null.totaldiscount, 
+          dbo.vew_pos_orderbill_null.branchid, 
+          dbo.vew_pos_orderbill_null.orderid, 
+          dbo.vew_pos_orderbill_null.customername               AS CustomerName, 
+          dbo.vew_pos_orderbill_null.ordertype                  AS Menu, 
+          ''Void''                                                PaymentType, 
+          0                                                     Amount, 
+          0                                                     PaymentID, 
+          dbo.vew_pos_orderbill_null.voided, 
+          0                                                     paytypeid, 
+          0                                                     PaymentTypeID, 
+          ''''                                                    BeamRefno 
+          FROM   dbo.vew_pos_orderbill_null 
+          GROUP  BY dbo.vew_pos_orderbill_null.menu, 
+          dbo.vew_pos_orderbill_null.tablenumber, 
+          dbo.vew_pos_orderbill_null.checknumber, 
+          dbo.vew_pos_orderbill_null.server, 
+          dbo.vew_pos_orderbill_null.OpeningTime, 
+          dbo.vew_pos_orderbill_null.closer, 
+          dbo.vew_pos_orderbill_null.PrintingTime, 
+          dbo.vew_pos_orderbill_null.totalpaid, 
+          dbo.vew_pos_orderbill_null.totaldiscount, 
+          dbo.vew_pos_orderbill_null.branchid, 
+          dbo.vew_pos_orderbill_null.orderid, 
+          dbo.vew_pos_orderbill_null.customername, 
+          dbo.vew_pos_orderbill_null.ordertype, 
+          dbo.vew_pos_orderbill_null.voided, 
+          dbo.vew_pos_orderbill_null.eoddate 
+          HAVING ( dbo.vew_pos_orderbill_null.branchid = @BranchID 
+          AND dbo.vew_pos_orderbill_null.eoddate IS NULL 
+          AND vew_pos_orderbill_null.voided = 1 )) A 
+          ORDER  BY A.invoicenumber 
+      END 
+
+    SET TRANSACTION isolation level READ committed ' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderBill1]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderBill1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderBill1]
+@BranchID	int,
+@OrderID 	int
+AS
+if (select taxablediscount from bof_s_systemsettings)=0
+begin
+SELECT     dbo.VEW_POS_OrderBill.BranchID,dbo.VEW_POS_OrderBill.OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch,Phone, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, 
+                      InvoiceRemark, Driver, CustomerAddress, dbo.VEW_POS_OrderBill.CustomerName, TotalTax, TotalService, -TotalDiscount  AS TotalDiscount, Description, 
+(Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity, 
+                      UsedPrice AS UsedPrice,TotalPaid, Change, Refund,OrderType,Address,InvoiceMessage1,Taxdesc1,Taxdesc2,Taxdesc3,Taxdesc4,numberofcustomers as guests,RoomCharge,openingtime,
+City,Street,NEAR,Building,Floor,Appartment,MailAddressZone,Remarks,cPhone,Mobile,OfficePhone,OtherPhone,plateno,make,model,color,service1,service1desc,CompanyLogo,InvoiceMessage2,Category, CategoryID, Location, SalesItemID,Company,
+paidby 
+FROM         dbo.VEW_POS_OrderBill 
+JOIN POS_Delivery_CusOrdList on dbo.VEW_POS_OrderBill.orderid=dbo.POS_Delivery_CusOrdList.orderid
+WHERE      (dbo.VEW_POS_OrderBill.OrderID = @OrderID AND dbo.VEW_POS_OrderBill.BranchID = @BranchID)
+ORDER BY OrderDetailID
+end
+else
+
+ begin
+if (Select Distinct(totalprice) FROM         dbo.VEW_POS_OrderBill
+WHERE      (OrderID = @OrderID AND BranchID = @BranchID))>0
+begin
+SELECT     dbo.VEW_POS_OrderBill.BranchID,dbo.VEW_POS_OrderBill.OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch,Phone, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, 
+                      InvoiceRemark, Driver, CustomerAddress, dbo.VEW_POS_OrderBill.CustomerName, (totaltax*(1- totaldiscount/case when totalprice = 0 then 1 else totalprice end))as totaltax,TotalService*(1-totaldiscount/case when totalprice = 0 then 1 else totalprice end)
+ as TotalService, -TotalDiscount  AS TotalDiscount, Description, (Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity, 
+                      UsedPrice AS UsedPrice,TotalPaid, Change, Refund,OrderType,Address,InvoiceMessage1,Taxdesc1,Taxdesc2,Taxdesc3,Taxdesc4,numberofcustomers as guests,RoomCharge,openingtime,
+City,Street,NEAR,Building,Floor,Appartment,MailAddressZone,Remarks,cPhone,Mobile,OfficePhone,OtherPhone,plateno,make,model,color,service1,service1desc,CompanyLogo,InvoiceMessage2,Category, CategoryID, Location, SalesItemID,Company,
+paidby
+FROM         dbo.VEW_POS_OrderBill
+JOIN POS_Delivery_CusOrdList on dbo.VEW_POS_OrderBill.orderid=dbo.POS_Delivery_CusOrdList.orderid
+WHERE      (dbo.VEW_POS_OrderBill.OrderID = @OrderID AND dbo.VEW_POS_OrderBill.BranchID = @BranchID)
+ORDER BY OrderDetailID
+end
+else
+begin
+SELECT     dbo.VEW_POS_OrderBill.BranchID,dbo.VEW_POS_OrderBill.OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch,Phone, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, 
+                      InvoiceRemark, Driver, CustomerAddress, dbo.VEW_POS_OrderBill.CustomerName,Totaltax,TotalService, -TotalDiscount  AS TotalDiscount, Description, 
+(Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity,
+                      UsedPrice AS UsedPrice,TotalPaid, Change, Refund,OrderType,Address,InvoiceMessage1,Taxdesc1,Taxdesc2,Taxdesc3,Taxdesc4,numberofcustomers as guests,RoomCharge,openingtime,
+City,Street,NEAR,Building,Floor,Appartment,MailAddressZone,Remarks,cPhone,Mobile,OfficePhone,OtherPhone,plateno,make,model,color,service1,service1desc,CompanyLogo,InvoiceMessage2,Category, CategoryID, Location, SalesItemID,Company,paidby
+FROM         dbo.VEW_POS_OrderBill
+JOIN POS_Delivery_CusOrdList on dbo.VEW_POS_OrderBill.orderid=dbo.POS_Delivery_CusOrdList.orderid
+WHERE      (dbo.VEW_POS_OrderBill.OrderID = @OrderID AND dbo.VEW_POS_OrderBill.BranchID = @BranchID)
+ORDER BY OrderDetailID
+end
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderBill_Refund]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderBill_Refund]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OrderBill_Refund]    
+@BranchID int,    
+@OrderID  int    
+AS    
+if (select taxablediscount from bof_s_systemsettings)=0    
+begin    
+SELECT     VEW_POS_OrderBill_Refund.BranchID, VEW_POS_OrderBill_Refund.OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, roomcharge,    
+                      InvoiceRemark, Driver, CustomerAddress, CustomerName, TotalTax, TotalService, -TotalDiscount  AS TotalDiscount, Description, Quantity,     
+                      UsedPrice AS UsedPrice,TotalPaid, Change,ordertype,refund,Phone,InvoiceMessage1,Address, taxdesc1,taxdesc2, taxdesc3,taxdesc4   ,
+(select max(BeamRefno)BeamRefno from pos_m_payments where VEW_POS_OrderBill_Refund.OrderID=pos_m_payments.OrderID) BeamRefno  
+FROM         dbo.VEW_POS_OrderBill_Refund    
+WHERE      (VEW_POS_OrderBill_Refund.OrderID = @OrderID AND VEW_POS_OrderBill_Refund.BranchID = @BranchID)    
+ORDER BY OrderDetailID    
+end    
+else    
+begin    
+SELECT     VEW_POS_OrderBill_Refund.BranchID, VEW_POS_OrderBill_Refund.OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber, Branch, Server, Closer, PrintingTime, CheckNumber, ItemPrice, ResturantName, roomcharge,    
+                      InvoiceRemark, Driver, CustomerAddress, CustomerName, (totaltax*(1- totaldiscount/totalprice))as totaltax,TotalService*(1-totaldiscount/totalprice)    
+ as TotalService, -TotalDiscount  AS TotalDiscount, Description, Quantity,     
+                      UsedPrice AS UsedPrice,TotalPaid, Change,ordertype,refund,Phone,InvoiceMessage1,Address, taxdesc1,taxdesc2, taxdesc3,taxdesc4   ,
+(select max(BeamRefno)BeamRefno from pos_m_payments where VEW_POS_OrderBill_Refund.OrderID=pos_m_payments.OrderID) BeamRefno 
+FROM         dbo.VEW_POS_OrderBill_Refund    inner join pos_m_payments on VEW_POS_OrderBill_Refund.OrderID=pos_m_payments.OrderID  
+WHERE      (VEW_POS_OrderBill_Refund.OrderID = @OrderID AND VEW_POS_OrderBill_Refund.BranchID = @BranchID)    
+ORDER BY OrderDetailID    
+end    
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OrderBill]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OrderBill]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[POS_SEL_OrderBill]
+    @BranchID INT ,
+    @OrderID INT
+AS 
+    IF ( SELECT taxablediscount FROM bof_s_systemsettings ) = 0 
+        BEGIN        
+            SELECT  VEW_POS_OrderBill.BranchID ,
+                    VEW_POS_OrderBill.OrderID ,
+                    Menu ,
+                    CAST(TableNumber AS VARCHAR(50)) AS TableNumber ,
+                    Branch ,
+                    Phone ,
+                    Server ,
+                    Closer ,
+                    PrintingTime ,
+                    CheckNumber ,
+                    ItemPrice ,
+                    ResturantName ,
+                    InvoiceRemark ,
+                    Driver ,
+                    CustomerAddress ,
+                    CustomerName ,
+					isnull(taxRate1, 0) as taxRate1,
+					isnull(taxRate2, 0) as taxRate2,
+					isnull(taxRate3, 0) as taxRate3,
+					isnull(taxRate4, 0) as taxRate4,
+                    isnull(taxAmt1, 0) as taxAmt1,
+                    isnull(taxAmt2, 0) as taxAmt2,
+                    isnull(taxAmt3, 0) as taxAmt3,
+                    TotalTax ,
+                    TotalService ,
+                    -TotalDiscount AS TotalDiscount ,
+                    TipAmount ,
+                    Description ,
+                    ( CASE WHEN ShowQty = 0 THEN ( CASE WHEN Quantity > 1 THEN Quantity ELSE 0 END ) ELSE Quantity END ) AS Quantity ,
+                    UsedPrice AS UsedPrice ,
+                    TotalPaid ,
+                    Change ,
+                    Refund ,
+                    OrderType ,
+                    Address ,
+                    InvoiceMessage1 ,
+                    InvoiceMessage2 ,
+                    InvoiceMessage3 ,
+                    InvoiceMessage4 ,
+                    Taxdesc1 ,
+                    Taxdesc2 ,
+                    Taxdesc3 ,
+                    Taxdesc4 ,
+                    numberofcustomers AS guests ,
+                    RoomCharge ,
+                    openingtime ,
+                    City ,
+                    Street ,
+                    NEAR ,
+                    Building ,
+                    Floor ,
+                    Appartment ,
+                    MailAddressZone ,
+                    Remarks ,
+                    cPhone ,
+                    Mobile ,
+                    OfficePhone ,
+                    OtherPhone ,
+                    plateno ,
+                    make ,
+                    model ,
+                    color ,
+                    service1 ,
+                    service1desc ,
+                    CompanyLogo ,
+                    InvoiceMessage2 ,
+                    Category ,
+                    CategoryID ,
+                    Location ,
+                    SalesItemID ,
+                    Company ,
+                    (SELECT MAX(BeamRefno) BeamRefno FROM pos_m_payments WHERE VEW_POS_OrderBill.OrderID = pos_m_payments.OrderID ) BeamRefno ,
+                    OtherDesc,
+                    (Select top 1 paidby from POS_Delivery_CusOrdList where OrderID=@OrderID order by CusOrdNo desc)as PaidBy
+                       ,DeliveryTime     
+            FROM    dbo.VEW_POS_OrderBill
+            WHERE   ( VEW_POS_OrderBill.OrderID = @OrderID
+                      AND VEW_POS_OrderBill.BranchID = @BranchID
+                    )
+            ORDER BY OrderDetailID
+        END        
+    ELSE 
+        BEGIN        
+            IF ( SELECT DISTINCT
+                        ( totalprice )
+                 FROM   dbo.VEW_POS_OrderBill
+                 WHERE  ( OrderID = @OrderID
+                          AND BranchID = @BranchID
+                        )
+               ) > 0 
+                BEGIN        
+                    SELECT  VEW_POS_OrderBill.BranchID ,
+                            VEW_POS_OrderBill.OrderID ,
+                            Menu ,
+                            CAST(TableNumber AS VARCHAR(50)) AS TableNumber ,
+                            Branch ,
+                            Phone ,
+                            Server ,
+                            Closer ,
+                            PrintingTime ,
+                CheckNumber ,
+                            ItemPrice ,
+                            ResturantName ,
+                            InvoiceRemark ,
+                            Driver ,
+                            CustomerAddress ,
+                            CustomerName ,
+							isnull(taxRate1, 0) as taxRate1,
+							isnull(taxRate2, 0) as taxRate2,
+							isnull(taxRate3, 0) as taxRate3,
+							isnull(taxRate4, 0) as taxRate4,
+							isnull(taxAmt1, 0) as taxAmt1,
+							isnull(taxAmt2, 0) as taxAmt2,
+							isnull(taxAmt3, 0) as taxAmt3,
+                            ( totaltax * ( 1 - totaldiscount / CASE WHEN totalprice = 0 THEN 1 ELSE totalprice END ) ) AS totaltax ,
+                            
+                            TotalService * ( 1 - totaldiscount / CASE WHEN totalprice = 0 THEN 1 ELSE totalprice END ) AS TotalService ,
+                            -TotalDiscount AS TotalDiscount ,
+                            TipAmount ,
+                            Description ,
+                            ( CASE WHEN ShowQty = 0 THEN ( CASE WHEN Quantity > 1 THEN Quantity ELSE 0 END ) ELSE Quantity END ) AS Quantity ,
+                            UsedPrice AS UsedPrice ,
+                            TotalPaid ,
+                            Change ,
+                            Refund ,
+                            OrderType ,
+                            Address ,
+                            InvoiceMessage1 ,
+                            InvoiceMessage2 ,
+                            InvoiceMessage3 ,
+                            InvoiceMessage4 ,
+                            Taxdesc1 ,
+                            Taxdesc2 ,
+                            Taxdesc3 ,
+                            Taxdesc4 ,
+                            numberofcustomers AS guests ,
+                            RoomCharge ,
+                            openingtime ,
+                            City ,
+                            Street ,
+                            NEAR ,
+                            Building ,
+                            Floor ,
+                            Appartment ,
+                            MailAddressZone ,
+                            Remarks ,
+                            cPhone ,
+                            Mobile ,
+                            OfficePhone ,
+                            OtherPhone ,
+                            plateno ,
+                            make ,
+                            model ,
+                            color ,
+                            service1 ,
+                            service1desc ,
+                            CompanyLogo ,
+                            InvoiceMessage2 ,
+                            Category ,
+                            CategoryID ,
+                            Location ,
+                            SalesItemID ,
+                            Company ,
+                            ( SELECT MAX(BeamRefno) BeamRefno FROM pos_m_payments WHERE VEW_POS_OrderBill.OrderID = pos_m_payments.OrderID) BeamRefno ,
+                            OtherDesc,
+                            (Select top 1 paidby from POS_Delivery_CusOrdList where OrderID=@OrderID order by CusOrdNo desc)as PaidBy
+                               ,DeliveryTime   
+                    FROM    dbo.VEW_POS_OrderBill
+                    WHERE   ( VEW_POS_OrderBill.OrderID = @OrderID
+                              AND VEW_POS_OrderBill.BranchID = @BranchID
+                            )
+                    ORDER BY OrderDetailID    
+                END        
+            ELSE 
+                BEGIN        
+                    SELECT  VEW_POS_OrderBill.BranchID ,
+                            VEW_POS_OrderBill.OrderID ,
+                            Menu ,
+                            CAST(TableNumber AS VARCHAR(50)) AS TableNumber ,
+                            Branch ,
+                            Phone ,
+                            Server ,
+                            Closer ,
+                            PrintingTime ,
+                            CheckNumber ,
+                            ItemPrice ,
+                            ResturantName ,
+                            InvoiceRemark ,
+                            Driver ,
+                            CustomerAddress ,
+                            CustomerName ,
+							isnull(taxRate1, 0) as taxRate1,
+							isnull(taxRate2, 0) as taxRate2,
+							isnull(taxRate3, 0) as taxRate3,
+							isnull(taxRate4, 0) as taxRate4,
+							isnull(taxAmt1, 0) as taxAmt1,
+							isnull(taxAmt2, 0) as taxAmt2,
+							isnull(taxAmt3, 0) as taxAmt3,
+                            Totaltax ,
+                            TotalService ,
+                            -TotalDiscount AS TotalDiscount ,
+                            Description ,
+                            TipAmount ,
+                            ( CASE WHEN ShowQty = 0 THEN ( CASE WHEN Quantity > 1 THEN Quantity ELSE 0 END ) ELSE Quantity END ) AS Quantity ,
+                            UsedPrice AS UsedPrice ,
+                            TotalPaid ,
+                            Change ,
+                            Refund ,
+                            OrderType ,
+                            Address ,
+                            InvoiceMessage1 ,
+                            InvoiceMessage2 ,
+                            InvoiceMessage3 ,
+                            InvoiceMessage4 ,
+                            Taxdesc1 ,
+                            Taxdesc2 ,
+                            Taxdesc3 ,
+                            Taxdesc4 ,
+                            numberofcustomers AS guests ,
+                            RoomCharge ,
+                            openingtime ,
+                            City ,
+                            Street ,
+                            NEAR ,
+                            Building ,
+                            Floor ,
+                            Appartment ,
+                            MailAddressZone ,
+                            Remarks ,
+                            cPhone ,
+                            Mobile ,
+                            OfficePhone ,
+                            OtherPhone ,
+                            plateno ,
+                            make ,
+                            model ,
+                            color ,
+                            service1 ,
+                            service1desc ,
+                            CompanyLogo ,
+                            InvoiceMessage2 ,
+                            Category ,
+                            CategoryID ,
+                            Location ,
+                            SalesItemID ,
+                            Company ,
+                            ( SELECT MAX(BeamRefno) BeamRefno FROM pos_m_payments WHERE VEW_POS_OrderBill.OrderID = pos_m_payments.OrderID ) BeamRefno ,
+                            OtherDesc,
+                            (Select top 1 paidby from POS_Delivery_CusOrdList where OrderID=@OrderID order by CusOrdNo desc)as PaidBy,
+                            DeliveryTime
+                            
+                    FROM    dbo.VEW_POS_OrderBill
+                    WHERE   ( VEW_POS_OrderBill.OrderID = @OrderID
+                              AND VEW_POS_OrderBill.BranchID = @BranchID
+                            )
+                    ORDER BY OrderDetailID  
+                END        
+        END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_Mainreading_CustomerCollection]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_Mainreading_CustomerCollection]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_Mainreading_CustomerCollection] 
+
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@TODate datetime=null
+AS
+IF @EmployeeID is NULL
+	BEGIN
+	IF @TODATE IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				select sum(amount)as amount,paymenttype, sum(discountvalue) as discountvalue 
+                from vew_mrcreditcollection  where (eoddate is null and branchid=@BranchID)group by paymenttype
+			END
+		ELSE
+			BEGIN			
+				select sum(amount)as amount,paymenttype, sum(discountvalue) as discountvalue from vew_mrcreditcollection  where ( branchid=@BranchID)
+				AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)					
+				group by paymenttype
+		    END
+	    END
+    ELSE
+		BEGIN
+                select sum(amount)as amount,paymenttype, sum(discountvalue) as discountvalue from
+		       (select sum(amount)as amount,paymenttype, sum(discountvalue) as discountvalue
+                FROM    vew_mrcreditcollection
+			    group by branchid, EODDate, paymenttype
+			    HAVING      (BranchID = @BranchID) 
+			    AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND 
+                EODDate  <= CONVERT(varchar(12), @ToDate, 101)) as a 
+				group by paymenttype	
+                           			
+    END
+end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_OlderSalesReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_OlderSalesReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_OlderSalesReport]   
+@BranchID int,  
+@EODDate Datetime  
+AS  
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED  
+if (select taxablediscount from bof_s_systemsettings)=0  
+begin  
+SELECT    dbo.VEW_POS_OrderBill.Menu AS OrderMenuID, dbo.VEW_POS_OrderBill.TableNumber AS OrderNumber,   
+                      dbo.VEW_POS_OrderBill.CheckNumber AS InvoiceNumber, dbo.VEW_POS_OrderBill.Server AS OpenedByServer,   
+                      dbo.VEW_POS_OrderBill.Closer AS ClosedByServer, dbo.VEW_POS_OrderBill.TotalPaid, SUM(dbo.VEW_POS_OrderBill.ItemPrice) AS TotalPrice,   
+                      Round(SUM(dbo.VEW_POS_OrderBill.TotalTax),2) AS TotalTax, Round(SUM(dbo.VEW_POS_OrderBill.TotalService),2) AS TotalService, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName AS CustomerName,   
+                      dbo.VEW_POS_OrderBill.OrderType AS Menu, dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount,   
+                      dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill.Voided  
+FROM         dbo.VEW_POS_OrderBill INNER JOIN  
+                      dbo.POS_M_Payments ON dbo.VEW_POS_OrderBill.BranchID = dbo.POS_M_Payments.BranchID AND   
+                      dbo.VEW_POS_OrderBill.OrderID = dbo.POS_M_Payments.OrderID AND   
+                      dbo.VEW_POS_OrderBill.CheckNumber = dbo.POS_M_Payments.InvoiceNumber INNER JOIN  
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID  
+GROUP BY dbo.VEW_POS_OrderBill.Menu, dbo.VEW_POS_OrderBill.TableNumber, dbo.VEW_POS_OrderBill.CheckNumber, dbo.VEW_POS_OrderBill.Server,   
+                      dbo.VEW_POS_OrderBill.Closer, dbo.VEW_POS_OrderBill.TotalPaid, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName, dbo.VEW_POS_OrderBill.OrderType,   
+                      dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill.Voided,   
+  dbo.VEW_POS_OrderBill.EODDate  
+HAVING     ( dbo.VEW_POS_OrderBill.BranchID =@BranchID AND  CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)  )  
+--ORDER BY dbo.VEW_POS_OrderBill.CheckNumber  
+union
+SELECT    dbo.VEW_POS_OrderBill.Menu AS OrderMenuID, dbo.VEW_POS_OrderBill.TableNumber AS OrderNumber,   
+                      dbo.VEW_POS_OrderBill.CheckNumber AS InvoiceNumber, dbo.VEW_POS_OrderBill.Server AS OpenedByServer,   
+                      dbo.VEW_POS_OrderBill.Closer AS ClosedByServer, dbo.VEW_POS_OrderBill.TotalPaid, SUM(dbo.VEW_POS_OrderBill.ItemPrice) AS TotalPrice,   
+                      Round(SUM(dbo.VEW_POS_OrderBill.TotalTax),2) AS TotalTax, Round(SUM(dbo.VEW_POS_OrderBill.TotalService),2) AS TotalService, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName AS CustomerName,   
+                      dbo.VEW_POS_OrderBill.OrderType AS Menu, ''Void'' PaymentType, 0 Amount,   
+                      0 PaymentID, dbo.VEW_POS_OrderBill.Voided  
+FROM         dbo.VEW_POS_OrderBill   
+GROUP BY dbo.VEW_POS_OrderBill.Menu, dbo.VEW_POS_OrderBill.TableNumber, dbo.VEW_POS_OrderBill.CheckNumber, dbo.VEW_POS_OrderBill.Server,   
+                      dbo.VEW_POS_OrderBill.Closer, dbo.VEW_POS_OrderBill.TotalPaid, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName, dbo.VEW_POS_OrderBill.OrderType,   
+                      dbo.VEW_POS_OrderBill.Voided,   
+  dbo.VEW_POS_OrderBill.EODDate  
+HAVING     ( dbo.VEW_POS_OrderBill.BranchID =@BranchID AND  CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)  and Voided=1)  
+--ORDER BY dbo.VEW_POS_OrderBill.CheckNumber
+end  
+else  
+begin  
+SELECT    dbo.VEW_POS_OrderBill.Menu AS OrderMenuID, dbo.VEW_POS_OrderBill.TableNumber AS OrderNumber,   
+                      dbo.VEW_POS_OrderBill.CheckNumber AS InvoiceNumber, dbo.VEW_POS_OrderBill.Server AS OpenedByServer,   
+                      dbo.VEW_POS_OrderBill.Closer AS ClosedByServer, dbo.VEW_POS_OrderBill.TotalPaid, SUM(dbo.VEW_POS_OrderBill.ItemPrice) AS TotalPrice,   
+                      Round(SUM(dbo.VEW_POS_OrderBill.TotalTax*(1- dbo.VEW_POS_OrderBill.TotalDiscount/case when totalprice = 0 then 1 else totalprice end)),2) AS TotalTax, 
+Round(SUM(dbo.VEW_POS_OrderBill.TotalService*(1- dbo.VEW_POS_OrderBill.TotalDiscount/case when totalprice = 0 then 1 else totalprice end)),2) AS TotalService, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName AS CustomerName,   
+                      dbo.VEW_POS_OrderBill.OrderType AS Menu, dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount,   
+                      dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill.Voided  
+FROM         dbo.VEW_POS_OrderBill INNER JOIN  
+                      dbo.POS_M_Payments ON dbo.VEW_POS_OrderBill.BranchID = dbo.POS_M_Payments.BranchID AND   
+                      dbo.VEW_POS_OrderBill.OrderID = dbo.POS_M_Payments.OrderID AND   
+                      dbo.VEW_POS_OrderBill.CheckNumber = dbo.POS_M_Payments.InvoiceNumber INNER JOIN  
+                      dbo.BOF_L_PaymentTypes ON dbo.POS_M_Payments.PaymentTypeID = dbo.BOF_L_PaymentTypes.PaymentTypeID  
+GROUP BY dbo.VEW_POS_OrderBill.Menu, dbo.VEW_POS_OrderBill.TableNumber, dbo.VEW_POS_OrderBill.CheckNumber, dbo.VEW_POS_OrderBill.Server,   
+                      dbo.VEW_POS_OrderBill.Closer, dbo.VEW_POS_OrderBill.TotalPaid, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName, dbo.VEW_POS_OrderBill.OrderType,   
+                      dbo.BOF_L_PaymentTypes.PaymentType, dbo.POS_M_Payments.Amount, dbo.POS_M_Payments.PaymentID, dbo.VEW_POS_OrderBill.Voided,   
+  dbo.VEW_POS_OrderBill.EODDate  
+HAVING     ( dbo.VEW_POS_OrderBill.BranchID =@BranchID AND  CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)  )  
+--ORDER BY dbo.VEW_POS_OrderBill.CheckNumber  
+SELECT    dbo.VEW_POS_OrderBill.Menu AS OrderMenuID, dbo.VEW_POS_OrderBill.TableNumber AS OrderNumber,   
+                      dbo.VEW_POS_OrderBill.CheckNumber AS InvoiceNumber, dbo.VEW_POS_OrderBill.Server AS OpenedByServer,   
+                      dbo.VEW_POS_OrderBill.Closer AS ClosedByServer, dbo.VEW_POS_OrderBill.TotalPaid, SUM(dbo.VEW_POS_OrderBill.ItemPrice) AS TotalPrice,   
+                      Round(SUM(dbo.VEW_POS_OrderBill.TotalTax),2) AS TotalTax, Round(SUM(dbo.VEW_POS_OrderBill.TotalService),2) AS TotalService, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName AS CustomerName,   
+                      dbo.VEW_POS_OrderBill.OrderType AS Menu, ''Void'' PaymentType, 0 Amount,   
+                      0 PaymentID, dbo.VEW_POS_OrderBill.Voided  
+FROM         dbo.VEW_POS_OrderBill   
+GROUP BY dbo.VEW_POS_OrderBill.Menu, dbo.VEW_POS_OrderBill.TableNumber, dbo.VEW_POS_OrderBill.CheckNumber, dbo.VEW_POS_OrderBill.Server,   
+                      dbo.VEW_POS_OrderBill.Closer, dbo.VEW_POS_OrderBill.TotalPaid, dbo.VEW_POS_OrderBill.TotalDiscount,   
+                      dbo.VEW_POS_OrderBill.BranchID, dbo.VEW_POS_OrderBill.OrderID, dbo.VEW_POS_OrderBill.CustomerName, dbo.VEW_POS_OrderBill.OrderType,   
+                      dbo.VEW_POS_OrderBill.Voided,   
+  dbo.VEW_POS_OrderBill.EODDate  
+HAVING     ( dbo.VEW_POS_OrderBill.BranchID =@BranchID AND  CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)  and Voided=1)  
+
+end  
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_Debt_Pay_report]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_Debt_Pay_report]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_Debt_Pay_report]
+	(@BranchID 	[int],
+	 
+	 
+	 @CustomerID 	[int])
+	
+
+AS
+BEGIN
+select Top 1 customername+'' ''+familyname as cname,[name]as bname,phone,date,paymenttype,
+debt,debt+amount as prevdebt,amount,debtpayid, Discountvalue from vew_debtpay_report
+where customerid= @CustomerID and branchid=@BranchID and eoddate is null
+order by [date] desc ,debtpayid desc
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_ChecklistDetail]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_ChecklistDetail]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[POS_SEL_ChecklistDetail]
+@Branchid int,
+@FromDate datetime=null,
+@ToDate datetime=null
+,@InvoiceNumber int=null
+as
+if isnull(@InvoiceNumber,'''')=''''
+begin
+					
+									if isnull(@FromDate,'''')=''''
+										begin
+											SELECT  distinct  EODDate,OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber,    PrintingTime, isnull(CheckNumber,0)CheckNumber, convert(decimal(18,2),ItemPrice)  ItemPrice,      
+											InvoiceRemark,  convert(decimal(18,2),TotalTax)TotalTax, convert(decimal(18,2),TotalService)TotalService,
+											(CASE   WHEN  Refund = 0 THEN convert(decimal(18,2),-TotalDiscount) WHEN  Refund < 0 THEN  convert(decimal(18,2),TotalDiscount) END) AS TotalDiscount, Description,    
+											(Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity,      
+											convert(decimal(18,2),UsedPrice) AS UsedPrice,convert(decimal(18,2),TotalPaid)TotalPaid, Change, Refund,ordertype,taxdesc1,taxdesc2,taxdesc3,taxdesc4,
+											numberofcustomers as guests,openingtime,Category,SalesItemID,Server, Closer,
+											(select max(BeamRefno)BeamRefno from pos_m_payments where VEW_POS_OrderBill.OrderID=pos_m_payments.OrderID)BeamRefno  , VEW_POS_OrderBill.ClosingTime
+											FROM         dbo.VEW_POS_OrderBill    
+											WHERE      (BranchID = @Branchid and EODDate is null)    
+											
+										end
+									else
+											SELECT distinct   EODDate,OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber,    PrintingTime, isnull(CheckNumber,0)CheckNumber, convert(decimal(18,2),ItemPrice)  ItemPrice,      
+											InvoiceRemark,  convert(decimal(18,2),TotalTax)TotalTax, convert(decimal(18,2),TotalService)TotalService,
+											(CASE   WHEN  Refund = 0 THEN convert(decimal(18,2),-TotalDiscount) WHEN  Refund < 0 THEN  convert(decimal(18,2),TotalDiscount) END) AS TotalDiscount, Description,    
+											(Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity,      
+											convert(decimal(18,2),UsedPrice) AS UsedPrice,convert(decimal(18,2),TotalPaid)TotalPaid, Change, Refund,ordertype,taxdesc1,taxdesc2,taxdesc3,taxdesc4,
+											numberofcustomers as guests,openingtime,Category,SalesItemID,Server, Closer,
+											(select max(BeamRefno)BeamRefno from pos_m_payments where VEW_POS_OrderBill.OrderID=pos_m_payments.OrderID)BeamRefno , VEW_POS_OrderBill.ClosingTime   
+											FROM         dbo.VEW_POS_OrderBill    
+											WHERE      (BranchID = @Branchid and EODDate between  @FromDate AND   @ToDate) 
+											
+
+end
+else
+begin
+					
+									if isnull(@FromDate,'''')=''''
+										begin
+											SELECT distinct   EODDate,OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber,    PrintingTime, isnull(CheckNumber,0)CheckNumber, convert(decimal(18,2),ItemPrice)  ItemPrice,      
+											InvoiceRemark,  convert(decimal(18,2),TotalTax)TotalTax, convert(decimal(18,2),TotalService)TotalService,
+											(CASE   WHEN  Refund = 0 THEN convert(decimal(18,2),-TotalDiscount) WHEN  Refund < 0 THEN  convert(decimal(18,2),TotalDiscount) END) AS TotalDiscount, Description,    
+											(Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity,      
+											convert(decimal(18,2),UsedPrice) AS UsedPrice,convert(decimal(18,2),TotalPaid)TotalPaid, Change, Refund,ordertype,taxdesc1,taxdesc2,taxdesc3,taxdesc4,
+											numberofcustomers as guests,openingtime,Category,SalesItemID,Server, Closer,
+											(select max(BeamRefno)BeamRefno from pos_m_payments where VEW_POS_OrderBill.OrderID=pos_m_payments.OrderID)BeamRefno    , VEW_POS_OrderBill.ClosingTime
+											FROM         dbo.VEW_POS_OrderBill    
+											WHERE      (BranchID = @Branchid and EODDate is null and CheckNumber=@InvoiceNumber
+)    
+											
+										end
+									else
+											SELECT  distinct   EODDate,OrderID, Menu, CAST(TableNumber AS varchar(50)) AS TableNumber,    PrintingTime, isnull(CheckNumber,0)CheckNumber, convert(decimal(18,2),ItemPrice)  ItemPrice,      
+											InvoiceRemark,  convert(decimal(18,2),TotalTax)TotalTax, convert(decimal(18,2),TotalService)TotalService,
+											(CASE   WHEN  Refund = 0 THEN convert(decimal(18,2),-TotalDiscount) WHEN  Refund < 0 THEN  convert(decimal(18,2),TotalDiscount) END) AS TotalDiscount, Description,    
+											(Case when ShowQty = 0 then (CASE WHEN Quantity >1 then Quantity else 0 end) else Quantity end) as Quantity,      
+											convert(decimal(18,2),UsedPrice) AS UsedPrice,convert(decimal(18,2),TotalPaid)TotalPaid, Change, Refund,ordertype,taxdesc1,taxdesc2,taxdesc3,taxdesc4,
+											numberofcustomers as guests,openingtime,Category,SalesItemID,Server, Closer,
+											(select max(BeamRefno)BeamRefno from pos_m_payments where VEW_POS_OrderBill.OrderID=pos_m_payments.OrderID)BeamRefno    , VEW_POS_OrderBill.ClosingTime
+											FROM         dbo.VEW_POS_OrderBill    
+											WHERE      (BranchID = @Branchid and EODDate between  @FromDate AND   @ToDate and CheckNumber=@InvoiceNumber
+) 
+											
+
+end				
+--exec POS_SEL_ChecklistDetail 1, '''', '''''' 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_UPD_SettleOrder]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_UPD_SettleOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_UPD_SettleOrder]  
+ (@BranchID  [int],  
+  @OrderID  [int],  
+  @TotalPaid  [real],  
+ @TotalPrice [real],  
+ @Tax [real],  
+ @Service [real],  
+ @Discount [real],  
+ @UserID [int])  
+  
+AS   
+EXEC POS_UPD_CloseOrder @BranchID, @OrderID, @UserID, @TotalPrice  
+if @Discount <> 0   
+BEGIN  
+EXEC POS_UPD_DiscountedItems @BranchID, @OrderID, @Discount  
+END  
+UPDATE [dbo].[POS_M_Orders]   
+  
+SET   [Status]  = 2,  
+  [TotalPaid]  = @TotalPaid,  
+ TotalPrice = @TotalPrice,   
+ TotalTax = @Tax,  
+ TotalService = @Service,  
+ TotalDiscount = @Discount  
+  
+WHERE   
+ ( [BranchID]  = @BranchID AND  
+  [OrderID]  = @OrderID)  
+  
+UPDATE POS_M_ORDERDETAILS SET Status=''Ordered'' where Status=''Hold'' AND Orderid=@OrderID and [BranchID]=@BranchID
+
+UPDATE [dbo].[POS_M_Invoices]   
+SET  [InvoiceValue] = @TotalPaid  
+ ,  [ReceivedBy] = @UserID  
+WHERE ( [BranchID]  = @BranchID AND  
+  [OrderID]  = @OrderID AND  
+ InvoiceID <= 10000000)  
+     
+  
+INSERT INTO [dbo].[POS_M_Transactions]   
+  ( [BranchID],  
+  [EmployeeID],  
+  [TransactionTypeID],  
+  [Amount],  
+ [OrderID],  
+  [Description])   
+   
+VALUES   
+ ( @BranchID,  
+  @UserID,  
+  1,  
+  @TotalPaid,  
+ @OrderID,  
+  ''Order Settlement'')  
+  
+UPDATE [dbo].[BOF_M_Customers]   
+  
+SET   [FirstOrderDate] =DATEADD(dd, 0,ISNULL ( FirstOrderDate , GETDATE() )),  
+ [LastOrderDate] = GETDATE(),  
+  [NoOfOrders]  =ISNULL ( NoOfOrders , 0 )+ 1,  
+  [AmountPaid]  =ISNULL( AmountPaid, 0 ) + @TotalPaid,  
+ [LastDriver] = (SELECT     dbo.BOF_M_Employees.EmployeeName  
+   FROM         dbo.BOF_M_Employees INNER JOIN  
+                         dbo.POS_M_Orders ON dbo.BOF_M_Employees.BranchID = dbo.POS_M_Orders.BranchID AND   
+                         dbo.BOF_M_Employees.EmployeeID = dbo.POS_M_Orders.DeliveryDriverEmpID  
+   WHERE     (dbo.POS_M_Orders.OrderID = @OrderID))  
+  
+WHERE   
+ ( [CustomerID]  = (SELECT CustomerID FROM POS_M_Orders WHERE BranchID = @BranchID AND OrderID = @OrderID) AND  
+  [BranchID]  = @BranchID)   
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[selitemprofitrpt]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[selitemprofitrpt]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[selitemprofitrpt] 
+	-- Add the parameters for the stored procedure here
+	@begdate datetime,
+    @enddate datetime
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select description,sum(totalquantity)as totalquantity,cost,sum(totalcost)as totalcost,unitprofit,Sum(totalprofit)as totalprofit,perccost,percprofit,usedprice from vew_solditemsreport where (CONVERT(varchar(10), EODDate, 101)>=convert(varchar(10),@begdate,101)) and (CONVERT(varchar(10), EODDate, 101)<=convert(varchar(10),@enddate,101))
+
+group by description,cost,unitprofit,perccost,percprofit,usedprice
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_Voiditems]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_Voiditems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[usp_dashboard_Voiditems]
+AS
+BEGIN
+SET NOCOUNT ON
+
+SELECT TableNumber,  CONVERT(VARCHAR(5), PrintingTime,108) AS voidTime  ,Description from VEW_POS_OrderBill_Refund where cast(CONVERT(varchar(8), PrintingTime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112);
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totalpaid]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totalpaid]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'Create procedure [dbo].[usp_dashboard_totalpaid]
+as
+BEGIN
+ SELECT  isnull(CAST(sum(TotalPaid) AS DECIMAL(18,2)),0) AS ''totalpaid'', isnull(sum(numberofcustomers),0) as ''custo'', isnull(round(sum(TotalPaid)/sum(numberofcustomers),2),0) as ''Avgcheck'' FROM (select distinct TotalPaid,numberofcustomers,openingtime from VEW_BOF_SalesItemDetails) VEW_BOF_SalesItemDetails WHERE cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112);
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totaldelivery]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totaldelivery]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[usp_dashboard_totaldelivery]  
+as  
+BEGIN  
+select isnull(Category,'''') as ''Category'', isnull(CAST(SUM(itemprice) AS DECIMAL(18,2)),0) AS ''Totaldelivery'' from   
+VEW_BOF_SalesItemDetails where [MenuID] in (select MenuID from BOF_M_ItemMenus where MenuID <> 0) and [categoryid] in ( select CategoryID from BOF_L_ItemCategories where CategoryID<>0  ) 
+and cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>= CONVERT(VARCHAR(8),GETDATE(),112) group by Category,CategoryID;  
+END  
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_salesitem]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_salesitem]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[usp_dashboard_salesitem]  
+as  
+BEGIN  
+
+select isnull(menu,'''') as menu,isnull(CAST(SUM(itemprice) AS DECIMAL(18,2)),0) AS ''Totaldelivery'' from 
+VEW_BOF_SalesItemDetails where [menuid] in (select MenuID from BOF_M_ItemMenus where MenuID <> 0) and 
+cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>= CONVERT(VARCHAR(8),GETDATE(),112) group by MenuID,menu;  
+  
+END  
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_itemsales]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_itemsales]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE procedure [dbo].[usp_dashboard_itemsales]
+as
+BEGIN
+SELECT TOP 10 isnull(description,'''') as ''description'', isnull(CAST(SUM(quantity) AS DECIMAL(18,2)),0) AS ''topsaleitem'' FROM 
+VEW_BOF_SalesItemDetails where cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>= CONVERT(VARCHAR(8),GETDATE(),112) GROUP BY description ORDER BY description;
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totaltable]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totaltable]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[usp_dashboard_totaltable]
+AS
+BEGIN
+SET NOCOUNT ON
+
+select isnull(count(distinct(orderid)),0) as TotalTable,
+(select isnull(count(distinct(orderid)),0) as Available from dbo.VEW_POS_OrderBill where tablenumber <> ''10007'' and tablenumber <> ''20002'' and status=2 and cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112)) ''Available'',
+(select isnull(count(distinct(orderid)),0) as Busy from dbo.VEW_POS_OrderBill where tablenumber <> ''10007'' and tablenumber <> ''20002'' and status=0 and cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112)) ''Busy'',
+(select isnull(SUM(numberofcustomers),0) as ''Sitting'' from (select distinct orderid,numberofcustomers,openingtime,status,tablenumber from VEW_POS_OrderBill) VEW_POS_OrderBill where tablenumber <> ''10007'' and tablenumber <> ''20002'' and status=0 and cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112)) ''Sitting'',
+(select isnull(SUM(numberofcustomers),0) as ''CustLeft'' from (select distinct orderid,numberofcustomers,openingtime,status,tablenumber from VEW_POS_OrderBill) VEW_POS_OrderBill where tablenumber <> ''10007'' and tablenumber <> ''20002'' and status=2 and cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112)) ''CustLeft''
+
+from dbo.VEW_POS_OrderBill where tablenumber <> ''10007'' and tablenumber <> ''20002'' and cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>=CONVERT(VARCHAR(8),GETDATE(),112);
+
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Inventory3]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Inventory3]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[InvM_Inventory3] 
+@Date Datetime
+--@LocationID int
+AS
+BEGIN
+SET NOCOUNT ON;
+with Inv as
+(
+SELECT     dbo.INV_M_Items.ItemId, dbo.INV_M_Items.ProductCode, dbo.INV_M_Items.Descreption, dbo.INV_M_ItemInLocations.Quantity, dbo.INV_L_Locations.LocationName,dbo.INV_L_Locations.LocationID ,
+                      dbo.INV_M_ItemGroups.GroupName, dbo.INV_L_ItemDivisions.Division, dbo.INV_L_ItemCategory.Category, dbo.INV_L_ItemFormat.ItemFormat, 
+                      dbo.INV_M_Items.UnitCost/dbo.INV_M_Items.QauntityInBuyFormat as UnitCost, dbo.INV_M_Items.AverageCost/dbo.INV_M_Items.QauntityInBuyFormat as AverageCost, 
+                      dbo.INV_M_ItemInLocations.Quantity / dbo.INV_M_Items.QauntityInBuyFormat * dbo.INV_M_Items.UnitCost AS TotalCost, 
+                      dbo.INV_M_ItemInLocations.Quantity / dbo.INV_M_Items.QauntityInBuyFormat * dbo.INV_M_Items.AverageCost AS TotalAvgCost, 
+                      dbo.INV_M_Items.QuantityInInvFormat, dbo.INV_M_Items.CreationDate
+FROM         dbo.INV_M_Items INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemInLocations.LocationID = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+WHERE     (dbo.INV_M_Items.CreationDate < CONVERT(DATETIME, @Date, 102))
+
+), Pur as 
+(
+SELECT DISTINCT 
+                      dbo.INV_M_OrderDetails.LocationID,  dbo.INV_M_Items.ItemID,dbo.INV_L_Locations.BranchID, 
+SUM(dbo.INV_M_OrderDetails.Quantity*dbo.INV_M_Items.QauntityInBuyFormat) AS purQty
+FROM         dbo.INV_M_Orders INNER JOIN
+                      dbo.INV_M_OrderDetails ON dbo.INV_M_Orders.OrderID = dbo.INV_M_OrderDetails.OrderID INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_OrderDetails.ItemID = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_OrderDetails.ItemUnitID = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_Orders.LocationID = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID INNER JOIN
+                      dbo.INV_M_Suppliers ON dbo.INV_M_Orders.SupplierID = dbo.INV_M_Suppliers.SupplierID
+WHERE     (dbo.INV_M_Orders.InvoiceDate >= CONVERT(DATETIME, @Date, 102))
+AND (dbo.INV_M_Orders.PurchaseType = 1)
+GROUP BY  dbo.INV_M_OrderDetails.LocationID, dbo.INV_M_Items.ItemID, dbo.INV_L_Locations.BranchID
+)
+,Selling as
+(
+SELECT DISTINCT dbo.BOF_S_BranchLocations.Inventory_LocationId as LocationId,dbo.Item_Ingredient.ingredientId as ID, SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity) AS Sqty, 
+             dbo.BOF_M_Branches.BranchID, dbo.BOF_M_Branches.Name AS Branch
+FROM         dbo.VEW_POS_MainReadingBase INNER JOIN
+                      dbo.POS_M_Invoices ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.POS_M_Invoices.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.OrderID = dbo.POS_M_Invoices.OrderID INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.BOF_S_BranchLocations.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.WorkStationID = dbo.BOF_S_BranchLocations.WorkstatonID INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.BOF_S_BranchLocations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.Item_Ingredient ON dbo.VEW_POS_MainReadingBase.SalesItemID = dbo.Item_Ingredient.Itemid LEFT OUTER JOIN
+                      dbo.BOF_L_VoidReasons ON dbo.VEW_POS_MainReadingBase.ItemVoidReasonID = dbo.BOF_L_VoidReasons.VoidReasonID
+WHERE     (NOT (dbo.VEW_POS_MainReadingBase.EODDate IS NULL)) AND 
+(dbo.VEW_POS_MainReadingBase.EODDate >= CONVERT(DATETIME, @Date, 102))
+GROUP BY dbo.BOF_S_BranchLocations.Inventory_LocationId,dbo.Item_Ingredient.ingredientId,  dbo.BOF_M_Branches.BranchID, dbo.BOF_M_Branches.Name
+)
+, Wastage as
+(
+SELECT DISTINCT 
+                      dbo.INV_M_ItemWastageDetails.LocationId, dbo.INV_M_ItemWastageDetails.ItemId, SUM(dbo.INV_M_ItemWastageDetails.Quantity) AS WQty, 
+                      dbo.INV_L_ItemFormat.ItemFormat, dbo.INV_L_Locations.BranchID
+FROM         dbo.INV_M_ItemWastageDetails INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemWastageDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemWastage ON dbo.INV_M_ItemWastageDetails.WastageID = dbo.INV_M_ItemWastage.WastageID INNER JOIN
+                      dbo.INV_L_WastageTypes ON dbo.INV_M_ItemWastageDetails.WastageTypeId = dbo.INV_L_WastageTypes.WastageTypeID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemWastageDetails.UnitId = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID
+WHERE     (dbo.INV_M_ItemWastage.WastageDate >= CONVERT(DATETIME, @Date, 102))
+GROUP BY dbo.INV_M_ItemWastageDetails.LocationId, dbo.INV_M_ItemWastageDetails.ItemId, dbo.INV_L_Locations.BranchID, 
+                      dbo.INV_L_ItemFormat.ItemFormat
+)
+, TransFrom as
+( 
+SELECT DISTINCT dbo.INV_M_DeliveryDetails.ItemId, SUM(dbo.INV_M_DeliveryDetails.Quantity) AS Qty, 
+dbo.INV_M_ItemDelivery.LocFromId FROM         dbo.INV_M_DeliveryDetails INNER JOIN
+                                                  dbo.INV_M_ItemDelivery ON dbo.INV_M_DeliveryDetails.DeliveryId = dbo.INV_M_ItemDelivery.DeliveryId
+                           WHERE     (dbo.INV_M_ItemDelivery.DeliveryTime >= CONVERT(DATETIME, @Date, 102))
+                           GROUP BY  dbo.INV_M_ItemDelivery.LocFromId,dbo.INV_M_DeliveryDetails.ItemId
+), 
+TransTo as
+(
+SELECT DISTINCT dbo.INV_M_DeliveryDetails.ItemId, SUM(dbo.INV_M_DeliveryDetails.Quantity) AS Qty, 
+dbo.INV_M_ItemDelivery.LocToId FROM         dbo.INV_M_DeliveryDetails INNER JOIN
+                                                  dbo.INV_M_ItemDelivery ON dbo.INV_M_DeliveryDetails.DeliveryId = dbo.INV_M_ItemDelivery.DeliveryId
+                           WHERE     (dbo.INV_M_ItemDelivery.DeliveryTime >= CONVERT(DATETIME, @Date, 102))
+                           GROUP BY dbo.INV_M_ItemDelivery.LocToId,dbo.INV_M_DeliveryDetails.ItemId
+)
+
+--Select  inv.LocationId,Inv.ItemId, Inv.ProductCode,Inv.Descreption, 
+--(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Wastage.WQty,0)
+--+isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0)) as Tqty, 
+--Inv.LocationName,
+--inv.GroupName, inv.Division, inv.Category, inv.Itemformat, Inv.Unitcost,
+--inv.Averagecost, Inv.Unitcost*(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Wastage.WQty,0)
+--+isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0)) as Totalcost, inv.Averagecost*(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Wastage.WQty,0)
+--+isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0))as TotalAvgcost, inv.Quantityininvformat, inv.creationdate
+--from inv left outer join pur on inv.LocationId = pur.locationId and Inv.ItemId = Pur.ItemId 
+--left outer join selling on inv.LocationId = Selling.LocationId and Inv.ItemId = Selling.Id
+--left outer join Wastage on inv.LocationId = Wastage.LocationId and Inv.ItemId = Wastage.ItemId
+--left outer join Transfrom on inv.LocationId = Transfrom.Locfromid and Inv.ItemId = TransFrom.ItemId
+--left outer join TransTo on inv.LocationId = TransTo.LocToid and Inv.ItemId = TransTo.ItemId
+
+SELECT * FROM selling
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Inventory2]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Inventory2]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[InvM_Inventory2] 
+@Date Datetime
+--@LocationID int
+AS
+BEGIN
+SET NOCOUNT ON;
+with Inv as
+(
+SELECT     dbo.INV_M_Items.ItemId, dbo.INV_M_Items.ProductCode, dbo.INV_M_Items.Descreption, dbo.INV_M_ItemInLocations.Quantity, dbo.INV_L_Locations.LocationName,dbo.INV_L_Locations.LocationID ,
+                      dbo.INV_M_ItemGroups.GroupName, dbo.INV_L_ItemDivisions.Division, dbo.INV_L_ItemCategory.Category, dbo.INV_L_ItemFormat.ItemFormat,  p.ItemFormat as ''unitusage'',
+                      dbo.INV_M_Items.UnitCost/dbo.INV_M_Items.QauntityInBuyFormat as UnitCost, dbo.INV_M_Items.AverageCost/dbo.INV_M_Items.QauntityInBuyFormat as AverageCost, 
+                      dbo.INV_M_ItemInLocations.Quantity / dbo.INV_M_Items.QauntityInBuyFormat * dbo.INV_M_Items.UnitCost AS TotalCost, 
+                      dbo.INV_M_ItemInLocations.Quantity / dbo.INV_M_Items.QauntityInBuyFormat * dbo.INV_M_Items.AverageCost AS TotalAvgCost, 
+                      dbo.INV_M_Items.QuantityInInvFormat, dbo.INV_M_Items.CreationDate
+FROM         dbo.INV_M_Items INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemInLocations.LocationID = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID INNER JOIN
+                    dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+
+INNER JOIN
+dbo.INV_L_ItemFormat p ON INV_M_Items.usageformat = p.FormatID 
+WHERE     (dbo.INV_M_Items.CreationDate < CONVERT(DATETIME, @Date, 102))
+
+), Pur as 
+(
+SELECT DISTINCT 
+                      dbo.INV_M_OrderDetails.LocationID,  dbo.INV_M_Items.ItemID,dbo.INV_L_Locations.BranchID, 
+SUM(dbo.INV_M_OrderDetails.Quantity*dbo.INV_M_Items.QauntityInBuyFormat) AS purQty
+FROM         dbo.INV_M_Orders INNER JOIN
+                      dbo.INV_M_OrderDetails ON dbo.INV_M_Orders.OrderID = dbo.INV_M_OrderDetails.OrderID INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_OrderDetails.ItemID = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_OrderDetails.ItemUnitID = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_Orders.LocationID = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID INNER JOIN
+                      dbo.INV_M_Suppliers ON dbo.INV_M_Orders.SupplierID = dbo.INV_M_Suppliers.SupplierID
+WHERE     (dbo.INV_M_Orders.InvoiceDate >= CONVERT(DATETIME, @Date, 102))
+AND (dbo.INV_M_Orders.PurchaseType = 1)
+GROUP BY  dbo.INV_M_OrderDetails.LocationID, dbo.INV_M_Items.ItemID, dbo.INV_L_Locations.BranchID
+)
+,Selling as
+(
+SELECT DISTINCT dbo.BOF_S_BranchLocations.Inventory_LocationId as LocationId,dbo.Item_Ingredient.ingredientId as ID, SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity) AS Sqty, 
+             dbo.BOF_M_Branches.BranchID, dbo.BOF_M_Branches.Name AS Branch
+FROM         dbo.VEW_POS_MainReadingBase INNER JOIN
+                      dbo.POS_M_Invoices ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.POS_M_Invoices.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.OrderID = dbo.POS_M_Invoices.OrderID INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.BOF_S_BranchLocations.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.WorkStationID = dbo.BOF_S_BranchLocations.WorkstatonID INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.BOF_S_BranchLocations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.Item_Ingredient ON dbo.VEW_POS_MainReadingBase.SalesItemID = dbo.Item_Ingredient.Itemid LEFT OUTER JOIN
+                      dbo.BOF_L_VoidReasons ON dbo.VEW_POS_MainReadingBase.ItemVoidReasonID = dbo.BOF_L_VoidReasons.VoidReasonID
+WHERE     (NOT (dbo.VEW_POS_MainReadingBase.EODDate IS NULL)) AND 
+(dbo.VEW_POS_MainReadingBase.EODDate >= CONVERT(DATETIME, @Date, 102))
+GROUP BY dbo.BOF_S_BranchLocations.Inventory_LocationId,dbo.Item_Ingredient.ingredientId,  dbo.BOF_M_Branches.BranchID, dbo.BOF_M_Branches.Name
+)
+, Wastage as
+(
+SELECT DISTINCT 
+                      dbo.INV_M_ItemWastageDetails.LocationId, dbo.INV_M_ItemWastageDetails.ItemId, SUM(dbo.INV_M_ItemWastageDetails.Quantity) AS WQty, 
+                      dbo.INV_L_ItemFormat.ItemFormat, dbo.INV_L_Locations.BranchID
+FROM         dbo.INV_M_ItemWastageDetails INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemWastageDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemWastage ON dbo.INV_M_ItemWastageDetails.WastageID = dbo.INV_M_ItemWastage.WastageID INNER JOIN
+                      dbo.INV_L_WastageTypes ON dbo.INV_M_ItemWastageDetails.WastageTypeId = dbo.INV_L_WastageTypes.WastageTypeID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemWastageDetails.UnitId = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID
+WHERE     (dbo.INV_M_ItemWastage.WastageDate >= CONVERT(DATETIME, @Date, 102))
+GROUP BY dbo.INV_M_ItemWastageDetails.LocationId, dbo.INV_M_ItemWastageDetails.ItemId, dbo.INV_L_Locations.BranchID, 
+                      dbo.INV_L_ItemFormat.ItemFormat
+)
+, TransFrom as
+( 
+SELECT DISTINCT dbo.INV_M_DeliveryDetails.ItemId, SUM(dbo.INV_M_DeliveryDetails.Quantity) AS Qty, 
+dbo.INV_M_ItemDelivery.LocFromId FROM         dbo.INV_M_DeliveryDetails INNER JOIN
+                                                  dbo.INV_M_ItemDelivery ON dbo.INV_M_DeliveryDetails.DeliveryId = dbo.INV_M_ItemDelivery.DeliveryId
+                           WHERE     (dbo.INV_M_ItemDelivery.DeliveryTime >= CONVERT(DATETIME, @Date, 102))
+                           GROUP BY  dbo.INV_M_ItemDelivery.LocFromId,dbo.INV_M_DeliveryDetails.ItemId
+), 
+TransTo as
+(
+SELECT DISTINCT dbo.INV_M_DeliveryDetails.ItemId, SUM(dbo.INV_M_DeliveryDetails.Quantity) AS Qty, 
+dbo.INV_M_ItemDelivery.LocToId FROM         dbo.INV_M_DeliveryDetails INNER JOIN
+                                                  dbo.INV_M_ItemDelivery ON dbo.INV_M_DeliveryDetails.DeliveryId = dbo.INV_M_ItemDelivery.DeliveryId
+                           WHERE     (dbo.INV_M_ItemDelivery.DeliveryTime >= CONVERT(DATETIME, @Date, 102))
+                           GROUP BY dbo.INV_M_ItemDelivery.LocToId,dbo.INV_M_DeliveryDetails.ItemId
+)
+
+Select  inv.LocationId,Inv.ItemId, Inv.ProductCode,Inv.Descreption, 
+(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Wastage.WQty,0)
++isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0)) as Tqty, 
+Inv.LocationName,
+inv.GroupName, inv.Division, inv.Category, inv.Itemformat,Inv.unitusage, Inv.Unitcost,
+inv.Averagecost, Inv.Unitcost*(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Wastage.WQty,0)
++isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0)) as Totalcost, inv.Averagecost*(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Wastage.WQty,0)
++isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0))as TotalAvgcost, inv.Quantityininvformat, inv.creationdate
+from inv left outer join pur on inv.LocationId = pur.locationId and Inv.ItemId = Pur.ItemId 
+left outer join selling on inv.LocationId = Selling.LocationId and Inv.ItemId = Selling.Id
+left outer join Wastage on inv.LocationId = Wastage.LocationId and Inv.ItemId = Wastage.ItemId
+left outer join Transfrom on inv.LocationId = Transfrom.Locfromid and Inv.ItemId = TransFrom.ItemId
+left outer join TransTo on inv.LocationId = TransTo.LocToid and Inv.ItemId = TransTo.ItemId
+END
+
+
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[InvM_Inventory]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[InvM_Inventory]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[InvM_Inventory] 
+@Date Datetime
+--@LocationID int
+AS
+BEGIN
+SET NOCOUNT ON;
+with Inv as
+(
+SELECT     dbo.INV_M_Items.ItemId, dbo.INV_M_Items.ProductCode, dbo.INV_M_Items.Descreption, dbo.INV_M_ItemInLocations.Quantity, dbo.INV_L_Locations.LocationName,dbo.INV_L_Locations.LocationID ,
+                      dbo.INV_M_ItemGroups.GroupName, dbo.INV_L_ItemDivisions.Division, dbo.INV_L_ItemCategory.Category, dbo.INV_L_ItemFormat.ItemFormat, 
+                      dbo.INV_M_Items.UnitCost/dbo.INV_M_Items.QauntityInBuyFormat as UnitCost, dbo.INV_M_Items.AverageCost/dbo.INV_M_Items.QauntityInBuyFormat as AverageCost, 
+                      dbo.INV_M_ItemInLocations.Quantity / dbo.INV_M_Items.QauntityInBuyFormat * dbo.INV_M_Items.UnitCost AS TotalCost, 
+                      dbo.INV_M_ItemInLocations.Quantity / dbo.INV_M_Items.QauntityInBuyFormat * dbo.INV_M_Items.AverageCost AS TotalAvgCost, 
+                      dbo.INV_M_Items.QuantityInInvFormat, dbo.INV_M_Items.CreationDate
+FROM         dbo.INV_M_Items INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemInLocations.LocationID = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+WHERE     (dbo.INV_M_Items.CreationDate < CONVERT(DATETIME, @Date, 102))
+
+), Pur as 
+(
+SELECT DISTINCT 
+                      dbo.INV_M_OrderDetails.LocationID,  dbo.INV_M_Items.ItemID,dbo.INV_L_Locations.BranchID, 
+SUM(dbo.INV_M_OrderDetails.Quantity*dbo.INV_M_Items.QauntityInBuyFormat) AS purQty
+FROM         dbo.INV_M_Orders INNER JOIN
+                      dbo.INV_M_OrderDetails ON dbo.INV_M_Orders.OrderID = dbo.INV_M_OrderDetails.OrderID INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_OrderDetails.ItemID = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_OrderDetails.ItemUnitID = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID INNER JOIN
+                      dbo.INV_L_ItemDivisions ON dbo.INV_M_ItemGroups.DivisionID = dbo.INV_L_ItemDivisions.DivisionID INNER JOIN
+                      dbo.INV_L_ItemCategory ON dbo.INV_L_ItemDivisions.CategoryID = dbo.INV_L_ItemCategory.CategoryID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_Orders.LocationID = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID INNER JOIN
+                      dbo.INV_M_Suppliers ON dbo.INV_M_Orders.SupplierID = dbo.INV_M_Suppliers.SupplierID
+WHERE     (dbo.INV_M_Orders.InvoiceDate >= CONVERT(DATETIME, @Date, 102))
+AND (dbo.INV_M_Orders.PurchaseType = 1)
+GROUP BY  dbo.INV_M_OrderDetails.LocationID, dbo.INV_M_Items.ItemID, dbo.INV_L_Locations.BranchID
+)
+,Selling as
+(
+SELECT DISTINCT dbo.BOF_S_BranchLocations.Inventory_LocationId as LocationId,dbo.Item_Ingredient.ingredientId as ID, 
+     SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity/(case when dbo.INV_M_Items.QuantityInInvFormat<>0 then dbo.INV_M_Items.QuantityInInvFormat else 1 end)) AS Sqty, 
+	--  SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity) AS Sqty, 
+             dbo.BOF_M_Branches.BranchID, dbo.BOF_M_Branches.Name AS Branch
+FROM         dbo.VEW_POS_MainReadingBase INNER JOIN
+                      dbo.POS_M_Invoices ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.POS_M_Invoices.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.OrderID = dbo.POS_M_Invoices.OrderID INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.BOF_S_BranchLocations.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.WorkStationID = dbo.BOF_S_BranchLocations.WorkstatonID INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.BOF_S_BranchLocations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.Item_Ingredient ON dbo.VEW_POS_MainReadingBase.SalesItemID = dbo.Item_Ingredient.Itemid INNER JOIN
+					  dbo.INV_M_Items ON dbo.Item_Ingredient.ingredientId = dbo.INV_M_Items.ItemID  LEFT OUTER JOIN
+                      dbo.BOF_L_VoidReasons ON dbo.VEW_POS_MainReadingBase.ItemVoidReasonID = dbo.BOF_L_VoidReasons.VoidReasonID
+WHERE     (NOT (dbo.VEW_POS_MainReadingBase.EODDate IS NULL)) AND 
+(dbo.VEW_POS_MainReadingBase.EODDate >= CONVERT(DATETIME, @Date, 102))
+GROUP BY dbo.BOF_S_BranchLocations.Inventory_LocationId,dbo.Item_Ingredient.ingredientId,  dbo.BOF_M_Branches.BranchID, dbo.BOF_M_Branches.Name
+)
+, Wastage as
+(
+SELECT DISTINCT 
+                      dbo.INV_M_ItemWastageDetails.LocationId, dbo.INV_M_ItemWastageDetails.ItemId, SUM(dbo.INV_M_ItemWastageDetails.Quantity) AS WQty, 
+                      dbo.INV_L_ItemFormat.ItemFormat, dbo.INV_L_Locations.BranchID
+FROM         dbo.INV_M_ItemWastageDetails INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemWastageDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemWastage ON dbo.INV_M_ItemWastageDetails.WastageID = dbo.INV_M_ItemWastage.WastageID INNER JOIN
+                      dbo.INV_L_WastageTypes ON dbo.INV_M_ItemWastageDetails.WastageTypeId = dbo.INV_L_WastageTypes.WastageTypeID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemWastageDetails.UnitId = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID
+WHERE     (dbo.INV_M_ItemWastage.WastageDate >= CONVERT(DATETIME, @Date, 102))
+GROUP BY dbo.INV_M_ItemWastageDetails.LocationId, dbo.INV_M_ItemWastageDetails.ItemId, dbo.INV_L_Locations.BranchID, 
+                      dbo.INV_L_ItemFormat.ItemFormat
+)
+, TransFrom as
+( 
+SELECT DISTINCT dbo.INV_M_DeliveryDetails.ItemId, SUM(dbo.INV_M_DeliveryDetails.Quantity) AS Qty, 
+dbo.INV_M_ItemDelivery.LocFromId FROM         dbo.INV_M_DeliveryDetails INNER JOIN
+                                                  dbo.INV_M_ItemDelivery ON dbo.INV_M_DeliveryDetails.DeliveryId = dbo.INV_M_ItemDelivery.DeliveryId
+                           WHERE     (dbo.INV_M_ItemDelivery.DeliveryTime >= CONVERT(DATETIME, @Date, 102))
+                           GROUP BY  dbo.INV_M_ItemDelivery.LocFromId,dbo.INV_M_DeliveryDetails.ItemId
+), 
+TransTo as
+(
+SELECT DISTINCT dbo.INV_M_DeliveryDetails.ItemId, SUM(dbo.INV_M_DeliveryDetails.Quantity) AS Qty, 
+dbo.INV_M_ItemDelivery.LocToId FROM         dbo.INV_M_DeliveryDetails INNER JOIN
+                                                  dbo.INV_M_ItemDelivery ON dbo.INV_M_DeliveryDetails.DeliveryId = dbo.INV_M_ItemDelivery.DeliveryId
+                           WHERE     (dbo.INV_M_ItemDelivery.DeliveryTime >= CONVERT(DATETIME, @Date, 102))
+                           GROUP BY dbo.INV_M_ItemDelivery.LocToId,dbo.INV_M_DeliveryDetails.ItemId
+)
+
+Select  inv.LocationId,Inv.ItemId, Inv.ProductCode,Inv.Descreption, 
+(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Selling.SQty,0) + isnull(Wastage.WQty,0) 
++isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0)) as Tqty, 
+Inv.LocationName,
+inv.GroupName, inv.Division, inv.Category, inv.Itemformat, Inv.Unitcost, inv.Averagecost, 
+Inv.Unitcost*(isnull(inv.Quantity,0)  - isnull(pur.PurQty,0) + isnull(Selling.SQty,0) + isnull(Wastage.WQty,0)
++isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0)) as Totalcost, 
+inv.Averagecost*(isnull(inv.Quantity,0) - isnull(pur.PurQty,0) + isnull(Selling.SQty,0)+isnull(Wastage.WQty,0)
++isnull(transfrom.Qty,0) - isnull(TransTo.Qty,0))as TotalAvgcost, 
+inv.Quantityininvformat, inv.creationdate
+from inv left outer join pur on inv.LocationId = pur.locationId and Inv.ItemId = Pur.ItemId 
+left outer join selling on inv.LocationId = Selling.LocationId and Inv.ItemId = Selling.Id
+left outer join Wastage on inv.LocationId = Wastage.LocationId and Inv.ItemId = Wastage.ItemId
+left outer join Transfrom on inv.LocationId = Transfrom.Locfromid and Inv.ItemId = TransFrom.ItemId
+left outer join TransTo on inv.LocationId = TransTo.LocToid and Inv.ItemId = TransTo.ItemId
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_CostOfGoods1]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_CostOfGoods1]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_CostOfGoods1]
+@DateFrom Datetime,
+@DateTo Datetime,
+@ReportType int
+AS
+BEGIN
+SET NOCOUNT ON;
+
+if @ReportType = 1
+BEGIN
+
+WITH Selling as
+(
+SELECT DISTINCT dbo.Item_Ingredient.ingredientId as ItemID, 
+SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity/(case when dbo.INV_M_Items.QuantityInInvFormat<>0 then dbo.INV_M_Items.QuantityInInvFormat else 1 end)) AS qty, 
+ ''Sale'' as Type        
+FROM         dbo.VEW_POS_MainReadingBase INNER JOIN
+                      dbo.POS_M_Invoices ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.POS_M_Invoices.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.OrderID = dbo.POS_M_Invoices.OrderID INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.BOF_S_BranchLocations.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.WorkStationID = dbo.BOF_S_BranchLocations.WorkstatonID INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.BOF_S_BranchLocations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.Item_Ingredient ON dbo.VEW_POS_MainReadingBase.SalesItemID = dbo.Item_Ingredient.Itemid INNER JOIN 
+					  dbo.INV_M_Items ON dbo.Item_Ingredient.ingredientId = dbo.INV_M_Items.ItemID 
+					   LEFT OUTER JOIN
+                      dbo.BOF_L_VoidReasons ON dbo.VEW_POS_MainReadingBase.ItemVoidReasonID = dbo.BOF_L_VoidReasons.VoidReasonID
+WHERE     NOT (dbo.VEW_POS_MainReadingBase.EODDate IS NULL) AND 
+(dbo.VEW_POS_MainReadingBase.EODDate <= CONVERT(DATETIME, @DateFrom, 102))
+GROUP BY dbo.Item_Ingredient.ingredientId
+)
+, Wastage as
+(
+SELECT DISTINCT dbo.INV_M_ItemWastageDetails.ItemId, 
+   SUM(dbo.INV_M_ItemWastageDetails.Quantity) AS Qty, ''Wastage'' as Type
+FROM         dbo.INV_M_ItemWastageDetails INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemWastageDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemWastage ON dbo.INV_M_ItemWastageDetails.WastageID = dbo.INV_M_ItemWastage.WastageID INNER JOIN
+                      dbo.INV_L_WastageTypes ON dbo.INV_M_ItemWastageDetails.WastageTypeId = dbo.INV_L_WastageTypes.WastageTypeID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemWastageDetails.UnitId = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID
+WHERE     (dbo.INV_M_ItemWastage.WastageDate <= CONVERT(DATETIME, @DateFrom, 102))
+GROUP BY dbo.INV_M_ItemWastageDetails.ItemId
+)
+, 
+Adjustment as
+(
+SELECT DISTINCT dbo.INV_M_ItemAdjustDetails.ItemId,
+   SUM(dbo.INV_M_ItemAdjustDetails.VarianceQty) AS Qty, ''Adjustment'' AS Type 
+FROM            dbo.INV_M_ItemAdjustDetails INNER JOIN 
+                dbo.INV_M_ItemAdjustment ON dbo.INV_M_ItemAdjustDetails.AdjustmentId = dbo.INV_M_ItemAdjustment.AdjustmentId INNER JOIN
+			    dbo.INV_M_Items ON dbo.INV_M_ItemAdjustDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+				dbo.INV_L_ItemFormat ON dbo.INV_M_ItemAdjustDetails.UnitId = dbo.INV_L_ItemFormat.FormatID
+ WHERE (dbo.INV_M_ItemAdjustment.AdjustmentDate <= CONVERT(DATETIME, @DateFrom, 102))
+                GROUP BY dbo.INV_M_ItemAdjustDetails.ItemId, dbo.INV_L_ItemFormat.ItemFormat
+)
+, Goods as
+(
+SELECT * FROM SELLING
+UNION ALL
+SELECT * FROM WASTAGE
+UNION ALL
+SELECT * FROM ADJUSTMENT
+)
+, GoodsItems as
+(
+SELECT Goods.ItemID, dbo.INV_M_Items.ProductCode, dbo.INV_M_Items.Descreption, dbo.INV_M_Items.GroupId , dbo.INV_M_ItemGroups.GroupName, Goods.Qty, dbo.INV_L_ItemFormat.ItemFormat, 
+  dbo.INV_M_Items.AverageCost/dbo.INV_M_Items.QauntityInBuyFormat as AverageCostGoods, Type
+ FROM Goods  INNER JOIN
+ dbo.INV_M_Items ON GOODS.ItemId = dbo.INV_M_Items.ItemID INNER JOIN 
+ dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID  INNER JOIN
+ dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+), GoodsX as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName,
+(CASE Type when ''Sale'' then Qty else 0 end) as SQty,
+(CASE Type when ''Wastage'' then Qty else 0 end) as WQty,
+(CASE Type when ''Adjustment'' then Qty else 0 end) as AQty, GoodsItems.ItemFormat, GoodsItems.AverageCostGoods 
+from GoodsItems Group by GroupId, GroupName, ItemID, ProductCode, Descreption, Qty, Type, ItemFormat, AverageCostGoods
+), GoodsY as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SUM(SQty) as SalesQty, 
+Sum(WQty) as WastageQty, Sum(AQty) as AdjustmentQty, ItemFormat, AverageCostGoods
+from GoodsX Group by GroupId, GroupName, ItemID, ProductCode, Descreption, ItemFormat, AverageCostGoods
+)
+
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SalesQty, 
+WastageQty, AdjustmentQty,ItemFormat, (SalesQty-WastageQty+AdjustmentQty) as TotQty,  AverageCostGoods, (SalesQty-WastageQty+AdjustmentQty)*AverageCostGoods AS TotAvgCost
+from GoodsY 
+END
+
+if @ReportType = 2
+BEGIN
+
+WITH Selling as
+(
+SELECT DISTINCT dbo.Item_Ingredient.ingredientId as ItemID, 
+SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity/(case when dbo.INV_M_Items.QuantityInInvFormat<>0 then dbo.INV_M_Items.QuantityInInvFormat else 1 end)) AS qty, 
+ ''Sale'' as Type        
+FROM         dbo.VEW_POS_MainReadingBase INNER JOIN
+                      dbo.POS_M_Invoices ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.POS_M_Invoices.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.OrderID = dbo.POS_M_Invoices.OrderID INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.BOF_S_BranchLocations.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.WorkStationID = dbo.BOF_S_BranchLocations.WorkstatonID INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.BOF_S_BranchLocations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.Item_Ingredient ON dbo.VEW_POS_MainReadingBase.SalesItemID = dbo.Item_Ingredient.Itemid INNER JOIN 
+					  dbo.INV_M_Items ON dbo.Item_Ingredient.ingredientId = dbo.INV_M_Items.ItemID 
+					   LEFT OUTER JOIN
+                      dbo.BOF_L_VoidReasons ON dbo.VEW_POS_MainReadingBase.ItemVoidReasonID = dbo.BOF_L_VoidReasons.VoidReasonID
+WHERE     NOT (dbo.VEW_POS_MainReadingBase.EODDate IS NULL) AND 
+(dbo.VEW_POS_MainReadingBase.EODDate BETWEEN CONVERT(DATETIME, @DateFrom, 102) AND CONVERT(DATETIME, @DateTo, 102))
+GROUP BY dbo.Item_Ingredient.ingredientId
+)
+, Wastage as
+(
+SELECT DISTINCT dbo.INV_M_ItemWastageDetails.ItemId, 
+   SUM(dbo.INV_M_ItemWastageDetails.Quantity) AS Qty, ''Wastage'' as Type
+FROM         dbo.INV_M_ItemWastageDetails INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemWastageDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemWastage ON dbo.INV_M_ItemWastageDetails.WastageID = dbo.INV_M_ItemWastage.WastageID INNER JOIN
+                      dbo.INV_L_WastageTypes ON dbo.INV_M_ItemWastageDetails.WastageTypeId = dbo.INV_L_WastageTypes.WastageTypeID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemWastageDetails.UnitId = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID
+WHERE     (dbo.INV_M_ItemWastage.WastageDate BETWEEN CONVERT(DATETIME, @DateFrom, 102) AND CONVERT(DATETIME, @DateTo, 102))
+GROUP BY dbo.INV_M_ItemWastageDetails.ItemId
+)
+, 
+Adjustment as
+(
+SELECT DISTINCT dbo.INV_M_ItemAdjustDetails.ItemId,
+   SUM(dbo.INV_M_ItemAdjustDetails.VarianceQty) AS Qty, ''Adjustment'' AS Type 
+FROM            dbo.INV_M_ItemAdjustDetails INNER JOIN 
+                dbo.INV_M_ItemAdjustment ON dbo.INV_M_ItemAdjustDetails.AdjustmentId = dbo.INV_M_ItemAdjustment.AdjustmentId INNER JOIN
+			    dbo.INV_M_Items ON dbo.INV_M_ItemAdjustDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+				dbo.INV_L_ItemFormat ON dbo.INV_M_ItemAdjustDetails.UnitId = dbo.INV_L_ItemFormat.FormatID
+ WHERE (dbo.INV_M_ItemAdjustment.AdjustmentDate BETWEEN CONVERT(DATETIME, @DateFrom, 102) AND CONVERT(DATETIME, @DateTo, 102))
+                GROUP BY dbo.INV_M_ItemAdjustDetails.ItemId, dbo.INV_L_ItemFormat.ItemFormat
+)
+, Goods as
+(
+SELECT * FROM SELLING
+UNION ALL
+SELECT * FROM WASTAGE
+UNION ALL
+SELECT * FROM ADJUSTMENT
+)
+, GoodsItems as
+(
+SELECT Goods.ItemID, dbo.INV_M_Items.ProductCode, dbo.INV_M_Items.Descreption, dbo.INV_M_Items.GroupId , dbo.INV_M_ItemGroups.GroupName, Goods.Qty, dbo.INV_L_ItemFormat.ItemFormat, 
+  dbo.INV_M_Items.AverageCost/dbo.INV_M_Items.QauntityInBuyFormat as AverageCostGoods, Type
+ FROM Goods  INNER JOIN
+ dbo.INV_M_Items ON GOODS.ItemId = dbo.INV_M_Items.ItemID INNER JOIN 
+ dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID  INNER JOIN
+ dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+), GoodsX as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName,
+(CASE Type when ''Sale'' then Qty else 0 end) as SQty,
+(CASE Type when ''Wastage'' then Qty else 0 end) as WQty,
+(CASE Type when ''Adjustment'' then Qty else 0 end) as AQty, GoodsItems.ItemFormat, GoodsItems.AverageCostGoods 
+from GoodsItems Group by GroupId, GroupName, ItemID, ProductCode, Descreption, Qty, Type, ItemFormat, AverageCostGoods
+), GoodsY as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SUM(SQty) as SalesQty, 
+Sum(WQty) as WastageQty, Sum(AQty) as AdjustmentQty, ItemFormat, AverageCostGoods
+from GoodsX Group by GroupId, GroupName, ItemID, ProductCode, Descreption, ItemFormat, AverageCostGoods
+)
+
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SalesQty, 
+WastageQty, AdjustmentQty,ItemFormat, (SalesQty-WastageQty+AdjustmentQty) as TotQty,  AverageCostGoods, (SalesQty-WastageQty+AdjustmentQty)*AverageCostGoods AS TotAvgCost
+from GoodsY 
+END
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[INVM_CostOfGoods]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[INVM_CostOfGoods]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[INVM_CostOfGoods]
+@DateFrom Datetime,
+@DateTo Datetime,
+@ReportType int
+AS
+BEGIN
+SET NOCOUNT ON;
+
+if @ReportType = 1
+BEGIN
+
+WITH Selling as
+(
+SELECT DISTINCT dbo.Item_Ingredient.ingredientId as ItemID, 
+SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity/(case when dbo.INV_M_Items.QuantityInInvFormat<>0 then dbo.INV_M_Items.QuantityInInvFormat else 1 end)) AS qty, 
+ ''Sale'' as Type        
+FROM         dbo.VEW_POS_MainReadingBase INNER JOIN
+                      dbo.POS_M_Invoices ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.POS_M_Invoices.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.OrderID = dbo.POS_M_Invoices.OrderID INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.BOF_S_BranchLocations.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.WorkStationID = dbo.BOF_S_BranchLocations.WorkstatonID INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.BOF_S_BranchLocations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.Item_Ingredient ON dbo.VEW_POS_MainReadingBase.SalesItemID = dbo.Item_Ingredient.Itemid INNER JOIN 
+					  dbo.INV_M_Items ON dbo.Item_Ingredient.ingredientId = dbo.INV_M_Items.ItemID 
+					   LEFT OUTER JOIN
+                      dbo.BOF_L_VoidReasons ON dbo.VEW_POS_MainReadingBase.ItemVoidReasonID = dbo.BOF_L_VoidReasons.VoidReasonID
+WHERE     NOT (dbo.VEW_POS_MainReadingBase.EODDate IS NULL) AND 
+(dbo.VEW_POS_MainReadingBase.EODDate <= CONVERT(DATETIME, @DateFrom, 102))
+GROUP BY dbo.Item_Ingredient.ingredientId
+)
+, Wastage as
+(
+SELECT DISTINCT dbo.INV_M_ItemWastageDetails.ItemId, 
+   SUM(dbo.INV_M_ItemWastageDetails.Quantity) AS Qty, ''Wastage'' as Type
+FROM         dbo.INV_M_ItemWastageDetails INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemWastageDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemWastage ON dbo.INV_M_ItemWastageDetails.WastageID = dbo.INV_M_ItemWastage.WastageID INNER JOIN
+                      dbo.INV_L_WastageTypes ON dbo.INV_M_ItemWastageDetails.WastageTypeId = dbo.INV_L_WastageTypes.WastageTypeID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemWastageDetails.UnitId = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID
+WHERE     (dbo.INV_M_ItemWastage.WastageDate <= CONVERT(DATETIME, @DateFrom, 102))
+GROUP BY dbo.INV_M_ItemWastageDetails.ItemId
+)
+, 
+Adjustment as
+(
+SELECT DISTINCT dbo.INV_M_ItemAdjustDetails.ItemId,
+   SUM(dbo.INV_M_ItemAdjustDetails.VarianceQty) AS Qty, ''Adjustment'' AS Type 
+FROM            dbo.INV_M_ItemAdjustDetails INNER JOIN 
+                dbo.INV_M_ItemAdjustment ON dbo.INV_M_ItemAdjustDetails.AdjustmentId = dbo.INV_M_ItemAdjustment.AdjustmentId INNER JOIN
+			    dbo.INV_M_Items ON dbo.INV_M_ItemAdjustDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+				dbo.INV_L_ItemFormat ON dbo.INV_M_ItemAdjustDetails.UnitId = dbo.INV_L_ItemFormat.FormatID
+ WHERE (dbo.INV_M_ItemAdjustment.AdjustmentDate <= CONVERT(DATETIME, @DateFrom, 102))
+                GROUP BY dbo.INV_M_ItemAdjustDetails.ItemId, dbo.INV_L_ItemFormat.ItemFormat
+)
+, Goods as
+(
+SELECT * FROM SELLING
+UNION ALL
+SELECT * FROM WASTAGE
+UNION ALL
+SELECT * FROM ADJUSTMENT
+)
+, GoodsItems as
+(
+SELECT Goods.ItemID, dbo.INV_M_Items.ProductCode, dbo.INV_M_Items.Descreption, dbo.INV_M_Items.GroupId , dbo.INV_M_ItemGroups.GroupName, Goods.Qty, dbo.INV_L_ItemFormat.ItemFormat, 
+  dbo.INV_M_Items.AverageCost/dbo.INV_M_Items.QauntityInBuyFormat as AverageCostGoods, Type
+ FROM Goods  INNER JOIN
+ dbo.INV_M_Items ON GOODS.ItemId = dbo.INV_M_Items.ItemID INNER JOIN 
+ dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID  INNER JOIN
+ dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+), GoodsX as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName,
+(CASE Type when ''Sale'' then Qty else 0 end) as SQty,
+(CASE Type when ''Wastage'' then Qty else 0 end) as WQty,
+(CASE Type when ''Adjustment'' then Qty else 0 end) as AQty, GoodsItems.ItemFormat, GoodsItems.AverageCostGoods 
+from GoodsItems Group by GroupId, GroupName, ItemID, ProductCode, Descreption, Qty, Type, ItemFormat, AverageCostGoods
+), GoodsY as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SUM(SQty) as SalesQty, 
+Sum(WQty) as WastageQty, Sum(AQty) as AdjustmentQty, ItemFormat, AverageCostGoods
+from GoodsX Group by GroupId, GroupName, ItemID, ProductCode, Descreption, ItemFormat, AverageCostGoods
+)
+
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SalesQty, 
+WastageQty, AdjustmentQty,ItemFormat, (SalesQty+WastageQty+AdjustmentQty) as TotQty,  AverageCostGoods, (SalesQty+WastageQty+AdjustmentQty)*AverageCostGoods AS TotAvgCost
+from GoodsY 
+END
+
+if @ReportType = 2
+BEGIN
+
+WITH Selling as
+(
+SELECT DISTINCT dbo.Item_Ingredient.ingredientId as ItemID, 
+SUM(dbo.Item_Ingredient.Quantity * dbo.VEW_POS_MainReadingBase.Quantity/(case when dbo.INV_M_Items.QuantityInInvFormat<>0 then dbo.INV_M_Items.QuantityInInvFormat else 1 end)) AS qty, 
+ ''Sale'' as Type        
+FROM         dbo.VEW_POS_MainReadingBase INNER JOIN
+                      dbo.POS_M_Invoices ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.POS_M_Invoices.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.OrderID = dbo.POS_M_Invoices.OrderID INNER JOIN
+                      dbo.BOF_S_BranchLocations ON dbo.VEW_POS_MainReadingBase.BranchID = dbo.BOF_S_BranchLocations.BranchID AND 
+                      dbo.VEW_POS_MainReadingBase.WorkStationID = dbo.BOF_S_BranchLocations.WorkstatonID INNER JOIN
+                      dbo.BOF_M_Branches ON dbo.BOF_S_BranchLocations.BranchID = dbo.BOF_M_Branches.BranchID INNER JOIN
+                      dbo.Item_Ingredient ON dbo.VEW_POS_MainReadingBase.SalesItemID = dbo.Item_Ingredient.Itemid INNER JOIN 
+					  dbo.INV_M_Items ON dbo.Item_Ingredient.ingredientId = dbo.INV_M_Items.ItemID 
+					   LEFT OUTER JOIN
+                      dbo.BOF_L_VoidReasons ON dbo.VEW_POS_MainReadingBase.ItemVoidReasonID = dbo.BOF_L_VoidReasons.VoidReasonID
+WHERE     NOT (dbo.VEW_POS_MainReadingBase.EODDate IS NULL) AND 
+(dbo.VEW_POS_MainReadingBase.EODDate BETWEEN CONVERT(DATETIME, @DateFrom, 102) AND CONVERT(DATETIME, @DateTo, 102))
+GROUP BY dbo.Item_Ingredient.ingredientId
+)
+, Wastage as
+(
+SELECT DISTINCT dbo.INV_M_ItemWastageDetails.ItemId, 
+   SUM(dbo.INV_M_ItemWastageDetails.Quantity) AS Qty, ''Wastage'' as Type
+FROM         dbo.INV_M_ItemWastageDetails INNER JOIN
+                      dbo.INV_M_Items ON dbo.INV_M_ItemWastageDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+                      dbo.INV_M_ItemWastage ON dbo.INV_M_ItemWastageDetails.WastageID = dbo.INV_M_ItemWastage.WastageID INNER JOIN
+                      dbo.INV_L_WastageTypes ON dbo.INV_M_ItemWastageDetails.WastageTypeId = dbo.INV_L_WastageTypes.WastageTypeID INNER JOIN
+                      dbo.INV_L_ItemFormat ON dbo.INV_M_ItemWastageDetails.UnitId = dbo.INV_L_ItemFormat.FormatID INNER JOIN
+                      dbo.INV_M_ItemInLocations ON dbo.INV_M_Items.ItemID = dbo.INV_M_ItemInLocations.ItemID AND 
+                      dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_M_ItemInLocations.LocationID INNER JOIN
+                      dbo.INV_L_Locations ON dbo.INV_M_ItemWastageDetails.LocationId = dbo.INV_L_Locations.LocationID INNER JOIN
+                      dbo.INV_L_Branches ON dbo.INV_L_Locations.BranchID = dbo.INV_L_Branches.BranchID
+WHERE     (dbo.INV_M_ItemWastage.WastageDate BETWEEN CONVERT(DATETIME, @DateFrom, 102) AND CONVERT(DATETIME, @DateTo, 102))
+GROUP BY dbo.INV_M_ItemWastageDetails.ItemId
+)
+, 
+Adjustment as
+(
+SELECT DISTINCT dbo.INV_M_ItemAdjustDetails.ItemId,
+   SUM(dbo.INV_M_ItemAdjustDetails.VarianceQty) AS Qty, ''Adjustment'' AS Type 
+FROM            dbo.INV_M_ItemAdjustDetails INNER JOIN 
+                dbo.INV_M_ItemAdjustment ON dbo.INV_M_ItemAdjustDetails.AdjustmentId = dbo.INV_M_ItemAdjustment.AdjustmentId INNER JOIN
+			    dbo.INV_M_Items ON dbo.INV_M_ItemAdjustDetails.ItemId = dbo.INV_M_Items.ItemID INNER JOIN
+				dbo.INV_L_ItemFormat ON dbo.INV_M_ItemAdjustDetails.UnitId = dbo.INV_L_ItemFormat.FormatID
+ WHERE (dbo.INV_M_ItemAdjustment.AdjustmentDate BETWEEN CONVERT(DATETIME, @DateFrom, 102) AND CONVERT(DATETIME, @DateTo, 102))
+                GROUP BY dbo.INV_M_ItemAdjustDetails.ItemId, dbo.INV_L_ItemFormat.ItemFormat
+)
+, Goods as
+(
+SELECT * FROM SELLING
+UNION ALL
+SELECT * FROM WASTAGE
+UNION ALL
+SELECT * FROM ADJUSTMENT
+)
+, GoodsItems as
+(
+SELECT Goods.ItemID, dbo.INV_M_Items.ProductCode, dbo.INV_M_Items.Descreption, dbo.INV_M_Items.GroupId , dbo.INV_M_ItemGroups.GroupName, Goods.Qty, dbo.INV_L_ItemFormat.ItemFormat, 
+  dbo.INV_M_Items.AverageCost/dbo.INV_M_Items.QauntityInBuyFormat as AverageCostGoods, Type
+ FROM Goods  INNER JOIN
+ dbo.INV_M_Items ON GOODS.ItemId = dbo.INV_M_Items.ItemID INNER JOIN 
+ dbo.INV_M_ItemGroups ON dbo.INV_M_Items.GroupId = dbo.INV_M_ItemGroups.GroupID  INNER JOIN
+ dbo.INV_L_ItemFormat ON dbo.INV_M_Items.InventoryFormat = dbo.INV_L_ItemFormat.FormatID
+), GoodsX as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName,
+(CASE Type when ''Sale'' then Qty else 0 end) as SQty,
+(CASE Type when ''Wastage'' then Qty else 0 end) as WQty,
+(CASE Type when ''Adjustment'' then Qty else 0 end) as AQty, GoodsItems.ItemFormat, GoodsItems.AverageCostGoods 
+from GoodsItems Group by GroupId, GroupName, ItemID, ProductCode, Descreption, Qty, Type, ItemFormat, AverageCostGoods
+), GoodsY as
+(
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SUM(SQty) as SalesQty, 
+Sum(WQty) as WastageQty, Sum(AQty) as AdjustmentQty, ItemFormat, AverageCostGoods
+from GoodsX Group by GroupId, GroupName, ItemID, ProductCode, Descreption, ItemFormat, AverageCostGoods
+)
+
+SELECT  ItemID, ProductCode, Descreption, GroupId, GroupName, SalesQty, 
+WastageQty, AdjustmentQty,ItemFormat, (SalesQty+WastageQty+AdjustmentQty) as TotQty,  AverageCostGoods, (SalesQty+WastageQty+AdjustmentQty)*AverageCostGoods AS TotAvgCost
+from GoodsY 
+END
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[Ludi_Query]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Ludi_Query]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'create procedure [dbo].[Ludi_Query] (
+@DateFrom datetime,
+@DateTo datetime)
+as
+SET NOCOUNT ON
+
+select employeename,groupname,description,sum(quantity) as totqty,sum(usedprice) as price, eoddate from VEW_BOF_SalesItemDetails 
+where [groupid] in (362) and 
+cast(CONVERT(varchar(8), EODDate, 112) AS datetime) >=@DateFrom and cast(CONVERT(varchar(8), EODDate, 112) AS datetime) <=@DateTo
+group by employeename,groupname,description,eoddate
+
+order by employeename asc' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DiscountedItems_New]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DiscountedItems_New]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_DiscountedItems_New]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+BEGIN
+
+SELECT     @StartDate AS StartDate, @EndDate AS EndDate, * FROM VEW_BOF_DiscountedItems_New
+WHERE  BranchID = @BranchID 
+AND CAST(FLOOR(CAST(EODDate as float)) as datetime) Between @StartDate And @EndDate 
+END 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DiscountedItems]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DiscountedItems]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_DiscountedItems]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+BEGIN
+
+SELECT     @StartDate AS StartDate, @EndDate AS EndDate, * FROM VEW_BOF_DiscountedItems
+--SELECT     @StartDate AS StartDate, @EndDate AS EndDate, * FROM VEW_BOF_DiscountedItems_New
+WHERE  BranchID = @BranchID 
+--AND Convert(datetime,EODDate,102) Between @StartDate And @EndDate 
+AND CAST(FLOOR(CAST(EODDate as float)) as datetime) Between @StartDate And @EndDate 
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesItemDetails]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesItemDetails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_SalesItemDetails]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT   @StartDate AS StartDate,@EndDate AS EndDate, BranchId, EODDate as [Date], InvoiceId as [Bill No], EmployeeName as [Ordered By], CustomerName as Customer, Category,
+Description, Quantity, UsedPrice as Price,  Quantity* UsedPrice as [Gross], ISNULL(Discount, 0) as Discount,
+ (Quantity* UsedPrice)-ISNULL(Discount, 0) as Net from [dbo].[VEW_BOF_SalesItemDetails]
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CatPerMenu]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CatPerMenu]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE Procedure [dbo].[BOF_SEL_CatPerMenu]
+@Branchid int,
+@FromDate datetime,
+@ToDate datetime
+as
+if isnull(@FromDate,'''')=''''		
+	BEGIN
+			select Category,sum(DineIn)DineIn,sum(DriveThru)DriveThru,sum(TakeAway)TakeAway,sum(Withinvicinity)Withinvicinity,sum(Outsidevicinity)Outsidevicinity,
+			sum(Catering)Catering,sum(Discount)Discount, 
+			((sum(DineIn)+sum(DriveThru)+sum(TakeAway)+sum(Withinvicinity)+sum(Outsidevicinity)+sum(Catering))-sum(Discount))TotalSales
+			from
+				(
+					Select Category,
+					(Case when Menu=''Dine In'' then sum(ItemPrice) ELSE 0 END )''DineIn'',
+					(Case when Menu=''Drive Thru'' then sum(ItemPrice) ELSE 0 END)''DriveThru'',
+					(Case when Menu=''Take Away'' then sum(ItemPrice) ELSE 0 END)''TakeAway'',
+					(Case when Menu=''Catering'' then sum(ItemPrice) ELSE 0 END)''Catering'',
+					(Case when Menu=''Delivery'' and  LocationDesc=''Within vicinity'' then sum(ItemPrice) ELSE 0 END)''Withinvicinity'',
+					(Case when Menu=''Delivery'' and  LocationDesc=''Outside vicinity'' then sum(ItemPrice) ELSE 0 END)''Outsidevicinity'',
+					sum(Discount)Discount
+					from
+						(
+							SELECT Category,sum(ItemPrice)ItemPrice,sum(isnull(Discount,0))Discount,Menu,LocationDesc 
+							FROM  dbo.VEW_POS_MainReading_Category ,BOF_M_ItemMenus,CustLocation
+							where ItemPrice <> 0 AND  EODDate IS  NULL and RevMenuID=MenuID and LocID=OrderLocID and BranchID=@Branchid
+							group by Category,Menu,LocationDesc
+						) A
+					GROUP BY Category,Menu,LocationDesc
+				) B
+			Group By Category
+	END
+ELSE
+	BEGIN
+			select Category,sum(DineIn)DineIn,sum(DriveThru)DriveThru,sum(TakeAway)TakeAway,sum(Withinvicinity)Withinvicinity,sum(Outsidevicinity)Outsidevicinity,
+			sum(Catering)Catering,sum(Discount)Discount, 
+			((sum(DineIn)+sum(DriveThru)+sum(TakeAway)+sum(Withinvicinity)+sum(Outsidevicinity)+sum(Catering))-sum(Discount))TotalSales
+			from
+				(
+					Select Category,
+					(Case when Menu=''Dine In'' then sum(ItemPrice) ELSE 0 END )''DineIn'',
+					(Case when Menu=''Drive Thru'' then sum(ItemPrice) ELSE 0 END)''DriveThru'',
+					(Case when Menu=''Take Away'' then sum(ItemPrice) ELSE 0 END)''TakeAway'',
+					(Case when Menu=''Catering'' then sum(ItemPrice) ELSE 0 END)''Catering'',
+					(Case when Menu=''Delivery'' and  LocationDesc=''Within vicinity'' then sum(ItemPrice) ELSE 0 END)''Withinvicinity'',
+					(Case when Menu=''Delivery'' and  LocationDesc=''Outside vicinity'' then sum(ItemPrice) ELSE 0 END)''Outsidevicinity'',
+					sum(Discount)Discount
+					from
+						(
+							SELECT Category,sum(ItemPrice)ItemPrice,sum(isnull(Discount,0))Discount,Menu,LocationDesc 
+							FROM  dbo.VEW_POS_MainReading_Category ,BOF_M_ItemMenus,CustLocation
+							where ItemPrice <> 0 AND  EODDate between @FromDate and @ToDate
+							and RevMenuID=MenuID and LocID=OrderLocID and BranchID=@Branchid
+							group by Category,Menu,LocationDesc
+						) A
+					GROUP BY Category,Menu,LocationDesc
+				) B
+			Group By Category
+	END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReportByTimeCount]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReportByTimeCount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CompleteSalesReportByTimeCount]  
+@BranchID int,  
+@StartDate DateTime,  
+@EndDate DateTime  
+AS  
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''00:00'' THEN Quantity END) , 0) AS Qty0,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''01:00'' THEN Quantity END) , 0) AS Qty1,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''02:00'' THEN Quantity END) , 0) AS Qty2,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''03:00'' THEN Quantity END) , 0) AS Qty3,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''04:00'' THEN Quantity END) , 0) AS Qty4,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''05:00'' THEN Quantity END) , 0) AS Qty5,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''06:00'' THEN Quantity END) , 0) AS Qty6,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''07:00'' THEN Quantity END) , 0) AS Qty7,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''08:00'' THEN Quantity END) , 0) AS Qty8,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''09:00'' THEN Quantity END) , 0) AS Qty9,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''10:00'' THEN Quantity END) , 0) AS Qty10,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''11:00'' THEN Quantity END) , 0) AS Qty11,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''12:00'' THEN Quantity END) , 0) AS Qty12,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''13:00'' THEN Quantity END) , 0) AS Qty13,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''14:00'' THEN Quantity END) , 0) AS Qty14,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''15:00'' THEN Quantity END) , 0) AS Qty15,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''16:00'' THEN Quantity END) , 0) AS Qty16,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''17:00'' THEN Quantity END) , 0) AS Qty17,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''18:00'' THEN Quantity END) , 0) AS Qty18,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''19:00'' THEN Quantity END) , 0) AS Qty19,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''20:00'' THEN Quantity END) , 0) AS Qty20,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''21:00'' THEN Quantity END) , 0) AS Qty21,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''22:00'' THEN Quantity END) , 0) AS Qty22,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''23:00'' THEN Quantity END) , 0) AS Qty23,   
+             ISNULL(count(CASE dbo.CheckTime(OpeningTime) WHEN ''24:00'' THEN Quantity END) , 0) AS Qty24             
+FROM         dbo.VEW_BOF_CompleteReportBase  
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)  
+GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description  
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReportByTime]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReportByTime]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[BOF_SEL_CompleteSalesReportByTime]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description, 
+	         ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''00:00'' THEN Quantity END) , 0) AS Qty0, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''01:00'' THEN Quantity END) , 0) AS Qty1, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''02:00'' THEN Quantity END) , 0) AS Qty2, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''03:00'' THEN Quantity END) , 0) AS Qty3, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''04:00'' THEN Quantity END) , 0) AS Qty4, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''05:00'' THEN Quantity END) , 0) AS Qty5, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''06:00'' THEN Quantity END) , 0) AS Qty6, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''07:00'' THEN Quantity END) , 0) AS Qty7, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''08:00'' THEN Quantity END) , 0) AS Qty8, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''09:00'' THEN Quantity END) , 0) AS Qty9, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''10:00'' THEN Quantity END) , 0) AS Qty10, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''11:00'' THEN Quantity END) , 0) AS Qty11, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''12:00'' THEN Quantity END) , 0) AS Qty12, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''13:00'' THEN Quantity END) , 0) AS Qty13, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''14:00'' THEN Quantity END) , 0) AS Qty14, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''15:00'' THEN Quantity END) , 0) AS Qty15, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''16:00'' THEN Quantity END) , 0) AS Qty16, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''17:00'' THEN Quantity END) , 0) AS Qty17, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''18:00'' THEN Quantity END) , 0) AS Qty18, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''19:00'' THEN Quantity END) , 0) AS Qty19, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''20:00'' THEN Quantity END) , 0) AS Qty20, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''21:00'' THEN Quantity END) , 0) AS Qty21, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''22:00'' THEN Quantity END) , 0) AS Qty22, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''23:00'' THEN Quantity END) , 0) AS Qty23, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''24:00'' THEN Quantity END) , 0) AS Qty24           
+FROM         dbo.VEW_BOF_CompleteReportBase
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReportByMenu]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReportByMenu]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_CompleteSalesReportByMenu]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, 
+        SalesItemID, Description, 
+        ISNULL(SUM(CASE MenuID WHEN 1 THEN Quantity END) , 0) AS QtyMenu1,
+        ISNULL(SUM(CASE MenuID WHEN 1 THEN ItemPrice END) , 0) AS SalesMenu1,  
+        ISNULL(SUM(CASE MenuID WHEN 2 THEN Quantity END) , 0) AS QtyMenu2, 
+        ISNULL(SUM(CASE MenuID WHEN 2 THEN ItemPrice END), 0)  AS SalesMenu2, 
+        ISNULL(SUM(CASE MenuID WHEN 3 THEN Quantity END) , 0) AS QtyMenu3, 
+        ISNULL(SUM(CASE MenuID WHEN 3 THEN ItemPrice END), 0)  AS SalesMenu3, 
+        ISNULL(SUM(CASE MenuID WHEN 4 THEN Quantity END), 0)  AS QtyMenu4, 
+        ISNULL(SUM(CASE MenuID WHEN 4 THEN ItemPrice END), 0)  AS SalesMenu4
+        FROM         dbo.VEW_BOF_CompleteReportBase
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReport_Tax]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReport_Tax]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_CompleteSalesReport_Tax]  
+@BranchID int,  
+@StartDate DateTime,  
+@EndDate DateTime,
+@GroupId int
+
+AS
+if @GroupId='''' 
+			 SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description,   
+					   ISNULL(SUM(CASE PriceModeID WHEN 1 THEN Quantity END) , 0) AS QtyMod1,   
+									ISNULL(SUM(CASE PriceModeID WHEN 1 THEN ItemPrice END) , 0) AS SalesMod1,   ISNULL(SUM(CASE PriceModeID WHEN 2 THEN Quantity END) , 0) AS QtyMod2,   
+									ISNULL(SUM(CASE PriceModeID WHEN 2 THEN ItemPrice END), 0)  AS SalesMod2,   ISNULL(SUM(CASE PriceModeID WHEN 3 THEN Quantity END) , 0) AS QtyMod3,   
+									ISNULL(SUM(CASE PriceModeID WHEN 3 THEN ItemPrice END), 0)  AS SalesMod3,   ISNULL(SUM(CASE PriceModeID WHEN 4 THEN Quantity END), 0)  AS QtyMod4,   
+									ISNULL(SUM(CASE PriceModeID WHEN 4 THEN ItemPrice END), 0)  AS SalesMod4,   IncTaxPerc  
+			FROM         dbo.VEW_BOF_CompleteReportBase_Tax  
+			WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)  
+			GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description ,IncTaxPerc
+else
+		 SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description,   
+				   ISNULL(SUM(CASE PriceModeID WHEN 1 THEN Quantity END) , 0) AS QtyMod1,   
+								ISNULL(SUM(CASE PriceModeID WHEN 1 THEN ItemPrice END) , 0) AS SalesMod1,   ISNULL(SUM(CASE PriceModeID WHEN 2 THEN Quantity END) , 0) AS QtyMod2,   
+								ISNULL(SUM(CASE PriceModeID WHEN 2 THEN ItemPrice END), 0)  AS SalesMod2,   ISNULL(SUM(CASE PriceModeID WHEN 3 THEN Quantity END) , 0) AS QtyMod3,   
+								ISNULL(SUM(CASE PriceModeID WHEN 3 THEN ItemPrice END), 0)  AS SalesMod3,   ISNULL(SUM(CASE PriceModeID WHEN 4 THEN Quantity END), 0)  AS QtyMod4,   
+								ISNULL(SUM(CASE PriceModeID WHEN 4 THEN ItemPrice END), 0)  AS SalesMod4,   IncTaxPerc  
+		FROM         dbo.VEW_BOF_CompleteReportBase_Tax  
+		WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)  
+		and GroupId=@GroupId
+		GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description ,IncTaxPerc
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteSalesReport]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteSalesReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CompleteSalesReport]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description, 
+	          ISNULL(SUM(CASE PriceModeID WHEN 1 THEN Quantity END) , 0) AS QtyMod1, 
+                        ISNULL(SUM(CASE PriceModeID WHEN 1 THEN ItemPrice END) , 0) AS SalesMod1,   ISNULL(SUM(CASE PriceModeID WHEN 2 THEN Quantity END) , 0) AS QtyMod2, 
+                        ISNULL(SUM(CASE PriceModeID WHEN 2 THEN ItemPrice END), 0)  AS SalesMod2,   ISNULL(SUM(CASE PriceModeID WHEN 3 THEN Quantity END) , 0) AS QtyMod3, 
+                        ISNULL(SUM(CASE PriceModeID WHEN 3 THEN ItemPrice END), 0)  AS SalesMod3,   ISNULL(SUM(CASE PriceModeID WHEN 4 THEN Quantity END), 0)  AS QtyMod4, 
+                        ISNULL(SUM(CASE PriceModeID WHEN 4 THEN ItemPrice END), 0)  AS SalesMod4
+FROM         dbo.VEW_BOF_CompleteReportBase
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DailySalesMenu]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DailySalesMenu]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[BOF_SEL_DailySalesMenu]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, EODDate, MenuId, Menu,
+SUM(TotalPaid) AS TotalPaid, COUNT(NumberOfCustomers) AS NumOfTrans 
+FROM         dbo.VEW_BOF_DailySalesMenu
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+GROUP BY BranchID, Branch, EODDate,MenuID, Menu
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_DailySalesDetailed]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_DailySalesDetailed]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_DailySalesDetailed]    
+@BranchID int,    
+@StartDate DateTime,    
+@EndDate DateTime    
+AS    
+  
+BEGIN    
+SET NOCOUNT ON;    
+    
+with DailyCategory as    
+(    
+SELECT CAT.EODDate,SUM(CAT.NonAlcoholicBeverage)NonAlcoholicBeverage,  
+SUM(CAT.Food)Food,SUM(CAT.Tobacco)Tobacco,SUM(CAT.AlcoholicBeverage)AlcoholicBeverage,  
+SUM(CAT.Remarks)Remarks,SUM(CAT.OTHERS)OTHERS,sum(cat.Discount)TotalDiscount,  
+CAT.BranchID, CAT.Branch, CAT.InvoiceId    
+FROM  
+(  
+SELECT EODDate,  
+  ISNULL(SUM(CASE CategoryID WHEN 1 THEN ItemPrice END) , 0) AS NonAlcoholicBeverage,  
+        ISNULL(SUM(CASE CategoryID WHEN 2 THEN ItemPrice END) , 0) AS Food,    
+  ISNULL(SUM(CASE CategoryID WHEN 3 THEN ItemPrice END) , 0) AS Tobacco,      
+  ISNULL(SUM(CASE CategoryID WHEN 4 THEN ItemPrice END) , 0) AS AlcoholicBeverage,    
+  ISNULL(SUM(CASE CategoryID WHEN 5 THEN ItemPrice END) , 0) AS Remarks,    
+        ISNULL(SUM(CASE WHEN  CategoryID>5 THEN ItemPrice END) , 0) AS OTHERS,  
+  BranchID, Branch, InvoiceId,ISNULL(SUM(Discount),0)Discount  
+FROM VEW_BOF_DailySalesCategory  
+WHERE BranchID = @BranchID AND    EODDate BETWEEN @StartDate AND @EndDate    
+GROUP BY EODDate,CategoryID,BranchID, Branch, InvoiceId    
+)  CAT  
+GROUP BY CAT.EODDate,CAT.BranchID, CAT.Branch, CAT.InvoiceId    
+), DailyPayment as    
+(    
+SELECT a.EODDate,Sum(a.Cash)Cash,sum(a.CreditCard)CreditCard,sum(a.CreditLedger)CreditLedger,sum(a.Cheque)Cheque,  
+sum(a.RoomCharge)RoomCharge,  
+sum(a.BeamWallet)BeamWallet,a.BranchID,a.Invoice,sum(a.TotalTax)TotalTax, sum(a.TotalService)TotalService,sum(a.TotalDiscount)TotalDiscount from  
+(  
+SELECT EODDate,  
+  ISNULL(SUM(CASE PayTypeID WHEN 1 THEN Amount*DollarRate END) , 0) AS Cash,  
+        ISNULL(SUM(CASE PayTypeID WHEN 3 THEN Amount*DollarRate END) , 0) AS CreditCard,  
+        ISNULL(SUM(CASE PayTypeID WHEN 2 THEN Amount*DollarRate END) , 0) AS CreditLedger,  
+        ISNULL(SUM(CASE PayTypeID WHEN 4 THEN Amount*DollarRate END) , 0) AS Cheque,  
+  ISNULL(SUM(CASE PayTypeID WHEN 5 THEN Amount*DollarRate END) , 0) AS RoomCharge,  
+  ISNULL(SUM(CASE PayTypeID WHEN 6 THEN Amount*DollarRate END) , 0) AS BeamWallet,  
+  BranchID,Invoice,TotalTax, TotalService,TotalDiscount   
+FROM VEW_BOF_DailySalesPayment    
+WHERE EODDate BETWEEN @StartDate AND @EndDate    
+GROUP BY  EODDate,PayTypeID,BranchID,Invoice,TotalTax, TotalService,TotalDiscount   
+) a  
+group by a.EODDate,a.BranchID,a.Invoice  
+)    
+  
+Select distinct DailyCategory.InvoiceId,  DailyCategory.BranchID,DailyCategory.Branch,DailyCategory.EODDate,  
+       DailyCategory.NonAlcoholicBeverage, DailyCategory.Food, DailyCategory.Tobacco,    
+ DailyCategory.AlcoholicBeverage,DailyCategory.Remarks,DailyCategory.OTHERS,  
+       DailyPayment.TotalTax, DailyPayment.TotalService,DailyCategory.TotalDiscount,    
+      (case when DailyPayment.Cash>=0 THEN DailyPayment.Cash  ELSE 0 END) Cash,     
+ DailyPayment.CreditCard, DailyPayment.CreditLedger, DailyPayment.Cheque    
+FROM DailyPayment , DailyCategory where DailyPayment.BranchID = DailyCategory.BranchID     
+       AND DailyPayment.EODDate = DailyCategory.EODDate AND DailyPayment.Invoice = DailyCategory.invoiceid     
+END 
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteReport]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CompleteReport]  
+@StartDate DateTime,  
+@EndDate DateTime  
+AS  
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description,   
+           ISNULL(SUM(CASE PriceModeID WHEN 1 THEN Quantity END) , 0) AS QtyMod1,   
+                        ISNULL(SUM(CASE PriceModeID WHEN 1 THEN ItemPrice END) , 0) AS SalesMod1,   ISNULL(SUM(CASE PriceModeID WHEN 2 THEN Quantity END) , 0) AS QtyMod2,   
+                        ISNULL(SUM(CASE PriceModeID WHEN 2 THEN ItemPrice END), 0)  AS SalesMod2,   ISNULL(SUM(CASE PriceModeID WHEN 3 THEN Quantity END) , 0) AS QtyMod3,   
+                        ISNULL(SUM(CASE PriceModeID WHEN 3 THEN ItemPrice END), 0)  AS SalesMod3,   ISNULL(SUM(CASE PriceModeID WHEN 4 THEN Quantity END), 0)  AS QtyMod4,   
+                        ISNULL(SUM(CASE PriceModeID WHEN 4 THEN ItemPrice END), 0)  AS SalesMod4  
+FROM         dbo.VEW_BOF_CompleteReportBase  
+WHERE EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)  
+GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description ' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteItemVoidsReport]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteItemVoidsReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CompleteItemVoidsReport] 
+@BranchID  INT, 
+@StartDate DATETIME, 
+@EndDate   DATETIME 
+AS 
+    SELECT @StartDate AS StartDate, 
+           @EndDate AS EndDate, 
+           branchid, 
+           branch, 
+           openingtime, 
+           employeename, 
+           ClosedBy,
+           ordernumber, 
+           invoiceid, 
+           description, 
+           -quantity AS Quantity, 
+           usedprice, 
+           voidreason, 
+           -( quantity * usedprice ) AS Value, 
+           voiddate 
+    FROM   dbo.vew_bof_completereportbase_voidsummary 
+    WHERE  branchid = @BranchID 
+           AND eoddate BETWEEN CONVERT(VARCHAR(20), @StartDate, 101) AND 
+                                   CONVERT(VARCHAR(20), @EndDate + 1, 101) 
+           AND ( dbo.vew_bof_completereportbase_voidsummary.itemvoided > 0 ) 
+           AND dbo.vew_bof_completereportbase_voidsummary.invoicevalue >= 0 
+           
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesReportByMenuTime_NoOrders]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesReportByMenuTime_NoOrders]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_SalesReportByMenuTime_NoOrders]  
+@BranchID int,  
+@StartDate DateTime,  
+@EndDate DateTime  
+AS  
+	Begin
+				Select    TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate, BranchID, Branch, MenuID, Menu, SalesItemID, Description, SUM(Count0)Count0,SUM(Count1)Count1,SUM(Count2)Count2,SUM(Count3)Count3,
+				SUM(Count4)Count4,SUM(Count5)Count5,SUM(Count6)Count6,SUM(Count7)Count7,SUM(Count8)Count8,SUM(Count9)Count9,
+				SUM(Count10)Count10,SUM(Count11)Count11,sum(Count12)Count12,sum(Count13)Count13,sum(Count14)Count14,
+				sum(Count15)Count15,sum(Count16)Count16,sum(Count17)Count17,sum(Count18)Count18,sum(Count19)Count19,sum(Count20)Count20,sum(Count21)Count21,
+				sum(Count22)Count22,sum(Count23)Count23,sum(Count24)Count24  
+				FROM
+				(
+							SELECT    BranchID, Branch, MenuID, Menu, SalesItemID, Description,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''00:00'' THEN count(OrderID) END) , 0) AS Count0,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''01:00'' THEN count(OrderID) END) , 0) AS Count1,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''02:00'' THEN count(OrderID) END) , 0) AS Count2,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''03:00'' THEN count(OrderID) END) , 0) AS Count3,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''04:00'' THEN count(OrderID) END) , 0) AS Count4,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''05:00'' THEN count(OrderID) END) , 0) AS Count5,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''06:00'' THEN count(OrderID) END) , 0) AS Count6,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''07:00'' THEN count(OrderID) END) , 0) AS Count7,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''08:00'' THEN count(OrderID) END) , 0) AS Count8,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''09:00'' THEN count(OrderID) END) , 0) AS Count9,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''10:00'' THEN count(OrderID) END) , 0) AS Count10,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''11:00'' THEN count(OrderID) END) , 0) AS Count11,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''12:00'' THEN count(OrderID) END) , 0) AS Count12,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''13:00'' THEN count(OrderID) END) , 0) AS Count13,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''14:00'' THEN count(OrderID) END) , 0) AS Count14,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''15:00'' THEN count(OrderID) END) , 0) AS Count15,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''16:00'' THEN count(OrderID) END) , 0) AS Count16,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''17:00'' THEN count(OrderID) END) , 0) AS Count17,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''18:00'' THEN count(OrderID) END) , 0) AS Count18,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''19:00'' THEN count(OrderID) END) , 0) AS Count19,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''20:00'' THEN count(OrderID) END) , 0) AS Count20,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''21:00'' THEN count(OrderID) END) , 0) AS Count21,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''22:00'' THEN count(OrderID) END) , 0) AS Count22,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''23:00'' THEN count(OrderID) END) , 0) AS Count23,   
+										 ISNULL((CASE dbo.CheckTime(OpeningTime) WHEN ''24:00'' THEN count(OrderID) END) , 0) AS Count24             
+							FROM     dbo.VEW_BOF_CompleteReportBase  
+				WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)  
+							GROUP BY BranchID, Branch, MenuID, Menu, SalesItemID, Description,OpeningTime   
+				) A
+				Group by BranchID, Branch, MenuID, Menu, SalesItemID, Description 
+	end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesReportByMenuTime]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesReportByMenuTime]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE [dbo].[BOF_SEL_SalesReportByMenuTime]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, MenuID, Menu, SalesItemID, Description, 
+	         ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''00:00'' THEN ItemPrice END) , 0) AS Price0, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''01:00'' THEN ItemPrice END) , 0) AS Price1, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''02:00'' THEN ItemPrice END) , 0) AS Price2, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''03:00'' THEN ItemPrice END) , 0) AS Price3, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''04:00'' THEN ItemPrice END) , 0) AS Price4, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''05:00'' THEN ItemPrice END) , 0) AS Price5, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''06:00'' THEN ItemPrice END) , 0) AS Price6, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''07:00'' THEN ItemPrice END) , 0) AS Price7, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''08:00'' THEN ItemPrice END) , 0) AS Price8, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''09:00'' THEN ItemPrice END) , 0) AS Price9, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''10:00'' THEN ItemPrice END) , 0) AS Price10, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''11:00'' THEN ItemPrice END) , 0) AS Price11, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''12:00'' THEN ItemPrice END) , 0) AS Price12, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''13:00'' THEN ItemPrice END) , 0) AS Price13, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''14:00'' THEN ItemPrice END) , 0) AS Price14, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''15:00'' THEN ItemPrice END) , 0) AS Price15, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''16:00'' THEN ItemPrice END) , 0) AS Price16, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''17:00'' THEN ItemPrice END) , 0) AS Price17, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''18:00'' THEN ItemPrice END) , 0) AS Price18, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''19:00'' THEN ItemPrice END) , 0) AS Price19, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''20:00'' THEN ItemPrice END) , 0) AS Price20, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''21:00'' THEN ItemPrice END) , 0) AS Price21, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''22:00'' THEN ItemPrice END) , 0) AS Price22, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''23:00'' THEN ItemPrice END) , 0) AS Price23, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''24:00'' THEN ItemPrice END) , 0) AS Price24           
+FROM         dbo.VEW_BOF_CompleteReportBase
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+GROUP BY BranchID, Branch, MenuID, Menu, SalesItemID, Description
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_SalesReportByItemPriceTime]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_SalesReportByItemPriceTime]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_SalesReportByItemPriceTime]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description, 
+	         ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''00:00'' THEN ItemPrice END) , 0) AS Price0, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''01:00'' THEN ItemPrice END) , 0) AS Price1, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''02:00'' THEN ItemPrice END) , 0) AS Price2, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''03:00'' THEN ItemPrice END) , 0) AS Price3, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''04:00'' THEN ItemPrice END) , 0) AS Price4, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''05:00'' THEN ItemPrice END) , 0) AS Price5, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''06:00'' THEN ItemPrice END) , 0) AS Price6, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''07:00'' THEN ItemPrice END) , 0) AS Price7, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''08:00'' THEN ItemPrice END) , 0) AS Price8, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''09:00'' THEN ItemPrice END) , 0) AS Price9, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''10:00'' THEN ItemPrice END) , 0) AS Price10, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''11:00'' THEN ItemPrice END) , 0) AS Price11, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''12:00'' THEN ItemPrice END) , 0) AS Price12, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''13:00'' THEN ItemPrice END) , 0) AS Price13, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''14:00'' THEN ItemPrice END) , 0) AS Price14, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''15:00'' THEN ItemPrice END) , 0) AS Price15, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''16:00'' THEN ItemPrice END) , 0) AS Price16, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''17:00'' THEN ItemPrice END) , 0) AS Price17, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''18:00'' THEN ItemPrice END) , 0) AS Price18, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''19:00'' THEN ItemPrice END) , 0) AS Price19, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''20:00'' THEN ItemPrice END) , 0) AS Price20, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''21:00'' THEN ItemPrice END) , 0) AS Price21, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''22:00'' THEN ItemPrice END) , 0) AS Price22, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''23:00'' THEN ItemPrice END) , 0) AS Price23, 
+             ISNULL(SUM(CASE dbo.CheckTime(OpeningTime) WHEN ''24:00'' THEN ItemPrice END) , 0) AS Price24           
+FROM         dbo.VEW_BOF_CompleteReportBase
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+GROUP BY BranchID, Branch, GroupID, GroupName, SalesItemID, Description
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[J_Xls_Export]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_Xls_Export]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[J_Xls_Export]
+AS
+	SELECT * from vw_xls
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[J_ExportERP]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[J_ExportERP]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[J_ExportERP]  
+ AS  
+BEGIN  
+  
+exec j_payments  
+  
+SELECT     dbo.vw_xls.Rcpt#, dbo.vw_xls.[Rcpt Date], dbo.vw_xls.[Rcpt Time], dbo.vw_xls.CustomerID, dbo.vw_xls.Voided, dbo.vw_xls.CustomerName,   
+                      dbo.vw_xls.[Ext D$], dbo.vw_xls.[Ext P$], dbo._TempPayments.[Cash DHS] AS [Cash $],    
+                      dbo._TempPayments.CREDIT, dbo._TempPayments.CreditSum AS CrCrd$, dbo._TempPayments.AMEX, dbo._TempPayments.MASTER,   
+                      dbo._TempPayments.VISA, dbo._TempPayments.DINERS, dbo._TempPayments.[Cash USD] AS USD,   
+                      dbo.vw_xls.[Ext P$] AS [Rcpt Total], dbo.vw_xls.CurrencyID, dbo.vw_xls.Cashier, dbo.vw_xls.[Sold #],  
+  
+                          (SELECT     TOP (1) TipAmount  
+                            FROM          dbo.POS_Tips  
+                            WHERE      (InvoiceNumber = dbo._TempPayments.InvoiceNumber)) AS TipAmount, dbo.GetConvertedRate(7, dbo._TempPayments.[Cash USD])   
+                      AS ''USD Amount'',   (SELECT     ABS(Amount) AS Expr1  
+                            FROM          dbo.POS_M_Payments  
+                            WHERE      (InvoiceNumber = dbo._TempPayments.InvoiceNumber) AND (Amount < 0)) AS Change  
+FROM         dbo._TempPayments INNER JOIN  
+                      dbo.vw_xls ON dbo._TempPayments.InvoiceNumber = dbo.vw_xls.Rcpt#  
+  
+  
+END  
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_MealsRevenue]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_MealsRevenue]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE Procedure [dbo].[BOF_SEL_MealsRevenue]  
+@Branchid int,  
+@FromDate datetime,  
+@ToDate datetime  
+as  
+if isnull(@FromDate,'''')=''''  
+ Begin  
+  select Category,sum(BPrice)BPrice,sum(BDiscount)BDiscount,sum(LPrice)LPrice,sum(LDiscount)LDiscount,sum(DPrice)DPrice,sum(DDiscount)DDiscount,sum(LDPrice)LDPrice,sum(LDDiscount)LDDiscount,  
+  (sum(BPrice)+sum(LPrice)+sum(DPrice)+sum(LDPrice)) TotalPrice,(sum(BDiscount)+sum(LDiscount)+sum(DDiscount)+sum(LDDiscount))TotalDiscount,  
+  ((sum(BPrice)+sum(LPrice)+sum(DPrice)+sum(LDPrice))-(sum(BDiscount)+sum(LDiscount)+sum(DDiscount)+sum(LDDiscount)))GrandTotal  
+  from(  
+    select T.Category,  
+    (case when T.Meal=''Breakfast'' then T.ItemPrice else 0 end) BPrice,  
+    (case when T.Meal=''Breakfast'' then T.Discount else 0 end) BDiscount,  
+    (case when T.Meal=''Lunch'' then T.ItemPrice else 0 end) LPrice,  
+    (case when T.Meal=''Lunch'' then T.Discount else 0 end) LDiscount,  
+    (case when T.Meal=''Dinner'' then T.ItemPrice else 0 end) DPrice,  
+    (case when T.Meal=''Dinner'' then T.Discount else 0 end) DDiscount,  
+    (case when T.Meal=''LateDinner'' then T.ItemPrice else 0 end) LDPrice,  
+    (case when T.Meal=''LateDinner'' then T.Discount else 0 end) LDDiscount  
+    from  
+     (  
+      SELECT M.Meal,M.Category,sum(M.ItemPrice)ItemPrice,sum(M.Discount)Discount  
+      FROM(  
+         SELECT   
+         (  
+          CASE WHEN cast(A.OrderingTime as datetime) BETWEEN cast(BreakfastFrom as datetime) and cast(BreakfastTo as datetime) then ''BreakFast''   
+           WHEN cast(A.OrderingTime as datetime) BETWEEN cast(LunchFrom as datetime) AND cast(LunchTo as datetime) then ''Lunch''   
+           WHEN cast(A.OrderingTime as datetime) BETWEEN cast(DinnerFrom as datetime) AND cast(DinnerTo as datetime) then ''Dinner''   
+           WHEN cast(A.OrderingTime as datetime) BETWEEN cast(LateDinnerFrom as datetime) AND cast(LateDinnerTo as datetime) then ''LateDinner'' end  
+         )Meal,  
+         A.Category,A.ItemPrice,A.Discount  
+         FROM  
+          (  
+           SELECT  CONVERT(CHAR(5),DATEADD(SECOND,FLOOR(DATEDIFF(SECOND,''20000101'',OpeningTime)/60.0)*60,''20000101''),108) OrderingTime,  
+           Category,sum(ItemPrice)ItemPrice,sum(isnull(Discount,0))Discount,BranchID  
+           FROM  dbo.VEW_POS_MainReading_Category   
+           where ItemPrice <> 0 AND  EODDate IS  NULL AND BRANCHID=@Branchid  
+           group by CONVERT(CHAR(5),DATEADD(SECOND,FLOOR(DATEDIFF(SECOND,''20000101'',OpeningTime)/60.0)*60,''20000101''),108),Category,BranchID  
+          ) A,BOF_M_BRANCHES B WHERE A.BranchID=B.BranchID     
+        ) M  
+      group by M.Meal,M.Category  
+     ) T  
+   ) Main  
+  Group by Category  
+ End  
+else  
+ Begin  
+  select Category,sum(BPrice)BPrice,sum(BDiscount)BDiscount,sum(LPrice)LPrice,sum(LDiscount)LDiscount,sum(DPrice)DPrice,sum(DDiscount)DDiscount,sum(LDPrice)LDPrice,sum(LDDiscount)LDDiscount,  
+  (sum(BPrice)+sum(LPrice)+sum(DPrice)+sum(LDPrice)) TotalPrice,(sum(BDiscount)+sum(LDiscount)+sum(DDiscount)+sum(LDDiscount))TotalDiscount,  
+  ((sum(BPrice)+sum(LPrice)+sum(DPrice)+sum(LDPrice))-(sum(BDiscount)+sum(LDiscount)+sum(DDiscount)+sum(LDDiscount)))GrandTotal  
+  from(  
+    select T.Category,  
+    (case when T.Meal=''Breakfast'' then T.ItemPrice else 0 end) BPrice,  
+    (case when T.Meal=''Breakfast'' then T.Discount else 0 end) BDiscount,  
+    (case when T.Meal=''Lunch'' then T.ItemPrice else 0 end) LPrice,  
+    (case when T.Meal=''Lunch'' then T.Discount else 0 end) LDiscount,  
+    (case when T.Meal=''Dinner'' then T.ItemPrice else 0 end) DPrice,  
+    (case when T.Meal=''Dinner'' then T.Discount else 0 end) DDiscount,  
+    (case when T.Meal=''LateDinner'' then T.ItemPrice else 0 end) LDPrice,  
+    (case when T.Meal=''LateDinner'' then T.Discount else 0 end) LDDiscount  
+    from  
+     (  
+      SELECT M.Meal,M.Category,sum(M.ItemPrice)ItemPrice,sum(M.Discount)Discount  
+      FROM(  
+         SELECT   
+         (  
+          CASE WHEN cast(A.OrderingTime as datetime) BETWEEN cast(BreakfastFrom as datetime) and cast(BreakfastTo as datetime) then ''BreakFast''   
+           WHEN cast(A.OrderingTime as datetime) BETWEEN cast(LunchFrom as datetime) AND cast(LunchTo as datetime) then ''Lunch''   
+           WHEN cast(A.OrderingTime as datetime) BETWEEN cast(DinnerFrom as datetime) AND cast(DinnerTo as datetime) then ''Dinner''   
+           WHEN cast(A.OrderingTime as datetime) BETWEEN cast(LateDinnerFrom as datetime) AND cast(LateDinnerTo as datetime) then ''LateDinner'' end 
+         )Meal,  
+         A.Category,A.ItemPrice,A.Discount  
+         FROM  
+          (  
+           SELECT  CONVERT(CHAR(5),DATEADD(SECOND,FLOOR(DATEDIFF(SECOND,''20000101'',OpeningTime)/60.0)*60,''20000101''),108) OrderingTime,  
+           Category,sum(ItemPrice)ItemPrice,sum(isnull(Discount,0))Discount,BranchID  
+           FROM  dbo.VEW_POS_MainReading_Category   
+           where ItemPrice <> 0 AND  EODDate between @FromDate and @ToDate   
+           AND BRANCHID=@Branchid  
+           group by CONVERT(CHAR(5),DATEADD(SECOND,FLOOR(DATEDIFF(SECOND,''20000101'',OpeningTime)/60.0)*60,''20000101''),108),Category,BranchID  
+          ) A,BOF_M_BRANCHES B WHERE A.BranchID=B.BranchID     
+        ) M  
+      group by M.Meal,M.Category  
+     ) T  
+    ) Main  
+   Group by Category   
+ End 
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[PDA_UPD_ScreenRemarks]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[PDA_UPD_ScreenRemarks]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[PDA_UPD_ScreenRemarks]
+ AS
+BEGIN
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N''[dbo].[Temp]'') AND type in (N''U''))
+DROP TABLE [dbo].[Temp]
+select * into Temp from VEW_BOF_PDAItemGroupLoc
+insert into Temp select * from VEW_BOF_PDAItemGroupLoc2
+Declare @PDAGroupLoc int
+Declare @GroupId int
+Declare @SalesItemID int
+Declare @Count int
+Declare @Description nvarchar(50)
+Declare @MenuDescription nvarchar(50)
+Declare @KitcheDescription nvarchar(50)
+Declare @PriceMode1 real
+Declare @PriceMode2 real
+Declare @PriceMode3 real
+Declare @PriceMode4 real
+Declare @FunctionID int
+Declare @PrintOut1 int
+Declare @PrintOut2 int
+Declare @Available bit
+Declare @OpenExtras bit
+
+DECLARE curs CURSOR FOR
+Select PDAGroupLoc,GroupID,SalesItemID from BOF_PDAItemGroupLoc
+OPEN curs
+FETCH NEXT FROM curs INTO @PDAGroupLoc,@GroupId,@SalesItemID
+WHILE @@FETCH_STATUS = 0
+  BEGIN
+    Select @Count = count(Pdagrouploc) from Temp where Temp.PDAGroupLoc = @PDAGroupLoc
+    and Temp.GroupID = @GroupId and Temp.SalesItemID = @SalesItemID
+    if @Count = 0 
+       BEGIN           
+            Delete from BOF_PDAItemGroupLoc where 
+            PDAGroupLoc = @PDAGroupLoc and GroupID = @GroupId
+            and SalesItemID = @SalesItemID
+       END 
+    FETCH NEXT FROM curs INTO @PDAGroupLoc,@GroupId,@SalesItemID
+  END
+CLOSE curs
+DEALLOCATE curs
+
+DECLARE cursTemp CURSOR FOR
+Select PDAGroupLoc,GroupID,SalesItemID,Description,MenuDescription,KitcheDescription,
+ PriceMode1,PriceMode2,PriceMode3,PriceMode4,FunctionID,PrintOut1,PrintOut2,Available,
+ OpenExtras from Temp
+OPEN cursTemp
+FETCH NEXT FROM cursTemp INTO @PDAGroupLoc,@GroupID,@SalesItemID,@Description,@MenuDescription,@KitcheDescription,
+ @PriceMode1,@PriceMode2,@PriceMode3,@PriceMode4,@FunctionID,@PrintOut1,@PrintOut2,@Available, @OpenExtras
+WHILE @@FETCH_STATUS = 0
+  BEGIN
+    Select @Count = count(Pdagrouploc) from BOF_PDAItemGroupLoc where 
+    BOF_PDAItemGroupLoc.PDAGroupLoc = @PDAGroupLoc
+    and BOF_PDAItemGroupLoc.GroupID = @GroupId and 
+    BOF_PDAItemGroupLoc.SalesItemID = @SalesItemID
+    if @Count = 0 
+       BEGIN  
+          insert into BOF_PDAItemGroupLoc select * from temp where
+          Temp.PDAGroupLoc = @PDAGroupLoc
+          and Temp.GroupID = @GroupId and Temp.SalesItemID = @SalesItemID          
+    END 
+    if @Count>0
+       Begin
+       update BOF_PDAItemGroupLoc 
+       set Description = @Description,MenuDescription = @MenuDescription,
+       KitcheDescription = @KitcheDescription,PriceMode1=@PriceMode1,
+       PriceMode2 = @PriceMode2,PriceMode3=@PriceMode3,PriceMode4=@PriceMode4,
+       FunctionID = @FunctionID,PrintOut1=@PrintOut1,PrintOut2=@PrintOut2,
+       Available = @Available,OpenExtras=@OpenExtras 
+       where PDAGroupLoc = @PDAGroupLoc and GroupID = @GroupId 
+       and SalesItemID = @SalesItemID
+       End 
+   FETCH NEXT FROM cursTemp INTO @PDAGroupLoc,@GroupId,@SalesItemID,@Description,
+   @MenuDescription,@KitcheDescription,@PriceMode1,@PriceMode2,@PriceMode3,@PriceMode4,
+   @FunctionID,@PrintOut1,@PrintOut2,@Available,@OpenExtras
+
+  END
+CLOSE cursTemp
+DEALLOCATE cursTemp
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[pims_sel_categorysales]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pims_sel_categorysales]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[pims_sel_categorysales]	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select categorycode, category+''Sales''as CategorySales,sum(itemprice)as CategoryTotal from dbo.vew_pos_mainreading_category
+group by branchid,eoddate,category,categorycode
+having eoddate is null
+
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[usp_dashboard_totalpayment]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[usp_dashboard_totalpayment]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE procedure [dbo].[usp_dashboard_totalpayment]  
+as  
+BEGIN  
+
+SELECT 
+	isnull(Paymenttype,'''')  AS ''Paymenttype'', 
+	isnull(CAST(SUM(amount) AS DECIMAL(18,2)),0) AS ''TotalPayments'', 
+	isnull(CAST(SUM(totaldiscount) AS DECIMAL(18,2)),0) AS ''DiscontAmount'' 
+FROM 
+
+(SELECT DISTINCT totaldiscount,amount,Paymenttype,paymentcode,openingtime FROM VEW_POS_MainReading_PaymentType ) 
+VEW_POS_MainReading_PaymentType 
+
+WHERE [paymentcode] in (select paymentcode from BOF_L_PaymentTypes) and cast(CONVERT(varchar(8), openingtime, 112) AS datetime)>= CONVERT(VARCHAR(8),GETDATE(),112) group by Paymenttype  ;
+
+END  
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[pims_sel_paymentSales]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pims_sel_paymentSales]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[pims_sel_paymentSales]
+	-- Add the parameters for the stored procedure here
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select paymenttype,paymentcode,sum(amount) as PaymentTotal
+from dbo.vew_pos_mainreading_paymenttype
+group by branchid,eoddate,paymentcode,paytypeid,paymenttype
+having (eoddate is null) and (paytypeid <>2)
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Division]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Division]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Division]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division
+				FROM         dbo.VEW_POS_MAinReading_Division where ItemPrice <> 0
+				GROUP BY BranchID, Division, EODDate
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division
+						FROM         dbo.VEW_POS_MAinReading_Division where ItemPrice <> 0
+						GROUP BY BranchID, Division, EODDate
+						HAVING      (BranchID = @BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 		
+					END
+end
+				ELSE
+					BEGIN
+						SELECT     BranchID, SUM(totalPrice) AS TotalPrice, Division from
+						(SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division
+						FROM         dbo.VEW_POS_MAinReading_Division where ItemPrice <> 0
+						GROUP BY BranchID, Division, EODDate
+						HAVING      (BranchID = @BranchID) 
+						AND  EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a		
+						GROUP BY BranchID, Division
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division, closedby as employeeid
+				FROM         dbo.VEW_POS_MAinReading_Division where ItemPrice <> 0
+				GROUP BY BranchID, Division, EODDate, closedby
+				HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division
+				FROM         dbo.VEW_POS_MAinReading_Division
+				where closedby= @EmployeeID or openedby= @EmployeeID and ItemPrice <> 0
+				GROUP BY BranchID, Division, EODDate
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+				end
+
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division, closedby as EmployeeID
+						FROM         dbo.VEW_POS_MAinReading_Division where ItemPrice <> 0
+						GROUP BY BranchID, Division, EODDate, closedby
+						HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						end
+						else 
+						begin
+						SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division
+						FROM         dbo.VEW_POS_MAinReading_Division
+						where closedby=@EmployeeID or openedby=@EmployeeID and ItemPrice <> 0
+						GROUP BY BranchID, Division, EODDate
+						HAVING      (BranchID = @BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						end		
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, SUM(totalPrice) AS TotalPrice, Division from
+						(SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division
+						FROM         dbo.VEW_POS_MAinReading_Division where ItemPrice <> 0
+						GROUP BY BranchID, Division, EODDate,closedby
+						HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+						AND EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a		
+						GROUP BY BranchID, Division
+						end
+						else
+						begin
+						SELECT     BranchID, SUM(totalPrice) AS TotalPrice, Division from
+						(SELECT     BranchID, SUM(ItemPrice) AS TotalPrice, Division
+						FROM         dbo.VEW_POS_MAinReading_Division
+						where closedby=@EmployeeID or openedby=@EmployeeID and ItemPrice <> 0
+						GROUP BY BranchID, Division, EODDate
+						HAVING      (BranchID = @BranchID) 
+						AND EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate <= CONVERT(varchar(12), @ToDate, 101) ) as a		
+						GROUP BY BranchID, Division
+						end
+
+					END
+			
+	END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_DiscountSummary]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_DiscountSummary]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_DiscountSummary]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,description
+				FROM         dbo.VEW_POS_MainReading_DiscountSummary
+				GROUP BY BranchID, EODDate, DiscountType,description
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,description
+						FROM         dbo.VEW_POS_MainReading_DiscountSummary
+						GROUP BY BranchID, EODDate, DiscountType,description
+						HAVING      (BranchID = @BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 		
+					END
+end
+				ELSE
+					BEGIN
+SELECT     BranchID, DiscountType, SUM(totalAmount) AS TotalAmount,description from
+						(SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,description
+						FROM         dbo.VEW_POS_MainReading_DiscountSummary
+						GROUP BY BranchID, EODDate, DiscountType,description
+						HAVING      (BranchID = @BranchID) 
+						AND  EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate < = CONVERT(varchar(12), @ToDate, 101))as a 		
+					GROUP BY BranchID,DiscountType,description
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount, closedby as employeeid,description
+				FROM         dbo.VEW_POS_MainReading_DiscountSummary
+				GROUP BY BranchID, EODDate, DiscountType, closedby,description
+				HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,description
+				FROM         dbo.VEW_POS_MainReading_DiscountSummary
+				where closedby=@EmployeeID or openedby=@EmployeeID
+				GROUP BY BranchID, EODDate, DiscountType,description
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+				end
+				
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,closedby as  EmployeeID,description
+						FROM         dbo.VEW_POS_MainReading_DiscountSummary
+						GROUP BY BranchID, EODDate, DiscountType, closedby,description
+						HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						end
+						else
+						begin
+						SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,description
+						FROM         dbo.VEW_POS_MainReading_DiscountSummary
+						where closedby=@EmployeeID or openedby=@EmployeeID
+						GROUP BY BranchID, EODDate, DiscountType,description
+						HAVING      (BranchID = @BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						end
+ 		
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, DiscountType, SUM(totalAmount) AS TotalAmount,description from
+						(SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,description
+						FROM         dbo.VEW_POS_MainReading_DiscountSummary
+						GROUP BY BranchID, EODDate, DiscountType,closedby,description
+						HAVING      (BranchID = @BranchID) AND (closedby= @EmployeeID) 
+						AND EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate < = CONVERT(varchar(12), @ToDate, 101))as a 		
+					GROUP BY BranchID,DiscountType,description
+						end
+						else
+						begin
+						SELECT     BranchID, DiscountType, SUM(totalAmount) AS TotalAmount,description from
+						(SELECT     BranchID, DiscountType, SUM(DiscountAmount) AS TotalAmount,description
+						FROM         dbo.VEW_POS_MainReading_DiscountSummary
+						where closedby=@EmployeeID or openedby=@EmployeeID
+						GROUP BY BranchID, EODDate, DiscountType,employeeid,description
+						HAVING      (BranchID = @BranchID)  
+						AND EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate < = CONVERT(varchar(12), @ToDate, 101))as a 		
+					GROUP BY BranchID,DiscountType,description
+						end
+
+					END
+			
+	END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_CreditList]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_CreditList]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_CreditList]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+	BEGIN	
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+				FROM         dbo.VEW_POS_MainReading_CreditList
+				GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_CreditList
+						GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber
+						HAVING      (BranchID = @BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+				ELSE
+					BEGIN
+						 SELECT     BranchID,min( EODDate) as eoddate, CustomerName, InvoiceNumber, SUM(totalAmount) AS TotalAmount from
+						(SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_CreditList
+						GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber
+						HAVING      (BranchID = @BranchID) 
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)) as a 
+							GROUP BY BranchID, CustomerName, InvoiceNumber				
+END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+				FROM         dbo.VEW_POS_MainReading_CreditList
+				GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber, closedby
+				HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+				FROM         dbo.VEW_POS_MainReading_CreditList
+				where closedby= @EmployeeID or openedby= @EmployeeID
+				GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_CreditList
+						GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber, closedby
+						HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+						else
+						begin
+						SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_CreditList
+						where closedby= @EmployeeID or openedby= @EmployeeID
+						GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber
+						HAVING      (BranchID = @BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						 SELECT     BranchID,min( EODDate) as eoddate, CustomerName, InvoiceNumber, SUM(TotalAmount) AS TotalAmount from
+						(SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_CreditList
+						GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber,closedby
+						HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID) 
+						 AND EODDate >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)) as a 
+						GROUP BY BranchID, CustomerName, InvoiceNumber	
+						end
+						else
+						begin
+						 SELECT     BranchID,min( EODDate) as eoddate, CustomerName, InvoiceNumber, SUM(TotalAmount) AS TotalAmount from
+						(SELECT     BranchID, EODDate, CustomerName, InvoiceNumber, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_CreditList
+						where closedby= @EmployeeID or openedby= @EmployeeID
+						GROUP BY BranchID, EODDate, CustomerName, InvoiceNumber
+						HAVING      (BranchID = @BranchID)  
+						 AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND  EODDate  <= CONVERT(varchar(12), @ToDate, 101)) as a 
+						GROUP BY BranchID, CustomerName, InvoiceNumber	
+						end
+						
+										
+END
+		
+	END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Checklist]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Checklist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Checklist]
+@BranchID int,
+
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, InvoiceID, InvoiceValue, OrderNumber
+				FROM         dbo.VEW_POS_MainReading_CheckList
+				WHERE     (BranchID = 1)  
+				AND EODDate IS NULL order by invoiceID
+			END
+
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, InvoiceID, InvoiceValue, OrderNumber
+						FROM         dbo.VEW_POS_MainReading_CheckList
+						WHERE     (BranchID = @BranchID)  
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 	order by invoiceID	
+					END
+end
+ELSE
+					BEGIN
+						SELECT     BranchID, InvoiceID, InvoiceValue, OrderNumber
+						FROM         dbo.VEW_POS_MainReading_CheckList
+						WHERE     (BranchID = @BranchID)  
+						AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND  EODDate  <= CONVERT(varchar(12), @ToDate, 101) 		
+						order by invoiceID	
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, InvoiceID, InvoiceValue, EmployeeID, OrderNumber
+				FROM         dbo.VEW_POS_MainReading_CheckList
+				WHERE     (BranchID = @BranchID) AND (closedby = @EmployeeID)
+				AND EODDate IS NULL order by invoiceID
+				end
+				else
+				begin
+				
+				
+				SELECT     BranchID, InvoiceID, InvoiceValue, EmployeeID, OrderNumber
+				FROM         dbo.VEW_POS_MainReading_CheckList
+				WHERE     (BranchID = @BranchID) AND ((closedby = @EmployeeID)or(openedby=@EmployeeID))
+				AND EODDate IS NULL order by invoiceID
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+							SELECT     BranchID, InvoiceID, InvoiceValue, EmployeeID, OrderNumber
+							FROM         dbo.VEW_POS_MainReading_CheckList
+							WHERE     (BranchID = @BranchID) AND (closedby = @EmployeeID)
+							AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) order by invoiceID
+						end
+						else
+						begin
+							SELECT     BranchID, InvoiceID, InvoiceValue, EmployeeID, OrderNumber
+							FROM         dbo.VEW_POS_MainReading_CheckList
+							WHERE     (BranchID = @BranchID) AND( (closedby = @EmployeeID)or(openedby=@EmployeeID))
+							AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) order by invoiceID
+						end
+								
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+							SELECT     BranchID, InvoiceID, InvoiceValue, EmployeeID, OrderNumber
+							FROM         dbo.VEW_POS_MainReading_CheckList
+							WHERE     (BranchID = @BranchID) AND (closedby = @EmployeeID)
+							AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) 	AND  EODDate < = CONVERT(varchar(12), @ToDate, 101) 	
+							order by invoiceID
+						end
+						else
+						begin
+							SELECT     BranchID, InvoiceID, InvoiceValue, EmployeeID, OrderNumber
+							FROM         dbo.VEW_POS_MainReading_CheckList
+							WHERE     (BranchID = @BranchID) AND( (closedby = @EmployeeID)or(openedby=@EmployeeID))
+							AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) 	AND  EODDate < = CONVERT(varchar(12), @ToDate, 101) 	
+							order by invoiceID
+						end					
+						END
+					
+	END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Category]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Category]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Category]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@TODate datetime=null
+AS
+IF @EmployeeID is NULL
+	BEGIN
+	IF @TODATE IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID,  Category, SUM(ItemPrice) AS CategoryTotal, SUM(Discount) as Discount
+				FROM         dbo.VEW_POS_MainReading_Category where ItemPrice <> 0
+				GROUP BY BranchID, EODDate, Category
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			BEGIN			
+					
+				SELECT     BranchID,  Category, SUM(ItemPrice) AS CategoryTotal,SUM(Discount) as Discount
+				FROM         dbo.VEW_POS_MainReading_Category where ItemPrice <> 0
+				GROUP BY BranchID, EODDate, Category
+				HAVING      (BranchID =@BranchID) 
+				AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)					
+				
+			END
+	END
+	ELSE
+		BEGIN		
+				
+				SELECT SUM(CATSUM)as categorytotal ,category,branchid, SUM(DCATSUM) as Discount FROM
+				 (SELECT   SUM(ItemPrice) AS CATSUM,category,branchid,SUM(Discount) as DCATSUM
+							FROM         dbo.VEW_POS_MainReading_Category where ItemPrice <> 0
+							GROUP BY BranchID, Category,EODDATE  
+				HAVING (BranchID =@BRANCHID) 
+				AND  EODDate >= CONVERT(varchar(12), @EODDATE, 101)  AND  EODDate < = CONVERT(varchar(12), @TODATE, 101)) as a
+				group by a.category,a.branchid
+				
+
+				HAVING (BranchID =@BRANCHID)	
+		END	
+end
+
+	
+ELSE
+	BEGIN
+IF @TODATE IS NULL
+BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID,  Category, SUM(ItemPrice) AS CategoryTotal,SUM(Discount) as Discount
+				FROM         dbo.VEW_POS_MainReading_Category where ItemPrice <> 0
+				GROUP BY BranchID, EODDate, Category, closedby
+				HAVING      (BranchID =@BranchID) AND (CLOSEDBY = @EmployeeID) 
+				AND EODDate IS NULL
+				end
+			else
+				begin
+				SELECT     BranchID,  Category, SUM(ItemPrice) AS CategoryTotal,SUM(Discount) as Discount
+				FROM         dbo.VEW_POS_MainReading_Category  
+				where  ((CLOSEDBY = @EmployeeID)or (openedby=@employeeid) and ItemPrice <> 0)
+				GROUP BY BranchID, EODDate, Category
+				HAVING      (BranchID =@BranchID)  
+				AND EODDate IS NULL
+				end
+			END
+		ELSE 
+			BEGIN
+					if (select separateSales from BOF_S_SystemSettings)=0
+					begin
+						SELECT     BranchID,  Category, SUM(ItemPrice) AS CategoryTotal,SUM(Discount) as Discount
+						FROM         dbo.VEW_POS_MainReading_Category where ItemPrice <> 0
+						GROUP BY BranchID, EODDate, Category,closedby
+						HAVING      (BranchID =@BranchID) AND (closedby = @EmployeeID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					end
+					else
+						begin
+						SELECT     BranchID,  Category, SUM(ItemPrice) AS CategoryTotal,SUM(Discount) as Discount
+						FROM         dbo.VEW_POS_MainReading_Category
+						where  ((CLOSEDBY = @EmployeeID)or (openedby=@employeeid) and ItemPrice <> 0)
+						GROUP BY BranchID, EODDate, Category
+						HAVING      (BranchID =@BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					end
+				
+			END
+END
+ELSE 
+BEGIN
+
+						/*SELECT     BranchID,  Category, SUM(ItemPrice) AS CategoryTotal
+						FROM         dbo.VEW_POS_MainReading_Category
+						GROUP BY BranchID, EODDate, Category, EmployeeID
+						HAVING      (BranchID =@BranchID) AND (EmployeeID = @EmployeeID) 
+						AND CONVERT(varchar(12), EODDate, 101) > = CONVERT(varchar(12), @EODDate, 101)  AND CONVERT(varchar(12), EODDate, 101) < = CONVERT(varchar(12), @ToDate, 101) 	*/		
+				if (select separateSales from BOF_S_SystemSettings)=0
+					begin
+						SELECT SUM(CATSUM)as categorytotal ,category,branchid,SUM(DCATSUM) as Discount  FROM
+						 (SELECT   SUM(ItemPrice) AS CATSUM,category,branchid,SUM(Discount) AS DCATSUM
+									FROM         dbo.VEW_POS_MainReading_Category where ItemPrice <> 0
+									GROUP BY BranchID, Category,EODDATE, closedby  
+						HAVING (BranchID =@BRANCHID)  AND (closedby = @EmployeeID) 
+						AND  EODDate >= CONVERT(varchar(12), @EODDATE, 101)  AND  EODDate < = CONVERT(varchar(12), @TODATE, 101)) as a
+						group by a.category,a.branchid
+						
+		
+						HAVING (BranchID =@BRANCHID)
+					end	
+				else
+					begin
+						SELECT SUM(CATSUM)as categorytotal ,category,branchid,SUM(DCATSUM) as Discount  FROM
+						 (SELECT   SUM(ItemPrice) AS CATSUM,category,branchid,SUM(Discount) as dCATSUM
+									FROM         dbo.VEW_POS_MainReading_Category
+									where  ((CLOSEDBY = @EmployeeID)or (openedby=@employeeid) and ItemPrice <> 0)
+									GROUP BY BranchID, Category,EODDATE  
+						HAVING (BranchID =@BRANCHID)  
+						AND  EODDate >= CONVERT(varchar(12), @EODDATE, 101)  AND  EODDate < = CONVERT(varchar(12), @TODATE, 101)) as a
+						group by a.category,a.branchid
+						
+		
+						HAVING (BranchID =@BRANCHID)
+					end
+
+END
+	END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReadingDiscounts]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReadingDiscounts]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[POS_SEL_MainReadingDiscounts]
+	@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+begin 
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				
+				where   EODDate IS NULL
+GROUP BY Description
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				
+				where    CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					GROUP BY Description
+END
+End
+				ELSE
+					BEGIN
+SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				
+							where        EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)
+				GROUP BY Description	
+			end
+	END
+else
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+
+				SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				GROUP BY Description,eoddate,closedby
+				HAVING       (closedby = @EmployeeID)
+				AND EODDate IS NULL
+				end
+				else
+				begin
+
+				SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				
+				where  closedby = @EmployeeID or openedby = @EmployeeID /*and ItemPrice > 0*/
+			AND EODDate IS NULL	
+              GROUP BY Description  ,eoddate
+				
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				GROUP BY Description,eoddate,closedby
+                HAVING     (closedby = @EmployeeID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+						else
+						begin
+						SELECT      SUM(DiscountAmount)aS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				
+						where (closedby=@EmployeeID or openedby=@EmployeeID) AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						/*and ItemPrice > 0*/
+						GROUP BY Description,eoddate  
+						end
+					END
+end
+				ELSE
+				begin
+					if (select separateSales from BOF_S_SystemSettings)=0
+					begin
+					SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				GROUP BY Description,eoddate,closedby
+                	HAVING     (closedby = @EmployeeID)
+						AND EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)
+						
+					end
+					else
+					begin
+					SELECT      SUM(DiscountAmount) AS Total ,description
+				FROM         dbo.VEW_POS_MainReading_Discount /*where ItemPrice > 0*/
+				
+	where (closedby=@EmployeeID or openedby=@EmployeeID)  AND EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)
+						/*and ItemPrice > 0*/
+GROUP BY Description,eoddate
+						end					
+					END
+			
+end
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_WorkStationPaymentType]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_WorkStationPaymentType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+Create PROCEDURE [dbo].[POS_SEL_MainReading_WorkStationPaymentType]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+begin
+IF @ToDate IS NULL
+	BEGIN	
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount
+				FROM         dbo.VEW_POS_MainReading_PaymentType
+				GROUP BY BranchID, WorkStationID, EODDate, PaymentType
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_PaymentType
+						GROUP BY BranchID, WorkStationID, EODDate, PaymentType
+						HAVING      (BranchID = @BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+				ELSE
+					BEGIN
+SELECT     BranchID, WorkStationID, PaymentType, SUM(TotalAmount) AS TotalAmount from
+						(SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_PaymentType
+						GROUP BY BranchID, WorkStationID, EODDate, PaymentType
+						HAVING      (BranchID = @BranchID) 
+						 AND  EODDate > = CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a
+						GROUP BY BranchID, WorkStationID, PaymentType
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount, closedby as EmployeeID
+				FROM         dbo.VEW_POS_MainReading_PaymentType
+				GROUP BY BranchID, WorkStationID, EODDate, PaymentType, closedby
+				HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount
+				FROM         dbo.VEW_POS_MainReading_PaymentType
+				where closedby = @EmployeeID or openedby = @EmployeeID
+				GROUP BY BranchID, WorkStationID, EODDate, PaymentType
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount,closedby as EmployeeID
+						FROM         dbo.VEW_POS_MainReading_PaymentType
+						GROUP BY BranchID, WorkStationID, EODDate, PaymentType, closedby
+						HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						end
+						else
+						begin
+						SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_PaymentType
+						where closedby = @EmployeeID or openedby = @EmployeeID
+						GROUP BY BranchID, WorkStationID, EODDate, PaymentType, closedby
+						HAVING      (BranchID = @BranchID)  
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						end 
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, WorkStationID, PaymentType, SUM(TotalAmount) AS TotalAmount from
+						(SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_PaymentType
+						GROUP BY BranchID, WorkStationID, EODDate, PaymentType,closedby
+						HAVING      (BranchID = @BranchID)AND (closedby = @EmployeeID)
+						 AND  EODDate > = CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a
+						GROUP BY BranchID, WorkStationID, PaymentType
+						end
+						else
+						begin
+						SELECT     BranchID, WorkStationID, PaymentType, SUM(TotalAmount) AS TotalAmount from
+						(SELECT     BranchID, WorkStationID, PaymentType, SUM(Amount) AS TotalAmount
+						FROM         dbo.VEW_POS_MainReading_PaymentType
+ 						where  (closedby = @EmployeeID) or  (openedby = @EmployeeID)
+						GROUP BY BranchID, WorkStationID, EODDate, PaymentType
+						HAVING      (BranchID = @BranchID)
+						 AND EODDate > = CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a
+						GROUP BY BranchID, WorkStationID, PaymentType
+						end
+END
+		
+	END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Workstation]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Workstation]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Workstation]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+				                      SUM(TotalPaid) AS TotalPaid, WorkStationID, COUNT(OrderID) AS NumberOfCustomers
+				FROM         dbo.VEW_POS_MainReading_Workstation
+				GROUP BY BranchID, EODDate, WorkStationID
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, COUNT(OrderID) AS NumberOfCustomers
+						FROM         dbo.VEW_POS_MainReading_Workstation
+						GROUP BY BranchID, EODDate, WorkStationID
+						HAVING      (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+
+				ELSE
+					BEGIN
+						SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, sum( NumberOfCustomers) AS NumberOfCustomers from
+						(SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, COUNT(OrderID) AS NumberOfCustomers
+						FROM         dbo.VEW_POS_MainReading_Workstation
+						GROUP BY BranchID, EODDate, WorkStationID
+						HAVING      (BranchID =@BranchID) 
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a
+						GROUP BY BranchID, WorkStationID
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+				                      SUM(TotalPaid) AS TotalPaid, WorkStationID, closedby as EmployeeID, COUNT(OrderID) AS NumberOfCustomers
+				FROM         dbo.VEW_POS_MainReading_Workstation
+				GROUP BY BranchID, EODDate, WorkStationID, closedby
+				HAVING      (BranchID =@BranchID) AND closedby = @EmployeeID
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+				                      SUM(TotalPaid) AS TotalPaid, WorkStationID, COUNT(OrderID) AS NumberOfCustomers
+				FROM         dbo.VEW_POS_MainReading_Workstation
+				where  closedby = @EmployeeID or  openedby = @EmployeeID
+				GROUP BY BranchID, EODDate, WorkStationID
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL
+				end
+				
+			END
+		ELSE
+			
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+				 		SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID,closedby as EmployeeID, COUNT(OrderID) AS NumberOfCustomers
+						FROM         dbo.VEW_POS_MainReading_Workstation
+						GROUP BY BranchID, EODDate, WorkStationID, closedby
+						HAVING      (BranchID =@BranchID) AND closedby = @EmployeeID
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+						else
+						begin
+				 		SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, COUNT(OrderID) AS NumberOfCustomers
+						FROM         dbo.VEW_POS_MainReading_Workstation
+						where closedby = @EmployeeID or openedby = @EmployeeID
+						GROUP BY BranchID, EODDate, WorkStationID
+						HAVING      (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+					END
+end
+
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, sum( NumberOfCustomers) AS NumberOfCustomers from
+						(SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, COUNT(OrderID) AS NumberOfCustomers
+						FROM         dbo.VEW_POS_MainReading_Workstation
+						GROUP BY BranchID, EODDate, WorkStationID,closedby
+						HAVING      (BranchID =@BranchID) AND closedby = @EmployeeID 
+						 AND EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a
+						GROUP BY BranchID, WorkStationID
+						end
+						else
+						begin
+						SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, sum( NumberOfCustomers) AS NumberOfCustomers from
+						(SELECT     BranchID, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						                      SUM(TotalPaid) AS TotalPaid, WorkStationID, COUNT(OrderID) AS NumberOfCustomers
+						FROM         dbo.VEW_POS_MainReading_Workstation
+						where closedby = @EmployeeID or openedby = @EmployeeID
+						GROUP BY BranchID, EODDate, WorkStationID
+						HAVING      (BranchID =@BranchID) 
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a
+						GROUP BY BranchID, WorkStationID
+						end
+					END
+			
+	END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Waiter]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Waiter]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Waiter]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+begin
+  IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+		   BEGIN
+			 if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				  SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice from
+                  (SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=OrderbyEmployeeId)as EmployeeName, SUM(TotalPrice) AS TotalPrice
+			       FROM         dbo.VEW_POS_MainReading_Waiter
+				   GROUP BY BranchID, EmployeeName, EODDate,OrderbyEmployeeId
+				   HAVING      (BranchID =@BranchID) 
+				   AND EODDate IS NULL)as a
+                   group by EmployeeName,branchid
+			     end
+		     else
+			   Begin
+				  SELECT BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice 
+				  from (SELECT     BranchID, OrderbyEmployeeId as empid, TotalPrice AS TotalPrice,OrderID
+								FROM         dbo.VEW_POS_MainReading_Waiter
+				  where  EODDate IS NULL and BranchID =@BranchID
+                  				  union
+				  SELECT     BranchID, OrderbyEmployeeId as empid, TotalPrice AS TotalPrice,OrderID 
+				  FROM dbo.VEW_POS_MainReading_Waiter  where  EODDate IS NULL and BranchID =@BranchID)as a
+				  group by empid, BranchID
+
+ 			   end
+		END
+    ELSE
+		BEGIN
+			if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				   SELECT BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice from
+                   (SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=OrderbyEmployeeId)as EmployeeName, SUM(TotalPrice) AS TotalPrice
+		           FROM         dbo.VEW_POS_MainReading_Waiter
+				   GROUP BY BranchID, EmployeeName, EODDate,OrderbyEmployeeId
+				   HAVING      (BranchID =@BranchID)  AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101))as a
+                   group by EmployeeName,branchid
+				 end
+			 else
+						begin
+						SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice
+from    				(SELECT     BranchID, OrderbyEmployeeId as empid, TotalPrice AS TotalPrice ,OrderID
+										FROM         dbo.VEW_POS_MainReading_Waiter
+						where   (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						union
+						SELECT     BranchID, OrderbyEmployeeId as empid, TotalPrice AS TotalPrice,OrderID 
+										FROM         dbo.VEW_POS_MainReading_Waiter  where  (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) )as a
+						group by empid,branchid
+
+						end
+					END
+end
+
+				ELSE
+					BEGIN
+					if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+						SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice from
+						(SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=OrderbyEmployeeId)as EmployeeName, SUM(TotalPrice) AS TotalPrice, OrderbyEmployeeId
+						FROM         dbo.VEW_POS_MainReading_Waiter
+						GROUP BY BranchID, EmployeeName, EODDate,OrderbyEmployeeId
+						HAVING      (BranchID =@BranchID) 
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename
+					end
+					else
+					begin
+					SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice from						
+					(SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice from
+					(SELECT     BranchID, OrderbyEmployeeId as empid, TotalPrice AS TotalPrice, OrderID
+									FROM         dbo.VEW_POS_MainReading_Waiter
+					where BranchID =@BranchID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)
+					
+					union
+					SELECT     BranchID, OrderbyEmployeeId as empid, TotalPrice AS TotalPrice ,OrderID 
+									FROM         dbo.VEW_POS_MainReading_Waiter where BranchID =@BranchID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND CONVERT(varchar(12), EODDate, 101)  <= CONVERT(varchar(12), @ToDate, 101)
+					)as a
+					group by empid,branchid) as b
+					group by branchid,employeename
+					end
+END
+			
+	END
+ELSE
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+					begin
+					SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice from
+			
+				(SELECT     BranchID,employeename, SUM(TotalPrice) AS TotalPrice 
+                FROM         dbo.VEW_POS_MainReading_Waiter
+				GROUP BY BranchID, EmployeeName, EODDate, OrderbyEmployeeId
+				HAVING      (BranchID =1) AND OrderbyEmployeeId = @employeeid
+				AND EODDate IS NULL)as a
+				 GROUP BY BranchID
+				end
+				else
+				begin
+				SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice from
+	         	(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice
+				FROM         dbo.VEW_POS_MainReading_Waiter
+				where OrderbyEmployeeId = @EmployeeID
+				GROUP BY BranchID, EmployeeName, EODDate
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL)
+				as a
+
+			GROUP BY BranchID
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice
+						FROM         dbo.VEW_POS_MainReading_Waiter
+						GROUP BY BranchID, EmployeeName, EODDate,OrderbyEmployeeId
+						HAVING      (BranchID =@BranchID)and (OrderbyEmployeeId=@employeeid) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) ) as a
+						group by branchid
+						end
+						else
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice
+						FROM         dbo.VEW_POS_MainReading_Waiter
+						where  (OrderbyEmployeeId=@employeeid)  or  (OrderbyEmployeeId=@employeeid)
+						GROUP BY BranchID, EmployeeName, EODDate
+						HAVING      (BranchID =@BranchID)
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) ) as a
+						group by branchid
+						end
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice from
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice
+						FROM         dbo.VEW_POS_MainReading_Waiter
+						GROUP BY BranchID, EmployeeName, EODDate,OrderbyEmployeeId
+						HAVING      (BranchID =@BranchID)  AND OrderbyEmployeeId = @EmployeeID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename) as a
+					group by branchid
+					end 
+					else
+					
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice from
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice from
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice
+						FROM         dbo.VEW_POS_MainReading_Waiter
+						where OrderbyEmployeeId = @EmployeeID or OrderbyEmployeeId=@EmployeeID
+						GROUP BY BranchID, EmployeeName, EODDate
+						HAVING      (BranchID =@BranchID)  
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename) as a
+					group by branchid
+					end 
+END
+			
+	END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_VoidList]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_VoidList]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_VoidList]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, InvoiceID,TotalPrice AS InvoiceValue, EmployeeName, Menu, OrderNumber, VoidReason, VoidedInvoice
+				FROM         dbo.VEW_POS_MainReading_VoidSummary
+				WHERE     (BranchID = @BranchID)
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, InvoiceID, TotalPrice AS InvoiceValue, EmployeeName, Menu, OrderNumber, VoidReason, VoidedInvoice
+						FROM         dbo.VEW_POS_MainReading_VoidSummary
+						WHERE     (BranchID = @BranchID)
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+				ELSE
+					BEGIN
+						SELECT     BranchID, InvoiceID, TotalPrice AS InvoiceValue, EmployeeName, Menu, OrderNumber, VoidReason, VoidedInvoice
+						FROM         dbo.VEW_POS_MainReading_VoidSummary
+						WHERE     (BranchID = @BranchID)
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, InvoiceID,TotalPrice AS  InvoiceValue, EmployeeName, Menu, OrderNumber,closedby as EmployeeID, VoidReason, VoidedInvoice
+				FROM         dbo.VEW_POS_MainReading_VoidSummary
+				WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)	
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, InvoiceID,TotalPrice AS  InvoiceValue, EmployeeName, Menu, OrderNumber, VoidReason, VoidedInvoice
+				FROM         dbo.VEW_POS_MainReading_VoidSummary
+				WHERE    (BranchID = @BranchID) AND ( (closedby = @EmployeeID)or(openedby=@EmployeeID))
+				AND EODDate IS NULL
+				end
+
+			END
+		ELSE
+			
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, InvoiceID,TotalPrice AS  InvoiceValue, EmployeeName, Menu, OrderNumber,closedby as EmployeeID, VoidReason, VoidedInvoice
+						FROM         dbo.VEW_POS_MainReading_VoidSummary
+						WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)	
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+						else
+						begin
+						SELECT     BranchID, InvoiceID,TotalPrice AS  InvoiceValue, EmployeeName, Menu, OrderNumber, VoidReason, VoidedInvoice
+						FROM         dbo.VEW_POS_MainReading_VoidSummary
+						WHERE    (BranchID = @BranchID) AND( (closedby = @EmployeeID)or(	openedby = @EmployeeID))
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, InvoiceID,TotalPrice AS  InvoiceValue, EmployeeName, Menu, OrderNumber,closedby as  EmployeeID, VoidReason, VoidedInvoice
+						FROM         dbo.VEW_POS_MainReading_VoidSummary
+						WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)	
+						 AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+						end
+						else
+						begin
+						SELECT     BranchID, InvoiceID,TotalPrice AS  InvoiceValue, EmployeeName, Menu, OrderNumber, VoidReason, VoidedInvoice
+						FROM         dbo.VEW_POS_MainReading_VoidSummary
+						WHERE    (BranchID = @BranchID) AND ((closedby = @EmployeeID)or(openedby=@EmployeeID))	
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+						end
+						END
+			
+	END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Server]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Server]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Server]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum( NumberOfCustomers)as numberofcustomers,
+               Menuid, Menu from			
+(SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=closedby)as EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				GROUP BY BranchID, EmployeeName, EODDate,closedby, Menuid, Menu
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL)as a
+group by EmployeeName,branchid, Menuid, Menu
+				end
+				else
+				begin
+				SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu from
+				(SELECT     BranchID, openedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+								                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu
+								FROM         dbo.VEW_POS_MainReading_Server
+				where  EODDate IS NULL and BranchID =@BranchID
+				union
+				SELECT     BranchID, closedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+								                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID,  Menuid, Menu 
+								FROM         dbo.VEW_POS_MainReading_Server  where  EODDate IS NULL and BranchID =@BranchID)as a
+				group by empid,branchid, Menuid, Menu
+
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+						SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				        AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum( NumberOfCustomers)as numberofcustomers from
+			
+(SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=closedby)as EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers,  Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				GROUP BY BranchID, EmployeeName, EODDate,closedby, Menuid, Menu
+				HAVING      (BranchID =@BranchID)  AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+				)as a
+group by EmployeeName,branchid,  Menuid, Menu
+						end
+						else
+						begin
+						SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers,  Menuid, Menu from
+						(SELECT     BranchID, openedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+										                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu
+										FROM         dbo.VEW_POS_MainReading_Server
+						where   (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						union
+						SELECT     BranchID, closedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+										                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu 
+										FROM         dbo.VEW_POS_MainReading_Server  where  (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) )as a
+						group by empid,branchid, Menuid, Menu
+
+						end
+					END
+end
+
+				ELSE
+					BEGIN
+					if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+						SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						(SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=closedby)as EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers,closedby, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						GROUP BY BranchID, EmployeeName, EODDate,closedby, Menuid, Menu
+						HAVING      (BranchID =@BranchID) 
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename, Menuid, Menu
+					end
+					else
+					begin
+					SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						
+					(SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+									                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu from
+					(SELECT     BranchID, openedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+									                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu
+									FROM         dbo.VEW_POS_MainReading_Server
+					where BranchID =@BranchID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)
+					
+					union
+					SELECT     BranchID, closedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+									                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu 
+									FROM         dbo.VEW_POS_MainReading_Server where BranchID =@BranchID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND CONVERT(varchar(12), EODDate, 101)  <= CONVERT(varchar(12), @ToDate, 101)
+					)as a
+					group by empid,branchid, Menuid, Menu) as b
+					group by branchid,employeename, Menuid, Menu
+					end
+END
+			
+	END
+ELSE
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+					begin
+					SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+				(SELECT     BranchID,employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				GROUP BY BranchID, EmployeeName, EODDate, closedby,Menuid, Menu
+				HAVING      (BranchID =@BranchID) AND closedby = @employeeid
+				AND EODDate IS NULL)as a
+				 GROUP BY BranchID, Menuid, Menu
+				end
+				else
+				begin
+				SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+				(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				where closedby = @EmployeeID or openedby = @EmployeeID
+				GROUP BY BranchID, EmployeeName, EODDate, Menuid, Menu
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL)
+				as a
+
+			GROUP BY BranchID, Menuid, Menu
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						GROUP BY BranchID, EmployeeName, EODDate,closedby, Menuid, Menu
+						HAVING      (BranchID =@BranchID)and (closedby=@employeeid) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) ) as a
+						group by branchid, Menuid, Menu
+						end
+						else
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						where  (closedby=@employeeid)  or  (openedby=@employeeid)
+						GROUP BY BranchID, EmployeeName, EODDate, Menuid, Menu
+						HAVING      (BranchID =@BranchID)
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) ) as a
+						group by branchid, Menuid, Menu
+						end
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						GROUP BY BranchID, EmployeeName, EODDate,closedby, Menuid, Menu
+						HAVING      (BranchID =@BranchID)  AND closedby = @EmployeeID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename, Menuid, Menu) as a
+					group by branchid, Menuid, Menu
+					end 
+					else
+					
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						where closedby = @EmployeeID or openedby=@EmployeeID
+						GROUP BY BranchID, EmployeeName, EODDate, Menuid, Menu
+						HAVING      (BranchID =@BranchID)  
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename, Menuid, Menu) as a
+					group by branchid, Menuid, Menu
+					end 
+END
+			
+	END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_PaymentType]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_PaymentType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'  
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_PaymentType]  
+@BranchID int,  
+@EmployeeID int = NULL,  
+@EODDate DateTime = Null,  
+@ToDate DateTime = null  
+AS  
+IF @EmployeeID  is NULL  
+begin  
+IF @ToDate IS NULL  
+ BEGIN   
+  IF @EODDate IS NULL  
+   BEGIN  
+    SELECT     BranchID, PaymentType, SUM(Amount) AS TotalAmount, DollarRate  
+    FROM         dbo.VEW_POS_MainReading_PaymentType  
+    GROUP BY BranchID, EODDate, PaymentType, DollarRate  
+    HAVING      (BranchID = @BranchID)   
+    AND EODDate IS NULL  
+   END  
+  ELSE  
+     
+      
+     BEGIN  
+      SELECT    BranchID, PaymentType, SUM(Amount) AS TotalAmount, DollarRate  
+      FROM         dbo.VEW_POS_MainReading_PaymentType  
+      GROUP BY BranchID, EODDate, PaymentType, DollarRate  
+      HAVING      (BranchID = @BranchID)   
+       AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)   
+     END  
+end  
+    ELSE  
+     BEGIN  
+SELECT     BranchID, PaymentType, SUM(TotalAmount) AS TotalAmount, DollarRate from  
+      (SELECT     BranchID, PaymentType, SUM(Amount) AS TotalAmount, DollarRate  
+      FROM         dbo.VEW_POS_MainReading_PaymentType  
+      GROUP BY BranchID, EODDate, PaymentType, DollarRate  
+      HAVING      (BranchID = @BranchID)   
+       AND  EODDate > = CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a  
+      GROUP BY BranchID, PaymentType, DollarRate  
+     END  
+     
+ END  
+ELSE  
+begin  
+IF @ToDate IS NULL  
+ BEGIN  
+  IF @EODDate IS NULL  
+   BEGIN  
+    if (select separateSales from BOF_S_SystemSettings)=0  
+    begin  
+    SELECT    BranchID, PaymentType, SUM(Amount) AS TotalAmount, closedby as EmployeeID, DollarRate  
+    FROM         dbo.VEW_POS_MainReading_PaymentType  
+    GROUP BY BranchID, EODDate, PaymentType, closedby, DollarRate  
+    HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)  
+    AND EODDate IS NULL  
+    end  
+    else  
+    begin  
+    SELECT  BranchID, PaymentType, SUM(Amount) AS TotalAmount, DollarRate  
+    FROM         dbo.VEW_POS_MainReading_PaymentType  
+    where closedby = @EmployeeID or openedby = @EmployeeID  
+    GROUP BY BranchID, EODDate, PaymentType, DollarRate  
+    HAVING      (BranchID = @BranchID)   
+    AND EODDate IS NULL  
+    end  
+   END  
+  ELSE  
+     
+      
+     BEGIN  
+      if (select separateSales from BOF_S_SystemSettings)=0  
+      begin  
+      SELECT  BranchID, PaymentType, SUM(Amount) AS TotalAmount,closedby as EmployeeID, DollarRate  
+      FROM         dbo.VEW_POS_MainReading_PaymentType  
+      GROUP BY BranchID, EODDate, PaymentType, closedby, DollarRate  
+      HAVING      (BranchID = @BranchID) AND (closedby = @EmployeeID)  
+      AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)  
+      end  
+      else  
+      begin  
+      SELECT  BranchID, PaymentType, SUM(Amount) AS TotalAmount, DollarRate  
+      FROM         dbo.VEW_POS_MainReading_PaymentType  
+      where closedby = @EmployeeID or openedby = @EmployeeID  
+      GROUP BY BranchID, EODDate, PaymentType, closedby, DollarRate  
+      HAVING      (BranchID = @BranchID)    
+      AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)  
+      end   
+     END  
+end  
+    ELSE  
+     BEGIN  
+      if (select separateSales from BOF_S_SystemSettings)=0  
+      begin  
+      SELECT  BranchID, PaymentType, SUM(TotalAmount) AS TotalAmount, DollarRate from  
+      (SELECT     BranchID, PaymentType, SUM(Amount) AS TotalAmount, DollarRate  
+      FROM         dbo.VEW_POS_MainReading_PaymentType  
+      GROUP BY BranchID, EODDate, PaymentType,closedby, DollarRate  
+      HAVING      (BranchID = @BranchID)AND (closedby = @EmployeeID)  
+       AND  EODDate > = CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a  
+      GROUP BY BranchID, PaymentType, DollarRate  
+      end  
+      else  
+      begin  
+      SELECT  BranchID, PaymentType, SUM(TotalAmount) AS TotalAmount, DollarRate from  
+      (SELECT     BranchID, PaymentType, SUM(Amount) AS TotalAmount, DollarRate  
+      FROM         dbo.VEW_POS_MainReading_PaymentType  
+       where  (closedby = @EmployeeID) or  (openedby = @EmployeeID)  
+      GROUP BY BranchID, EODDate, PaymentType, DollarRate  
+      HAVING      (BranchID = @BranchID)  
+       AND EODDate > = CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) ) as a  
+      GROUP BY BranchID, PaymentType, DollarRate  
+      end  
+END  
+    
+ END  
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_OpenServer]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_OpenServer]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_OpenServer]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum( NumberOfCustomers)as numberofcustomers,
+               Menuid, Menu from			
+(SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=OpenedBy)as EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				GROUP BY BranchID, EmployeeName, EODDate,OpenedBy, Menuid, Menu
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL)as a
+group by EmployeeName,branchid, Menuid, Menu
+				end
+				else
+				begin
+				SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu from
+				(SELECT     BranchID, openedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+								                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu
+								FROM         dbo.VEW_POS_MainReading_Server
+				where  EODDate IS NULL and BranchID =@BranchID
+				union
+				SELECT     BranchID, OpenedBy as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+								                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID,  Menuid, Menu 
+								FROM         dbo.VEW_POS_MainReading_Server  where  EODDate IS NULL and BranchID =@BranchID)as a
+				group by empid,branchid, Menuid, Menu
+
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+						SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				        AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum( NumberOfCustomers)as numberofcustomers from
+			
+(SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=OpenedBy)as EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers,  Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				GROUP BY BranchID, EmployeeName, EODDate,OpenedBy, Menuid, Menu
+				HAVING      (BranchID =@BranchID)  AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+				)as a
+group by EmployeeName,branchid,  Menuid, Menu
+						end
+						else
+						begin
+						SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers,  Menuid, Menu from
+						(SELECT     BranchID, openedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+										                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu
+										FROM         dbo.VEW_POS_MainReading_Server
+						where   (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						union
+						SELECT     BranchID, OpenedBy as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+										                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu 
+										FROM         dbo.VEW_POS_MainReading_Server  where  (BranchID =@BranchID) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) )as a
+						group by empid,branchid, Menuid, Menu
+
+						end
+					END
+end
+
+				ELSE
+					BEGIN
+					if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+						SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						(SELECT     BranchID, (select employeename from   bof_m_employees where employeeid=OpenedBy)as EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers,OpenedBy, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						GROUP BY BranchID, EmployeeName, EODDate,OpenedBy, Menuid, Menu
+						HAVING      (BranchID =@BranchID) 
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename, Menuid, Menu
+					end
+					else
+					begin
+					SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						
+					(SELECT     BranchID,(select employeename from   bof_m_employees where employeeid=empid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+									                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu from
+					(SELECT     BranchID, openedby as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+									                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu
+									FROM         dbo.VEW_POS_MainReading_Server
+					where BranchID =@BranchID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)
+					
+					union
+					SELECT     BranchID, OpenedBy as empid, TotalPrice AS TotalPrice, TotalTax AS TotalTax, TotalService AS TotalService, TotalDiscount 
+									                      AS TotalDiscount, TotalPaid AS TotalPaid,OrderID, Menuid, Menu 
+									FROM         dbo.VEW_POS_MainReading_Server where BranchID =@BranchID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND CONVERT(varchar(12), EODDate, 101)  <= CONVERT(varchar(12), @ToDate, 101)
+					)as a
+					group by empid,branchid, Menuid, Menu) as b
+					group by branchid,employeename, Menuid, Menu
+					end
+END
+			
+	END
+ELSE
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+					begin
+					SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+				(SELECT     BranchID,employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				GROUP BY BranchID, EmployeeName, EODDate, OpenedBy,Menuid, Menu
+				HAVING      (BranchID =@BranchID) AND OpenedBy = @employeeid
+				AND EODDate IS NULL)as a
+				 GROUP BY BranchID, Menuid, Menu
+				end
+				else
+				begin
+				SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+				(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+				FROM         dbo.VEW_POS_MainReading_Server
+				where OpenedBy = @EmployeeID
+				GROUP BY BranchID, EmployeeName, EODDate, Menuid, Menu
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL)
+				as a
+
+			GROUP BY BranchID, Menuid, Menu
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						GROUP BY BranchID, EmployeeName, EODDate,OpenedBy, Menuid, Menu
+						HAVING      (BranchID =@BranchID)and (OpenedBy=@employeeid) 
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) ) as a
+						group by branchid, Menuid, Menu
+						end
+						else
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						where  (openedby=@employeeid)
+						GROUP BY BranchID, EmployeeName, EODDate, Menuid, Menu
+						HAVING      (BranchID =@BranchID)
+						 AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) ) as a
+						group by branchid, Menuid, Menu
+						end
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						GROUP BY BranchID, EmployeeName, EODDate,OpenedBy, Menuid, Menu
+						HAVING      (BranchID =@BranchID)  AND OpenedBy = @EmployeeID
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename, Menuid, Menu) as a
+					group by branchid, Menuid, Menu
+					end 
+					else
+					
+						begin
+						SELECT     BranchID,(select employeename from bof_m_employees where employeeid=@employeeid)as employeename, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+				                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum ( NumberOfCustomers) as NumberOfCustomers, Menuid, Menu from
+			
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, sum(NumberOfCustomers) AS NumberOfCustomers, Menuid, Menu from
+						(SELECT     BranchID, EmployeeName, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, SUM(TotalDiscount) 
+						                      AS TotalDiscount, SUM(TotalPaid) AS TotalPaid, COUNT(OrderID) AS NumberOfCustomers, Menuid, Menu
+						FROM         dbo.VEW_POS_MainReading_Server
+						where openedby=@EmployeeID
+						GROUP BY BranchID, EmployeeName, EODDate, Menuid, Menu
+						HAVING      (BranchID =@BranchID)  
+						 AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101)  AND EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a 
+					group by branchid,employeename, Menuid, Menu) as a
+					group by branchid, Menuid, Menu
+					end 
+END
+			
+	END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Menu]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Menu]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Menu]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID  is NULL
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+				SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount,  
+				SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+				FROM         dbo.VEW_POS_MainReading_Menu
+				GROUP BY BranchID, Menu, MenuID, EODDate
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+						FROM         dbo.VEW_POS_MainReading_Menu
+						GROUP BY BranchID, Menu, MenuID, EODDate
+						HAVING      (BranchID = @BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+				ELSE
+					BEGIN
+SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID from
+						(SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+						FROM         dbo.VEW_POS_MainReading_Menu
+						GROUP BY BranchID, Menu, MenuID, EODDate
+						HAVING      (BranchID = @BranchID) 
+						AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND  EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a
+						GROUP BY BranchID, Menu, MenuID
+					END
+			
+	END
+ELSE
+BEGIN
+				IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+				SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+				SUM(TotalPaid) AS TotalPaid, closedby as EmployeeID, SUM(NumberOfCustomers) AS NumberOfCustomers,
+                MenuID, COUNT(OrderID) as OrderID FROM dbo.VEW_POS_MainReading_Menu
+				GROUP BY BranchID, Menu, MenuID, EODDate, closedby
+				HAVING      (BranchID = @BranchID) AND closedby = @EmployeeID
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+				SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+				SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+				FROM         dbo.VEW_POS_MainReading_Menu
+				where closedby=@EmployeeID or openedby=@EmployeeID
+				GROUP BY BranchID, Menu, MenuID, EODDate 
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+				end
+			END
+		ELSE
+			
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid,closedby as EmployeeID, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+						FROM         dbo.VEW_POS_MainReading_Menu
+						GROUP BY BranchID, Menu, MenuID, EODDate, closedby 
+						HAVING      (BranchID = @BranchID) AND closedby = @EmployeeID
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						end
+						else
+						begin
+						SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+						FROM         dbo.VEW_POS_MainReading_Menu
+						where closedby=@EmployeeID or openedby=@EmployeeID
+						GROUP BY BranchID, Menu, MenuID, EODDate 
+						HAVING      (BranchID = @BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101)
+						
+						end 
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID from
+						(SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+						FROM         dbo.VEW_POS_MainReading_Menu
+						GROUP BY BranchID, Menu, MenuID, EODDate,closedby
+						HAVING      (BranchID = @BranchID)  AND closedby = @EmployeeID
+						AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a
+						GROUP BY BranchID, Menu, MenuID
+						end
+						else
+						begin
+						SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID from
+						(SELECT     BranchID, Menu, SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, 
+						SUM(TotalService) AS TotalService, SUM(TotalDiscount) AS TotalDiscount, 
+						SUM(TotalPaid) AS TotalPaid, SUM(NumberOfCustomers) AS NumberOfCustomers, MenuID, COUNT(OrderID) as OrderID
+						FROM         dbo.VEW_POS_MainReading_Menu
+						where closedby = @EmployeeID or openedby = @EmployeeID
+						GROUP BY BranchID, Menu,MenuID, EODDate
+						HAVING      (BranchID = @BranchID)  
+						AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND  EODDate  <= CONVERT(varchar(12), @ToDate, 101))as a
+						GROUP BY BranchID, Menu, MenuID
+						end
+			
+	END
+end
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_ItemVoid]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_ItemVoid]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_ItemVoid]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, OrderID, Description, -ItemPrice AS ItemPrice, EmployeeID, -Quantity AS Quantity, VoidReason, OrderNumber, EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+				FROM         VEW_POS_MainReading_ItemVoid
+				WHERE     (BranchID = @BranchID)
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice, EmployeeID,  -Quantity AS Quantity, VoidReason, OrderNumber,  EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+						FROM         VEW_POS_MainReading_ItemVoid
+						WHERE     (BranchID = @BranchID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+				ELSE
+					BEGIN
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice, EmployeeID,  -Quantity AS Quantity, VoidReason, OrderNumber,  EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+						FROM         VEW_POS_MainReading_ItemVoid
+						WHERE     (BranchID = @BranchID)
+						AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+					END
+		
+	END
+ELSE
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice, closedby as employee,  -Quantity AS Quantity, VoidReason, OrderNumber, EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+				FROM         VEW_POS_MainReading_ItemVoid
+				WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)		
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,  -Quantity AS Quantity, VoidReason, OrderNumber, EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+				FROM         VEW_POS_MainReading_ItemVoid
+				WHERE    (BranchID = @BranchID) AND ((closedby = @EmployeeID)or(openedby=@EmployeeID))		
+				AND EODDate IS NULL
+				end
+				
+			END
+		ELSE
+		
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,closedby as EmployeeID,  -Quantity AS Quantity, VoidReason, OrderNumber,  EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+						FROM         VEW_POS_MainReading_ItemVoid
+						WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)		
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end	
+						else
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,  -Quantity AS Quantity, VoidReason, OrderNumber,  EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+						FROM         VEW_POS_MainReading_ItemVoid
+						WHERE    (BranchID = @BranchID) AND( (closedby = @EmployeeID)or(	openedby=@EmployeeID))	
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end	
+						
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,closedby as EmployeeID,  -Quantity AS Quantity, VoidReason, OrderNumber,  EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+						FROM         VEW_POS_MainReading_ItemVoid
+						WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)		
+						AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+						end
+						else
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,  -Quantity AS Quantity, VoidReason, OrderNumber,  EmployeeName, EODDate,VoidedBy,InvoiceNumber,VoidDate
+						FROM         VEW_POS_MainReading_ItemVoid
+						WHERE    (BranchID = @BranchID) AND( (closedby = @EmployeeID)or (openedby = @EmployeeID))		
+						AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+						end
+						END
+			END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_ItemReturn]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_ItemReturn]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_ItemReturn]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, OrderID, Description, -ItemPrice AS ItemPrice, EmployeeID, -Quantity AS Quantity, OrderNumber, EmployeeName, EODDate
+				FROM         VEW_POS_MainReading_ItemReturn
+				WHERE     (BranchID = @BranchID)
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice, EmployeeID,  -Quantity AS Quantity, OrderNumber,  EmployeeName, EODDate
+						FROM         VEW_POS_MainReading_ItemReturn
+						WHERE     (BranchID = @BranchID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+				ELSE
+					BEGIN
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice, EmployeeID,  -Quantity AS Quantity, OrderNumber,  EmployeeName, EODDate
+						FROM         VEW_POS_MainReading_ItemReturn
+						WHERE     (BranchID = @BranchID)
+						AND  EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+					END
+		
+	END
+ELSE
+	BEGIN
+IF @ToDate IS NULL
+begin
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+				SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice, closedby as employee,  -Quantity AS Quantity, OrderNumber, EmployeeName, EODDate
+				FROM         VEW_POS_MainReading_ItemReturn
+				WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)		
+				AND EODDate IS NULL
+				end
+				else
+				begin
+				SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,  -Quantity AS Quantity, OrderNumber, EmployeeName, EODDate
+				FROM         VEW_POS_MainReading_ItemReturn
+				WHERE    (BranchID = @BranchID) AND ((closedby = @EmployeeID)or(openedby=@EmployeeID))		
+				AND EODDate IS NULL
+				end
+				
+			END
+		ELSE
+		
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,closedby as EmployeeID,  -Quantity AS Quantity, OrderNumber,  EmployeeName, EODDate
+						FROM         VEW_POS_MainReading_ItemReturn
+						WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)		
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end	
+						else
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,  -Quantity AS Quantity, OrderNumber,  EmployeeName, EODDate
+						FROM         VEW_POS_MainReading_ItemReturn
+						WHERE    (BranchID = @BranchID) AND( (closedby = @EmployeeID)or(	openedby=@EmployeeID))	
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end	
+						
+					END
+end
+				ELSE
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,closedby as EmployeeID,  -Quantity AS Quantity, OrderNumber,  EmployeeName, EODDate
+						FROM         VEW_POS_MainReading_ItemReturn
+						WHERE    (BranchID = @BranchID) AND (closedby = @EmployeeID)		
+						AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+						end
+						else
+						begin
+						SELECT     BranchID, OrderID, Description,  -ItemPrice AS ItemPrice,  -Quantity AS Quantity, OrderNumber,  EmployeeName, EODDate
+						FROM         VEW_POS_MainReading_ItemReturn
+						WHERE    (BranchID = @BranchID) AND( (closedby = @EmployeeID)or (openedby = @EmployeeID))		
+						AND EODDate  >= CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101) 
+						end
+						END
+			END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Item]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Item]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Item]
+@BranchID int,
+@EmployeeID	int = NULL,
+@EODDate	DateTime = Null,
+@ToDate DateTime = null
+AS
+IF @EmployeeID is NULL
+begin 
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category
+				FROM         dbo.VEW_POS_MainReading_Item /*where ItemPrice > 0*/
+				GROUP BY BranchID, SalesItemID, EODDate, Description,GroupName,category
+				HAVING      (BranchID =@BranchID) 
+				AND EODDate IS NULL
+			END
+		ELSE
+			
+				
+					BEGIN
+						SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category
+						FROM         dbo.VEW_POS_MainReading_Item /*where ItemPrice > 0*/
+						GROUP BY BranchID, SalesItemID, EODDate, Description,GroupName,category
+						HAVING      (BranchID =@BranchID) 
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+					END
+end
+				ELSE
+					BEGIN
+SELECT     BranchID, SalesItemID,description, SUM(ItemTotal) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category from
+						(SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category
+						FROM         dbo.VEW_POS_MainReading_Item /*where ItemPrice > 0*/
+						GROUP BY BranchID, SalesItemID, EODDate, Description,GroupName,category
+						HAVING      (BranchID =@BranchID) 
+						AND  EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate <= CONVERT(varchar(12), @ToDate, 101)) as a
+						GROUP BY BranchID, SalesItemID, Description,GroupName,category					
+					END
+			
+	END
+ELSE
+begin
+IF @ToDate IS NULL
+	BEGIN
+		IF @EODDate IS NULL
+			BEGIN
+				if (select separateSales from BOF_S_SystemSettings)=0
+				begin
+
+				SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity, closedby,GroupName,category
+				FROM         dbo.VEW_POS_MainReading_Item /*where ItemPrice > 0*/
+				GROUP BY BranchID, SalesItemID, EODDate, Description, closedby,GroupName,category
+				HAVING      (BranchID = @BranchID)  AND (closedby = @EmployeeID)
+				AND EODDate IS NULL
+				end
+				else
+				begin
+
+				SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity, GroupName,category
+				FROM         dbo.VEW_POS_MainReading_Item
+				where  closedby = @EmployeeID or openedby = @EmployeeID /*and ItemPrice > 0*/
+				GROUP BY BranchID, SalesItemID, EODDate, Description,GroupName,category
+				HAVING      (BranchID = @BranchID) 
+				AND EODDate IS NULL
+				end
+			END
+		ELSE
+			
+				
+					BEGIN
+						if (select separateSales from BOF_S_SystemSettings)=0
+						begin
+						SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity, closedby,GroupName,category
+						FROM         dbo.VEW_POS_MainReading_Item /*where ItemPrice > 0*/
+						GROUP BY BranchID, SalesItemID, EODDate, Description, closedby,GroupName,category
+						HAVING      (BranchID = @BranchID)  AND (closedby = @EmployeeID)
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+						else
+						begin
+						SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category
+						FROM         dbo.VEW_POS_MainReading_Item
+						where closedby=@EmployeeID or openedby=@EmployeeID /*and ItemPrice > 0*/
+						GROUP BY BranchID, SalesItemID, EODDate, Description,GroupName,category
+						HAVING      (BranchID = @BranchID)  
+						AND CONVERT(varchar(12), EODDate, 101)  = CONVERT(varchar(12), @EODDate, 101) 
+						end
+					END
+end
+				ELSE
+				begin
+					if (select separateSales from BOF_S_SystemSettings)=0
+					begin
+					SELECT     BranchID, SalesItemID,description, SUM(ItemTotal) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category from
+						(SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category
+						FROM         dbo.VEW_POS_MainReading_Item /*where ItemPrice > 0*/
+						GROUP BY BranchID, SalesItemID, EODDate, Description,closedby,GroupName,category
+						HAVING      (BranchID =@BranchID) AND (closedby = @EmployeeID)
+						AND  EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)) as a
+						GROUP BY BranchID, SalesItemID, Description,GroupName,category
+					end
+					else
+					begin
+					SELECT     BranchID, SalesItemID,description, SUM(ItemTotal) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category from
+						(SELECT     BranchID, SalesItemID, Description, SUM(ItemPrice) AS ItemTotal, SUM(Quantity) AS Quantity,GroupName,category
+						FROM         dbo.VEW_POS_MainReading_Item
+						where closedby=@EmployeeID or openedby=@EmployeeID and ItemPrice > 0/*and ItemPrice > 0*/
+						GROUP BY BranchID, SalesItemID, EODDate, Description,GroupName,category
+						HAVING      (BranchID =@BranchID) 
+						AND EODDate > = CONVERT(varchar(12), @EODDate, 101) AND EODDate  <= CONVERT(varchar(12), @ToDate, 101)) as a
+						GROUP BY BranchID, SalesItemID, Description,GroupName,category
+					end					
+					END
+			
+	END
+
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[pos_stat_account]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pos_stat_account]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[pos_stat_account]
+(@customerID as integer,
+@branchID as integer,
+@begdate as datetime,
+@enddate as datetime)
+
+AS
+BEGIN
+declare @ballance as real
+select  @ballance= debt-sum(amount)+sum(DiscountValue)
+from ((select  customerid,  customername+'' ''+familyname as cname,[name]as bname,phone,debt, 
+closingtime as Date, (case when (amount>=0) then ''Inv '' else ''RInv '' end )+invoicenumber 
+as Description,  amount AS amount,(case when (amount>=0) then 0 else 1 end )as type,
+0 as Discountvalue
+from vew_pos_credit_payments where customerid=@customerid and branchid=@branchid and  
+ CONVERT(varchar(12), closingtime, 102)  >= CONVERT(varchar(12), @begdate, 102) and payTypeID=2)
+Union 
+(select  customerid,  customername+'' ''+familyname as cname,[name]as bname,phone,debt,Date,
+''Rp''+str(debtpayid)+'' ''+PaymentType as Description, 0-amount as amount,2 as type,
+discountvalue
+from vew_pos_debt_payments where customerid=@customerid and branchid=@branchid 
+and CONVERT(varchar(12), date, 102)  >= CONVERT(varchar(12), @begdate, 102)
+ and CONVERT(varchar(12), date, 102)  <= CONVERT(varchar(12), @enddate, 102) ))as a group by debt
+
+begin
+
+select customerid,cname,bname,phone,debt,date,description,
+-- commented by merin starts here
+--(case when (type=0) then abs(Amount) else  ''  ''  end )as Debit,
+--(case when (type>0) then abs(amount) else ''  ''  end )as Credit ,
+-- commented by merin ends here
+(case when (type=0) then abs(Amount) else  0  end )as Debit,
+(case when (type>0) then abs(amount) else 0  end )as Credit ,
+
+@ballance as balance, Discountvalue from ((select  customerid,  customername+'' ''+familyname as cname,
+[name]as bname,phone,debt, closingtime as Date, (case when (amount>=0) then ''Inv '' else ''RInv '' end )
++invoicenumber  as Description,  
+amount AS amount,(case when (amount>=0) then 0 else 1 end )as type, 0 as Discountvalue
+from vew_pos_credit_payments where customerid=@customerid and branchid=@branchid and 
+CONVERT(varchar(12), closingtime, 102)  >= CONVERT(varchar(12), @begdate, 102) 
+and payTypeID=2)
+Union
+(select  customerid,  customername+'' ''+familyname as cname,[name]as bname,phone,debt,Date,
+''Rp''+str(debtpayid)+'' ''+PaymentType as Description, 0-amount as amount,2 as type, 
+Discountvalue from 
+vew_pos_debt_payments where customerid=@customerid and branchid=@branchid and
+CONVERT(varchar(12), date, 102)  >= CONVERT(varchar(12), @begdate, 102) and 
+CONVERT(varchar(12), date, 102)  <= CONVERT(varchar(12), @enddate, 102) )) as a order by [DATE] asc 
+end
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_YearlySalesReport]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_YearlySalesReport]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[POS_SEL_YearlySalesReport]   
+@StartDate datetime ,
+@EndDate datetime 
+AS
+
+BEGIN 
+ 
+SELECT a.Year,a.January,a.February,a.March,a.April,a.May,a.June,a.July,a.August,a.September,a.October,a.November,a.December
+FROM         dbo.fn_POS_YEAR_MONTH_SALESREPORT(@StartDate,@EndDate) a 
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_YEARLYSALES]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_YEARLYSALES]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_YEARLYSALES]
+@StartDate datetime,
+@EndDate datetime
+AS
+begin
+select  * from dbo.YEARLYDAILYSALES(@StartDate,@EndDate)
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[POS_SEL_MainReading_Header]    Script Date: 06/18/2016 17:01:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[POS_SEL_MainReading_Header]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[POS_SEL_MainReading_Header] @BranchID   INT, 
+                                                    @EmployeeID INT = NULL, 
+                                                    @EODDate    DATETIME = NULL, 
+                                                    @ToDate     DATETIME = NULL 
+AS 
+    EXEC [dbo].[Pos_sel_mainreading_adjust] 
+
+    IF @EmployeeID IS NULL 
+      BEGIN 
+          IF @todate IS NULL 
+            BEGIN 
+                IF @EODDate IS NULL 
+                  BEGIN 
+                      SELECT Getdate()                                   AS 
+                             ReportDate 
+                             , 
+                             branchid, 
+                             branch                                      AS 
+                             Company, 
+                             branch, 
+                             Min(openingtime)                            AS 
+                             FirstOrder 
+                             , 
+                             Max(openingtime) 
+                             AS LastOrder, 
+                             Min(invoiceid)                              AS 
+                             FirstInvoice, 
+                             Max(invoiceid)                              AS 
+                             Lastinvoice, 
+                             Sum(totalprice)                             AS 
+                             TotalPrice 
+                             ,
+                             isnull((SELECT isnull(Description,''Tax1'') FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as tax1Desc,
+                             isnull((SELECT isnull(Description,''Tax2'') FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as tax2Desc,
+                             isnull((SELECT isnull(Description,''Tax3'') FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as tax3Desc,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                             Sum(totaltax) 
+                             AS TotalTax, 
+
+                             Sum(totalservice)                           AS 
+                             TotalService, 
+                             Sum(totaldiscount)                          AS 
+                             TotalDiscount, 
+                             Sum(totalpaid)                              AS 
+                             TotalPaid, 
+                             eoddate, 
+                             Sum(numberofcustomers)                      AS 
+                             NumberOfCustomers, 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND transactiontypeid = 1 
+                                     AND orderid IS NULL 
+                                     AND transactime >= Max(openingtime))AS 
+                             paidin, 
+                             --(select top 1 eoddate from POS_M_Orders order by eoddate desc))as paidin,   
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND transactiontypeid = -1 
+                                     AND orderid IS NULL 
+                                     AND transactime >= Max(openingtime))AS 
+                             paidout, 
+                             (SELECT Sum(amount) 
+                              FROM   dbo.cust_debt_pay 
+                              WHERE  eoddate IS NULL)                    AS 
+                             Credit_coll, 
+                             Sum(Isnull(includetaxamnt, 0)) 
+                             IncludeTaxAmnt, 
+                             Sum(Isnull(servicetaxamnt, 0)) 
+                             ServiceTaxAmnt, 
+                             Isnull(inctaxperc, 0) 
+                             IncTaxPerc, 
+                             Isnull(serchargeperc, 0) 
+                             SerChargePerc 
+                      --(select top 1 eoddate from POS_M_Orders order by eoddate desc))as paidout     
+                      FROM   dbo.vew_pos_mainreading_header 
+                      GROUP  BY branchid, 
+                                company, 
+                                branch, 
+                                eoddate, 
+                                inctaxperc, 
+                                serchargeperc 
+                      HAVING ( branchid = @BranchID ) 
+                             AND eoddate IS NULL 
+                  END 
+                ELSE 
+                  --BEGIN       
+                  BEGIN 
+                      SELECT eoddate                       AS ReportDate, 
+                             branchid, 
+                             branch                        AS Company, 
+                             branch, 
+                             Min(openingtime)              AS FirstOrder, 
+                             Max(openingtime)              AS LastOrder, 
+                             Min(invoiceid)                AS FirstInvoice, 
+                             Max(invoiceid)                AS Lastinvoice, 
+                             Sum(totalprice)               AS TotalPrice,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3, 
+                             Sum(totaltax)                 AS TotalTax, 
+                             Sum(totalservice)             AS TotalService, 
+                             Sum(totaldiscount)            AS TotalDiscount, 
+                             Sum(totalpaid)                AS TotalPaid, 
+                             eoddate, 
+                             Sum(numberofcustomers)        AS NumberOfCustomers, 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND transactiontypeid = 1 
+                                     AND transactime >= @EODDate 
+                                     AND orderid IS NULL)  AS paidin, 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND transactiontypeid = -1 
+                                     AND transactime >= @EODDate 
+                                     AND orderid IS NULL)  AS paidout, 
+                             (SELECT Sum(amount) 
+                              FROM   dbo.cust_debt_pay 
+                              WHERE  CONVERT(VARCHAR(12), eoddate, 101) = 
+                                     CONVERT(VARCHAR(12), @EODDate, 101) 
+                             )                             AS Credit_coll, 
+                             Sum(Isnull(includetaxamnt, 0))IncludeTaxAmnt, 
+                             Sum(Isnull(servicetaxamnt, 0))ServiceTaxAmnt, 
+                             Isnull(inctaxperc, 0)         IncTaxPerc, 
+                             Isnull(serchargeperc, 0)      SerChargePerc 
+                      FROM   dbo.vew_pos_mainreading_header 
+                      GROUP  BY branchid, 
+                                company, 
+                                branch, 
+                                eoddate, 
+                                inctaxperc, 
+                                serchargeperc 
+                      HAVING ( branchid = @BranchID ) 
+                             AND CONVERT(VARCHAR(12), eoddate, 101) = 
+                                 CONVERT(VARCHAR(12), @EODDate, 101) 
+                  END 
+            END 
+          ELSE 
+            BEGIN 
+                SELECT Min(reportdate) 
+                       AS 
+                       reportdate, 
+                       branchid, 
+                       branch 
+                       AS 
+                       Company, 
+                       branch, 
+                       Min(firstorder) 
+                       AS 
+                       FirstOrder 
+                       , 
+                       Max(lastorder) 
+                       AS 
+                       LastOrder, 
+                       Min(firstinvoice) 
+                       AS 
+                       FirstInvoice, 
+                       Max(lastinvoice) 
+                       AS 
+                       Lastinvoice, 
+                       Sum(totalprice) 
+                       AS 
+                       TotalPrice 
+                       , 
+					  isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                       Sum(totaltax) 
+                       AS 
+                       TotalTax, 
+                       Sum(totalservice) 
+                       AS 
+                       TotalService, 
+                       Sum(totaldiscount) 
+                       AS 
+                       TotalDiscount, 
+                       Sum(totalpaid) 
+                       AS 
+                       TotalPaid, 
+                       Min(eoddate) 
+                       AS 
+                       eoddate, 
+                       Sum(numberofcustomers) 
+                       AS 
+                       NumberOfCustomers, 
+                       (SELECT Sum(amount) 
+                        FROM   pos_m_transactions 
+                        WHERE  pos_m_transactions.branchid = @BranchID 
+                               AND transactiontypeid = 1 
+                               AND transactime >= @EODDate 
+                               AND transactime <= @ToDate 
+                               AND orderid IS NULL) 
+                       AS 
+                       paidin 
+                       , 
+                       (SELECT Sum(amount) 
+                        FROM   pos_m_transactions 
+                        WHERE  pos_m_transactions.branchid = @BranchID 
+                               AND transactiontypeid = -1 
+                               AND transactime >= @EODDate 
+                               AND transactime <= @ToDate 
+                               AND orderid IS NULL) 
+                       AS 
+                       paidout, 
+                       (SELECT Sum(amount) 
+                        FROM   dbo.cust_debt_pay 
+                        WHERE  eoddate > = CONVERT(VARCHAR(12), @EODDate, 101) 
+                               AND eoddate < = CONVERT(VARCHAR(12), @ToDate, 101 
+                                               )) 
+                       AS 
+                       Credit_coll, 
+                       Sum(Isnull(includetaxamnt, 0)) 
+                       IncludeTaxAmnt, 
+                       Sum(Isnull(servicetaxamnt, 0)) 
+                       ServiceTaxAmnt, 
+                       Isnull(inctaxperc, 0) 
+                       IncTaxPerc, 
+                       Isnull(serchargeperc, 0) 
+                       SerChargePerc 
+                FROM   (SELECT eoddate                       AS ReportDate, 
+                               branchid, 
+                               company, 
+                               branch, 
+                               Min(openingtime)              AS FirstOrder, 
+                               Max(openingtime)              AS LastOrder, 
+                               Min(invoiceid)                AS FirstInvoice, 
+                               Max(invoiceid)                AS Lastinvoice, 
+                               Sum(totalprice)               AS TotalPrice, 
+							  isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                               Sum(totaltax)                 AS TotalTax, 
+                               Sum(totalservice)             AS TotalService, 
+                               Sum(totaldiscount)            AS TotalDiscount, 
+                               Sum(totalpaid)                AS TotalPaid, 
+                               eoddate, 
+                               Sum(numberofcustomers)        AS 
+                               NumberOfCustomers, 
+                               Sum(Isnull(includetaxamnt, 0))IncludeTaxAmnt, 
+                               Sum(Isnull(servicetaxamnt, 0))ServiceTaxAmnt, 
+                               Isnull(inctaxperc, 0)         IncTaxPerc, 
+                               Isnull(serchargeperc, 0)      SerChargePerc 
+                        FROM   dbo.vew_pos_mainreading_header 
+                        GROUP  BY branchid, 
+                                  company, 
+                                  branch, 
+                                  eoddate, 
+                                  inctaxperc, 
+                                  serchargeperc 
+                        HAVING ( branchid = @BranchID ) 
+                               AND eoddate > = CONVERT(VARCHAR(12), @EODDate, 
+                                               101) 
+                               AND eoddate < CONVERT(VARCHAR(12), @ToDate, 101)) 
+                       AS a 
+                GROUP  BY branchid, 
+                          company, 
+                          branch, 
+                          inctaxperc, 
+                          serchargeperc 
+            END 
+      END 
+    ELSE IF @ToDate IS NULL 
+      BEGIN 
+          IF @EODDate IS NULL 
+            BEGIN 
+                IF (SELECT separatesales 
+                    FROM   bof_s_systemsettings) = 0 
+                  BEGIN 
+                      SELECT Getdate() 
+                             AS 
+                             ReportDate, 
+                             branchid, 
+                             branch 
+                             AS 
+                             Company, 
+                             branch, 
+                             Min(openingtime) 
+                             AS 
+                             FirstOrder, 
+                             Max(openingtime) 
+                             AS 
+                             LastOrder, 
+                             Min(invoiceid) 
+                             AS 
+                             FirstInvoice 
+                             , 
+                             Max(invoiceid) 
+                             AS Lastinvoice, 
+                             Sum(totalprice) 
+                             AS 
+                             TotalPrice, 
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                             Sum(totaltax) 
+                             AS 
+                             TotalTax 
+                             , 
+                             Sum(totalservice) 
+                             AS TotalService 
+                             , 
+                             Sum(totaldiscount) 
+                             AS TotalDiscount, 
+                             Sum(totalpaid) 
+                             AS 
+                             TotalPaid, 
+                             eoddate, 
+                             Sum(numberofcustomers) 
+                             AS 
+                             NumberOfCustomers, 
+                             closedby, 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = 1 
+                                     AND orderid IS NULL 
+                                     AND transactime >= (SELECT TOP 1 eoddate 
+                                                         FROM   pos_m_orders 
+                                                         ORDER  BY eoddate DESC) 
+                             )AS 
+                             paidin 
+                             , 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = -1 
+                                     AND orderid IS NULL 
+                                     AND transactime >= (SELECT TOP 1 eoddate 
+                                                         FROM   pos_m_orders 
+                                                         ORDER  BY eoddate DESC) 
+                             )AS 
+                             paidout, 
+                             NULL 
+                             AS 
+                             Credit_coll, 
+                             Sum(Isnull(includetaxamnt, 0)) 
+                             IncludeTaxAmnt, 
+                             Sum(Isnull(servicetaxamnt, 0)) 
+                             ServiceTaxAmnt, 
+                             Isnull(inctaxperc, 0) 
+                             IncTaxPerc, 
+                             Isnull(serchargeperc, 0) 
+                             SerChargePerc 
+                      FROM   dbo.vew_pos_mainreading_header 
+                      GROUP  BY branchid, 
+                                company, 
+                                branch, 
+                                eoddate, 
+                                closedby, 
+                                inctaxperc, 
+                                serchargeperc 
+                      HAVING ( branchid = @BranchID ) 
+                             AND closedby = @EmployeeID 
+                             AND eoddate IS NULL 
+                  END 
+                ELSE 
+                  BEGIN 
+                      SELECT Getdate() 
+                             AS 
+                             ReportDate, 
+                             branchid, 
+                             branch 
+                             AS 
+                             Company, 
+                             branch, 
+                             Min(openingtime) 
+                             AS 
+                             FirstOrder, 
+                             Max(openingtime) 
+                             AS 
+                             LastOrder, 
+                             Min(invoiceid) 
+                             AS 
+                             FirstInvoice 
+                             , 
+                             Max(invoiceid) 
+                             AS Lastinvoice, 
+                             Sum(totalprice) 
+                             AS 
+                             TotalPrice, 
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                             Sum(totaltax) 
+                             AS 
+                             TotalTax 
+                             , 
+                             Sum(totalservice) 
+                             AS TotalService 
+                             , 
+                             Sum(totaldiscount) 
+                             AS TotalDiscount, 
+                             Sum(totalpaid) 
+                             AS 
+                             TotalPaid, 
+                             eoddate, 
+                             Sum(numberofcustomers) 
+                             AS 
+                             NumberOfCustomers, 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = 1 
+                                     AND orderid IS NULL 
+                                     AND transactime >= (SELECT TOP 1 eoddate 
+                                                         FROM   pos_m_orders 
+                                                         ORDER  BY eoddate DESC) 
+                             )AS 
+                             paidin 
+                             , 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = -1 
+                                     AND orderid IS NULL 
+                                     AND transactime >= (SELECT TOP 1 eoddate 
+                                                         FROM   pos_m_orders 
+                                                         ORDER  BY eoddate DESC) 
+                             )AS 
+                             paidout, 
+                             NULL 
+                             AS 
+                             Credit_coll, 
+                             Sum(Isnull(includetaxamnt, 0)) 
+                             IncludeTaxAmnt, 
+                             Sum(Isnull(servicetaxamnt, 0)) 
+                             ServiceTaxAmnt, 
+                             Isnull(inctaxperc, 0) 
+                             IncTaxPerc, 
+                             Isnull(serchargeperc, 0) 
+                             SerChargePerc 
+                      FROM   dbo.vew_pos_mainreading_header 
+                      WHERE  ( ( closedby = @EmployeeID ) 
+                                OR ( openedby = @employeeid ) ) 
+                      GROUP  BY branchid, 
+                                company, 
+                                branch, 
+                                eoddate, 
+                                inctaxperc, 
+                                serchargeperc 
+                      HAVING ( branchid = @BranchID ) 
+                             --AND EmployeeID = @EmployeeID --and (ClosedBy=@EmployeeID or openedby=@employeeid)   
+                             AND eoddate IS NULL 
+                  END 
+            END 
+          ELSE 
+            BEGIN 
+                IF (SELECT separatesales 
+                    FROM   bof_s_systemsettings) = 0 
+                  BEGIN 
+                      SELECT eoddate                                         AS 
+                             ReportDate 
+                             , 
+                             branchid, 
+                             company, 
+                             branch, 
+                             Min(openingtime)                                AS 
+                             FirstOrder 
+                             , 
+                             Max(openingtime) 
+                             AS LastOrder, 
+                             Min(invoiceid)                                  AS 
+                             FirstInvoice 
+                             , 
+                             Max(invoiceid) 
+                             AS Lastinvoice, 
+                             Sum(totalprice)                                 AS 
+                             TotalPrice 
+                             , 
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                             Sum(totaltax) 
+                             AS TotalTax, 
+                             Sum(totalservice)                               AS 
+                             TotalService 
+                             , 
+                             Sum(totaldiscount) 
+                             AS TotalDiscount, 
+                             Sum(totalpaid)                                  AS 
+                             TotalPaid, 
+                             eoddate, 
+                             Sum(numberofcustomers)                          AS 
+                             NumberOfCustomers, 
+                             closedby, 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = 1 
+                                     AND transactime >= @EODDate 
+                                     AND [description] <> ''Order Settlement'')AS 
+                             paidin 
+                             , 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = -1 
+                                     AND transactime >= @EODDate 
+                                     AND [description] <> ''Order Settlement'')AS 
+                             paidout, 
+                             NULL                                            AS 
+                             Credit_coll, 
+                             Sum(Isnull(includetaxamnt, 0)) 
+                             IncludeTaxAmnt, 
+                             Sum(Isnull(servicetaxamnt, 0)) 
+                             ServiceTaxAmnt, 
+                             Isnull(inctaxperc, 0) 
+                             IncTaxPerc, 
+                             Isnull(serchargeperc, 0) 
+                             SerChargePerc 
+                      FROM   dbo.vew_pos_mainreading_header 
+                      GROUP  BY branchid, 
+                                company, 
+                                branch, 
+                                eoddate, 
+                                closedby, 
+                                inctaxperc, 
+                                serchargeperc 
+                      HAVING ( branchid = @BranchID ) 
+                             AND closedby = @EmployeeID 
+                             AND CONVERT(VARCHAR(12), eoddate, 101) = 
+                                 CONVERT(VARCHAR(12), @EODDate, 101) 
+                  END 
+                ELSE 
+                  BEGIN 
+                      SELECT eoddate                                         AS 
+                             ReportDate 
+                             , 
+                             branchid, 
+                             company, 
+                             branch, 
+                             Min(openingtime)                                AS 
+                             FirstOrder 
+                             , 
+                             Max(openingtime) 
+                             AS LastOrder, 
+                             Min(invoiceid)                                  AS 
+                             FirstInvoice 
+                             , 
+                             Max(invoiceid) 
+                             AS Lastinvoice, 
+                             Sum(totalprice)                                 AS 
+                             TotalPrice 
+                             , 
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                             Sum(totaltax) 
+                             AS TotalTax, 
+                             Sum(totalservice)                               AS 
+                             TotalService 
+                             , 
+                             Sum(totaldiscount) 
+                             AS TotalDiscount, 
+                             Sum(totalpaid)                                  AS 
+                             TotalPaid, 
+                             eoddate, 
+                             Sum(numberofcustomers)                          AS 
+                             NumberOfCustomers, 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = 1 
+                                     AND transactime >= @EODDate 
+                                     AND [description] <> ''Order Settlement'')AS 
+                             paidin 
+                             , 
+                             (SELECT Sum(amount) 
+                              FROM   pos_m_transactions 
+                              WHERE  pos_m_transactions.branchid = @BranchID 
+                                     AND employeeid = @EmployeeID 
+                                     AND transactiontypeid = -1 
+                                     AND transactime >= @EODDate 
+                                     AND [description] <> ''Order Settlement'')AS 
+                             paidout, 
+                             NULL                                            AS 
+                             Credit_coll, 
+                             Sum(Isnull(includetaxamnt, 0)) 
+                             IncludeTaxAmnt, 
+                             Sum(Isnull(servicetaxamnt, 0)) 
+                             ServiceTaxAmnt, 
+                             Isnull(inctaxperc, 0) 
+                             IncTaxPerc, 
+                             Isnull(serchargeperc, 0) 
+                             SerChargePerc 
+                      FROM   dbo.vew_pos_mainreading_header 
+                      WHERE  ( closedby = @EmployeeID 
+                                OR openedby = @employeeid ) 
+                      GROUP  BY branchid, 
+                                company, 
+                                branch, 
+                                eoddate, 
+                                inctaxperc, 
+                                serchargeperc 
+                      HAVING ( branchid = @BranchID ) 
+                             --AND EmployeeID = @EmployeeID-- and (ClosedBy=@EmployeeID or openedby=@employeeid)   
+                             AND CONVERT(VARCHAR(12), eoddate, 101) = 
+                                 CONVERT(VARCHAR(12), @EODDate, 101) 
+                  END 
+            END 
+      END 
+    ELSE 
+      BEGIN 
+          IF (SELECT separatesales 
+              FROM   bof_s_systemsettings) = 0 
+            BEGIN 
+                SELECT Min(reportdate)                                 AS 
+                       reportdate 
+                       , 
+                       branchid, 
+                       branch                                          AS 
+                       Company, 
+                       branch, 
+                       Min(firstorder)                                 AS 
+                       FirstOrder 
+                       , 
+                       Max(lastorder) 
+                       AS LastOrder, 
+                       Min(firstinvoice)                               AS 
+                       FirstInvoice 
+                       , 
+                       Max(lastinvoice) 
+                       AS Lastinvoice, 
+                       Sum(totalprice)                                 AS 
+                       TotalPrice 
+                       , 
+					  isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                       Sum(totaltax) 
+                       AS TotalTax, 
+                       Sum(totalservice)                               AS 
+                       TotalService 
+                       , 
+                       Sum(totaldiscount) 
+                       AS TotalDiscount, 
+                       Sum(totalpaid)                                  AS 
+                       TotalPaid, 
+                       Min(eoddate)                                    AS 
+                       eoddate, 
+                       Sum(numberofcustomers)                          AS 
+                       NumberOfCustomers, 
+                       (SELECT Sum(amount) 
+                        FROM   pos_m_transactions 
+                        WHERE  pos_m_transactions.branchid = @BranchID 
+                               AND transactiontypeid = 1 
+                               AND transactime >= @EODDate 
+                               AND transactime <= @ToDate 
+                               AND [description] <> ''Order Settlement'')AS paidin 
+                       , 
+                       (SELECT Sum(amount) 
+                        FROM   pos_m_transactions 
+                        WHERE  pos_m_transactions.branchid = @BranchID 
+                               AND transactiontypeid = -1 
+                               AND transactime >= @EODDate 
+                               AND transactime <= @ToDate 
+                               AND [description] <> ''Order Settlement'')AS 
+                       paidout, 
+                       NULL                                            AS 
+                       Credit_coll, 
+                       Sum(Isnull(includetaxamnt, 0)) 
+                       IncludeTaxAmnt, 
+                       Sum(Isnull(servicetaxamnt, 0)) 
+                       ServiceTaxAmnt, 
+                       Isnull(inctaxperc, 0) 
+                       IncTaxPerc, 
+                       Isnull(serchargeperc, 0) 
+                       SerChargePerc 
+                FROM   (SELECT eoddate                       AS ReportDate, 
+                               branchid, 
+                               company, 
+                               branch, 
+                               Min(openingtime)              AS FirstOrder, 
+                               Max(openingtime)              AS LastOrder, 
+                               Min(invoiceid)                AS FirstInvoice, 
+                               Max(invoiceid)                AS Lastinvoice, 
+                               Sum(totalprice)               AS TotalPrice,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                               Sum(totaltax)                 AS TotalTax, 
+                               Sum(totalservice)             AS TotalService, 
+                               Sum(totaldiscount)            AS TotalDiscount, 
+                               Sum(totalpaid)                AS TotalPaid, 
+                               eoddate, 
+                               Sum(numberofcustomers)        AS 
+                               NumberOfCustomers, 
+                               Sum(Isnull(includetaxamnt, 0))IncludeTaxAmnt, 
+                               Sum(Isnull(servicetaxamnt, 0))ServiceTaxAmnt, 
+                               Isnull(inctaxperc, 0)         IncTaxPerc, 
+                               Isnull(serchargeperc, 0)      SerChargePerc 
+                        FROM   dbo.vew_pos_mainreading_header 
+                        GROUP  BY branchid, 
+                                  company, 
+                                  branch, 
+                                  eoddate, 
+                                  closedby, 
+                                  inctaxperc, 
+                                  serchargeperc 
+                        HAVING ( branchid = @BranchID ) 
+                               AND closedby = @EmployeeID 
+                               AND CONVERT(VARCHAR(12), eoddate, 101) > = 
+                                   CONVERT(VARCHAR(12), @EODDate, 101) 
+                               AND CONVERT(VARCHAR(12), eoddate, 101) < 
+                                   CONVERT(VARCHAR(12), @ToDate, 101))AS a 
+                GROUP  BY branchid, 
+                          company, 
+                          branch, 
+                          inctaxperc, 
+                          serchargeperc 
+            END 
+          ELSE 
+            BEGIN 
+                SELECT Min(reportdate)                                 AS 
+                       reportdate 
+                       , 
+                       branchid, 
+                       branch                                          AS 
+                       Company, 
+                       branch, 
+                       Min(firstorder)                                 AS 
+                       FirstOrder 
+                       , 
+                       Max(lastorder) 
+                       AS LastOrder, 
+                       Min(firstinvoice)                               AS 
+                       FirstInvoice 
+                       , 
+                       Max(lastinvoice) 
+                       AS Lastinvoice, 
+                       Sum(totalprice)                                 AS 
+                       TotalPrice 
+                       , 
+					  isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                       Sum(totaltax) 
+                       AS TotalTax, 
+                       Sum(totalservice)                               AS 
+                       TotalService 
+                       , 
+                       Sum(totaldiscount) 
+                       AS TotalDiscount, 
+                       Sum(totalpaid)                                  AS 
+                       TotalPaid, 
+                       Min(eoddate)                                    AS 
+                       eoddate, 
+                       Sum(numberofcustomers)                          AS 
+                       NumberOfCustomers, 
+                       (SELECT Sum(amount) 
+                        FROM   pos_m_transactions 
+                        WHERE  pos_m_transactions.branchid = @BranchID 
+                               AND transactiontypeid = 1 
+                               AND transactime >= @EODDate 
+                               AND transactime <= @ToDate 
+                               AND [description] <> ''Order Settlement'')AS paidin 
+                       , 
+                       (SELECT Sum(amount) 
+                        FROM   pos_m_transactions 
+                        WHERE  pos_m_transactions.branchid = @BranchID 
+                               AND transactiontypeid = -1 
+                               AND transactime >= @EODDate 
+                               AND transactime <= @ToDate 
+                               AND [description] <> ''Order Settlement'')AS 
+                       paidout, 
+                       NULL                                            AS 
+                       Credit_coll, 
+                       Sum(Isnull(includetaxamnt, 0)) 
+                       IncludeTaxAmnt, 
+                       Sum(Isnull(servicetaxamnt, 0)) 
+                       ServiceTaxAmnt, 
+                       Isnull(inctaxperc, 0) 
+                       IncTaxPerc, 
+                       Isnull(serchargeperc, 0) 
+                       SerChargePerc 
+                FROM   (SELECT eoddate                       AS ReportDate, 
+                               branchid, 
+                               company, 
+                               branch, 
+                               Min(openingtime)              AS FirstOrder, 
+                               Max(openingtime)              AS LastOrder, 
+                               Min(invoiceid)                AS FirstInvoice, 
+                               Max(invoiceid)                AS Lastinvoice, 
+                               Sum(totalprice)               AS TotalPrice, 
+							  isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 1 AND inclusive = 1),0 ) as taxRate1,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 2 AND inclusive = 1),0 ) as taxRate2,
+							isnull((SELECT isnull(rate,0) FROM bof_l_taxes WHERE taxid = 3 AND inclusive = 1),0 ) as taxRate3,
+                               Sum(totaltax)                 AS TotalTax, 
+                               Sum(totalservice)             AS TotalService, 
+                               Sum(totaldiscount)            AS TotalDiscount, 
+                               Sum(totalpaid)                AS TotalPaid, 
+                               eoddate, 
+                               Sum(numberofcustomers)        AS 
+                               NumberOfCustomers, 
+                               Sum(Isnull(includetaxamnt, 0))IncludeTaxAmnt, 
+                               Sum(Isnull(servicetaxamnt, 0))ServiceTaxAmnt, 
+                               Isnull(inctaxperc, 0)         IncTaxPerc, 
+                               Isnull(serchargeperc, 0)      SerChargePerc 
+                        FROM   dbo.vew_pos_mainreading_header 
+                        WHERE  ( closedby = @EmployeeID 
+                                  OR openedby = @employeeid ) 
+                        GROUP  BY branchid, 
+                                  company, 
+                                  branch, 
+                                  eoddate, 
+                                  inctaxperc, 
+                                  serchargeperc, 
+                                  includetaxamnt, 
+                                  servicetaxamnt 
+                        HAVING ( branchid = @BranchID ) 
+                               --AND (EmployeeID = @EmployeeID)--and (closedby=@EmployeeID or openedby=@employeeid)   
+                               AND CONVERT(VARCHAR(12), eoddate, 101) > = 
+                                   CONVERT(VARCHAR(12), @EODDate, 101) 
+                               AND CONVERT(VARCHAR(12), eoddate, 101) < 
+                                   CONVERT(VARCHAR(12), @ToDate, 101))AS a 
+                GROUP  BY branchid, 
+                          company, 
+                          branch, 
+                          inctaxperc, 
+                          serchargeperc 
+            END 
+      END ' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[pims_sel_totals]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[pims_sel_totals]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[pims_sel_totals] 
+	-- Add the parameters for the stored procedure here
+@branchid int 
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT   
+				
+				 SUM(TotalPrice) AS TotalPrice, SUM(TotalTax) AS TotalTax, SUM(TotalService) AS TotalService, 
+				SUM(TotalDiscount) AS TotalDiscount
+				FROM         dbo.VEW_POS_MainReading_Header
+group by branchid, eoddate
+				
+				HAVING      (BranchID = @BranchID) 
+				AND  EODDate IS NULL
+END
+
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_OrderOpenedBy]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_OrderOpenedBy]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_OrderOpenedBy]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+BEGIN
+
+SELECT @StartDate AS StartDate, @EndDate AS EndDate, BranchID, Name, EODDate, OpeningTime,  
+       InvoiceID, OrderID, OrderbyEmployeeId, SUM(TotalPrice) AS TotalPrice,
+       NumberOfCustomers, EmployeeName from
+ (SELECT     BranchID, Name, EODDate, OpeningTime, InvoiceID, OrderID,OrderbyEmployeeId,
+ (select employeename from   bof_m_employees where employeeid=OrderbyEmployeeId)as EmployeeName,
+  SUM(TotalPrice) AS TotalPrice, NumberOfCustomers FROM dbo.VEW_BOF_OrderOpenedBy
+  GROUP BY BranchID, Name, EmployeeName,EODDate, OpeningTime, InvoiceID, OrderID, OrderbyEmployeeId, NumberOfCustomers
+  HAVING (BranchID =@BranchID)  AND Convert(datetime,EODDate,102) BETWEEN @StartDate AND @EndDate)as a
+  GROUP BY BranchID, Name, EmployeeName, EODDate, OpeningTime, InvoiceID, OrderID, OrderbyEmployeeId, NumberOfCustomers
+END
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_TheoreticalProfit]    Script Date: 06/18/2016 17:01:42 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_TheoreticalProfit]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE [dbo].[BOF_SEL_TheoreticalProfit]
+@BranchID	int,
+@StartDate DateTime,
+@EndDate	DateTime
+AS
+SELECT     TOP 100 PERCENT @StartDate AS StartDate,@EndDate AS EndDate,  BranchID, Branch, GroupID, GroupName, SalesItemID, Description, 
+	          Quantity,UsedPrice,ISNULL(UnitCost,0) as UnitCost, PriceModeId,CategoryID,Category
+FROM         dbo.SVU_TheoreticalProfit
+WHERE BranchID = @BranchID AND   EODDate BETWEEN CONVERT(varchar(20),@StartDate, 101)  AND CONVERT(varchar(20),@EndDate+1, 101)
+' 
+END
+GO
+/****** Object:  StoredProcedure [dbo].[BOF_SEL_CompleteReport_SalesInfo]    Script Date: 06/18/2016 17:01:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[BOF_SEL_CompleteReport_SalesInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[BOF_SEL_CompleteReport_SalesInfo]  
+@BranchID int,  
+@EODDate DateTime = NULL,  
+@ToDate DateTime = null  
+AS 
+
+if @ToDate is null  
+		begin  
+		  IF @EODDate IS NULL  
+			   BEGIN  
+					SELECT  BranchID, branch as Company, Branch,
+					SUM(TotalPrice) AS TotalPrice,  SUM(TotalDiscount) AS TotalDiscount,     
+					sum(IncludeTaxAmnt)IncludeTaxAmnt,sum(ServiceTaxAmnt)ServiceTaxAmnt,
+					(select count(*) BillCount from pos_m_orders where invoicenumber is not null and eoddate is null  )BillCount
+					,(SUM(TotalPrice)-SUM(TotalDiscount)) SalesAmount
+					,SUM(NumberOfCustomers) AS NumberOfCustomers
+					FROM         dbo.VEW_POS_MainReading_Header  
+					GROUP BY  BranchID, Company, Branch  ,IncTaxPerc,SerChargePerc,EODDate
+					HAVING      (BranchID = @BranchID)   
+					AND  EODDate IS NULL  
+			   END  
+		  ELSE  
+			   BEGIN  
+					SELECT   BranchID, branch as Company, Branch,
+					SUM(TotalPrice) AS TotalPrice,  SUM(TotalDiscount) AS TotalDiscount,     
+					sum(IncludeTaxAmnt)IncludeTaxAmnt,sum(ServiceTaxAmnt)ServiceTaxAmnt,
+					(select count(*) BillCount from pos_m_orders where invoicenumber is not null     
+						AND  CONVERT(varchar(12), EODDate, 101) = CONVERT(varchar(12), @EODDate, 101))BillCount
+					,(SUM(TotalPrice)-SUM(TotalDiscount)) SalesAmount
+					,SUM(NumberOfCustomers) AS NumberOfCustomers
+					FROM         dbo.VEW_POS_MainReading_Header  
+					GROUP BY  BranchID, Company, Branch  ,IncTaxPerc,SerChargePerc,EODDate
+					HAVING      (BranchID = @Branchid)   
+					AND  CONVERT(varchar(12), EODDate, 101) = CONVERT(varchar(12), @EODDate, 101)     
+			   End  
+		end  
+Else  
+     BEGIN  
+					SELECT  a.BranchID,Branch, a.Company, 
+					SUM(a.TotalPrice) AS TotalPrice,  SUM(a.TotalDiscount) AS TotalDiscount,     
+					sum(a.IncludeTaxAmnt)IncludeTaxAmnt,sum(a.ServiceTaxAmnt)ServiceTaxAmnt,a.BillCount 
+					,(SUM(a.TotalPrice)-SUM(a.TotalDiscount)) SalesAmount
+					,SUM(NumberOfCustomers) AS NumberOfCustomers
+from
+(
+      				SELECT  BranchID, branch as Company, Branch,
+					SUM(TotalPrice) AS TotalPrice,  SUM(TotalDiscount) AS TotalDiscount,     
+					sum(IncludeTaxAmnt)IncludeTaxAmnt,sum(ServiceTaxAmnt)ServiceTaxAmnt,
+					(select count(*) BillCount from pos_m_orders where invoicenumber is not null     
+					AND  CONVERT(varchar(12), EODDate, 101) between CONVERT(varchar(12), @EODDate, 101) and CONVERT(varchar(12), @ToDate, 101))BillCount
+					,SUM(NumberOfCustomers) AS NumberOfCustomers
+					FROM         dbo.VEW_POS_MainReading_Header  
+					GROUP BY  BranchID, Company, Branch  ,IncTaxPerc,SerChargePerc,EODDate
+					HAVING      (BranchID = @Branchid)   
+					AND  CONVERT(varchar(12), EODDate, 101) between CONVERT(varchar(12), @EODDate, 101) and CONVERT(varchar(12), @ToDate, 101)
+	   
+)a
+GROUP BY  a.BranchID, a.Company,a.BillCount, a.Branch    
+ END
+
+
+' 
+END
+GO
+
